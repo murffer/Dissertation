@@ -1,0 +1,89 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                                 PREAMBLE                                %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% LANGUAGE and ENDCODING
+\usepackage[english]{babel}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% PACKAGES
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{microtype}
+\usepackage[obeyDraft]{todonotes}
+\usepackage{fancyvrb}
+\VerbatimFootnotes
+\usepackage{algorithmic}
+\usepackage{booktabs}
+
+%% GRAPHICS RELATED
+\usepackage{graphicx}
+\usepackage[outdir=./tmp/]{epstopdf}
+\DeclareGraphicsExtensions{.eps, .pdf, .jpeg, .png,}
+
+%% CPATION SETUP
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{belowskip=12pt,aboveskip=4pt}
+
+%% BIBLIOGRAPHY
+\bibliographystyle{ieeetr}
+
+%% UNITS,  EQUATIONS, and CHEMISTRY
+\usepackage{siunitx}
+\usepackage{mhchem}
+\usepackage{mathrsfs}
+
+%% NOMENCLATURE
+\usepackage[refpage]{nomencl}  % refer to the page where notation appears
+\newcommand{\definevar}[2]{#1 is the #2\nomenclature{#1}{#2}}
+\newcommand{\nom}[2]{#1 #2\nomenclature{#1}{#2}}
+\renewcommand{\nomname}{List of Notations}
+\renewcommand*{\pagedeclaration}[1]{\unskip\dotfill\hyperpage{#1}}
+\makenomenclature
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                             Listing Setup                               %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{listings}
+\lstset{ %
+    language=C++,
+    basicstyle=\footnotesize\ttfamily,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=2,
+    numbersep=5pt,
+    backgroundcolor=\color{white},
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    rulecolor=\color{black},
+    tabsize=2,
+    breaklines=true,
+    breakatwhitespace=false,
+    title=\lstname,
+    keywordstyle=\color{blue},
+    commentstyle=\color{OliveGreen},
+    stringstyle=\color{orange}
+}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35, 0.01}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,singlelinecheck=false,margin=0pt,font={bf,footnotesize}}
+
+%% USER COMMANDS
+\usepackage{isotope}
+\newcommand{\iso}{\isotope}
+\newcommand{\figurewidth}{\textwidth}
+\DeclareSIUnit\roetgen{R}
+\DeclareSIUnit\eV{\electronVolt}
+\DeclareSIUnit\count{count}
+\DeclareSIUnit\rem{rem}
+\DeclareSIUnit\in{in}
+\DeclareSIUnit\cps{\count\per\second}
+\DeclareSIUnit\cpsngcf{\count\per\second\per\nano\gram\iso[252]{Cf}}

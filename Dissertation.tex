@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This template is distributed with ABSOLUTELY NO WARRANTY.
+% It serves as a guideline and constitutes a basic structure for a
+% thesis/dissertation. The user assumes full responsibility for formatting
+% and typesetting their document and for verifying that all the thesis
+% requirements set by the University of Tennessee are met. Please refer to the most
+% recent UT thesis guide (http://web.utk.edu/~thesis/thesisresources.shtml)
+% or contact the thesis consultant (http://web.utk.edu/~thesis/).
+% Please report any bugs to the thesis consultant.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% O P T I O N S:
+% 1. thesis/dissertation
+% 2. monochrome
+% 3. all options provided by the report class
+\documentclass[thesis,letterpaper,12pt]{utthesis} % thesis, one side
+\input{Preamble}
+\usepackage{termcal}
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{dot2texi}
+% some alternatives are:
+%\documentclass[thesis,monochrome,letterpaper,12pt]{utthesis} %thesis, one side, monochrome text
+%\documentclass[thesis,twoside,letterpaper,12pt]{utthesis} % thesis, two side
+%\documentclass[thesis,monochrome,twoside,letterpaper,12pt]{utthesis} % thesis, two side, monochrome text
+% for a dissertation, replace the thesis option by dissertation:
+% \documentclass[dissertation,letterpaper,12pt]{utthesis} . . .
+\renewcommand{\baselinestretch}{1.5} 	 % line Spacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TO DO: FILL IN YOUR INFORMATION BELOW - READ THIS SECTION CAREFULLY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{Optimization of the Radiation Portal Monitor}
+\author{Matthew J. Urffer}
+\date{August 9, 2013}
+\copyrightYear{2013} 
+\graduationMonth{December}
+\majorProfessor{Liaurence F. Miller}
+\keywords{Neutron Detectors, Radiation Portal Monitors, GEANT4, MCNPX, Simulation}
+\college{Engineering}
+\dept{Nuclear Engineering}
+\university{The University  of Tennessee, Knoxville}
+\viceProvost{Carolyn R. Hodges}
+\major{Nuclear Engineering}
+\degree{Doctor of Philosophy}
+\college{Engineering}
+\dept{Nuclear Engineering}
+\university{The University  of Tennessee, Knoxville}
+\numberOfCommitteeMembers{3}
+\committeeMemberA {Lawrence H. Heilbronn}
+\committeeMemberB {Dayaker Penumadu}
+\committeeMemberC {Ronald E. Pevey}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOAD SOME USEFUL PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\graphicspath{{tmp/}{figures/}{figures/eps/}{figures/pdf/} }% specify the path where figures are located
+\usepackage{fancyhdr}                   % fancy headers and footers
+\usepackage[inactive]{srcltx}		 	% necessary to use forward and inverse searching in DVI
+\usepackage{relsize}                    % font sizing hierarchy
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+    \pagenumbering{alph} % this is needed to clear certain issues with the hyperref package
+    %
+    %
+    \addToPDFBookmarks{0}{Front Matter}{rootNode} % create a root node named "Front Matter" in the pdf bookmarks
+    \addToPDFBookmarks{1}{Title}{a} % add a pdf bookmark to the title page
+    \maketitle
+    %
+    \pagenumbering{roman}
+    \setcounter{page}{2}
+    %
+    \addToPDFBookmarks{1}{Dedication}{b} % add a pdf bookmark to the dedication page
+    \include{front-matter/dedication} % include the dedication
+    %
+    \addToPDFBookmarks{1}{Acknowledgements}{c} % add a pdf bookmark to the acknowledgements page
+    \include{front-matter/acknowledgements} % include the acknowledgements
+    \addToPDFBookmarks{1}{Abstract}{d} % add a pdf bookmark to the title page
+    \begin{abstract}
+    \input{front-matter/abstract}
+    \end{abstract}
+    %
+    \pagenumbering{roman}
+    \setcounter{page}{2}
+    %
+    \addToPDFBookmarks{1}{Table of Contents}{e}
+    \tableofcontents % generate a table of contents
+    %
+    \addToPDFBookmarks{1}{List of Tables}{f}
+    \listoftables % generate a list of tables
+    %
+    \addToPDFBookmarks{1}{List of Figures}{g}
+    \listoffigures % generate a list of figures
+    %
+    \makenomenclature % OPTIONAL
+    \addToPDFBookmarks{1}{Nomenclature}{h} % OPTIONAL
+    \printnomenclature[1.25in] % OPTIONAL
+    %
+    \newpage
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % INCLUDE THE CHAPTERS STARTING WITH THE NOMENCLATURE IF PRESENT
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \include{chapters/chapter-1}  % Problem introduction
+    \include{chapters/chapter-2}  % Proposal and Methodol
+    \include{chapters/chapter-3}  % Deliverables
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % BIBLIOGRAPHY
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \bibliographystyle{apalike} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
+    \bibliography{Bib} % Bib.bib included in the references directory
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % APPENDIX - OPTIONAL - COMMENT IF NOT NEEDED
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \makeAppendixPage   % make the appendix title page - can be edited in ut-thesis-template.tex
+    \appendix
+    \include{back-matter/DetectorComparisons}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % A VITA IS REQUIRED
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \addToTOC{Vita}
+    \include{back-matter/vita}
+\end{document}
