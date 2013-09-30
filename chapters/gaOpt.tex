@@ -6,6 +6,8 @@ Effective utilization of the neutron flux and is necessary for minimizing the am
 Several possible geometries have been considered for the films. 
 They are generally a vertical or horizontal layer of the films or a vertical or horizontal aragment of the films aranged in cocentric cylindars.
 \section{Methods}
+
+
 \subsubsection{MCNPX Detector Modeling}
 \label{sec:MCNPDetectorModelingMethod}
 The performance of films is simulated in MCNPX, a Monte Carlo transport code\cite{pelowitz_mcnpx_????}.
@@ -60,6 +62,68 @@ This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\e
  \label{eqn:RPMCountRate}
  \text{Count Rate} &= I_{\text{sim}} \eta
 \end{align}
+
+\subsubsection{XSDRN Detector Modeling}
+A full 3D Monte Carlo treatment of the problem provides an accurate knowledge of the interaction rate at the expense of higher computation times. 
+In order to preform a faster search of the parameter space a simple one dimenensional model was desired.
+\subsection{Genetic Algorthim Introduction}
+The genetic algorithm typically consist of four tasks: creating an initial population, evaluating that populations fitness, selecting members of the current population to breed, and then applying genetic operators to the selected members to breed the new population. 
+This is completed for either a maximum generation is reached or the desired fitness is achieved. 
+
+
+First, however, it is necessary to become familar with the terms used in genetic programming.
+\begin{itemize}
+  \item \verb+genome+ The set of all genes of an individual, where a gene is a problem parameter.  The problem representation
+  \item \verb+population+ All individuals that represent a solution to the problem at a given point in time
+  \item \verb+selection+ Choosing which individuals go on to produce new offspring
+\end{itemzie}
+\subsubsection{Initial Population}
+
+The inital population
+
+
+\subsection{Population Selection}
+
+Population selection was achieved using a hybrid approach of tournament
+selection and rank selection. In rank selection the individuals were
+selected based on their rank, where the rank was determined by their
+fitness (lower SSE correspond to a higher fitness). Tournament selection
+was used to generate the other component of the population for breeding.
+\subsection{Genetic Operators}
+
+Individuals selected for reproduction are subjected to genetic operators
+to breed the next generation. Genetic programs generally contain two
+genetic operators, crossover and mutation. Crossover serves to create
+new members of the population by interchanging the genetic material
+(tree structure) of two parents in which significant changes in the
+tree solutions are achieved. Mutation serves to slightly modify an
+existing solution. 
+
+
+\subsubsection{Crossover}
+
+Crossover is defined in genetic programming as the swapping of sub-trees
+between individuals in the population, which is meant to mimic the
+crossover of genes that occurs during evolution. As the solutions
+are recursively defined, crossover was implemented by selecting randomly
+selecting a two nodes from different trees and swapping their parents.
+
+
+\subsubsection{Mutation}
+
+Mutation, unlike crossover, does not involve changes to the structure
+of the solution but rather operators within the solution. For example,
+in symbolic regression mutation will randomly (defined by the mutation
+rate) change the node function and leaf values, but it will not add
+or prune branches to the tree structure. Mutation was implemented
+as a recursive traversal of the tree, switching the function types
+with other functions types according to a user supplied probability.
+The terminals mutations were implemented in a similar fashion, but
+if the node was a value leaf the leaf was randomly set to a new random
+variable. An example of mutation is shown in Figure \ref{Mutation}.
+
+\subsubsection{Selection Techniques}
+The analogy to a roulette wheel can be envisaged by imagining a roulette wheel in which each candidate solution represents a pocket on the wheel; the size of the pockets are proportionate to the probability of selection of the solution.
 
 \section{Conclusions}
 
