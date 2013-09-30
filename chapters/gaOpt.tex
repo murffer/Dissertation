@@ -69,7 +69,16 @@ In order to preform a faster search of the parameter space a simple one dimenens
 \subsection{Genetic Algorthim Introduction}
 The genetic algorithm typically consist of four tasks: creating an initial population, evaluating that populations fitness, selecting members of the current population to breed, and then applying genetic operators to the selected members to breed the new population. 
 This is completed for either a maximum generation is reached or the desired fitness is achieved. 
-
+[Start] Generate random population of n chromosomes (suitable solutions for the problem)
+[Fitness] Evaluate the fitness f(x) of each chromosome x in the population
+[New population] Create a new population by repeating following steps until the new population is complete
+[Selection] Select two parent chromosomes from a population according to their fitness (the better fitness, the bigger chance to be selected)
+[Crossover] With a crossover probability cross over the parents to form a new offspring (children). If no crossover was performed, offspring is an exact copy of parents.
+[Mutation] With a mutation probability mutate new offspring at each locus (position in chromosome).
+[Accepting] Place new offspring in a new population
+[Replace] Use new generated population for a further run of algorithm
+[Test] If the end condition is satisfied, stop, and return the best solution in current population
+[Loop] Go to step 2
 
 First, however, it is necessary to become familar with the terms used in genetic programming.
 \begin{itemize}
