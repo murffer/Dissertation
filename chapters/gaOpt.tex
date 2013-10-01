@@ -7,66 +7,6 @@ Several possible geometries have been considered for the films.
 They are generally a vertical or horizontal layer of the films or a vertical or horizontal aragment of the films aranged in cocentric cylindars.
 \section{Methods}
 
-
-\subsubsection{MCNPX Detector Modeling}
-\label{sec:MCNPDetectorModelingMethod}
-The performance of films is simulated in MCNPX, a Monte Carlo transport code\cite{pelowitz_mcnpx_????}.
-The geometry is as in the PNNL reports, namely a nano-gram of \iso[252]{Cf}  encased in \SI{0.5}{\cm} of lead and \SI{2.5}{\cm} of HDPE. 
-The size of the RPM8 is \SI{12.7}{\cm} deep, by \SI{30}{\cm} wide and \SI{2}{\m} tall.
-
-The interaction rate is calculated using the a cell flux tally in MCNPX and a tally multiplier card.
-The tally multiplier card (FMn) is used to calculated any quantity of the form \eqref{eqn:FMCardForm} \cite{pelowitz_mcnpx_????}
-\begin{align}
-  \label{eqn:FMCardForm}
-  I &= C\int\phi(E)\Re_m(E)dE
-\end{align}
-where \definevar{$I$}{Interaction rate}, \definevar{$\phi(E)$}{Energy dependent fluence} , \definevar{$\Re_m(E)$}{Response function operator} and $C$ is an arbitrary scalar for normalization.
-An general example of the use of the FM card is shown in Listing \ref{lst:GeneralFMExample}, which is taken from the MCNPX manual \cite{pelowitz_mcnpx_????}.
-% See pg. 4-41 of the MCNP manual
-\begin{lstlisting}[caption={[Example usage of the FM card]Example usage of the FM card to calculate the number of reactions per \si{\cm\cubed} of type R in cell 8 of material M. The normalization is by atomic density, signified by the -1},label={lst:GeneralFMExample}]
-F104: N 8
-FM104 -1 M R
-\end{lstlisting}
-
-The reaction rate $\iso[6]{Li}\left(\text{n},\text{t}\right)\alpha$ can be calculated by then applying the appropriate input for the FMn card and using an F4 card to calculate $\phi(E)$.
-It should be noted that depending on the form of the cell flux card it may be necessary to normalize by the volume of the cell, $\forall$.
-\nomenclature{$\forall$}{Volume of the cell}
-
-This is shown in Listing \ref{lst:InteractionRateRPM}, where the reaction number is 105 and the material number of the detector is 3.
-The interaction rate in a simulated RPM8 replacement detector is calculated in a similar manner as the simulation of the measured detectors; the interaction rate as computed by the \verb+FMn+ is multiplied by the source strength and volume if necessary.
-An example of the MCNPX input cards is shown in Listing \ref{lst:InteractionRateRPM}.
-Given that there the thermal response is not desired, there is no need to subtract out the differences between the spectra, and the interaction rate is simply \eqref{eqn:RPM8InteractionRate}.
-Note that in this calculation the source strength is set to be \SI{1}{\nano\gram} \iso[252]{Cf}, which has a neutron emission rate of \SI{2.3E3}{neutron\per\second}.
-This is in accordance with the direct evaluation of the PNNL criteria, which require a absolute neutron count rate of \SI{2.5}{count\per\second\per\nano\gram\iso[252]{Cf}}.
-\begin{lstlisting}[caption={[RPM8 ${}^{6}\text{Li}\left(\text{n},\text{t}\right)\alpha$ Reaction Rate]RPM8 ${}^{6}\text{Li}\left(\text{n},\text{t}\right)\alpha$ Reaction Rate. The detector is all of the layers of cell 500 inside universe 610. This tally is multiplied by an SD card to normalize by the volume},label={lst:InteractionRateRPM}]
-FC4 (n,t) Reactions in Thin Film (Neutron Detector)
-F4:n (500<610)
-SD4 1
-FM4 -1 3 105
-\end{lstlisting}
-\begin{align}
-  \label{eqn:RPM8InteractionRate}
-  I_{\text{sim}} &= S_0 I \\
-  &= \SI{2.3E3}{neutron\per\second} I
-\end{align}
-
-$I_{\text{sim}}$ provides the total number of simulated neutron interactions in the detector.
-However, not all of these interactions will lead to counts above the pulse height discriminator setting necessary for meeting the gamma intrinsic efficiency.
-This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\eta$, that occur above the gamma LLD \eqref{eqn:FractionOfCountsDefination}, \eqref{eqn:RPMCountRate}.
-\begin{align}
-  \label{eqn:FractionOfCountsDefination}
-  \eta \equiv \frac{\int_{MLLD}^\infty p(x)dx}{\int_0^\infty p(x)dx}
-\end{align}
-\nomenclature{$p(x)$}{Measured spectra, as a function of channel number}
-\begin{align}
- \label{eqn:RPMCountRate}
- \text{Count Rate} &= I_{\text{sim}} \eta
-\end{align}
-
-\input{XSDRNModel}
-
-
-Further refinement of the spacing could be completed in the MCNPX calculations by adjust the slices a millimeter to the left or right for each one.
 \subsection{Genetic Algorthim Introduction}
 The genetic algorithm typically consist of four tasks: creating an initial population, evaluating that populations fitness, selecting members of the current population to breed, and then applying genetic operators to the selected members to breed the new population. 
 This is completed for either a maximum generation is reached or the desired fitness is achieved. 
@@ -141,6 +81,25 @@ Imagine a roulette wheel where the space a canidate occupies on the wheel is pro
 Higher fitness individuals will occupy more space, and will thus have a higher probability of being selected.
 
 Roulette selection avoids some of the local minima by providing an opertunity for less fit individuals to be selected.
+
+\input{MCNPXModel}
+
+However, not all of these interactions will lead to counts above the pulse height discriminator setting necessary for meeting the gamma intrinsic efficiency.
+This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\eta$, that occur above the gamma LLD \eqref{eqn:FractionOfCountsDefination}, \eqref{eqn:RPMCountRate}.
+\begin{align}
+  \label{eqn:FractionOfCountsDefination}
+  \eta \equiv \frac{\int_{MLLD}^\infty p(x)dx}{\int_0^\infty p(x)dx}
+\end{align}
+\nomenclature{$p(x)$}{Measured spectra, as a function of channel number}
+\begin{align}
+ \label{eqn:RPMCountRate}
+ \text{Count Rate} &= I_{\text{sim}} \eta
+\end{align}
+
+\input{XSDRNModel}
+
+
+Further refinement of the spacing could be completed in the MCNPX calculations by adjust the slices a millimeter to the left or right for each one.
 
 \section{Conclusions}
 
