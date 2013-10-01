@@ -63,9 +63,10 @@ This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\e
  \text{Count Rate} &= I_{\text{sim}} \eta
 \end{align}
 
-\subsubsection{XSDRN Detector Modeling}
-A full 3D Monte Carlo treatment of the problem provides an accurate knowledge of the interaction rate at the expense of higher computation times. 
-In order to preform a faster search of the parameter space a simple one dimenensional model was desired.
+\input{XSDRNModel}
+
+
+Further refinement of the spacing could be completed in the MCNPX calculations by adjust the slices a millimeter to the left or right for each one.
 \subsection{Genetic Algorthim Introduction}
 The genetic algorithm typically consist of four tasks: creating an initial population, evaluating that populations fitness, selecting members of the current population to breed, and then applying genetic operators to the selected members to breed the new population. 
 This is completed for either a maximum generation is reached or the desired fitness is achieved. 
@@ -133,10 +134,13 @@ variable. An example of mutation is shown in Figure \ref{Mutation}.
 
 \subsubsection{Selection Techniques}
 Several differnet selection technqiues are available to select the individuals from one population to reproduce in the next.
-Among the most common are proportional fitness selection, rank selection, tournament selection, and roulette selection.
-Proporitional fitness selection
-Rank selection occurs when the individuals are ranked by their fitness
-The analogy to a roulette wheel can be envisaged by imagining a roulette wheel in which each candidate solution represents a pocket on the wheel; the size of the pockets are proportionate to the probability of selection of the solution.
+Among the most common are fitness proportional selection (roulette selection) and tournament selection.
+
+Fitness proporitional selection (or roulette selection) occurs when the individuals are ranked by their fitness, and individuals are chosen by their fitness rank.
+Imagine a roulette wheel where the space a canidate occupies on the wheel is proporitonal to its fiteness.  
+Higher fitness individuals will occupy more space, and will thus have a higher probability of being selected.
+
+Roulette selection avoids some of the local minima by providing an opertunity for less fit individuals to be selected.
 
 \section{Conclusions}
 

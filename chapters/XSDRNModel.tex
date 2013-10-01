@@ -1,0 +1,17 @@
+% XSDRN Model of the RPM
+\subsubsection{XSDRN Detector Model}
+A full 3D Monte Carlo treatment of the problem provides an accurate knowledge of the interaction rate at the expense of higher computation times. 
+In order to preform a faster search of the parameter space a simple one dimenensional model was desired.
+XSDRNPM, a 1D multi-group deterministic neutron transport code distributed in the SCALE package was chosen for this purpose.
+
+The XSDRN model was a simplified model of the RPM along an axis through the midpoint of the RPM.
+A $S_n$ of 16 was used for the quadrature, and convergence for the flux was set at \SI{1E-7} for the inner iterations.
+Only two types of materials were simulated in the XSDRN calcualation; a detector material containing the \iso[6]{LiF} and a moderating material of polystyrene.
+The 44 group neutron cross sections of each of these materials were processed using NITWAL (without any resonance regions) assuming an infinate, homogenous medium for simplicity.
+The XSDRN model consisted of a multi-group isotropic boundary source on the left most boundary on the RPM, with the values for this flux coming from an MCNPX simulaiton.
+A MCNPX calculation was used to determine the neutron flux incident upon the left most side of the RPM, and then this flux was input as the surface boundary flux condition in XSDRN.
+
+The XSDRN model was validated by comparing to the MCNPX simulations of a similar geometry.
+It was observed that geometries that started with a neutron absorber layer did not have good agreement with the MCNPX model; this is attributed to the breakdown of the diffusion equation in a strongly absorbing medium near a source.
+
+Some strification of the results were also observed, leading to the conclusion that the XSDRN calculations should only be used as a general guide.
