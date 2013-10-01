@@ -22,6 +22,13 @@ where \definevar{$S_B$}{absolute scintillation efficiency},\definevar{$\frac{dE}
 For a given material the stopping power of the film will be constant, and therefore the light output of the film can be found by integrating the light output per path length over the total length of the film.
 It is then possible to observe that the light output of a film is proportional to the energy deposited in the film.
 
+Preferential energy deposition by neutrons relative to gammas will enhance the discrimination by creating larger neutron light pulses than the gamma pulses, allowing for fewer neutron pulses to be classified as gamma pulses because they are below the MLLD.
+Thus, neutron-gamma discrimination can be enhanced by optimizing the energy deposition in the film.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                      ENERGY SCALE AND RANGES`                            %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Charged Particle Interactions and Ranges}
 
 The theoritical basis for the differnece in energy deposition lies in the differnet mechanisms between charged particle interactions and photon interactions in matter.
@@ -73,12 +80,13 @@ This is also reflected in the stopping power, where the reaction product seconda
 
 %In the case of the $\iso[6]{Li}(n,t)\alpha$ reaction the energy is distributed between the triton (\SI{2.
 %Knowing the energy ranges of intrest
-It is proposed to optimize the neutron-gamma discrimination by focusing on the energy deposition in the film.
-Preferential energy deposition by neutrons relative to gammas will enhance the discrimination by creating larger neutron light pulses than the gamma pulses, allowing for fewer neutron pulses to be classified as gamma pulses because they are below the MLLD.
-The product of this work will be a measurement validated simulation capability for the energy deposition in polymeric films (focusing on polystyrene).
-The simulation capability will be applied to the optimization of the polystyrene film system.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                     ENERGY DEPOSITION SIMULATIONS                       %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Methodology}
+\section{Energy Deposition Simulations}
 
 The GEANT4 toolkit has the ability to track the energy deposition in different materials as well as the tracking of electrons to a least \SI{1}{\keV}\cite{agostinelli_geant4simulation_2003}.
 It is proposed to represent the detector geometry as a single layer of neutron absorbing thin polymeric film mounted on top of a non-scintillating material (PMMA).
@@ -91,6 +99,11 @@ For simplicity, the initial events for runs will be chosen by setting up a parti
 It is expected that the the Livermore data-driven parameterized electromagnetic physics will be necessary to calculate the ionizing energy deposition, extending the standard electro-magnetic physics down to \SI{1}{\kilo\eV}.
 The neutron interactions will be simulated with a hadronic modules, using the \verb+HP+ flavored modules to use the ENDF cross sections to calculate the interaction rates.
 
+\subsection{Simualtion Validaiton}
+
+\subsubsection{Single Collision Energy Loss}
+
+\subsubsection{Spectra Agreement}
 It is proposed to validate the simulation by reproducing the single collision energy loss in water as well as comparing  the spectral shapes and averages of simulated and measured spectra.
 The reproduction of the single collision energy loss will ensure that the electron physics are implemented correctly, while the simulation of the polymeric film energy deposition allows the user to gain confidence that the correct tracking and binning analysis has been implemented.
 
