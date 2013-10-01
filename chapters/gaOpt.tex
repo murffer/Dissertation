@@ -11,6 +11,9 @@ They are generally a vertical or horizontal layer of the films or a vertical or 
 A fast simulation model (XSDRN) will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
 A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
 %%%
+In this particular problem the placement of a film greatly changes the solution because of the large change in the neutron flux, and traditional gradient based solvers would tend to be trapped in these local minima.
+Genetic algorthims were chosen as the optimization technique because they are less suscutible to local minimas than other search techniques and tend to preform very well on combinitorial problems such as this one \cite{Mitchell}.
+
 \subsection{Genetic Algorithm Introduction}
 Genetic algorthims provide a search technique analagous to biological evolution in which instead of searching from general to specific solutions, or from more simple to complex, genetic algorthims generate solutions by mutating and combining parts of the best previously known solutions.
 At each step in the search for the best solution a collection of solutions called the current \textit{population} is refined by replacing members with solutions representing the offspring of the best individuals.
@@ -35,16 +38,20 @@ This is completed until either a maximum generation is reached or the desired fi
   \end{algorithmic}
 \end{algorithm}
 
-First, however, it is necessary to become familar with the terms used in genetic programming.
-\begin{itemize}
-  \item \verb+genome+ The set of all genes of an individual, where a gene is a problem parameter.  The problem representation
-  \item \verb+population+ All individuals that represent a solution to the problem at a given point in time
-  \item \verb+selection+ Choosing which individuals go on to produce new offspring
-\end{itemzie}
-\subsubsection{Initial Population}
+\subsubsection{Problem Representaiton}
+The thickness of the RPM  (\SI{12.7}{\cm}) was divided into slices, where each slice could be either a detector slice or a moderator slice.
+These slices of detector material (represented as a \verb+1+) or moderator material (represented as a \verb+0+) were appened into a sequence.
+This sequence of one's and zero's (or bit string) then completely represented the goemetry of the RPM and formed the basis for all possible solutions to the optimization problem.
+For example the sequence \verb+0001110010+ would represent a detector that had three moderator slices, three detector slices, another two moderator slicees, and a final detector slice before a single moderator slice as the reflector.
+Examples of two differnet genomes are shown in \autofref{fig:ExGeoGenomes}
+\begin{figure}
 
-The inital population
-
+  \caption[Example Geometries Genomes]{Example of Geometry Genomes}
+  \caption{fig:ExGeoGenomes}
+\end{figure}
+In terms of genetic algorthims the set of all possible solutions is refered to as the \textit{genome}.
+The length of the genome is thus the number of slices in the geometry, where a higher length genome allows for a more complicated geoemtry.
+The intial population for the genetic algorthim was initialized to be random bit strings with equal probability of a slice being a detector slice or moderator.
 
 \subsection{Population Selection}
 
@@ -71,6 +78,13 @@ between individuals in the population, which is meant to mimic the
 crossover of genes that occurs during evolution. As the solutions
 are recursively defined, crossover was implemented by selecting randomly
 selecting a two nodes from different trees and swapping their parents.
+Crossover, in which two individuals are breed in produce the new generataion was implemented as \textbf{VALUE}.
+An example of the crossover operations is shown in the Figure ~\ref{figGeneticCrossover}.
+\begin{figure}
+    \missingfigure{Crossover examples}
+    \caption[Genetic Crossover Operations]{Genetic Crossover Operations}
+    \label{fig:GeneticCrossover}
+\end{figure}
 
 
 \subsubsection{Mutation}
@@ -84,8 +98,8 @@ as a recursive traversal of the tree, switching the function types
 with other functions types according to a user supplied probability.
 The terminals mutations were implemented in a similar fashion, but
 if the node was a value leaf the leaf was randomly set to a new random
-variable. An example of mutation is shown in Figure \ref{Mutation}.
-
+variable. 
+The mutation operation was chosen to be a simple bit flip in which a randomly chosen \verb+1+ or \verb+0+ in the geoemtry was flipped; for example \verb+001001010+ could be mutated to \verb+001001000+.
 \subsubsection{Selection Techniques}
 Several differnet selection technqiues are available to select the individuals from one population to reproduce in the next.
 Among the most common are fitness proportional selection (roulette selection) and tournament selection.
@@ -94,7 +108,17 @@ Fitness proporitional selection (or roulette selection) occurs when the individu
 Imagine a roulette wheel where the space a canidate occupies on the wheel is proporitonal to its fiteness.  
 Higher fitness individuals will occupy more space, and will thus have a higher probability of being selected.
 
-Roulette selection avoids some of the local minima by providing an opertunity for less fit individuals to be selected.
+
+The fitness function was choosen to count rate per mass of \iso[6]{Li}, provided that the geometry meet the total count rate criteria.
+If it failed to meet the count rate criteria a zero fitness was returned \eqref{eqn:FitnessFun}.
+\begin{align}
+    \label{eqn:FitnessFun}
+    f(\vec{x})
+    = \begin{cases}
+    0 & \text{if} \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
+    \text{countRatePerMass}(\vec{x})
+    \end{cases}
+\end{align}
 
 \input{MCNPXModel}
 
