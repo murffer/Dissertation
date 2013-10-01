@@ -1,0 +1,69 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                      									 %
+%                  		  	RPM Light Collection                           %
+% 									                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{RPM Light Collection Performance}
+\label{sec:RPMLCP}
+
+There is no assurance that the detectors designed based on interaction rate would be feasible to construct; due to their low light output and opaqueness collecting the light from scintillation events would be extremely difficult.  
+Additional simulation work then needs to be completed to ensure that a RPM in the layered detector design has a realistic method of collecting the light emitted from the scintillation events.
+Light transport modeling provides a way to calculate the performance of such a design while providing insights for the improvement of a detector design.
+
+Several previous authors have used the GEANT4 toolkit to simulate the light collection efficiency of their detector designs.
+In PNNL 14283 the authors looked at a variety of different PMT placement and detectors designs to increase the light output of a detector in the Advanced Large-Area Plastic Scintillators (ALPS) project \cite{pnnl_14283}.
+The authors found that for a \SI{127}{\cm} by \SI{57}{\cm} by \SI{5}{\cm} slab of BC-408 wrapped in a loose foil of 85\% reflectivity that the light output could be almost doubled by doubling the number of PMT's.
+These results are summarized in \autoref{tab:PNNLLightCollectionEfficiency}.
+\begin{table}
+  \centering
+  \caption[PNNL Light Collection Efficiencies]{Light collection efficiencies of several detector designs simulated by PNNL\cite{pnnl_14283}.}
+  \label{tab:PNNLLightCollectionEfficiency}
+  \begin{tabular}{c|c c}
+  \toprule
+  & \multicolumn{2}{c}{Light Collection Efficiency} \\
+  Number of PMTs  & 2-in PMT & 5-in PMT \\
+  \midrule
+  2 & 7.0\% & 18.8\% \\
+  4 & 13.3\% & 30.7\ \\
+  6 & 18.4\% & 40.2\% \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+In addition, other authors have reported on the simulation performance of a light guides and photon attenuation using the GEANT4 toolkit.
+An overview of the light transport and scintillation processes available in GEANT4 is presented in \cite{riggi_introducing_2011}.
+The authors also simulated a \SI{1}{\m} by \SI{1}{\cm} by \SI{1}{\cm} plastic strip in order to calculate the photon attenuation in the plastic.
+Two orders of magnitude drop in the number of photons was calculated for photons collected \SI{90}{\cm} from the distance of emission, and was highly dependent of the reflectivity of the material encasing the plastic strip\cite{riggi_introducing_2011}.
+Polymeric detectors containing PPO/POPOP as the fluor have also been modeled for the light transport with GEANT4\cite{5485130}.
+This provides a measure of confidence that the films fabricated at the University of Tennessee containing PPO/POPOP can also be simulated without undo burden in finding light transport properties.
+
+\subsection{Proposed Work}
+It is proposed to simulate the neutronics, energy deposition, and light transport and collection of the optical photons with the GEANT4 toolkit to ensure that the proposed detector designs will be feasible. 
+This will then have two parts:
+\begin{enumerate}
+  \item the fabrication and simulation of detectors whose performance can be measured in the laboratory, and
+  \item the simulation of a RPM in the geometry specified by the neutronics calculations.
+\end{enumerate}
+It is also proposed to explore the design space of the light collection instrumentation, where such design options include
+\begin{itemize}
+  \item the use of a wavelength shifter (WLS) to increase the detected optical photons by decrease the optical photons absorbed in the light guide,
+  \item the design of a light guide to enhance the photons reflected towards the PMT,
+  \item the application of different light reflection techniques (air gap, Teflon tape, aluminized mylar) to enhance the light collection, and
+  \item the placement of PMT's for their effective utilization.
+\end{itemize}
+The developed GEANT4 application will then have the ability to fully simulate the performance of a replacement RPM.
+
+\subsection{Methodology}
+The full simulation of the light transport of the RPM will be completed in with the GEANT4 toolkit.
+GEANT4 offers three example simulations for generation and tracking of optical photons (\verb+ExampleN06+, \verb+extended/LXe+, and \verb+extended/WLS+).
+These examples will be adapted for the purposes of this simulation.
+However, it should be noted that the \verb+LXe+ and \verb+WLS+ utilize a sensitive detector which kills tracks, and for the purposes of the simulation of the RPM this will not be implemented.
+
+The validation of the GEANT4 simulations will be completed with the fabrication of a 4 inches by 6 inches layered detector to allow the toolset to be benchmarked against measurements.
+Detectors of various materials (boron loaded plastic, lithium loaded polymers, and LiF/ZnS(Ag)) will be tested to avoid a basis in the simulation parameters.
+Where possible, the optical parameters of the materials will be taken from the literature.
+However, it they cannot be found a similar material for which the property is know will be substituted.
+In addition, rather than providing reflectivity parameters for each material, a model of optical surface will be used according to the work of Janecek\cite{5485130}. 
+
+The GEANT4 light transport simulation code base will be written such that bit-string geometries from genetic algorithm optimization can be directly implemented.
+With this formulation it will be possible to reuse the genetic algorithm optimization code base, while additionally providing a validation of the GEANT4 neutronic calculations against the MCNPX.
