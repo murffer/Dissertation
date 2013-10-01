@@ -1,6 +1,7 @@
 % ComptonScatteringSpectra
 \chapter{Compton Scattering}
 \label{ch:ComptonScattering}
+
 \section{Compton Scattering}
 Compton scattering is the inelastic scattering of a photon off a free charged particle, usually an electron.
 The incident photon undergoes a decrease in energy, transfering the energy to the kinetic energy of the electron while also having a scattered photon.
@@ -22,6 +23,8 @@ Using the conservation of energy, the energy given to the electron, $E_e$ must b
   E_e &= E - E' \\ \notag
    &= E - \frac{E m_e c^2}{m_e c^2 + E (1-\cos\theta)}
 \end{align}
+
+\section{Differential Scattering Cross Section}
 The probability of scattering and imparting energy is provided by the Klein-Nishina formula \eqref{eqn:KleinNishia}.
 \begin{align}
   \label{eqn:KleinNishina}
@@ -50,15 +53,8 @@ With the chain rule and a few algebraic maniupulations it is possible to arrive 
 \frac{d\sigma}{dE_e} = 2\pi r_e^2 \sin \theta f(\theta)\left [ \frac{1+\frac{E}{m_e c^2}\left(1-\cos\theta \right)^2}{E^2 \sin \theta} \right ]
 \end{align}
 
-The Compton scattered spectra is plotted for \iso[60]{Co}, as shown in Figure \ref{fig:ComptonScatteredSpectra}.
-\missingfigure{Compton Scattered Spectra}
-%\begin{figure}
-%  \caption{\iso[60]{Co} Scattered Photon Spectra}
-%  \label{fig:ComptonScatteredSpectra}
-%\end{figure}
-
 \section{Computational Spectra}
-The comparison of the analytical and simulated secondary electron Compton scattered sepectra can be preformed if one treats the analytical Compton scattered spectra as a probability distribution and selects from that distribution, utilizing the appropriate binning.
-
-A rejection method was chosen in order to select from the scattering distribution, in which the probability of keeping a value was proportional to the relative value of the function evaluated at that energy.
+The probability of a Compton scattered electron having an energy $E$ was calculated by sampling (using a rejection method) for the scattering distribution derived in \autoref{eqn:dSdEKleinNishina}.
+This probability was then normalzied into a probability density function and the cumulatitive density function was then calcualted to yield the probability that an electron would be born at an energy.
+% Something about the code is avialable . . .
 
