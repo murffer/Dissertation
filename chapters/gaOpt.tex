@@ -4,26 +4,36 @@
 Effective utilization of the neutron flux and is necessary for minimizing the amount of neutron absorber (\iso[6]{Li}) that is used in the detector.
 
 Several possible geometries have been considered for the films. 
-They are generally a vertical or horizontal layer of the films or a vertical or horizontal aragment of the films aranged in cocentric cylindars.
+They are generally a vertical or horizontal layer of the films or a vertical or horizontal arrangement of the films arranged in concentric cylinders.
 \section{Methods}
 
 %%%
-A fast simulation model (XSDRN) will be used to preform an initial parameter study and determine a subset of optimal geometeries on which to preform more accurate monte carlo (MCNPX) modeling. 
-The a subset of the highest preforming geoemtries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
+A fast simulation model (XSDRN) will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
+A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
 %%%
-\subsection{Genetic Algorthim Introduction}
+\subsection{Genetic Algorithm Introduction}
+Genetic algorthims provide a search technique analagous to biological evolution in which instead of searching from general to specific solutions, or from more simple to complex, genetic algorthims generate solutions by mutating and combining parts of the best previously known solutions.
+At each step in the search for the best solution a collection of solutions called the current \textit{population} is refined by replacing members with solutions representing the offspring of the best individuals.
+The goals is then to find the best solution to the problem as determined by some criteria, called the \textit{fitness function}.
 The genetic algorithm typically consist of four tasks: creating an initial population, evaluating that populations fitness, selecting members of the current population to breed, and then applying genetic operators to the selected members to breed the new population. 
-This is completed for either a maximum generation is reached or the desired fitness is achieved. 
-[Start] Generate random population of n chromosomes (suitable solutions for the problem)
-[Fitness] Evaluate the fitness f(x) of each chromosome x in the population
-[New population] Create a new population by repeating following steps until the new population is complete
-[Selection] Select two parent chromosomes from a population according to their fitness (the better fitness, the bigger chance to be selected)
-[Crossover] With a crossover probability cross over the parents to form a new offspring (children). If no crossover was performed, offspring is an exact copy of parents.
-[Mutation] With a mutation probability mutate new offspring at each locus (position in chromosome).
-[Accepting] Place new offspring in a new population
-[Replace] Use new generated population for a further run of algorithm
-[Test] If the end condition is satisfied, stop, and return the best solution in current population
-[Loop] Go to step 2
+This is completed until either a maximum generation is reached or the desired fitness is achieved, as shown in \autoref{alg:GAOutline}.
+\begin{algorithm}
+  \caption{Genetic Program Outline}
+  \label{alg:GAOutline}
+  \begin{algorithmic}
+    \WHILE{$error>goal$}
+      \FORALL{$t\in F$}
+        \STATE{Compute fitness}
+      \ENDFOR
+      \FORALL{$t\in F$
+        \STATE{Choose individuals based on fitness}
+      \ENDFOR
+      \STATE{Select individuals for next population}
+      \STATE{Crossover selected individuals}
+      \STATE{Mutate selected individual}}}
+    \ENDWHILE
+  \end{algorithmic}
+\end{algorithm}
 
 First, however, it is necessary to become familar with the terms used in genetic programming.
 \begin{itemize}
