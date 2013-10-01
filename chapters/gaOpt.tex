@@ -26,13 +26,6 @@ The analysis of the neutron flux throughout this detector lead to a flat flux pr
 Effective utilization of the neutron flux is necessary for minimizing the amount of neutron absorber (\iso[6]{Li}) that is used in the detector.
 Several different strategies can then be used to optimize the geometry to ensure effective utilization of the thermal cross section of the absorber material.
 
-
-\section{Methods}
-
-%%%
-A fast simulation model (XSDRN) will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
-A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
-%%%
 In this particular problem the placement of a film greatly changes the solution because of the large change in the neutron flux, and traditional gradient based solvers would tend to be trapped in these local minima.
 Genetic algorthims were chosen as the optimization technique because they are less suscutible to local minimas than other search techniques and tend to preform very well on combinitorial problems such as this one \cite{Mitchell}.
 
@@ -142,6 +135,12 @@ If it failed to meet the count rate criteria a zero fitness was returned \eqref{
     \end{cases}
 \end{align}
 
+\section{Neutronic Models}
+
+%%%
+A fast simulation model (XSDRN) will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
+A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
+%%%
 \input{MCNPXModel}
 
 However, not all of these interactions will lead to counts above the pulse height discriminator setting necessary for meeting the gamma intrinsic efficiency.
