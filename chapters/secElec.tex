@@ -1,6 +1,5 @@
-
-\section{Neutron - Gamma Discrimination}
-\label{sec:NGDiscrim}
+\chapter{Neturon - Gamma Discrimination}
+\label{ch:SecElectron}
 
 Effective neutron-gamma discrimination is integral to the performance of the detector.
 Generally, two methods are available for discrimination; 1) pulse shape discrimination and 2) pulse height discrimination.
@@ -22,11 +21,22 @@ This is described by the Birks equation \eqref{eqn:BirksEquation}
 where \definevar{$S_B$}{absolute scintillation efficiency},\definevar{$\frac{dE}{dx}$}{linear stopping power} and \definevar{$kB$}{Birks parameter}.
 For a given material the stopping power of the film will be constant, and therefore the light output of the film can be found by integrating the light output per path length over the total length of the film.
 It is then possible to observe that the light output of a film is proportional to the energy deposited in the film.
-\subsection{Proposed Work}
+
+\section{Charged Particle Interactions and Ranges}
+
+The theoritical basis for the differnece in energy deposition lies in the differnet mechanisms between charged particle interactions and photon interactions in matter.
+For photons with energies between approximately \SI{0.5}{\MeV} and \SI{5}{\MeV} Compton scattering is the prediomant interaction mechanism between the material and the photon.
+The probability of an electron having a given kinetic energy after scattering can be expressed as \autoref{eqn:dSdEKlienNishina} (see \autoref{ch:ComptonScatter} for derivation details)
+\begin{align}
+  \label{eqn:dSdEKleinNishina}
+\frac{d\sigma}{dE_e} = 2\pi r_e^2 \sin \theta f(\theta)\left [ \frac{1+\frac{E}{m_e c^2}\left(1-\cos\theta \right)^2}{E^2 \sin \theta} \right ]
+\end{align}
+
 It is proposed to optimize the neutron-gamma discrimination by focusing on the energy deposition in the film.
 Preferential energy deposition by neutrons relative to gammas will enhance the discrimination by creating larger neutron light pulses than the gamma pulses, allowing for fewer neutron pulses to be classified as gamma pulses because they are below the MLLD.
 The product of this work will be a measurement validated simulation capability for the energy deposition in polymeric films (focusing on polystyrene).
 The simulation capability will be applied to the optimization of the polystyrene film system.
+
 \subsection{Methodology}
 
 The GEANT4 toolkit has the ability to track the energy deposition in different materials as well as the tracking of electrons to a least \SI{1}{\keV}\cite{agostinelli_geant4simulation_2003}.
