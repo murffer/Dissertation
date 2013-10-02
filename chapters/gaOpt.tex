@@ -116,6 +116,7 @@ In this representation of the problem a mutation produces a very large change in
 
 \subsection{Fitness Function}
 \label{sec:FitnessFunc}
+The fiteness function defines the criteria for ranking solutions and probablistically including them in the next generation.
 The fitness function was choosen to count rate per mass of \iso[6]{Li}, provided that the geometry meet the total count rate criteria.
 If it failed to meet the count rate criteria a zero fitness was returned \eqref{eqn:FitnessFun}.
 \begin{align}
@@ -127,6 +128,34 @@ If it failed to meet the count rate criteria a zero fitness was returned \eqref{
     \end{cases}
 \end{align}
 Films that have excessive detector laysers will be penalzied by the normalization by the mass of \iso[6]{Li} that they contain, while favoring films that have the minimium number of detector layers that meet the count rate criteria and have a more effective utilization of the neturon flux which increase their count rate.
+
+At this point it is instructive to make a note about the size of the solution space.
+\autoref{tab:BitStringGeo} some of the these geometries are simple enougth that the search space can be computed exaustively.
+\begin{table}
+    \caption[Genome Bit String Geometries]{Bit String Simplified Geometetry Descriptions}
+    \label{tab:BitStringGeo}
+    \centering
+    \begin{tabular}{ c | c cc}
+     \toprule
+     Genome Length&Slice Thickness&Possible Geomeries \\
+     \midrule
+        5&2.54&31\\
+        10&1.2700&1,023\\
+        15&0.8467&32,765\\
+        20&0.6350&1,048,575\\
+        25&0.5080&33,554,431\\
+        30&0.4233&\num{1.07E9}\\
+        35&0.3629&\num{3.44E10}\\
+        40&0.3175&\num{1.10E12}
+    \bottomrule
+    \end{tabular}
+\end{table}
+There are several salient features highlighted in \autoref{tab:BitStringGeo}.
+For small genome lengths (less than 10) it is possible to exhasutive search the hypothesis space of possible solutions.
+This is not possible for the larger genome lengths.
+Thefore, efficient evaluation of the fitness function is necessary in order to evolve a reasonable number of solutions.
+In addition the refinement in the details of the geometries increases lineary with the genome length while the size of the search space increases as $2^n$.
+This suggest that a hybrid method of finding a basic geometry in a low search space and then preforming pertubations on that geometry will have a better performance than attempting to search the higher geometry solutioin space.
 
 \section{Neutronic Models}
 
