@@ -163,7 +163,9 @@ Thankfully, models have already been developed for this purpose.
 Deterministic models discretize the transport equation into energy groups and quadrature sets or spherical harmonics, and then solve the discritized equations.
 Probabilistic models follow the path of indvidiuals neutrons with interactions based on the probability of a given event occuring.
 Such codes are also known as Monte Carlo models, for which MCNPX is a well known example.
-XSDRN is a one dimension discrete ordiantes that solves the one dimensional Boltzmann equation.
+A full 3D Monte Carlo treatment of the problem provides an accurate knowledge of the interaction rate at the expense of higher computation times. 
+In order to preform a faster search of the parameter space a simple one dimenensional model was desired.
+XSDRN, a one dimension discrete ordiantes that solves the one dimensional Boltzmann equation distributed in the SCALE package was chosen for this purpose.
 XSDRN will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
 A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
