@@ -120,21 +120,10 @@ Uniform crossover uses a set mixing ratio for which according to that ratio an i
   \label{fig:GeneticCrossover}
 \end{figure}
 
-
-\subsubsection{Mutation}
-
-Mutation, unlike crossover, does not involve changes to the structure
-of the solution but rather operators within the solution. For example,
-in symbolic regression mutation will randomly (defined by the mutation
-rate) change the node function and leaf values, but it will not add
-or prune branches to the tree structure. Mutation was implemented
-as a recursive traversal of the tree, switching the function types
-with other functions types according to a user supplied probability.
-The terminals mutations were implemented in a similar fashion, but
-if the node was a value leaf the leaf was randomly set to a new random
-variable. 
+Mutation is used to produce small, random changes in the genomes to maintain genetic diversity.
 The mutation operation was chosen to be a simple bit flip in which a randomly chosen \verb+1+ or \verb+0+ in the geoemtry was flipped; for example \verb+001001010+ could be mutated to \verb+001001000+.
-\subsubsection{Selection Techniques}
+Generally the mutation rate is set very low (less than 2\%) in order to prevent the search for the solution to becoming simply a random search.
+In this representation of the problem a mutation produces a very large change in the solution and the mutation rate was set even lower.
 
 \section{Neutronic Models}
 
