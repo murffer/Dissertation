@@ -76,18 +76,7 @@ This is analagous to a roulette wheel where the space a canidate occupies on the
 Higher fitness individuals will occupy more space, and will thus have a higher probability of being selected.
 Tournament selection is another selection techinque in which a pool of solutions are chosen at random from the current population.
 Within this tournament pool a fitness proportional selection will be used to select individuals for the next generation.
-
-The fitness function was choosen to count rate per mass of \iso[6]{Li}, provided that the geometry meet the total count rate criteria.
-If it failed to meet the count rate criteria a zero fitness was returned \eqref{eqn:FitnessFun}.
-\begin{align}
-    \label{eqn:FitnessFun}
-    f(\vec{x})
-    = \begin{cases}
-    0 & \text{if} \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
-    \text{countRatePerMass}(\vec{x})
-    \end{cases}
-\end{align}
-Films that have excessive detector laysers will be penalzied by the normalization by the mass of \iso[6]{Li} that they contain, while favoring films that have the minimium number of detector layers that meet the count rate criteria and have a more effective utilization of the neturon flux which increase their count rate.
+The fitness function will be explained in detail in \autoref{sec:FitnessFunc}.
 
 \subsection{Genetic Operators}
 Individuals selected for reproduction are subjected to genetic operators to breed the next generation. 
@@ -124,6 +113,20 @@ Mutation is used to produce small, random changes in the genomes to maintain gen
 The mutation operation was chosen to be a simple bit flip in which a randomly chosen \verb+1+ or \verb+0+ in the geoemtry was flipped; for example \verb+001001010+ could be mutated to \verb+001001000+.
 Generally the mutation rate is set very low (less than 2\%) in order to prevent the search for the solution to becoming simply a random search.
 In this representation of the problem a mutation produces a very large change in the solution and the mutation rate was set even lower.
+
+\subsection{Fitness Function}
+\label{sec:FitnessFunc}
+The fitness function was choosen to count rate per mass of \iso[6]{Li}, provided that the geometry meet the total count rate criteria.
+If it failed to meet the count rate criteria a zero fitness was returned \eqref{eqn:FitnessFun}.
+\begin{align}
+    \label{eqn:FitnessFun}
+    f(\vec{x})
+    = \begin{cases}
+    0 & \text{if} \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
+    \text{countRatePerMass}(\vec{x})
+    \end{cases}
+\end{align}
+Films that have excessive detector laysers will be penalzied by the normalization by the mass of \iso[6]{Li} that they contain, while favoring films that have the minimium number of detector layers that meet the count rate criteria and have a more effective utilization of the neturon flux which increase their count rate.
 
 \section{Neutronic Models}
 
