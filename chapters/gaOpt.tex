@@ -158,6 +158,13 @@ In addition the refinement in the details of the geometries increases lineary wi
 This suggest that a hybrid method of finding a basic geometry in a low search space and then preforming pertubations on that geometry will have a better performance than attempting to search the higher geometry solutioin space.
 
 \section{Neutronic Models}
+The interaction rate of a geometry can be found by solving the neutron transport equation in that geometery and then composing the neutron flux with the absorber materials reaction rate.
+Thankfully, models have already been developed for this purpose.
+Deterministic models discretize the transport equation into energy groups and quadrature sets or spherical harmonics, and then solve the discritized equations.
+Probabilistic models follow the path of indvidiuals neutrons with interactions based on the probability of a given event occuring.
+Such codes are also known as Monte Carlo models, for which MCNPX is a well known example.
+
+Differnet models can be used to calculate the epxected interaction rate of various geometeries.
 
 %%%
 A fast simulation model (XSDRN) will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
