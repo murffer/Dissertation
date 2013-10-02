@@ -163,13 +163,20 @@ Thankfully, models have already been developed for this purpose.
 Deterministic models discretize the transport equation into energy groups and quadrature sets or spherical harmonics, and then solve the discritized equations.
 Probabilistic models follow the path of indvidiuals neutrons with interactions based on the probability of a given event occuring.
 Such codes are also known as Monte Carlo models, for which MCNPX is a well known example.
-
-Differnet models can be used to calculate the epxected interaction rate of various geometeries.
-
-%%%
-A fast simulation model (XSDRN) will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
+XSDRN is a one dimension discrete ordiantes that solves the one dimensional Boltzmann equation.
+XSDRN will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
 A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
-%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                             XSDRN Model                                 %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{XSDRNModel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                             MCNPX Model                                 %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{MCNPXModel}
 
 However, not all of these interactions will lead to counts above the pulse height discriminator setting necessary for meeting the gamma intrinsic efficiency.
@@ -183,11 +190,6 @@ This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\e
  \label{eqn:RPMCountRate}
  \text{Count Rate} &= I_{\text{sim}} \eta
 \end{align}
-
-\input{XSDRNModel}
-
-
-Further refinement of the spacing could be completed in the MCNPX calculations by adjust the slices a millimeter to the left or right for each one.
 
 \section{Conclusions}
 
