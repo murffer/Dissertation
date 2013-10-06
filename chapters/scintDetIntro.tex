@@ -24,6 +24,31 @@ The $T_0$ state typically decays by interacting with another $T_0$ state in a $T
 The excited singlet state $S^*$ then also decays to the $S_0$ state.
 The $T_0 + T_0$ transitions is slower than direct singlet state dexcitations, and results in a slow component of the pulse, which can be used for pulse shape discrimination.
 
+The light output of an organic scintillator can be empirically related to the energy deposition in the scintillator through the Birks equation.
+In the absence of any quencing it is assumed that the light output per unit lengh is directly proporotional to the energy deposition per unit length \eqref{eqn:LONoQuench}
+\begin{align}
+  \label{eqn:LONoQuench}
+    \frac{dL}{dx} = S_B\frac{dE}{dx}
+\end{align}
+where \definevar{$S_B$}{absolute scintillation efficiency}.
+If quenching of the light from molecules damanged by the radiation is also assumed to be proporitioanl to the energy deposition per track length, than the Birks equation can be writted as \eqref{eqn:BirksEquation}
+\begin{align}
+  \label{eqn:BirksEquation}
+    \frac{dL}{dx} = \frac{S_B\frac{dE}{dx}}{1+kB\frac{dE}{dx}}
+    \end{align}
+    where \definevar{$S_B$}{absolute scintillation efficiency},\definevar{$\frac{dE}{dx}$}{linear stopping power} and \definevar{$kB$}{Birks parameter}.
+The Birks parameter accounts for the quenching of the light.
+For sufficiently large energies (or particles with a low stopping power) the light ouput per unit track length is linear, but for particles with a large stopping power the light output along the track length becomes saturated by quenching.
+This differnece in pulse height (or pulse height deficit) accounts for that differnece in light output for a \SI{1}{\MeV} electron compared to a \SI{1}{\MeV} alpha.
+
+,\definevar{$\frac{dE}{dx}$}{linear stopping power} and \definevar{$kB$}{Birks parameter}.
+It is currently understood that the light output per path length of the film (which is directly proportional to the pulses collected on the PMT) is related to the stopping power of the radiation in the film material.
+    For a given material the stopping power of the film will be constant, and therefore the light output of the film can be found by integrating the light output per path length over the total length of the film.
+    It is then possible to observe that the light output of a film is proportional to the energy deposited in the film.
+
+It should be noted that the Birks equation suggest that a high ionization density along the track length of the particle leads to a reduction in the scintillation efficiency.
+
+
 Several factors need to be considered in order of a material to be considred as a scintilaltor:
 \begin{itemize}
   \item The light yield should be linearly proportional to the energy deposition
