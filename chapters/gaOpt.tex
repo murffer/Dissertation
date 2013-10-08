@@ -1,3 +1,38 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                      									 %
+%                  		  	RPM Neutronic Performance   		            	 %
+% 									                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{RPM Neutronic Performance}
+\label{sec:RPMNP}
+
+Simulations are necessary to guide the design of a replacement RPM.
+These simulations must provide a link between the measured performance of laboratory developed and characterized samples which are generally two inches and the performance of the film in an implemented detector system as it is prohibitive to construct and measure each film in an RPM.
+Previous work showed that it is possible to adequately simulate detector performance in MCNPX, a Monte Carlo radiation transport code.
+Generally these simulations involve correctly defining the simulation physics, source and geometry, and then using the correct tally measures to extract pertinent performance metrics.
+After the simulation is completed is then benchmarked against measured quantities to provide a measure of confidence that the simulation provides an accurate model of reality.
+Often (as in this case) the capability to directly measure the performance of the desired simulation geometry is not availabl is not available, and therefore the benchmarking must be completed on a comparable system on which it is possible to measure.
+
+A validated simulation capability allows for one to explore the design space without having to physically build and test systems, which can be prohibitively expensive.
+As a single film does not have the necessary interactions to fulfill the neutron count rate criteria multiple films are necessary, and the arrangement of these films provides a design space for a replacement RPM.
+In the case of the RPM, there are several design parameters that can be explored:
+\begin{itemize}
+  \item the neutron absorber loading of the film,
+  \item the thickness of the film,
+  \item the geometry of the film (cylinders or sheets), and
+  \item the placement of the films.
+\end{itemize}
+It is expected that the loading of the film will be limited by the optical clarity, and that the thickness of the film will be determined by the optimization of the energy deposition.
+Thus, of the above design parameters only the geometric placement of the films is an available optimization space.
+
+Preliminary work by this author provided a simple design in which the detector layers are linearly placed throughout the detector volume in an alternating fashion.
+The analysis of the neutron flux throughout this detector lead to a flat flux profile as shown in \autoref{fig:AltLayerThermalNeutronFraction}.
+\begin{figure}
+  \includegraphics[width=\textwidth]{ThermalFluxRatioAltLayers}
+	\caption{Fraction of the neutron flux that is thermalized through a alternating detector and moderator layered RPM.  The low thermal fluxes result in a poor utilization of the high thermal cross section of \iso[6]{Li}.}
+	\label{fig:AltLayerThermalNeutronFraction}
+\end{figure}
+Several different strategies can then be used to optimize the geometry to ensure effective utilization of the thermal cross section of the absorber material.
 \chapter{Summary, Deliverables and Timetable}
 \label{ch:SummaryDeliverables}
 \section{Summary}
