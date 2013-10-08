@@ -23,7 +23,12 @@ For a given material the stopping power of the film will be constant, and theref
 It is then possible to observe that the light output of a film is proportional to the energy deposited in the film.
 
 Preferential energy deposition by neutrons relative to gammas will enhance the discrimination by creating larger neutron light pulses than the gamma pulses, allowing for fewer neutron pulses to be classified as gamma pulses because they are below the MLLD.
-Thus, neutron-gamma discrimination can be enhanced by optimizing the energy deposition in the film.
+Thus, neutron-gamma discrimination can be enhanced by optimizing the energy deposition in the film. 
+
+The organization of this chapter is as follows.
+\autoref{sec:ScintMechanics} will provide an overview in order to understand the necessary scintillation mechanics of organic scintillators and as it relates to the energy deposited by charged particles.
+\autoref{sec:InteractionsAndRange} will describe the physics of charged particle and gamma interactions in plastics (focusing on polystyrene) in order to explain the basis for the differnece in energy depositions. 
+\autoref{sec:EnergyDep} describes the simulation and results of energy deposition in polymeric materials, which results in neutron-gamma discrimination.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
@@ -31,6 +36,7 @@ Thus, neutron-gamma discrimination can be enhanced by optimizing the energy depo
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scintillation Mechanisms}
+\label{sec:ScintMechanics}
 \input{chapter/scintDetIntro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
@@ -38,6 +44,7 @@ Thus, neutron-gamma discrimination can be enhanced by optimizing the energy depo
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Charged Particle Interactions and Ranges}
+\label{sec:InteractionsAndRange}
 
 The theoritical basis for the differnece in energy deposition lies in the differnet mechanisms between charged particle interactions and photon interactions in matter.
 For photons with energies between approximately \SI{0.5}{\MeV} and \SI{5}{\MeV} Compton scattering is the prediomant interaction mechanism between the material and the photon.
@@ -95,7 +102,7 @@ This is also reflected in the stopping power, where the reaction product seconda
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Energy Deposition Simulations}
-
+\label{sec:EnergyDeposition}
 The GEANT4 toolkit has the ability to track the energy deposition in different materials as well as the tracking of electrons to a least \SI{1}{\keV}\cite{agostinelli_geant4simulation_2003}.
 It is proposed to represent the detector geometry as a single layer of neutron absorbing thin polymeric film mounted on top of a non-scintillating material (PMMA).
 For simplicity, the initial events for runs will be chosen by setting up a particle gun for thermal (\SI{0.025}{\eV}) neutrons upon the detector and for both gammas resulting from a \iso[60]{Co} decay.
