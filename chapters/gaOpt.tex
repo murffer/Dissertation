@@ -44,12 +44,12 @@ This is completed until either a maximum generation is reached or the desired fi
       \FORALL{$t\in F$}
         \STATE{Compute fitness}
       \ENDFOR
-      \FORALL{$t\in F$
+      \FORALL{$t\in F$}
         \STATE{Choose individuals based on fitness}
       \ENDFOR
       \STATE{Select individuals for next population}
       \STATE{Crossover selected individuals}
-      \STATE{Mutate selected individual}}}
+      \STATE{Mutate selected individual}
     \ENDWHILE
   \end{algorithmic}
 \end{algorithm}
@@ -59,7 +59,7 @@ The thickness of the RPM  (\SI{12.7}{\cm}) was divided into slices, where each s
 These slices of detector material (represented as a \verb+1+) or moderator material (represented as a \verb+0+) were appened into a sequence.
 This sequence of one's and zero's (or bit string) then completely represented the goemetry of the RPM and formed the basis for all possible solutions to the optimization problem.
 For example the sequence \verb+0001110010+ would represent a detector that had three moderator slices, three detector slices, another two moderator slicees, and a final detector slice before a single moderator slice as the reflector.
-Examples of two differnet genomes are shown in \autofref{fig:ExGeoGenomes}
+Examples of two differnet genomes are shown in \autoref{fig:ExGeoGenomes}
 \begin{figure}
 
   \caption[Example Geometries Genomes]{Example of Geometry Genomes}
@@ -136,7 +136,7 @@ At this point it is instructive to make a note about the size of the solution sp
     \caption[Genome Bit String Geometries]{Bit String Simplified Geometetry Descriptions}
     \label{tab:BitStringGeo}
     \centering
-    \begin{tabular}{ c | c cc}
+    \begin{tabular}{ c | c c}
      \toprule
      Genome Length&Slice Thickness&Possible Geomeries \\
      \midrule
@@ -147,7 +147,7 @@ At this point it is instructive to make a note about the size of the solution sp
         25&0.5080&33,554,431\\
         30&0.4233&\num{1.07E9}\\
         35&0.3629&\num{3.44E10}\\
-        40&0.3175&\num{1.10E12}
+        40&0.3175&\num{1.10E12}\\
     \bottomrule
     \end{tabular}
 \end{table}
@@ -174,13 +174,13 @@ A subset of the highest preforming geometries validated by the detailed model wi
 %                             XSDRN Model                                 %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{XSDRNModel}
+\input{chapters/XSDRNModel}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
 %                             MCNPX Model                                 %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{MCNPXModel}
+\input{chapters/MCNPXModel}
 
 However, not all of these interactions will lead to counts above the pulse height discriminator setting necessary for meeting the gamma intrinsic efficiency.
 This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\eta$, that occur above the gamma LLD \eqref{eqn:FractionOfCountsDefination}, \eqref{eqn:RPMCountRate}.
@@ -198,7 +198,7 @@ This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\e
 
 A physical basis of the optimal solution found by the genetic algorthim can be found by observing the form of the optimal solutions.
 These solutions involve an intial moderator layer in order to ensure that all of the neutrons are thermalized to (increasing the thermal fraction by \textbf{SOME PRECENT}).
-After this moderator layer a film layer is placed to utilize this neutron spectra; however not all of the thermal neutrons are captured (as the mean free path of a neutron in polyethylene is about \si{0.37}{\cm} and thus some pass through the material) and another abosrber layer is needed to capture those neutrons.  
+After this moderator layer a film layer is placed to utilize this neutron spectra; however not all of the thermal neutrons are captured (as the mean free path of a neutron in polyethylene is about \SI{0.37}{\cm} and thus some pass through the material) and another abosrber layer is needed to capture those neutrons.  
 The neutron flux is then moderated again, and additional layers of detectors are needed to capture this neutron cross section.
 However, it is desirably to have a large neutron reflector in the portal monitor to reflect neturons back into the detector slices. 
 Theortically this reflector should be as large as possible, but the limited space of the RPM provides a constraint.
