@@ -36,17 +36,14 @@ If quenching of the light from molecules damanged by the radiation is also assum
   \label{eqn:BirksEquation}
     \frac{dL}{dx} = \frac{S_B\frac{dE}{dx}}{1+kB\frac{dE}{dx}}
     \end{align}
-    where \definevar{$S_B$}{absolute scintillation efficiency},\definevar{$\frac{dE}{dx}$}{linear stopping power} and \definevar{$kB$}{Birks parameter}.
-The Birks parameter accounts for the quenching of the light.
-For sufficiently large energies (or particles with a low stopping power) the light ouput per unit track length is linear, but for particles with a large stopping power the light output along the track length becomes saturated by quenching.
-This differnece in pulse height (or pulse height deficit) accounts for that differnece in light output for a \SI{1}{\MeV} electron compared to a \SI{1}{\MeV} alpha.
+    where \definevar{$S_B$}{absolute scintillation efficiency},\definevar{$\frac{dE}{dx}$}{linear stopping power} and \definevar{$kB$}{Birks parameter}, which accounts for the quenching of the light.
+For low stopping powers (or particles with a very high energy) the light ouput per unit track length is linear as the quenching term can be neglected.
+However, for particles with a large stopping power the light output along the track length becomes saturated by quenching.
+This differnece in the pulse height accounts for that differnece in light output from a \SI{1}{\MeV} electron compared to a \SI{1}{\MeV} alpha.
+The \textit{alpha to beta} ratio provides a measure of this effect, and for the GS20 glass is it typically around 0.23.
+This effect is critical in the developed detectors are the reaction products of of the \iso[6]{Li} neutron absoribition are both heavily charged particles subject to this effect.
+Thus, while there is \SI{4.78}{\MeV} of reaction product energy released in the neutron absorbition, the low alpha to beta ratio of the material limits the actual number of scintillation events.
 
-,\definevar{$\frac{dE}{dx}$}{linear stopping power} and \definevar{$kB$}{Birks parameter}.
-It is currently understood that the light output per path length of the film (which is directly proportional to the pulses collected on the PMT) is related to the stopping power of the radiation in the film material.
-    For a given material the stopping power of the film will be constant, and therefore the light output of the film can be found by integrating the light output per path length over the total length of the film.
-    It is then possible to observe that the light output of a film is proportional to the energy deposited in the film.
-
-It should be noted that the Birks equation suggest that a high ionization density along the track length of the particle leads to a reduction in the scintillation efficiency.
 
 Several factors need to be considered in order of a material to be considred as a scintilaltor:
 \begin{itemize}
