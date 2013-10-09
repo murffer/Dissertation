@@ -4,7 +4,7 @@
 % 									                                                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Neutronic Optimization}
-\label{ch:GAOpt}
+\label{chap:GARPMOpt}
 \section{Introduction}
 A single film does not have the necessary interactions to fulfill the neutron count rate criteria multiple films are necessary, and the arrangement of these films provides a design space for a replacement RPM.
 In the case of the RPM, there are several design parameters that can be explored:
@@ -28,7 +28,7 @@ Effective utilization of the neutron flux is necessary for minimizing the amount
 Several different strategies can then be used to optimize the geometry to ensure effective utilization of the thermal cross section of the absorber material.
 
 In this particular problem the placement of a film greatly changes the solution because of the large change in the neutron flux, and traditional gradient based solvers would tend to be trapped in these local minima.
-Genetic algorithms were chosen as the optimization technique because they are less susceptible to local minima than other search techniques and tend to preform very well on combinatorial problems such as this one \cite{Mitchell}.
+Genetic algorithms were chosen as the optimization technique because they are less susceptible to local minima than other search techniques and tend to preform very well on combinatorial problems such as this one \cite{Mitchell_1997}.
 
 \section{Genetic Algorithm Introduction}
 Genetic algorithms provide a search technique analogous to biological evolution in which instead of searching from general to specific solutions, or from more simple to complex, genetic algorithms generate solutions by mutating and combining parts of the best previously known solutions.

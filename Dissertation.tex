@@ -14,12 +14,6 @@
 % 3. all options provided by the report class
 \documentclass[thesis,letterpaper,12pt]{utthesis} % thesis, one side
 \input{Preamble}
-\usepackage{termcal}
-\usepackage{pgfgantt}
-\usepackage{rotating}
-\usepackage{tikz}
-\usetikzlibrary{shapes,arrows}
-\usepackage{dot2texi}
 % some alternatives are:
 %\documentclass[thesis,monochrome,letterpaper,12pt]{utthesis} %thesis, one side, monochrome text
 %\documentclass[thesis,twoside,letterpaper,12pt]{utthesis} % thesis, two side
@@ -105,6 +99,7 @@
     \include{chapters/secElec}  
     \include{chapters/gaOpt}
     \include{chapters/lightTrans}
+    \include{chapters/conclusions}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % BIBLIOGRAPHY
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -115,7 +110,11 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \makeAppendixPage   % make the appendix title page - can be edited in ut-thesis-template.tex
     \appendix
+    \include{back-matter/ComptonScattering}
+    \include{back-matter/MCNPXReactionRateCalc}
+    \include{back-matter/IntrinsicEfficiency}
     \include{back-matter/DetectorComparisons}
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % A VITA IS REQUIRED
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
