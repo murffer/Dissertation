@@ -3,18 +3,10 @@
 %                  		  	RPM Neutronic Performance   		            	 %
 % 									                                                     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{RPM Neutronic Performance}
-\label{sec:RPMNP}
-
-Simulations are necessary to guide the design of a replacement RPM.
-These simulations must provide a link between the measured performance of laboratory developed and characterized samples which are generally two inches and the performance of the film in an implemented detector system as it is prohibitive to construct and measure each film in an RPM.
-Previous work showed that it is possible to adequately simulate detector performance in MCNPX, a Monte Carlo radiation transport code.
-Generally these simulations involve correctly defining the simulation physics, source and geometry, and then using the correct tally measures to extract pertinent performance metrics.
-After the simulation is completed is then benchmarked against measured quantities to provide a measure of confidence that the simulation provides an accurate model of reality.
-Often (as in this case) the capability to directly measure the performance of the desired simulation geometry is not availabl is not available, and therefore the benchmarking must be completed on a comparable system on which it is possible to measure.
-
-A validated simulation capability allows for one to explore the design space without having to physically build and test systems, which can be prohibitively expensive.
-As a single film does not have the necessary interactions to fulfill the neutron count rate criteria multiple films are necessary, and the arrangement of these films provides a design space for a replacement RPM.
+\chapter{Neutronic Optimization}
+\label{ch:GAOpt}
+\section{Introduction}
+A single film does not have the necessary interactions to fulfill the neutron count rate criteria multiple films are necessary, and the arrangement of these films provides a design space for a replacement RPM.
 In the case of the RPM, there are several design parameters that can be explored:
 \begin{itemize}
   \item the neutron absorber loading of the film,
@@ -32,97 +24,183 @@ The analysis of the neutron flux throughout this detector lead to a flat flux pr
 	\caption{Fraction of the neutron flux that is thermalized through a alternating detector and moderator layered RPM.  The low thermal fluxes result in a poor utilization of the high thermal cross section of \iso[6]{Li}.}
 	\label{fig:AltLayerThermalNeutronFraction}
 \end{figure}
+Effective utilization of the neutron flux is necessary for minimizing the amount of neutron absorber (\iso[6]{Li}) that is used in the detector.
 Several different strategies can then be used to optimize the geometry to ensure effective utilization of the thermal cross section of the absorber material.
-\chapter{Summary, Deliverables and Timetable}
-\label{ch:SummaryDeliverables}
-\section{Summary}
-Defense against nuclear terrorism relies upon the ability to accurately detect and identify Special Nuclear Material (SNM).
-The current standard for neutron detection in portal monitors is \iso[3]{He}, which is a diminishing resource. 
-A significant amount of research is then focused on developing new (or optimizing an existing) neutron detection system to serve as a replacement RPMs.
-Previous work by this author focused on the characterization of replacement polymeric thin film detector technologies for RPMs.  
-The proposed work will focus on designing a framework for determining an optimized detector design for replacement RPMs based on polymeric thin films.
-This work will be novel in its utilization of high fidelity energy deposition to explain the origins of neutron-gamma discrimination through the range of secondary electrons from the neutron and photons reactions in their subsequent energy deposition.
-The neutronic performance of a film will then be assessed by calculating the performance of a full scale replacement RPM in the test environment with MCNPX.
-Non-linear search techniques will then be used to find the optimal geometry of the MCNPX model of the detector that best utilizes the neutron absorber.
-Finally, the scintillation light from the detectors will be simulated with the GEANT4 toolkit, and the performance of the detector based upon the collected light signal reported.
-Different light collection strategies will be employed to maximize the light collection efficiency and minimize the cost of electronics necessary for the detector.
 
+In this particular problem the placement of a film greatly changes the solution because of the large change in the neutron flux, and traditional gradient based solvers would tend to be trapped in these local minima.
+Genetic algorthims were chosen as the optimization technique because they are less suscutible to local minimas than other search techniques and tend to preform very well on combinitorial problems such as this one \cite{Mitchell}.
 
-\section{Delerivables and Timetable} 
-The proposed optimization strategy will first optimize on the microscopic domain of the energy deposition of a single layered detector (supporting the simulations with measurements) and then optimize the performance on the macroscopic domain of a large area plastic scintillator detector.
-What has been proposed is essentially an architecture for the optimization that can be broken down into modules.
-For each of the subsystems, the developed code will be well documented in order to ensure that the toolkit is portable and with the ability to be extended.
-In addition, self-contained repositories of the code base will be made available.
-Doxygen, a standard tool for extracting documentation for annotated C++ sources will be used to develop HTML based documentation files and a project manual.
-If time permits a tutorial will be developed to assist others in replicating this work.
-Measurements made to validate the simulations will also be well documented, and hopefully self contained.
-This is to ensure the portability of this work.
-\autoref{fig:OptArc} is a flow chart of the proposed optimization process in which the energy deposition simulations influence the inputs of the neutronics modeling and the light transport simulations.
-If either of these simulations indicate that the DHS/DNDO detector criteria will not be meet, it is then necessary to modify the detector thickness or material in order to design a detector that will meet the criteria. 
+\section{Genetic Algorithm Introduction}
+Genetic algorthims provide a search technique analagous to biological evolution in which instead of searching from general to specific solutions, or from more simple to complex, genetic algorthims generate solutions by mutating and combining parts of the best previously known solutions.
+At each step in the search for the best solution a collection of solutions called the current \textit{population} is refined by replacing members with solutions representing the offspring of the best individuals.
+The goals is then to find the best solution to the problem as determined by some criteria, called the \textit{fitness function}.
+The genetic algorithm typically consist of four tasks: creating an initial population, evaluating that populations fitness, selecting members of the current population to breed, and then applying genetic operators to the selected members to breed the new population. 
+This is completed until either a maximum generation is reached or the desired fitness is achieved, as shown in \autoref{alg:GAOutline}.
+\begin{algorithm}
+  \caption{Genetic Program Outline}
+  \label{alg:GAOutline}
+  \begin{algorithmic}
+    \WHILE{$error>goal$}
+      \FORALL{$t\in F$}
+        \STATE{Compute fitness}
+      \ENDFOR
+      \FORALL{$t\in F$}
+        \STATE{Choose individuals based on fitness}
+      \ENDFOR
+      \STATE{Select individuals for next population}
+      \STATE{Crossover selected individuals}
+      \STATE{Mutate selected individual}
+    \ENDWHILE
+  \end{algorithmic}
+\end{algorithm}
+
+\subsection{Problem Representaiton}
+The thickness of the RPM  (\SI{12.7}{\cm}) was divided into slices, where each slice could be either a detector slice or a moderator slice.
+These slices of detector material (represented as a \verb+1+) or moderator material (represented as a \verb+0+) were appened into a sequence.
+This sequence of one's and zero's (or bit string) then completely represented the goemetry of the RPM and formed the basis for all possible solutions to the optimization problem.
+For example the sequence \verb+0001110010+ would represent a detector that had three moderator slices, three detector slices, another two moderator slicees, and a final detector slice before a single moderator slice as the reflector.
+Examples of two differnet genomes are shown in \autoref{fig:ExGeoGenomes}
 \begin{figure}
-  \centering
-  \includegraphics[width=0.75\textwidth]{optArch}
-  \caption[Optimization Architecture]{Optimization Architecture.  The energy deposition module provides inputs into the MCNP neutronics model and the GEANT4 Light transport simulations. Parameters available for optimization are shown in yellow, while measurement feedback is shown in cyan.}
-  \label{fig:OptArc}
+
+  \caption[Example Geometries Genomes]{Example of Geometry Genomes}
+  \caption{fig:ExGeoGenomes}
+\end{figure}
+In terms of genetic algorthims the set of all possible solutions is refered to as the \textit{genome}.
+The length of the genome is thus the number of slices in the geometry, where a higher length genome allows for a more complicated geoemtry.
+The intial population for the genetic algorthim was initialized to be random bit strings with equal probability of a slice being a detector slice or moderator.
+
+\subsection{Population Selection}
+Several differnet selection technqiues are available to select the individuals from one population to reproduce in the next.
+Among the most common are fitness proportional selection (roulette selection) and tournament selection.
+Roulette selection occurs when the individuals are ranked by their fitness, and individuals are chosen by their fitness rank.
+This is analagous to a roulette wheel where the space a canidate occupies on the wheel is proporitional to its fitness.
+Higher fitness individuals will occupy more space, and will thus have a higher probability of being selected.
+Tournament selection is another selection techinque in which a pool of solutions are chosen at random from the current population.
+Within this tournament pool a fitness proportional selection will be used to select individuals for the next generation.
+The fitness function will be explained in detail in \autoref{sec:FitnessFunc}.
+
+\subsection{Genetic Operators}
+Individuals selected for reproduction are subjected to genetic operators to breed the next generation. 
+Genetic programs generally contain two genetic operators, crossover and mutation. 
+Crossover serves to create new members of the population by interchanging the genetic material of two parents in which significant changes in the solutions are achieved. 
+Mutation serves to slightly modify an existing solution. 
+
+Crossover is defined in genetic programming as the swapping of genetic material from one individual to another.  
+For bit strings several crossover operations are commonly used; they are 1) single point crossover, 2) two point crossover, and 3) uniform crossover.
+An example of the crossover operations are shown in \autoref{fig:GeneticCrossover}.
+In single point crossover a single point is selected on both parents genes and the genetic material between the two parents is swapped.
+In two point crossover two points are chosen on the parents bit strings and the genetic material is swapped between the intervals.
+Uniform crossover uses a set mixing ratio for which according to that ratio an individual bit will be interchanged between the two parents to yeild the dauthers.
+\begin{figure}
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{SinglePointCrossover}
+    \caption{Single Point Crossover}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{TwoPointCrossover}
+    \caption{Two Point Crossover}
+  \end{subfigure}
+  ~
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{UniformCrossover}
+    \caption{Uniform Crossover}
+  \end{subfigure}
+  \caption[Genetic Crossover Operations]{Genetic Crossover Operations. Images from Wikipedia}
+  \label{fig:GeneticCrossover}
 \end{figure}
 
-The timelines for the proposed work is presented in the following charts.
-\autoref{fig:AdmTimeline} shows a broad overview of the project milestones and accomplishements.
-In \autoref{fig:CompletedWorkTimeline} the energy deposition and neutronics optimization by genetic algothrims are shown.
-Finally \autoref{fig:LightTransportTimeline} presents the timeline for simulation of light transport.
-%%%%%%% ADMINISTRATIVE TIMELINE %%%%%
-\begin{sidewaysfigure}
-\begin{center}
-\begin{ganttchart}[x unit=8.5mm,vgrid,time slot format=isodate,compress calendar,today=2013-08-05,today offset=.5,today label=Current Week,today rule/.style={draw=blue,ultra thick}]{2012-06-12}{2013-12-30}
-\gantttitlecalendar{year} \\
-\ganttgroup[progress=100]{Energy Modeling}{2012-06-15}{2013-06-01}\\
-\ganttgroup[progress=90]{Neutronics Optimization}{2012-12-15}{2013-3-30}\\
-\ganttgroup[progress=75]{GEANT4 Light Transport}{2013-4-1}{2013-9-1}\\
-\ganttgroup[progress=50]{Write Up and Conclusions}{2013-7-1}{2013-10-1}\\
-\ganttmilestone{Dissertation Proposal}{2013-8-9}\\
-\ganttbar{Disserrtation Defense}{2013-10-1}{2013-11-1}\\
-\ganttmilestone{Dissertation to Trace}{2013-11-27}\\
-\ganttmilestone{Pass/Fail Form}{2013-11-27}\\
-\end{ganttchart}
-\end{center}
-\caption{Proposed Adminstrative Timeline}
-\label{fig:AdmTimeline}
-\end{sidewaysfigure}
-%%%%%%% COMPLETED WORK %%%%%%%
-\begin{sidewaysfigure}
-\begin{center}
-\begin{ganttchart}[x unit=8.5mm,vgrid,time slot format=isodate,compress calendar,today=2013-08-05,today offset=.5,today label=Current Week,today rule/.style={draw=blue,ultra thick}]{2012-06-12}{2013-12-30}
-\gantttitlecalendar{year} \\
-\ganttgroup[progress=100]{Energy Modeling}{2012-06-15}{2013-06-01}\\
-\ganttbar[progress=100]{Energy Deposition}{2012-06-15}{2013-4-15} \\
-\ganttbar[progress=100]{Range}{2013-5-25}{2013-6-15} \\
-\ganttmilestone{IEEE Secondary Electron Paper}{2013-06-15}\\
-\ganttgroup[progress=90]{Neutronics Optimization}{2012-12-15}{2013-3-30}\\
-\ganttbar[progress=100]{MCNP Neutronics}{2012-12-15}{2013-1-15} \\
-\ganttbar[progress=100]{Scripted Input Decks}{2013-1-30}{2013-2-5}\\
-\ganttlinkedbar[progress=90]{Genetic Algorthims}{2013-2-15}{2013-3-10}\\
-\ganttmilestone{ANS Presentation}{2013-11-10}
-\end{ganttchart}
-\end{center}
-\caption[Timeline of Completed Work]{Timeline of Completed Work.}
-\label{fig:CompletedWorkTimeline}
-\end{sidewaysfigure}
-%%%% LIGHT TRANSPORT TIMELINE
-\begin{sidewaysfigure}
-\begin{center}
-\begin{ganttchart}[x unit=8.5mm,vgrid,time slot format=isodate,compress calendar,today=2013-08-05,today offset=.5,today label=Current Week,today rule/.style={draw=blue,ultra thick}]{2012-06-12}{2013-12-30}
-\gantttitlecalendar{year} \\
-\ganttgroup[progress=75]{GEANT4 Validation}{2013-1-10}{2013-7-10}\\
-\ganttbar[progress=100]{Flir Detectors}{2013-4-15}{2013-4-30}\\
-\ganttbar[progress=100]{Fabrication of Detectors}{2013-1-10}{2013-7-10} \\
-\ganttlinkedbar[progress=100]{GS20 Simulation}{2013-06-1}{2013-7-10}\\
-\ganttlinkedbar[progress=80]{Layred Simulations}{2013-6-15}{2013-7-15}\\
-\ganttgroup[progress=75]{GEANT4 RPM Light Transport}{2013-6-1}{2013-10-1}\\
-\ganttbar[progress=50]{Prelimiary Simuation}{2013-7-1}{2013-7-20} \\
-\ganttlinkedbar[progress=25]{Parameter Studies}{2013-8-1}{2013-9-1}\\
-\ganttlinkedbar[progress=0]{Optimization}{2013-9-1}{2013-10-1}\\
-\end{ganttchart}
-\end{center}
-\caption{Light Transport Timeline}
-\label{fig:LightTransportTimeline}
-\end{sidewaysfigure}
+Mutation is used to produce small, random changes in the genomes to maintain genetic diversity.
+The mutation operation was chosen to be a simple bit flip in which a randomly chosen \verb+1+ or \verb+0+ in the geoemtry was flipped; for example \verb+001001010+ could be mutated to \verb+001001000+.
+Generally the mutation rate is set very low (less than 2\%) in order to prevent the search for the solution to becoming simply a random search.
+In this representation of the problem a mutation produces a very large change in the solution and the mutation rate was set even lower.
+
+\subsection{Fitness Function}
+\label{sec:FitnessFunc}
+The fiteness function defines the criteria for ranking solutions and probablistically including them in the next generation.
+The fitness function was choosen to count rate per mass of \iso[6]{Li}, provided that the geometry meet the total count rate criteria.
+If it failed to meet the count rate criteria a zero fitness was returned \eqref{eqn:FitnessFun}.
+\begin{align}
+    \label{eqn:FitnessFun}
+    f(\vec{x})
+    = \begin{cases}
+    0 & \text{if} \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
+    \text{countRatePerMass}(\vec{x})
+    \end{cases}
+\end{align}
+Films that have excessive detector laysers will be penalzied by the normalization by the mass of \iso[6]{Li} that they contain, while favoring films that have the minimium number of detector layers that meet the count rate criteria and have a more effective utilization of the neturon flux which increase their count rate.
+
+At this point it is instructive to make a note about the size of the solution space.
+\autoref{tab:BitStringGeo} some of the these geometries are simple enougth that the search space can be computed exaustively.
+\begin{table}
+    \caption[Genome Bit String Geometries]{Bit String Simplified Geometetry Descriptions}
+    \label{tab:BitStringGeo}
+    \centering
+    \begin{tabular}{ c | c c}
+     \toprule
+     Genome Length&Slice Thickness&Possible Geomeries \\
+     \midrule
+        5&2.54&31\\
+        10&1.2700&1,023\\
+        15&0.8467&32,765\\
+        20&0.6350&1,048,575\\
+        25&0.5080&33,554,431\\
+        30&0.4233&\num{1.07E9}\\
+        35&0.3629&\num{3.44E10}\\
+        40&0.3175&\num{1.10E12}\\
+    \bottomrule
+    \end{tabular}
+\end{table}
+There are several salient features highlighted in \autoref{tab:BitStringGeo}.
+For small genome lengths (less than 10) it is possible to exhasutive search the hypothesis space of possible solutions.
+This is not possible for the larger genome lengths.
+Thefore, efficient evaluation of the fitness function is necessary in order to evolve a reasonable number of solutions.
+In addition the refinement in the details of the geometries increases lineary with the genome length while the size of the search space increases as $2^n$.
+This suggest that a hybrid method of finding a basic geometry in a low search space and then preforming pertubations on that geometry will have a better performance than attempting to search the higher geometry solutioin space.
+
+\section{Neutronic Models}
+The interaction rate of a geometry can be found by solving the neutron transport equation in that geometery and then composing the neutron flux with the absorber materials reaction rate.
+Thankfully, models have already been developed for this purpose.
+Deterministic models discretize the transport equation into energy groups and quadrature sets or spherical harmonics, and then solve the discritized equations.
+Probabilistic models follow the path of indvidiuals neutrons with interactions based on the probability of a given event occuring.
+Such codes are also known as Monte Carlo models, for which MCNPX is a well known example.
+A full 3D Monte Carlo treatment of the problem provides an accurate knowledge of the interaction rate at the expense of higher computation times. 
+In order to preform a faster search of the parameter space a simple one dimenensional model was desired.
+XSDRN, a one dimension discrete ordiantes that solves the one dimensional Boltzmann equation distributed in the SCALE package was chosen for this purpose.
+XSDRN will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
+A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                             XSDRN Model                                 %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/XSDRNModel}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                             MCNPX Model                                 %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/MCNPXModel}
+
+However, not all of these interactions will lead to counts above the pulse height discriminator setting necessary for meeting the gamma intrinsic efficiency.
+This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\eta$, that occur above the gamma LLD \eqref{eqn:FractionOfCountsDefination}, \eqref{eqn:RPMCountRate}.
+\begin{align}
+  \label{eqn:FractionOfCountsDefination}
+  \eta \equiv \frac{\int_{MLLD}^\infty p(x)dx}{\int_0^\infty p(x)dx}
+\end{align}
+\nomenclature{$p(x)$}{Measured spectra, as a function of channel number}
+\begin{align}
+ \label{eqn:RPMCountRate}
+ \text{Count Rate} &= I_{\text{sim}} \eta
+\end{align}
+
+\section{Conclusions}
+
+A physical basis of the optimal solution found by the genetic algorthim can be found by observing the form of the optimal solutions.
+These solutions involve an intial moderator layer in order to ensure that all of the neutrons are thermalized to (increasing the thermal fraction by \textbf{SOME PRECENT}).
+After this moderator layer a film layer is placed to utilize this neutron spectra; however not all of the thermal neutrons are captured (as the mean free path of a neutron in polyethylene is about \SI{0.37}{\cm} and thus some pass through the material) and another abosrber layer is needed to capture those neutrons.  
+The neutron flux is then moderated again, and additional layers of detectors are needed to capture this neutron cross section.
+However, it is desirably to have a large neutron reflector in the portal monitor to reflect neturons back into the detector slices. 
+Theortically this reflector should be as large as possible, but the limited space of the RPM provides a constraint.
+A parameter study with a single detector slice between a moderator and reflector constrained by the radiaiton portal monitor design showed that it is desriable to have around \textbf{So much} moderator leaving the majority of the RPM to be left for the reflector.
+Thus it is demonstrated that a large reflector is desired.
