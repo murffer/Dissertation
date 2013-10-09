@@ -1,4 +1,4 @@
-\chapter{Neturon - Gamma Discrimination}
+\chapter{Neutron - Gamma Discrimination}
 \label{ch:SecElectron}
 
 Effective neutron-gamma discrimination is integral to the performance of the detector.
@@ -27,7 +27,7 @@ Thus, neutron-gamma discrimination can be enhanced by optimizing the energy depo
 
 The organization of this chapter is as follows.
 \autoref{sec:ScintMechanics} will provide an overview in order to understand the necessary scintillation mechanics of organic scintillators and as it relates to the energy deposited by charged particles.
-\autoref{sec:InteractionsAndRange} will describe the physics of charged particle and gamma interactions in plastics (focusing on polystyrene) in order to explain the basis for the differnece in energy depositions. 
+\autoref{sec:InteractionsAndRange} will describe the physics of charged particle and gamma interactions in plastics (focusing on polystyrene) in order to explain the basis for the difference in energy depositions. 
 \autoref{sec:EnergyDep} describes the simulation and results of energy deposition in polymeric materials, which results in neutron-gamma discrimination.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,13 +59,13 @@ It is proposed to represent the detector geometry as a single layer of neutron a
 For simplicity, the initial events for runs will be chosen by setting up a particle gun for thermal (\SI{0.025}{\eV}) neutrons upon the detector and for both gammas resulting from a \iso[60]{Co} decay.
 \begin{figure}
   \includegraphics[width=\textwidth]{GEANT4AnnotatedGeo_EnergyDepEvent}
-	\caption[GEANT4 Energy Depostion Geometry]{GEANT4 Geometry for the Simulation of Energy Deposition. What is shown are 10 photons from a \iso[60]{Co} source impigent upon a \SI{2}{\cm} thick detector.  The photon tracks are shown in yellow, while the electron tracks are shown in red.}
+	\caption[GEANT4 Energy Deposition Geometry]{GEANT4 Geometry for the Simulation of Energy Deposition. What is shown are 10 photons from a \iso[60]{Co} source impingement upon a \SI{2}{\cm} thick detector.  The photon tracks are shown in yellow, while the electron tracks are shown in red.}
 	\label{fig:EDepSimGeo}
 \end{figure}
 It is expected that the the Livermore data-driven parameterized electromagnetic physics will be necessary to calculate the ionizing energy deposition, extending the standard electro-magnetic physics down to \SI{1}{\kilo\eV}.
 The neutron interactions will be simulated with a hadronic modules, using the \verb+HP+ flavored modules to use the ENDF cross sections to calculate the interaction rates.
 
-\subsection{Simualtion Validaiton}
+\subsection{Simulation Validation}
 The validation of this GEANT4 simulation was completed by reproducing the single collision energy loss in water as well as comparing  the spectral shapes and averages of simulated and measured spectra.
 The reproduction of the single collision energy loss will ensure that the electron physics are implemented correctly, while the simulation of the polymeric film energy deposition allows the user to gain confidence that the correct tracking and binning analysis has been implemented.
 
