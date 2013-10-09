@@ -18,7 +18,8 @@ The thickness of these detectors and mass of the absorber are shown in \autoref{
 \centering
 \caption[Detector Physical Characteristics]{Physical characteristics of the detector.}
 \label{tab:PhysicalProperties}
-  \begin{tabular}{p{5cm}| m{1.75cm} m{2cm} p{3.75cm}}
+  \small
+  \begin{tabularx}{\textwidth}{X| X X X}
   \toprule
     & Absorber & Thickness &  Mass Absorber (mg) \\
     \midrule
@@ -27,10 +28,10 @@ The thickness of these detectors and mass of the absorber are shown in \autoref{
     EJ 254 5\% & \iso[10]{B} & 3/4 & 356.1 \\
     EJ 425 HD2-PE & \iso[6]{Li} & \SI{0.1}{\mm} & 17.5 \\
     GS20 & \iso[6]{LI} & \SI{2}{\mm} & 155 \\
-    Post Processed Composite PEN Film & \iso[6]{Li} & $\approx$ \SI{212}{\um} & 42.42 \\
+    Annealed PEN & \iso[6]{Li} & $\approx$ \SI{212}{\um} & 42.42 \\
     PS Film & \iso[6]{Li} & \SI{50}{\um} & 2.71 \\
     \bottomrule
-  \end{tabular}
+  \end{tabularx}
 \end{table}
 
 \section{Methods}
@@ -87,17 +88,20 @@ C.W.E van Eijk has published the light yield of LiF:ZnS as 75,000 photons per Me
   \centering
   \caption[Average Channel Number of Gamma and Neutron Spectra]{Average channel number of gamma and the thermal neutron spectra.  The channel averages are scaled to 1,000V, 10G. The light yields are scaled to GS20 having 3,800 photons per MeV, and 6,250 photons per Neutron.}
   \label{tab:AvgChNG}
-  \begin{tabular}{m{3.5cm}| m{2.2cm} m{2cm} |m{2cm} m{4cm}}
+  \small
+  %\begin{tabular}{p{4cm}| m{2cm} m{2cm} | m{2cm} m{2cm}}
+  \begin{tabular}{c | c c | c c}
     \toprule
-        &\multicolumn{2}{|c|}{Gamma}&\multicolumn{2}{|c}{Neutron}\\
-        & Average Channel& Photons per MeVee & Average Neutron Channel & Photons per Neutron\\
+        &\multicolumn{2}{c}{Gamma}&\multicolumn{2}{|c}{Neutron}\\
+        & Average & Photons & Average & Photons \\
+        & Channel& per MeVee & Channel & per Neutron\\
     \midrule
     EJ 254 2.5\%, 1/4"&	183.41	&	8,100	&	54.06	&	640	\\
     EJ 254 1\%, 1/4"&	216.25	&	9,500	&	65.04	&	780	\\
     EJ 254 5\%, 3/4"&	176.49	&	7,800	&	39.56	&	479	\\
     EJ 426 HD2&	1636.53	&	72,000	&	2018.	& 	24,000	\\
-    GS20 &	172.76	&	3800.00	&	524.10	&	6,250	\\
-    Post processed Composite PEN & 41.11 & 1,800 & 142.01 & 1,700\\
+    GS20 &	172.76	&	3,800	&	524.10	&	6,250	\\
+    Annealed PEN & 41.11 & 1,800 & 142.01 & 1,700\\
     PS Film & 32.18 & 1,400 & 169.34 & 2,000 \\
     \bottomrule
   \end{tabular}
@@ -107,10 +111,11 @@ The count rates of the detectors are presented in \autoref{tab:CountRate} for bo
 \centering
   \caption[Detector Count Rate]{Count rate of the detectors in the thermal spectra as well as the lead well spectra.  The final two columns are normalize by the mass of the absorber in the material. Significant self-shielding may exists in the the 5\% boron, 3/4" EJ-254.}
   \label{tab:CountRate}
-  \begin{tabular}{m{4cm}| m{2cm} m{2cm} |m{2cm} m{2.2cm}}
+  \small
+  \begin{tabular}{p{4cm}| m{2cm} m{2cm} |m{2cm} m{2.2cm}}
   \toprule
-    &\multicolumn{2}{|c|}{Count Rate}&\multicolumn{2}{|c}{Count Rate per Mass Absorber} \\
-    &\multicolumn{2}{|c|}{(cps)}&\multicolumn{2}{|c}{(cps per mg)} \\
+    &\multicolumn{2}{c}{Count Rate}&\multicolumn{2}{|c}{Count Rate per Mass Absorber} \\
+    &\multicolumn{2}{c}{(cps)}&\multicolumn{2}{|c}{(cps per mg)} \\
     & Thermal Neutrons &Lead Well & Thermal Neutrons & Lead Well\\
   \midrule
   EJ 254 2.5\%, 1/4"&	1104	&	1869	&	18.5	&	31.4	\\
@@ -118,7 +123,7 @@ The count rates of the detectors are presented in \autoref{tab:CountRate} for bo
   EJ 254 5\%, 3/4"&	1417	&	3415	&	3.98	&	9.59	\\
   EJ 42 6 HD2 \SI{0.1}{\mm}&	224	&	234	&	12.8	&	13.4	\\
   GS20 \SI{2}{\mm}&	328	&	412	&	2.12	&	2.66	\\
-  Post processed Composite PEN $\approx$ \SI{212}{\um}&	322	& 227	&	5.35 &	7.60	\\
+  {Annealed PEN}&	322	& 227	&	5.35 &	7.60	\\
   PS, \SI{50}{\um}, 10\% LiF & 90.6 & 20.7 & 7.63& 33.4 \\
   \bottomrule
   \end{tabular}
@@ -128,7 +133,8 @@ The count rates of the detectors are presented in \autoref{tab:CountRate} for bo
   \centering
   \caption[Discrimination Performance]{Discriminator setting and count rate above the gamma intrinsic efficiency of \num{1E-6} for various detectors.}
   \label{tab:DiscrimPreformance}
-  \begin{tabular}{m{5cm} | m{2cm} m{6cm}}
+  \small
+  \begin{tabular}{m{5cm} | m{3cm} m{5cm}}
     \toprule
     &	MLLD Location	&	Count Rate above the intrinsic discriminator setting of \num{1E-6} per Absorber Mass (cps per mg)	\\
     \midrule
@@ -137,7 +143,7 @@ The count rates of the detectors are presented in \autoref{tab:CountRate} for bo
     EJ 254, 5\% B, 3/4"	&	1290		&	0.03	\\
     EJ 426 HD2, \SI{0.1}{\mm}&	3308		&	1.97	\\
     GS20, \SI{2}{\mm}	&	557		&	0.56	\\
-    Post processed Composite PEN,\SI{212}{\um}, 25\% LiF	&	284	&	0.73	\\
+    {Annealed PEN,\SI{212}{\um}, 25\% LiF}	&	284	&	0.73	\\
     PS, \SI{50}{\um}, 10\% LiF & 223 & 2.15\\
     \bottomrule
 \end{tabular}
