@@ -56,7 +56,28 @@ This is measured as the difference between the energy of the heavy ion and its a
   \caption[Light yield non-proporitonality of anthracene]{Light yield non-proproitonality of antrhacene. Data from \cite{Verbinski_1968}.}
   \label{fig:lightYieldVerbinski}
 \end{figure}
-
+An illustration of the energy deposition between the different particles resulting in the pulse height deficit is presented in \autoref{fig:ParticleTracks}.
+The electrons, with their low stopping power and broad track structure deposit their energy over a broader range than do the heavy charged ions (which tend to have rather collimated tracks).
+Thus, the heavy charged ions deposit a large amount of their energy in a small volume, completely ionizing that volume and inhibiting sctintillation.
+\begin{figure}
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{alphaTrack_0}
+  \end{subfigure}% 
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{electronTrack_100keV_0}
+  \end{subfigure}
+  
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{electronTrack_50keV_0}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{tritonTrack_0}
+  \end{subfigure}
+  \caption[Particle Tracks of Alpha, Triton and Electrons]{GEANT4 simulated Particles tracks of a \SI{10}{\keV} electron, \SI{100}{\keV} electron, \SI{2.05}{\MeV} alpha, and \SI{2.73}{\MeV} triton.  The electron tracks are alot broader than the heavy ion tracks, resulting in a greater spread of the energy deposition and less quenching.}
+  \label{fig:ParticleTracks}
+\end{figure}
 scinitillator light yield non-propritionality, birks, 1951 has a figure which shows this
 It should be noted that this term closely resembles the phenomena described by pulse height defect as seen in semiconductors.
 
