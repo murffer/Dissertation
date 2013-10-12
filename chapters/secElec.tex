@@ -13,14 +13,8 @@ The pulse height discriminator setting necessary to achieve the neutron-gamma di
 This virtual discriminator establishes the bound where $\epsilon_{int,\gamma n}\leq 10^{-6}$, and counts above the MLLD are classified as neutron counts. 
 
 It is currently understood that the light output per path length of the film (which is directly proportional to the pulses collected on the PMT) is related to the stopping power of the radiation in the film material.
-This is described by the Birks equation \eqref{eqn:BirksEquation}
-\begin{align}
-  \label{eqn:BirksEquation}
-  \frac{dL}{dx} = \frac{S_B\frac{dE}{dx}}{1+kB\frac{dE}{dx}}
-\end{align}
-where \definevar{$S_B$}{absolute scintillation efficiency},\definevar{$\frac{dE}{dx}$}{linear stopping power} and \definevar{$kB$}{Birks parameter}.
 For a given material the stopping power of the film will be constant, and therefore the light output of the film can be found by integrating the light output per path length over the total length of the film.
-It is then possible to observe that the light output of a film is proportional to the energy deposited in the film.
+It is then possible to conclude that the light output of a film is proportional to the energy deposited in the film.
 
 Preferential energy deposition by neutrons relative to gammas will enhance the discrimination by creating larger neutron light pulses than the gamma pulses, allowing for fewer neutron pulses to be classified as gamma pulses because they are below the MLLD.
 Thus, neutron-gamma discrimination can be enhanced by optimizing the energy deposition in the film. 
