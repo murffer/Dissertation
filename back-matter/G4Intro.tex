@@ -4,7 +4,29 @@ GEANT4 is a free toolkit for the simulation of particles as they travel through 
 While nothing can replace the \href{http://geant4.web.cern.ch/geant4/G4UsersDocuments/UsersGuides/ForApplicationDeveloper/html/index.html}{User's Manual}, this is intended as a short guide to introduce a reader to the GEANT4 toolkit, and provide background on how the simulations were implemented.
 
 \section{Toolkit Fundamentals}
-The GEANT4
+A simulation in the GEANT4 toolkit requires a detector geometry (including materials), particles and interactions, and primary events.
+Once the geometry and physics has been described, GEANT4 then tracks the primary particle (and generated secondaries) until the particle leaves the world volume, slows down to zero kinetic energy, or disappears by an interaction or decay. 
+Particles can also be killed by implementing a range a cut, in which the particle is killed once its energy is less than the range.
 
-GEANT4 provides access to the simulation internals through virutal UserAction clases which the user is responsible for implementing.
-These classes include 'G4VUs
+The GEANT4 toolkit employs the following notation to describe a simulation.
+A \textit{track} contains information about the a particles steps through a material, and acts like a snapshop of the particle.
+\textit{Processes} contain implementations of models of the physics interactions.
+Processes are used by \textit{tracking}, which can be thought of a linked list of tracks, where the links between the tracks are the processes.
+A collection of tracking objects then makes up an \textit{event}.
+A \textit{run} is then events that share a common beam and detector implementation.
+A description of a run in GEANT4 is as follows.
+At the beginning of a run the geometry is optimized and cross-sections are computed for the materials involved in the run.
+Primary particles are then generated, and the corresponding tracks are then pushed into an event stack.
+Each track in the stack is then processed until the event stack is empty.
+Tracks that are above the cutoff value and inside the world geometry are processed by the use of a \textit{step} (a change in the track) and then repushed onto the track.
+
+\section{Optional User Classes}
+Access to the simulation results is then provided by UserAction classes.
+These classes are employed to hook into the GEANT4 simulation internals.
+The user classes used in these simulations are described below.
+\begin{itemize}
+  \item \verb+G4UserRunAction+ - which has methods that are called before the begining of each run and at the end of each run. Typical usage is to initialize histograms and book them at then end of the run.
+  \item \verb+G4UserEventAction+ - has methods that are called before and after each event. Typically it is used for summerizing an event, such as calculating the total energy deposition or track length.
+  \item \verb+G4UserStackingAction+ - this class is called before each track is pushed onto the event stack, and provides an oppertunity for the user to kill tracks.
+\end{itemize}
+It should be noted that if a track is killed in the stacking or tracking action that GEANT4 does account for the lost energy in the track, thus the user is responsible for recording it if it is desired.
