@@ -3,6 +3,19 @@
 Repeated characterization techniques of the detector materials are necessary to ensure a fair comparison between differnet detector materials.
 As the focus of this work was on effective scintiallators, the characteizations were designed to measure scintillation properties; namely the light yield of the detector and the count rate when exposed to differnet radiation sources.
 
+\begin{itemize}
+  \item Total Neutron Counts – provides a measure of how responsive the detector is to neutrons
+  \item  Total Neutron Count Rate Per mg Absorber – provides a measure of how well the fabricated detector utilizes the neutron absorber in it. Indirectly this can be a measure of the amount of absorber in the detector
+  \item  Gamma LLD – The position (in channel number) of where an LLD would have to be set in order to meet the criteria of . This calculation is explained in more detail in the following paragrah and in GammaLLDAlgoReview.docx.
+  \item  Fraction of Total Neutron Count Rate Above the Gamma LLD – this is a measure of how effective the film would be with an LLD set in order to meet the This is calculated by summing the counts above the gamma LLD and dividing by the total counts.
+  \item  Alpha Peak – provides a clear indication of the light yield of the film from an alpha particle, which is one of the reaction products of the 6Li neutron interaction. The alpha peak is visible in thin films when other features may be lost (due to the range of the secondary electrons exceeding the thickness of the detector) because the range of the alpha is on the order of 30 microns.
+  \item  Beta Average – characterizes the response of the film to electrons, account for the possibility that a film may not have a clearly defined feature due to energy escaping. Electrons are generated in the film from scattering events of photon interactions.
+  \item  Alpha / Beta – characterizes the relative light yield of the detector from heavy charged particles to electrons.
+  \item  Photons per gamma and Photons per beta – a measure of the light yield of the film, or how many photons are produced per energy absorbed.
+  \item  Pulse Height Deficit – a measure the apparent energy loss (as seen from the pulse height) of a heavy charged ion compared to an electron. This is measured as the difference between the energy of the heavy ion and its apparent energy from the pulse height. It should be noted that this term closely resembles the phenomena described by pulse height defect as seen in semiconductors.
+  \item  Photons per Neutron – a measure of the light yield of the film, or how many photons are produced per energy absorbed.
+\end{itemize}
+
 \subsection{Characterization Electronics and Sources}
 Solid samples are characterized by mounting them with a thin layer of silicone optical grease (BC-630, index of refraction 2.465) onto a Philips XP2202B 10 Stage PMT most senstive in the \SI{350}{\nm} to \SI{500}{\nm} region.
 The PMT is then connected to a Canberra 2007P base, which also funtions as a preamplifier.
@@ -39,6 +52,9 @@ The gamma sources consist of button sources (\iso[137]{Cs} up to \SI{10}{\uCi} a
 The irradiator consist of four 4”x8”x 2” lead bricks on the bottom with and additional four 4”x4”x2” lead bricks encased in an 1/8” metal box. 
 The top four inches is HDPE. 
 The overall dimensions of the detector are 14” by 12” by 12”. 
+
+\subsection{Intrisinic Efficiency}
+
 \subsection{Light Yeild}
 The light yeild of a spectrum describes how many photons are generated (and subsquently detected on a PMT) for a given material for a scintillation event from a radiation source.
 % Some words from Knoll about LY
