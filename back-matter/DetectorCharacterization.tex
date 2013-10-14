@@ -10,13 +10,35 @@ The Canberra 2007P feeds into an Ortec 572A amplifier, and the amplified signal 
 MAESTRO-32 is the used to read the signals from the MCB.
 \autofref{fig:ElectronicsSetup} provides an overview of this setup.
 \begin{figure}
-  \includegraphcis[width=0.5\textwidth]{}
+  \includegraphcis[width=0.5\textwidth]{ElectronicsSpectra}
   \capition[Optical Characterization Experiment Setup]{Electronic figure for measuring the spectra of materials in response to various radiation sources.}
   \label{fig:ElectronicSetup}
 \end{figure}
 A general protocol has been developed in order to ensure that the measurments are made in a repeatable manner and verified with a reference.
 \begin{enumerate}
+  \item Verify that the instrumentation gains are stable by confirming that the reference neutron peak is in the same channel as for previous measurements. This is completed by setting the voltage and coarse gain to previously determined values, and then adjusting the fine gain until the peak of the lead spectra measurement occurs in the specified location,
+  \item obtain a spectrum from an Am-241 alpha source,
+  \item obtain a spectrum from a Cl-36 beta source,
+  \item obtain a neutron spectrum from the Pb-shielded tube neutron irradiator,
+  \item obtain a neutron spectrum from the Cd-shielded tube in the neutron irradiator,
+  \item obtain a gamma spectrum in the gamma irradiator.
 \end{enumerate}
+
+Several radiation sources are available for characterization use.
+The neutron irradiator is a custom built \SI{0.59}{\ug} \iso[252]{Cf} source encased in 2” blocks of high density polyethylene (HDPE). 
+The HDPE box is approximately 20” long, 12” wide, and 14” tall (\autoref{fig:NeutronIrridiator}). 
+There are two detector 1/16” thick acrylic detectors wells, one surrounded by a 1/16” cadmium to shield out thermal neutrons, and the other surrounded by 1/16” of lead to shield out a similar amount of gammas as the cadmium well.
+The \iso[252]{Cf} source is surrounded by stainless steel, which in turn is contained within a 2” diameter, 1/2” thick, 5 and 1/4” tall lead vessel.
+\begin{figure}
+  \centering
+  \includegraphcis[width=0.5\textwidth]{NeutronIrridiator_CAD}
+  \capition[CAD Rendering of Neutron Irridiator]{Schematic of the neturon irridiator.}
+  \label{fig:NeutronIrridiator}
+\end{figure}
+The gamma sources consist of button sources (\iso[137]{Cs} up to \SI{10}{\uCi} and \iso[60]{CO} up to \SI{1}{\uCi}) as well as a gamma irradiator that produces a 10 mR/hr gamma field across the detector face. 
+The irradiator consist of four 4”x8”x 2” lead bricks on the bottom with and additional four 4”x4”x2” lead bricks encased in an 1/8” metal box. 
+The top four inches is HDPE. 
+The overall dimensions of the detector are 14” by 12” by 12”. 
 \subsection{Light Yeild}
 The light yeild of a spectrum describes how many photons are generated (and subsquently detected on a PMT) for a given material for a scintillation event from a radiation source.
 % Some words from Knoll about LY
@@ -24,4 +46,3 @@ The light yeild of a spectrum describes how many photons are generated (and subs
 The light yield of fabricated samples that were characterized was completed by comparing the spectrum average of a sample to that a sample of a known light yield.
 Formally this is shown in \eqref{eqn:LightYield} where \definevar{p(x)}{measured spectrum}, 
 
-\subsection{Count Rate}
