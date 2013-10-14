@@ -119,6 +119,48 @@ With the average energy deposition on the left axis and the average light yield 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:Results}
+
+The average energy deposited by a neutron and gamma reaction was investigated for different film thickness to determine if an optimal thickness does exits in a geometry similar to \autoref{fig:EDepSimGeo}.
+\autoref{fig:SimEDep} shows that the energy deposition of the gamma quickly falls off as the films get thinner, while it isn't util the neutron films become on the order of the range of the triton that the energy deposition is impacted.
+\autoref{fig:EDepPosSim} examines the impact of where the interaction took place in the film on the energy deposition.
+The geometry for this simulation is once again \autoref{fig:EDepSimGeo}, where the beam spot is \SI{3}{\mm} and the area of the detector face is \SI{10}{\cm}. 
+The interaction position is then defined to be distance to the first interaction of the beam in the material along the direction of the beam.
+It is obseved that for neutrons events that take place within the center of the films tend to deposit a large majority of their energy in the film, while events that occur on the edge of the film have partial energy depositions in accordance with the ranges of the charged particles.
+A compton spectra is obseved in the photon energy deposition. 
+A secondary effect in having a backing material is also observed for photons in which there is a hightened energy deposition for interactions that occur in the film but near the boundary and electrons are back scattered into the detector material.
+\begin{figure}
+  \centering
+  \incluegraphics[width=0.6\textwidth]{SimulatedEnergyDeposition}
+  \caption[Simulated Energy Deposition and Film Thickness]{Simulated energy deposition and film thickness.  As the films get much thinner it is very unlikely for gamma events to deposition all of their energy, while above \SI{50}{\um} there is very little impact on the energy deposited by neturons.}
+  \label{fig:SimEDep}
+\end{figure}
+
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{posEDepCo600.025}
+		\caption{ \SI{25}{\um} Gamma (\iso[60]{Co})}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{posEDepCo6010.0}
+		  \caption{ \SI{1}{\cm} Gamma (\iso[60]{Co})}
+	\end{subfigure}%
+	
+  \begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{posEDepneutron0.025}
+		\caption{ \SI{25}{\um} Neutron}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{posEDepneutron10.0}
+		  \caption{ \SI{1}{\cm} Neutron}
+	\end{subfigure}%
+	\caption[Simulated Energy Deposition and Position]{Simulated average energy depositions and the position of the first interactions. The beam is considered to be incident on position 0, and thus interactions that occur on the front of the film have a much higher probability deposting all of their energy. Events that occur on the edge of the film much less likely to deposit all of their available energy.}
+	\label{fig:EDepPosSim}
+\end{figure*}
+
+
 The calculated gamma intrinsic efficiency for six polymeric films along with the neutron response of two of the films in Figure \ref{fig:GammaIntrNeutronCounts}, and the fraction of neutron counts above the MLLD necessary for a given gamma intrinsic efficiency is plotted in Figure \ref{fig:crVsIntEff}.
 It is observed that if the films are thin enough (less than \SI{150}{\um}) it is possible to have a significant count rate above the mathematical lower level discriminator necessary for the pulse height discrimination of one in a million.
 This is seen by the \SI{50}{\um} film and the \SI{150}{\um} film having the tail of their neutron spectra above the pulse height discriminator necessary for an intrinsic efficiency of \num{1E-6}.
