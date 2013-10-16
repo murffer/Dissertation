@@ -110,15 +110,112 @@ With the average energy deposition on the left axis and the average light yield 
 	\caption{Average Energy Deposition and Measured Light Yield. The solid lines are calculated values and the red dots are measurements.}
 	\label{fig:EDepLightYield}
 \end{figure*}
+The average energy deposited by a neutron and gamma reaction was investigated for different film thickness to determine if an optimal thickness does exits in a geometry similar to \autoref{fig:EDepSimGeo}.
+\autoref{fig:SimEDep} shows that the energy deposition of the gamma quickly falls off as the films get thinner, while it isn't util the neutron films become on the order of the range of the triton that the energy deposition is impacted.
+\autoref{fig:EDepPosSim} examines the impact of where the interaction took place in the film on the energy deposition.
+The geometry for this simulation is once again \autoref{fig:EDepSimGeo}, where the beam spot is \SI{3}{\mm} and the area of the detector face is \SI{10}{\cm}. 
+The interaction position is then defined to be distance to the first interaction of the beam in the material along the direction of the beam.
+It is obseved that for neutrons events that take place within the center of the films tend to deposit a large majority of their energy in the film, while events that occur on the edge of the film have partial energy depositions in accordance with the ranges of the charged particles.
+A compton spectra is obseved in the photon energy deposition. 
+A secondary effect in having a backing material is also observed for photons in which there is a hightened energy deposition for interactions that occur in the film but near the boundary and electrons are back scattered into the detector material.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.6\textwidth]{SimulatedEnergyDeposition}
+  \caption[Simulated Energy Deposition and Film Thickness]{Simulated energy deposition and film thickness.  As the films get much thinner it is very unlikely for gamma events to deposition all of their energy, while above \SI{50}{\um} there is very little impact on the energy deposited by neturons.}
+  \label{fig:SimEDep}
+\end{figure}
 
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{{posEDepCo600.025}.png}
+		\caption{ \SI{25}{\um} Gamma (\iso[60]{Co})}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{{posEDepCo6010.0}.png}
+		  \caption{ \SI{1}{\cm} Gamma (\iso[60]{Co})}
+	\end{subfigure}%
+	
+  \begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{{posEDepneutron0.025}.png}
+		\caption{ \SI{25}{\um} Neutron}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{{posEDepneutron10.0}.png}
+		  \caption{ \SI{1}{\cm} Neutron}
+	\end{subfigure}%
+	\caption[Simulated Energy Deposition and Position]{Simulated average energy depositions and the position of the first interactions. The beam is considered to be incident on position 0, and thus interactions that occur on the front of the film have a much higher probability deposting all of their energy. Events that occur on the edge of the film much less likely to deposit all of their available energy.}
+	\label{fig:EDepPosSim}
+\end{figure*}
 
+\autoref{fig:simKinE} illustrates the simulated kinetic energy of secondary electrons from Compton scattering and from alpha and triton interactions.
+It is observed that kinetic energy of the secondary electrons from the neutron reaction products have predominately energies in the kilo-volt range, while the Compton scattering electrons have energies in hundreds of kilo-volts range. 
+However, it should be noted that there is only one secondary electron from a Compton scattering and multiple secondary electrons from the reaction products.
+Figure \ref{fig:ReacProdDist} shows the distribution of the number of secondary electrons from the alpha and triton and their kinetic energy.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{NGSecElecKinEDist}
+    \caption{Simulated Kinetic Energy of Secondary Electrons from Compton Scattering and from \iso[6]{Li} reaction products}
+    \label{fig:simKinE}
+\end{figure}
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{AlphaTritonSecElecKinEDist}
+		\caption{Alpha and Triton Secondary Electron Kinetic Energy Distribution}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{NeutronNumSecElec}
+		\caption{Number of Secondary Electrons Produced Per Neutron Interaction}
+	\end{subfigure}%
+	\caption{Neutron Reaction Products Secondary Electrons Energies}
+	\label{fig:ReacProdDist}
+\end{figure*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
-%                     RESULTS and ANALYSIS                                %
+%                  Light Yield and Energy Deposition                      %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}
-\label{sec:Results}
+\section{Light Yield and Energy Deposition}
+The energy deposition and light yield were also investigated by simulations in the GEANT4 enviroment for polystyrene based films (light output 1,000 photons per MeV).
+These simulations (summerized in \autoref{fig:EDepLightYield}) show that as expected the light output was linear with the energy deposition.
+\begin{figure*}[ht]
+	\centering
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{EDepLightYield_Gamma}
+		\caption{ Gamma (\iso[60]{Co}}
+	\end{subfigure}%
+	~
+	\begin{subfigure}[b]{0.45\textwidth}
+    		\includegraphics[width=\textwidth]{EDepLightYield_Neutron}
+		  \caption{ Neutron}
+	\end{subfigure}%
+  \caption[Energy Depostion and Light Yield]{Simulated energy deposition and light yield.  The light yield is fairly linear with the energy deposition, thus, the energy deposition is an adaquate indicator of the expected light yield.}
+  \label{fig:EDepLightYield}
+\end{figure*}
+However, it is instructive to look at the distrubtions of how many photons were created per event.
+As the films become thicker and more of the triton energy is captured the response of the triton starts to dominate the alpha (\autoref{fig:NeutronPhotonsGenSim}), resulting in the number of photons peaking around around 2,500 photons for this simulated sample.
+For photons, shown in \autoref{fig:GammaPhotonsGenSim}, it is observed that the distribution is flat for very thick films, but for thinner films the probablity is greatly increased for an event to generate a low number of photons.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{Neutron_PhotonsGenerated_Sim}
+  \caption[Number of photons generated from neutron interactions]{Simulated number of photons generated from neturon interactions.  For the \SI{10}{\um} film it is observed that the majority of the photons are generated by a partial energy deposition corresponding to the alpha paricle, and this effect tappers off as the films get thicker}
+  \label{fig:NeutronPhotonsGenSim}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{Gamma_PhotonsGenerated_Sim}
+  \caption[Number of photons generated from gamma interactions]{Simulated number of photons generated from gamma interactions.}
+  \label{fig:GammaPhotonsGenSim}
+\end{figure}
+
+\section{Pulse Height Discimination}
+\label{sec:PulseHeightDiscrm}
+The basis for setting a pulse height discrimiantor to differniate between neutorn and gammas can be attributed to the secondary electrons and the differnece in energy mechanicms as presented in the first section of thi chapter.
+
 The calculated gamma intrinsic efficiency for six polymeric films along with the neutron response of two of the films in Figure \ref{fig:GammaIntrNeutronCounts}, and the fraction of neutron counts above the MLLD necessary for a given gamma intrinsic efficiency is plotted in Figure \ref{fig:crVsIntEff}.
 It is observed that if the films are thin enough (less than \SI{150}{\um}) it is possible to have a significant count rate above the mathematical lower level discriminator necessary for the pulse height discrimination of one in a million.
 This is seen by the \SI{50}{\um} film and the \SI{150}{\um} film having the tail of their neutron spectra above the pulse height discriminator necessary for an intrinsic efficiency of \num{1E-6}.
@@ -174,27 +271,3 @@ For thickness greater than \SI{150}{\um} there is little benefit in increasing t
   \label{tab:FractionEDep}
 \end{table}
 
-Figure \ref{fig:simKinE} illustrates the simulated kinetic energy of secondary electrons from Compton scattering and from alpha and triton interactions.
-It is observed that kinetic energy of the secondary electrons from the neutron reaction products have predominately energies in the kilo-volt range, while the Compton scattering electrons have energies in hundreds of kilo-volts range. 
-However, it should be noted that there is only one secondary electron from a Compton scattering and multiple secondary electrons from the reaction products.
-Figure \ref{fig:ReacProdDist} shows the distribution of the number of secondary electrons from the alpha and triton and their kinetic energy.
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{NGSecElecKinEDist}
-    \caption{Simulated Kinetic Energy of Secondary Electrons from Compton Scattering and from \iso[6]{Li} reaction products}
-    \label{fig:simKinE}
-\end{figure}
-\begin{figure*}[ht]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{AlphaTritonSecElecKinEDist}
-		\caption{Alpha and Triton Secondary Electron Kinetic Energy Distribution}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{NeutronNumSecElec}
-		\caption{Number of Secondary Electrons Produced Per Neutron Interaction}
-	\end{subfigure}%
-	\caption{Neutron Reaction Products Secondary Electrons Energies}
-	\label{fig:ReacProdDist}
-\end{figure*}
