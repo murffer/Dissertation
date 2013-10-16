@@ -65,7 +65,7 @@ The reproduction of the single collision energy loss will ensure that the electr
 
 \subsubsection{Single Collision Energy Loss}
 The simulation was validated by reproducing the single collision energy loss for water as well as comparing spectra shapes and averages of simulated spectra to the measured spectra.
-The single collision energy loss spectra for water that was simulated is shown in Figure \ref{fig:SingleCollisionELossWater}.
+The single collision energy loss spectra for water that was simulated is shown in \autoref{fig:SingleCollisionELossWater}.
 In general there was excellent agreement between the simulated energy spectra and a previously published spectra\cite{turner_comparative_1982}, with the simulated spectra having much better resolution than the reference did not.
 It is thought that this is due to the water model in GEANT4 having better cross sections than the previously published spectra.
 \begin{figure}[ht]
@@ -111,12 +111,12 @@ With the average energy deposition on the left axis and the average light yield 
 	\label{fig:EDepLightYield}
 \end{figure*}
 The average energy deposited by a neutron and gamma reaction was investigated for different film thickness to determine if an optimal thickness does exits in a geometry similar to \autoref{fig:EDepSimGeo}.
-\autoref{fig:SimEDep} shows that the energy deposition of the gamma quickly falls off as the films get thinner, while it isn't util the neutron films become on the order of the range of the triton that the energy deposition is impacted.
+\autoref{fig:SimEDep} shows that the energy deposition of the gamma quickly falls off as the films get thinner, while it isn't until the neutron films become on the order of the range of the triton that the energy deposition is impacted.
 \autoref{fig:EDepPosSim} examines the impact of where the interaction took place in the film on the energy deposition.
 The geometry for this simulation is once again \autoref{fig:EDepSimGeo}, where the beam spot is \SI{3}{\mm} and the area of the detector face is \SI{10}{\cm}. 
 The interaction position is then defined to be distance to the first interaction of the beam in the material along the direction of the beam.
-It is obseved that for neutrons events that take place within the center of the films tend to deposit a large majority of their energy in the film, while events that occur on the edge of the film have partial energy depositions in accordance with the ranges of the charged particles.
-A compton spectra is obseved in the photon energy deposition. 
+It is observed that for neutrons events that take place within the center of the films tend to deposit a large majority of their energy in the film, while events that occur on the edge of the film have partial energy depositions in accordance with the ranges of the charged particles.
+A Compton spectra is obseved in the photon energy deposition. 
 A secondary effect in having a backing material is also observed for photons in which there is a hightened energy deposition for interactions that occur in the film but near the boundary and electrons are back scattered into the detector material.
 \begin{figure}
   \centering
@@ -153,7 +153,7 @@ A secondary effect in having a backing material is also observed for photons in 
 \autoref{fig:simKinE} illustrates the simulated kinetic energy of secondary electrons from Compton scattering and from alpha and triton interactions.
 It is observed that kinetic energy of the secondary electrons from the neutron reaction products have predominately energies in the kilo-volt range, while the Compton scattering electrons have energies in hundreds of kilo-volts range. 
 However, it should be noted that there is only one secondary electron from a Compton scattering and multiple secondary electrons from the reaction products.
-Figure \ref{fig:ReacProdDist} shows the distribution of the number of secondary electrons from the alpha and triton and their kinetic energy.
+\autoref{fig:ReacProdDist} shows the distribution of the number of secondary electrons from the alpha and triton and their kinetic energy.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{NGSecElecKinEDist}
@@ -217,12 +217,48 @@ For photons, shown in \autoref{fig:GammaPhotonsGenSim}, it is observed that the 
   \caption[Number of photons generated of a 1 mm for neutron and gamma interactions]{Simulated number of photons generated from neutron and gamma interactions.}
   \label{fig:NeutronGammaPhotonsGenSim}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                      Pulse Height Discrimination                        %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Pulse Height Discimination}
 \label{sec:PulseHeightDiscrm}
-The basis for setting a pulse height discrimiantor to differniate between neutorn and gammas can be attributed to the secondary electrons and the differnece in energy mechanicms as presented in the first section of thi chapter.
+The criteria set forth by the DHS-DNDO require that all replacment portal monitors have an intrisinic gamma-ray efficiency of less than one in a million.
+Simply put, for a million photons that pass through the detector only a single one of those can be considered as a count.
+One such technique for achieving a gamma ray intrisiinc efficiency is to set a pulse height discriminator setting such that pulse below that discriminator are discarded.
+The basis for setting a pulse height discrimiantor to differniate between neutron and gammas can be attributed to the secondary electrons and the differenece in energy mechanicms as presented in the first section of this chapter.
+However, the application to physical detectors has yet to be concretely formulated.
+This section will serve to remedy that and present a pulse height discrimination scheme capabeling of discrimination between neutrons and gammas.
 
-The calculated gamma intrinsic efficiency for six polymeric films along with the neutron response of two of the films in Figure \ref{fig:GammaIntrNeutronCounts}, and the fraction of neutron counts above the MLLD necessary for a given gamma intrinsic efficiency is plotted in Figure \ref{fig:crVsIntEff}.
+A pulse height discrminator is usually set by the hardware electronics, but need not be a physical voltage cutoff - it can also be set by software in an offline analysis.
+A mathmatical lower level discriminator (MLLD) is then introduced to clarifity the determination of what discriminator setting will be necessary to achieve a given intrisinic efficiency criteria.
+The intrisinic efficiency for a given MLLD is determined for a sample by first determing the photon fluence over the sample (usually by a MCNPX calculations, these calculations are explained in \autoref{chap:IntEff}).
+The recorded spectra is then normalized the photon fluenece to determine the count rate per incident photon per channel.
+As the intrinsic efficiency is defined as the count per incident quanta of radiation, the spectra needs to be integrated from the channel number represented by the MLLD to the end of the spectra over the channels to determine the count rate.
+By summing only the counts that are above the discriminator represented as the MLDD these counts are then discarded from the analysis.
+A formulation of the MLLD is presented in \eqref{eqn:MLLDFormulation},
+\begin{align}
+	\epsilon_{\gamma,int}\left(MLLD\right) &= \frac{\int_{MLLD}^{\infty}p(x)dx}{\Phi}
+  \label{eqn:MLLDFormulation}
+\end{align},
+where \definevar{$p(x)$}{spectra as a function of channel number} and \definevar{$\Phi$} is the incident gamma flux.
+By computing the gamma intrsinic efficiency as a function of the MLLD, one only needs to find what MLLD corresponds to having a intrsinic efficiency of less than one in a million.
+
+A sequence of polystyrene films (10\% by weight enriched LiF) were fabricated by Dr. Mabe and analalyzed for their ability to achieve differnet gamma intrisinic efficiencies in the MLLD framework.
+These measurements and caluations, presented in \autoref{fig:GammaIntEffMLLD}, demonstrate the utility of the MLLD.
+This figure shows, as expected, that increasing the MLLD causes a lower intrisinic efficiency as counts below the MLLD are discarded.
+Thicker films, where more energy is deposited and thus produce more photons, require higher MLLD settings in order to acheive the same level of discrimination as their thinner counter parts.
+\begin{figure}
+  \centering
+    \includegraphics[width=\textwidth]{PS_intEffMLLD}
+  \caption[Intrisinic efficiency achieved at various discriminator settings]{Gamma intrinsic efficiency versus the pulse height discriminator setting (MLLD) to achieve the corresponding level of discrimination. It is observed that there is a change in the shape of the curves reflecting the increased fraction of energy deposition in thicker films relative to the thinner films.}
+  \label{fig:GammaIntEffMLLD}
+\end{figure}
+
+Such a scheme will not be without cost, however, as the simulations and measurements indicate there is an overlap between the neutron 
+The calculated gamma intrinsic efficiency for six polymeric films along with the neutron response of two of the films in \autoref{fig:GammaIntrNeutronCounts}, and the fraction of neutron counts above the MLLD necessary for a given gamma intrinsic efficiency is plotted in \autoref{fig:crVsIntEff}.
 It is observed that if the films are thin enough (less than \SI{150}{\um}) it is possible to have a significant count rate above the mathematical lower level discriminator necessary for the pulse height discrimination of one in a million.
 This is seen by the \SI{50}{\um} film and the \SI{150}{\um} film having the tail of their neutron spectra above the pulse height discriminator necessary for an intrinsic efficiency of \num{1E-6}.
 Table \ref{tab:FractionCRGamma} shows the fraction of neutron count rate that is above the MLLD necessary for $\epsilon_{int,\gamma n} \le \si{1E-6}$.
@@ -255,7 +291,7 @@ Films less than \SI{50}{\um} have over 2\% of the counts above the necessary dis
 	\end{tabular}
   \label{tab:FractionCRGamma}
 \end{table}
-In addition it is observed in Figure \ref{fig:GammaIntrNeutronCounts} that for neutrons, thicker films only enhance the resolution of the film and do little to increase the light yield, as most of energy from a neutron event is captured in the film.
+In addition it is observed in \autoref{fig:GammaIntrNeutronCounts} that for neutrons, thicker films only enhance the resolution of the film and do little to increase the light yield, as most of energy from a neutron event is captured in the film.
 The average energy deposited was computed for each thickness and normalized by the incident energy for gammas by the Q-value of the reaction for neutrons, and is presented in Table ~\ref{tab:FractionEDep}.
 For thickness greater than \SI{150}{\um} there is little benefit in increasing the thickness of the film in terms of energy deposition by neutrons, since over 90\% of the energy is being deposited in the film.
 \begin{table}[ht]
