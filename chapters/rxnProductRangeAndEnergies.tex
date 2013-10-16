@@ -15,17 +15,20 @@ This distribution is shown for \iso[60]{Co} in \autoref{fig:Co60ComptonScatterSp
 It is then highly likely that the Compton scattered electron will have an energy close to that of the maximum energy for the Compton scattering, \SI{0.96}{\MeV} for the \SI{1.173}{\MeV} photon and \SI{1.12}{\MeV} for the \SI{1.33}{\MeV} photon.
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{Co60ComptonScatteredSpectra}
-  \caption[Gamma (Co-60) Compton Scattered Spectra]{Probability per energy of an Compton Scattered Electron having a given kinetic energy from \iso[60]{Co}}
-  \label{fig:Co60ComptonScatterSpectra}
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Co60ComptonScatteredSpectra}
+    \caption{Probability per energy of an Compton Scattered Electron having a given kinetic energy from \iso[60]{Co}}
+    \label{fig:Co60ComptonScatterSpectra}
+  \end{subfigure}%
+  ~
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=\textwidth]{Co60ComptonScatteredSpectraCDF}
+    \caption{Probability of the energy of a Compton Scattered Electron from \iso[60]{Co}. Over half of the electrons from the Compton scattering will have an energy greater than \SI{0.5}{\MeV}}
+    \label{fig:Co60ComptonScatterCDF}
+  \end{subfigure}
+  \caption[Analytical Co-60 Compton Scattered Spectra]{Analytically calculated Compton scattered probability and cumulative distribution functions for the photons from \iso[60]{Co}.}
 \end{figure}
 The cumulative distribution function (CDF) is shown in \autoref{fig:Co60ComptonScatterCDF}.
-\begin{figure}
-  \centering
-  \includegraphics[width=\textwidth]{Co60ComptonScatteredSpectraCDF}
-  \caption[Gamma (Co-60) Compton Scattered CDF]{Probability of the energy of a Compton Scattered Electron from \iso[60]{Co}. Over half of the electrons from the Compton scattering will have an energy greater than \SI{0.5}{\MeV}}
-  \label{fig:Co60ComptonScatterCDF}
-\end{figure}
 In the case of $\iso[6]{Li}\left(n,\iso[3]{H}\right)\alpha$ the fission energy is distributed between a triton of energy \SI{2.73}{\mega\eV} and an alpha of energy \SI{2.05}{\mega\eV}.
 The maximum kinetic energy of an electron from a Compton scattering event with an impingement \iso[60]{Co} source is \SI{1.117}{\mega\eV} (for the \SI{1.332}{\mega\eV} gamma). 
 In polystyrene with a density of \SI{1}{\gram\per\cm\cubed}, the range of the maximum electron from Compton scattering is around \SI{4.5E3}{\um}\cite{berger_estar_2005}.
