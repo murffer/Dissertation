@@ -211,10 +211,30 @@ For photons, shown in \autoref{fig:GammaPhotonsGenSim}, it is observed that the 
   \caption[Number of photons generated from gamma interactions]{Simulated number of photons generated from gamma interactions.}
   \label{fig:GammaPhotonsGenSim}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                      Pulse Height Discrimination                        %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Pulse Height Discimination}
 \label{sec:PulseHeightDiscrm}
-The basis for setting a pulse height discrimiantor to differniate between neutorn and gammas can be attributed to the secondary electrons and the differnece in energy mechanicms as presented in the first section of thi chapter.
+The detector electronics serve as  bridge between the discussion of photons and energy deposition to spectra and their corresponding pulses.
+Events that produce a large number of photons will tend to have a higher number of these photons interact with the photocathode of the PMT, thus creating a large electron avalance which results in a larger voltage pulse.
+
+The basis for setting a pulse height discrimiantor to differniate between neutorn and gammas can be attributed to the secondary electrons and the differnece in energy mechanicms as presented in the first section of this chapter.
+However, the application to physical detectors has yet to be concretely formualted.
+This section will serve to remedy that and present a pulse height discrimination scheme capabeling of discrimination between neutrons and gammas.
+
+The criteria set forth by the DHS-DNDO require that all replacment portal monitors have an intrisinic gamma-ray efficiency of less than one in a million.
+Simply put, for a million photons that pass through the detector only a single one of those can be considered as a count.
+One such technique for achieving a gamma ray intrisiinc efficiency is to set a pulse height discriminator setting such that pulse below that discriminator are discarded.
+Such a pulse height discrminator is usually set by the hardware electronics, but it can also be set by software in an offline analysis.
+
+A mathmatical lower level discriminator (MLLD) is then introduced to clarifity the determination of what discriminator setting will be necessary to achieve a given intrisinic efficiency criteria.
+
+
+Such a scheme will not be without cost, however, as the simulations and measurements indicate there is an overlap between the neutron 
 
 The calculated gamma intrinsic efficiency for six polymeric films along with the neutron response of two of the films in Figure \ref{fig:GammaIntrNeutronCounts}, and the fraction of neutron counts above the MLLD necessary for a given gamma intrinsic efficiency is plotted in Figure \ref{fig:crVsIntEff}.
 It is observed that if the films are thin enough (less than \SI{150}{\um}) it is possible to have a significant count rate above the mathematical lower level discriminator necessary for the pulse height discrimination of one in a million.
