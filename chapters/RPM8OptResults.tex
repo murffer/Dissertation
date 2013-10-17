@@ -3,6 +3,7 @@
 \subsecton{10 Length Genomes}
 The comparison between the MCNPX simulation and the XSDRN is shown for some of the samples in \autoref{tab:10GenomeXSDRNMCNPXCompare}.
 The change in rank is computed by rank of the MCNPX model versus the rank of the XSDRN model.
+
 \begin{table}
   \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
   \label{tab:10GenomeXSDRNMCNPXCompare}
@@ -10,53 +11,71 @@ The change in rank is computed by rank of the MCNPX model versus the rank of the
     \toprule
     XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
     \midrule
-0111000000 & 10.95 & 0101010000 &  3.08 & \downarray 10
-0110100000 & 10.50 & 0101100000 &  2.93 & \uparrow 2
-0110010000 & 10.21 & 0110010000 &  2.89 & 0
-0101100000 & 10.12 & 0110100000 &  2.85 & \downarray 2
-0111100000 & 13.16 & 0110001000 &  2.84 & \downarray 4
+  0111000000 & 10.95 & 0101010000 &  3.08 & $\downarray$ 10
+  0110100000 & 10.50 & 0101100000 &  2.93 & $\uparrow$ 2
+  0110010000 & 10.21 & 0110010000 &  2.89 & 0
+  0101100000 & 10.12 & 0110100000 &  2.85 & $\downarray$ 2
+  0111100000 & 13.16 & 0110001000 &  2.84 & $\downarray$ 4
     \bottomrule
   \end{tabular}
 \end{table}
+
+Pertubations of the geometry yielded a doubling of the count rate (this is really, really weird)
+\begin{verbatim}
 OUT_0110001000_2_0.635 ->  6.63
 OUT_0110010000_2_0.635 ->  6.63
 OUT_0101010000_3_0.635 ->  6.54
 OUT_0110100000_2_0.635 ->  6.38
 OUT_0101010000_1_0.635 ->  6.35
-
+\end{verbatim}
 \subsection{20 Lenght Genomes}
-Using the XSDRN Model
-01111000000000000000 -> 30.39
-01111100000000000000 -> 23.93
-01011010010000000000 -> 23.46
-01111010010000000000 -> 27.14
-01111000000000100000 -> 20.22
-Using the MCNPX Model
-00110010000000000000 ->  3.14
-01010010000000000000 ->  3.14
-01011000000000000000 ->  2.65
-01101000000000000000 ->  2.60
-01011010010000000000 ->  4.29
-Using the MCNPX Model
+\begin{table}
+  \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
+  \label{tab:10GenomeXSDRNMCNPXCompare}
+  \begin{tabular}{c c | c c | c}
+    \toprule
+    XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
+    \midrule
+  01111000000000000000 & 30.39 & 00110010000000000000 &  3.14 & $\downarrow$ 10 \\
+  01111100000000000000 & 23.93 & 01010010000000000000 &  3.14 & $\downarrow$ 7 \\
+  01011010010000000000 & 23.46 & 01011000000000000000 &  2.65 & $\downarrow$ \\
+  01111010010000000000 & 27.14 & 01101000000000000000 &  2.60 & $\downarrow$ 5\\
+  01111000000000100000 & 20.22 & 01011010010000000000 &  4.29 & $\uparrow$ 2\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{verbatim}
 OUT_01010010000000000000_3_0.318 ->  6.05
 OUT_00110010000000000000_3_0.318 ->  5.90
 OUT_01010010000000000000_1_0.318 ->  5.66
 OUT_00110010000000000000_3_-0.318 ->  5.57
 OUT_00110010000000000000_2_0.318 ->  5.55
-
+\end{verbatim}
 \subsection{30 Length Genomes}
+\begin{table}
+  \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
+  \label{tab:10GenomeXSDRNMCNPXCompare}
+  \begin{tabular}{c c | c c | c}
+    \toprule
+    XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
+    \midrule
 Using the MCNPX Model
 000100100100000000000000000000 ->  3.39
 000101001000000000000000000000 ->  3.27
 001001001000000000000000000000 ->  3.19
 000110001000000000000000000000 ->  3.14
 010001001000000000000000000000 ->  3.13
+    \bottomrule
+  \end{tabular}
+\end{table}
 Using the MCNPX Model
+\begin{verbatim}
 OUT_010001MMMM001M0_5_0.212 ->  5.95
 OUT_0001001001MMMMM_6_0.212 ->  5.78
 OUT_0001001001MMMMM_3_0.212 ->  5.71
 OUT_01000101MMMMM00_5_0.212 ->  5.70
 OUT_0001001001MMMMM_3_-0.212 ->  5.61
+\end{verbatim}
 Using the XSDRN Model
 010001010000000000000000000000 -> 13.91
 010001010000000010000000000000 -> 16.68
