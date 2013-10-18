@@ -26,10 +26,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Optimization of the Radiation Portal Monitor}
 \author{Matthew J. Urffer}
-\date{August 9, 2013}
+\date{\today}
 \copyrightYear{2013} 
 \graduationMonth{December}
-\majorProfessor{Laurence F. Miller}
+\majorProfessor{Liaurence F. Miller}
 \keywords{Neutron Detectors, Radiation Portal Monitors, GEANT4, MCNPX, Simulation}
 \college{Engineering}
 \dept{Nuclear Engineering}
@@ -56,8 +56,6 @@
     \pagenumbering{alph} % this is needed to clear certain issues with the hyperref package
     %
     %
-     \makeApprovalPage % make the approval page - this is the page that needs to be signed & returned to the thesis/dissertation consultant
-    \makeETDApprovalPage % make the Electronic Thesis & Dissertation page - this page is kept with the electronic copy
     \addToPDFBookmarks{0}{Front Matter}{rootNode} % create a root node named "Front Matter" in the pdf bookmarks
     \addToPDFBookmarks{1}{Title}{a} % add a pdf bookmark to the title page
     \maketitle
@@ -78,8 +76,6 @@
     \pagenumbering{roman}
     \setcounter{page}{2}
     %
-      \makeCopyrightPage % make the copyright page
-     %
     \addToPDFBookmarks{1}{Table of Contents}{e}
     \tableofcontents % generate a table of contents
     %
@@ -116,7 +112,6 @@
     \appendix
     \include{back-matter/ComptonScattering}
     \include{back-matter/MCNPXReactionRateCalc}
-    \include{back-matter/IntrinsicEfficiency}
     \include{back-matter/DetectorCharacterization}
     \include{back-matter/DetectorComparisons}
 
