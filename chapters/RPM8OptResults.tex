@@ -1,9 +1,8 @@
 \section{Optimal Detector Geometries}
 
-\subsecton{10 Length Genomes}
-The comparison between the MCNPX simulation and the XSDRN is shown for some of the samples in \autoref{tab:10GenomeXSDRNMCNPXCompare}.
-The change in rank is computed by rank of the MCNPX model versus the rank of the XSDRN model.
-
+\subsecton{XSDRN and MCNPX Model Comparison}
+The comparison between the MCNPX simulation and the XSDRN is shown for some of the samples in \autoref{tab:10GenomeXSDRNMCNPXCompare} and \autoref{tab:20GenomeXSDRNMCNPXCompare}, where the change in rank is computed by rank of the MCNPX model versus the rank of the XSDRN model.
+It is observed that the XSDRN model preformed faily closesly to the MCNPX model, but tended to over predict and favor geometries that had repeated layers and clusters.
 \begin{table}
   \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
   \label{tab:10GenomeXSDRNMCNPXCompare}
@@ -19,19 +18,9 @@ The change in rank is computed by rank of the MCNPX model versus the rank of the
     \bottomrule
   \end{tabular}
 \end{table}
-
-Pertubations of the geometry yielded a doubling of the count rate (this is really, really weird)
-\begin{verbatim}
-OUT_0110001000_2_0.635 ->  6.63
-OUT_0110010000_2_0.635 ->  6.63
-OUT_0101010000_3_0.635 ->  6.54
-OUT_0110100000_2_0.635 ->  6.38
-OUT_0101010000_1_0.635 ->  6.35
-\end{verbatim}
-\subsection{20 Lenght Genomes}
 \begin{table}
-  \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
-  \label{tab:10GenomeXSDRNMCNPXCompare}
+  \caption[20 Genome Length RPM Model]{20 Genome Length RPM Model Interactions rates}
+  \label{tab:20GenomeXSDRNMCNPXCompare}
   \begin{tabular}{c c | c c | c}
     \toprule
     XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
@@ -44,43 +33,8 @@ OUT_0101010000_1_0.635 ->  6.35
     \bottomrule
   \end{tabular}
 \end{table}
-\begin{verbatim}
-OUT_01010010000000000000_3_0.318 ->  6.05
-OUT_00110010000000000000_3_0.318 ->  5.90
-OUT_01010010000000000000_1_0.318 ->  5.66
-OUT_00110010000000000000_3_-0.318 ->  5.57
-OUT_00110010000000000000_2_0.318 ->  5.55
-\end{verbatim}
-\subsection{30 Length Genomes}
-\begin{table}
-  \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
-  \label{tab:10GenomeXSDRNMCNPXCompare}
-  \begin{tabular}{c c | c c | c}
-    \toprule
-    XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
-    \midrule
-Using the MCNPX Model
-000100100100000000000000000000 ->  3.39
-000101001000000000000000000000 ->  3.27
-001001001000000000000000000000 ->  3.19
-000110001000000000000000000000 ->  3.14
-010001001000000000000000000000 ->  3.13
-    \bottomrule
-  \end{tabular}
-\end{table}
-Using the MCNPX Model
-\begin{verbatim}
-OUT_010001MMMM001M0_5_0.212 ->  5.95
-OUT_0001001001MMMMM_6_0.212 ->  5.78
-OUT_0001001001MMMMM_3_0.212 ->  5.71
-OUT_01000101MMMMM00_5_0.212 ->  5.70
-OUT_0001001001MMMMM_3_-0.212 ->  5.61
-\end{verbatim}
-Using the XSDRN Model
-010001010000000000000000000000 -> 13.91
-010001010000000010000000000000 -> 16.68
-010001010100000000000000000100 -> 17.26
-010001000000000000000000100000 ->  9.78
-000100100100000000000000000000 ->  7.17
 
-It is observed that the XSDRN model appears to prefer to cluster results.
+\subsection{Pertubations on the MCNPX Model}
+Pertubations on the MCNPX were preformed inorder to determine if a minimum in the search function was acheived.
+For the ten length genomes where each slice is \SI{1.27}{\cm} and a pertubation moves a slice \SI{6.35}{\mm} it is observed that pertubations increase the count rate by 15\%.
+
