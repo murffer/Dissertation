@@ -1,0 +1,40 @@
+\section{Optimal Detector Geometries}
+
+\subsecton{XSDRN and MCNPX Model Comparison}
+The comparison between the MCNPX simulation and the XSDRN is shown for some of the samples in \autoref{tab:10GenomeXSDRNMCNPXCompare} and \autoref{tab:20GenomeXSDRNMCNPXCompare}, where the change in rank is computed by rank of the MCNPX model versus the rank of the XSDRN model.
+It is observed that the XSDRN model preformed faily closesly to the MCNPX model, but tended to over predict and favor geometries that had repeated layers and clusters.
+\begin{table}
+  \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
+  \label{tab:10GenomeXSDRNMCNPXCompare}
+  \begin{tabular}{c c | c c | c}
+    \toprule
+    XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
+    \midrule
+  0111000000 & 10.95 & 0101010000 &  3.08 & $\downarray$ 10
+  0110100000 & 10.50 & 0101100000 &  2.93 & $\uparrow$ 2
+  0110010000 & 10.21 & 0110010000 &  2.89 & 0
+  0101100000 & 10.12 & 0110100000 &  2.85 & $\downarray$ 2
+  0111100000 & 13.16 & 0110001000 &  2.84 & $\downarray$ 4
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}
+  \caption[20 Genome Length RPM Model]{20 Genome Length RPM Model Interactions rates}
+  \label{tab:20GenomeXSDRNMCNPXCompare}
+  \begin{tabular}{c c | c c | c}
+    \toprule
+    XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
+    \midrule
+  01111000000000000000 & 30.39 & 00110010000000000000 &  3.14 & $\downarrow$ 10 \\
+  01111100000000000000 & 23.93 & 01010010000000000000 &  3.14 & $\downarrow$ 7 \\
+  01011010010000000000 & 23.46 & 01011000000000000000 &  2.65 & $\downarrow$ \\
+  01111010010000000000 & 27.14 & 01101000000000000000 &  2.60 & $\downarrow$ 5\\
+  01111000000000100000 & 20.22 & 01011010010000000000 &  4.29 & $\uparrow$ 2\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Pertubations on the MCNPX Model}
+Pertubations on the MCNPX were preformed inorder to determine if a minimum in the search function was acheived.
+For the ten length genomes where each slice is \SI{1.27}{\cm} and a pertubation moves a slice \SI{6.35}{\mm} it is observed that pertubations increase the count rate by 15\%.
+
