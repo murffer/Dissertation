@@ -1,7 +1,16 @@
 \chapter{Theory}
 \label{chap:theory}
-Effective design of a radiation portal monitor should be guided by the physics guiding the processes of interest.
-These fields include the interactions of neutrons with matter and their subsequent absorption, the study of charged particle interactions with matter, scintillation, and optics.
+Detecting radiation utilizing a scintillation detector involves several physical processes, which can be elucidated by imagining a typical interaction in the RPM.
+A neutron incident upon the radiation portal monitor interacts by mostly elastic scattering with the nuclei in the RPM material, eventually slowing down to thermal ranges.
+Once thermal, the neutron then has a large probability of interaction with a neutron absorber in the RPM, which releases fission products into the material.
+These fission products then interact with the material by slowing down and depositing energy.
+The material needs to convert the deposited energy into light through scintillation, and then the photons produced by scintillation need to be collected and transformed into a signal.
+
+Effective design of a radiation portal monitor should then be guided by the physics guiding the processes of interest.
+The process of the thermalization of the neutrons and nuclear absorptions are discussed in \autoref{sec:NuclearInteractions}.
+Next, the charged particle interactions and ranges are discussed in \autoref{sec:InteractionsAndRange}.
+The scintillation processes is discussed in \autoref{sec:ScintMechancis}, and is followed by a brief discussion of optics in \autoref{sec:OpticsTheory}.
+
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
@@ -20,7 +29,7 @@ These fields include the interactions of neutrons with matter and their subseque
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Charged Particle Interactions and Ranges}
 \label{sec:InteractionsAndRange}
-\input{theory/RnageEnergyTheory}
+\input{theory/RangeEnergyTheory}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %

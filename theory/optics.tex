@@ -1,0 +1,36 @@
+One would like to collect as much light as emitted from the scintillator as possible.
+In practice two effects limit the fraction of the emitted light collected; the optical self-absorption in the material and losses at the edges of the optical surfaces \cite{knoll_radiation_2009}.
+The optical self-absorption of a scintillator is a material property in which photons are reabsorbed by the material.
+This effect is important for large area scintillators and for scintillators which are not optically  clear, both of which apply to the developed polymeric scintillators.
+Typically this effect is mitigated by the use of a wavelength shifting fiber in which the light is transferred to a material which has a much lower optical self-absorption.
+
+Light collection of a scintillation event is emitted isotropically, and therefore only a very small fraction of the photons can travel directly to a photon detector surface.
+The majority of the light must then be collected by reflecting back into the medium.
+Snell's law governs the reflection of light at an optical boundary, and there are two cases to consider as shown in \autoref{fig:SnellsLaw} and described by Snell's Law, \eqref{eqn:SnellsLaw}
+\begin{align}
+	\theta_c = \sin^-1 \frac{n_1}{n_0}
+	\label{eqn:SnellsLaw}
+\end{align}
+where \definevar{$\theta_c$}{critical angle}, \definevar{$n_1$}{index of refraction of the surrounding medium} and \definevar{$n_0$}{index of refraction of the scintillator}.
+If the angle of incidence, $\theta$, is greater than the critical angle total internal reflection will occur.
+When the angle of incidence is less than the critical angle particle reflection (or \textit{Fresnel} reflection) will occur and there will be partial transmission of the photons to the surrounding medium.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{SnellsLaw}
+	\caption[Light Reflection at a Boundary]{Relfection of light at an optical surface is governed by Snell's law.  The fraction of light reflected back into the material is greatest at an angle of incident equal to $\theta_c$}
+	\label{fig:SnellsLaw}
+\end{figure}
+To ensure that the light stays within the desired medium it is usually encased in a reflector, of which there are two types (\autoref{fig:SpecularDiffusive}).
+A polished metallic surface (such as aluminized mylar) may be applied as a specular reflector which are generally better when the length is much longer than the thickness\cite{SaintGobain_DAM_2012}.
+A diffusive reflector, such as teflon tape, is better for conditions when the detector is thick compared to its length \cite{knoll_radiation_2009}.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{SpecularDiffusive}
+	\caption[Specular and Diffusive Reflection]{Specular reflection (right) in which the light in a single incoming direction is emitted as a single outgoing direction. The rough surface of a diffusive reflector, left, causes the light to be reflected at many angles.}
+	\label{fig:SpecularDiffusive} 
+\end{figure}
+It should be noted, however, that one would like to optically match the surface at which the scintillator is to be viewed to prevent reflection.
+
+In the cases of a large scintillating detector, such as the one presented in this work, it  may be necessary to employ more than one PMT to collect the light.
+In such cases the use of light pipes may enhance the collection efficiency. 
+Light pipes are not without costs, however, as they are generally of a high index of refraction to maintain a high internal reflection
