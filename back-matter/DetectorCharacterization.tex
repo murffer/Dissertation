@@ -1,33 +1,32 @@
 \chapter{Detector Characterization}
 \label{chap:DetChar}
-Repeated characterization techniques of the detector materials are necessary to ensure a fair comparison between differnet detector materials.
-As the focus of this work was on effective scintiallators, the characteizations were designed to measure scintillation properties; namely the light yield of the detector and the count rate when exposed to differnet radiation sources.
+Repeated characterization techniques of the detector materials are necessary to ensure a fair comparison between different detector materials.
+As the focus of this work was on effective scintillators the characterizations were designed to measure scintillation properties; namely the light yield of the detector and the count rate when exposed to different radiation sources.
 
 \begin{itemize}
   \item Total Neutron Counts – provides a measure of how responsive the detector is to neutrons
   \item  Total Neutron Count Rate Per mg Absorber – provides a measure of how well the fabricated detector utilizes the neutron absorber in it. Indirectly this can be a measure of the amount of absorber in the detector
-  \item  Gamma LLD – The position (in channel number) of where an LLD would have to be set in order to meet the criteria of . This calculation is explained in more detail in the following paragrah and in GammaLLDAlgoReview.docx.
+  \item  Gamma LLD – The position (in channel number) of where an LLD would have to be set in order to meet the criteria of \si{1E-6}
   \item  Fraction of Total Neutron Count Rate Above the Gamma LLD – this is a measure of how effective the film would be with an LLD set in order to meet the This is calculated by summing the counts above the gamma LLD and dividing by the total counts.
   \item  Alpha Peak – provides a clear indication of the light yield of the film from an alpha particle, which is one of the reaction products of the 6Li neutron interaction. The alpha peak is visible in thin films when other features may be lost (due to the range of the secondary electrons exceeding the thickness of the detector) because the range of the alpha is on the order of 30 microns.
   \item  Beta Average – characterizes the response of the film to electrons, account for the possibility that a film may not have a clearly defined feature due to energy escaping. Electrons are generated in the film from scattering events of photon interactions.
   \item  Alpha / Beta – characterizes the relative light yield of the detector from heavy charged particles to electrons.
-  \item  Photons per gamma and Photons per beta – a measure of the light yield of the film, or how many photons are produced per energy absorbed.
   \item  Pulse Height Deficit – a measure the apparent energy loss (as seen from the pulse height) of a heavy charged ion compared to an electron. This is measured as the difference between the energy of the heavy ion and its apparent energy from the pulse height. It should be noted that this term closely resembles the phenomena described by pulse height defect as seen in semiconductors.
   \item  Photons per Neutron – a measure of the light yield of the film, or how many photons are produced per energy absorbed.
 \end{itemize}
 
 \subsection{Characterization Electronics and Sources}
-Solid samples are characterized by mounting them with a thin layer of silicone optical grease (BC-630, index of refraction 2.465) onto a Philips XP2202B 10 Stage PMT most senstive in the \SI{350}{\nm} to \SI{500}{\nm} region.
-The PMT is then connected to a Canberra 2007P base, which also funtions as a preamplifier.
+Solid samples are characterized by mounting them with a thin layer of silicone optical grease (BC-630, index of refraction 2.465) onto a Philips XP2202B 10 Stage PMT most sensitive in the \SI{350}{\nm} to \SI{500}{\nm} region.
+The PMT is then connected to a Canberra 2007P base, which also functions as a preamplifier.
 The Canberra 2007P feeds into an Ortec 572A amplifier, and the amplified signal is inputted to an Ortec 926 MCB-ADC.
 MAESTRO-32 is the used to read the signals from the MCB.
-\autofref{fig:ElectronicsSetup} provides an overview of this setup.
+\autoref{fig:ElectronicsSetup} provides an overview of this setup.
 \begin{figure}
-  \includegraphcis[width=0.5\textwidth]{ElectronicsSpectra}
-  \capition[Optical Characterization Experiment Setup]{Electronic figure for measuring the spectra of materials in response to various radiation sources.}
+  \includegraphics[width=0.5\textwidth]{ElectronicsSpectra}
+  \caption[Optical Characterization Experiment Setup]{Electronic figure for measuring the spectra of materials in response to various radiation sources.}
   \label{fig:ElectronicSetup}
 \end{figure}
-A general protocol has been developed in order to ensure that the measurments are made in a repeatable manner and verified with a reference.
+A general protocol has been developed in order to ensure that the measurements are made in a repeatable manner and verified with a reference.
 \begin{enumerate}
   \item Verify that the instrumentation gains are stable by confirming that the reference neutron peak is in the same channel as for previous measurements. This is completed by setting the voltage and coarse gain to previously determined values, and then adjusting the fine gain until the peak of the lead spectra measurement occurs in the specified location,
   \item obtain a spectrum from an Am-241 alpha source,
@@ -37,28 +36,48 @@ A general protocol has been developed in order to ensure that the measurments ar
   \item obtain a gamma spectrum in the gamma irradiator.
 \end{enumerate}
 
-Several radiation sources are available for characterization use.
+\subsubsection{Neutron and Gamma Irridiators}
 The neutron irradiator is a custom built \SI{0.59}{\ug} \iso[252]{Cf} source encased in 2” blocks of high density polyethylene (HDPE). 
 The HDPE box is approximately 20” long, 12” wide, and 14” tall (\autoref{fig:NeutronIrridiator}). 
 There are two detector 1/16” thick acrylic detectors wells, one surrounded by a 1/16” cadmium to shield out thermal neutrons, and the other surrounded by 1/16” of lead to shield out a similar amount of gammas as the cadmium well.
 The \iso[252]{Cf} source is surrounded by stainless steel, which in turn is contained within a 2” diameter, 1/2” thick, 5 and 1/4” tall lead vessel.
 \begin{figure}
   \centering
-  \includegraphcis[width=0.5\textwidth]{NeutronIrridiator_CAD}
-  \capition[CAD Rendering of Neutron Irridiator]{Schematic of the neturon irridiator.}
+  \includegraphics[width=0.5\textwidth]{NeutronIrridiator_CAD}
+  \caption[CAD Rendering of Neutron Irridiator]{Schematic of the neturon irridiator.}
   \label{fig:NeutronIrridiator}
 \end{figure}
-The gamma sources consist of button sources (\iso[137]{Cs} up to \SI{10}{\uCi} and \iso[60]{CO} up to \SI{1}{\uCi}) as well as a gamma irradiator that produces a 10 mR/hr gamma field across the detector face. 
+The gamma sources consist of button sources (\iso[137]{Cs} up to \SI{10}{\u Ci} and \iso[60]{CO} up to \SI{1}{\u Ci}) as well as a gamma irradiator that produces a 10 mR/hr gamma field across the detector face. 
 The irradiator consist of four 4”x8”x 2” lead bricks on the bottom with and additional four 4”x4”x2” lead bricks encased in an 1/8” metal box. 
 The top four inches is HDPE. 
 The overall dimensions of the detector are 14” by 12” by 12”. 
 
-\subsection{Intrisinic Efficiency}
-
-\subsection{Light Yeild}
-The light yeild of a spectrum describes how many photons are generated (and subsquently detected on a PMT) for a given material for a scintillation event from a radiation source.
-% Some words from Knoll about LY
+\section{Light Yeild}
+The light yield of a spectrum describes how many photons are generated (and subsequently detected on a PMT) for a given material for a scintillation event from a radiation source.
+In general, a feature, such as the Compton edge or neutron peak,  provides a unambiguous measure of light yield of a film. 
+However, the thinner films do not always have such a clearly defined feature, and thus an alternative measure needs to be formulated.
+The spectral average is then defined as \eqref{eqn:spectralAverage} where \definevar{p(x)}{measured spectrum} and \definevar{x} {channel number} which describes the count rate average channel number, normalized by the total count rate.
+\begin{align}
+	<\mu> = \frac{\int_0^\infty x p(x) dx}{\int_0^\infty p(x) dx}
+	\label{eqn:spectralAverage}
+\end{align}
+The limits of integration in \eqref{eqn:spectralAverage} are from the lowest to the higest channel number.
+While the spectral average does provide a clear represenation of a spectra, it fails to capture the shape of the spectra and tends to underestimate the spectra, as most spectra a skewed having the majority of their counts in the low channel region.
 
 The light yield of fabricated samples that were characterized was completed by comparing the spectrum average of a sample to that a sample of a known light yield.
-Formally this is shown in \eqref{eqn:LightYield} where \definevar{p(x)}{measured spectrum}, 
+This is shown for neutrons in \eqref{eqn:neutronLY}, and for gammas in \eqref{eqn:gammaLY}.
+GS20 is normally used as the reference sample, having a reported light yield of \SI{3,800}{photons \per\MeV} and \SI{6,200}{photons \per neutron} \cite{carel_w.e_inorganic-scintillator_2001,knoll_radiation_2009}.
+\begin{align}
+	LY_{n,\text{sample}} &= LY_{n,\text{ref}} \left( \frac{<n>_\text{sample}}{<n>_\text{ref} } \right )\\
+	&= \SI{6,200}{photons\per neutron} \left( \frac{<n>_\text{sample}}{<n>_\text{ref} } \right )
+	\label{eqn:neutronLY}
+\end{align}
+\begin{align}
+	LY_{\gamma,\text{sample}} &= LY_{\gamma,\text{ref}} \left( \frac{<\gamma>_\text{sample}}{<\gamma>_\text{ref} } \right )\\
+	&= \SI{3,800}{photons\per\MeV} \left( \frac{<\gamma>_\text{sample}}{<\gamma>_\text{ref} } \right )
+	\label{eqn:gammaLY}
+\end{align}
 
+\section{Intrisinic Efficiency}
+\label{sec:IntEff}
+\input{back-matter/IntrinsicEfficiency}
