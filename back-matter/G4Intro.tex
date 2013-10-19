@@ -30,3 +30,21 @@ The user classes used in these simulations are described below.
   \item \verb+G4UserStackingAction+ - this class is called before each track is pushed onto the event stack, and provides an opportunity for the user to kill tracks.
 \end{itemize}
 It should be noted that if a track is killed in the stacking or tracking action that GEANT4 does account for the lost energy in the track, thus the user is responsible for recording it if it is desired.
+
+\section{Phyics List}
+
+\subsection{Hadronic Physics}
+
+\subsection{Electromagnetic Phyics}
+
+\subsection{Optical Phyics}
+The light transport in GEANT4 can be thought of in two components; the generation of the optical photon, and the subsequent transport of that photon.
+Scintillating materials have a characteristic light yield defined by \verb+SCINTILLATIONYIELD+, and an intrinsic resolution, \verb+RESOLUTIONSCALE+.
+The number of photons generated during a step by an energy deposition is then a distribution characterized by \verb+RESOLUTIONSCALE+.
+A prompt and slow component of the scintillator emission spectra may be simulated as \verb+SLOWCOMPONENT+ for the slow time component and the fast as \verb+FASTCOMPONENT+, and the ratio between the fast and slow components, \verb+YIELDRATIO+.
+In the case of wavelength shifters, it is necessary to specify the absorption length, \verb+WLSABSLENGTH+, the emission spectra, \verb+WLSCOMPONENT+, and the time constant between them, \verb+WLSTIMECONSTANT+.
+
+The tracking of optical photons may be completed in the material by specifying the bulk absorption is defined by the key \verb+ABSLENGTH+, which is set from empirical absorption length.
+Scattering at the boundary between two surfaces can be  handled by the UNIFIED model for Optical Surfaces, or by the use of look up tables based on the measured data values \cite{5485130}
+For this work a look up table model was employed.
+

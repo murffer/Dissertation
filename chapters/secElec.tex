@@ -24,92 +24,13 @@ An overview of scintillation mechanics of organic scintillators will be provided
 The energy spectra and ranges of neutron and gamma reaction products will be discussed in \autoref{sec:InteractionsAndRange} (focusing on polystyrene) to explain the basis for the difference in energy depositions. 
 Calculations of the energy deposition will be shown in \autoref{sec:EnergyDep} for polymeric materials, providing the foundation of neutron-gamma pulse height discrimination.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                         %
-%                      SCINTILLATION MECHANICS                            %
-%                                                                         %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Scintillation Mechanisms}
-\label{sec:ScintMechanics}
-\input{chapters/scintDetIntro}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                         %
-%                      ENERGY SCALE AND RANGES                            %
-%                                                                         %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Charged Particle Interactions and Ranges}
-\label{sec:InteractionsAndRange}
-\input{chapters/rxnProductRangeAndEnergies}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
 %                     ENERGY DEPOSITION SIMULATIONS                       %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Energy Deposition Simulations}
-\label{sec:EnergyDeposition}
-The GEANT4 toolkit has the ability to track the energy deposition in different materials as well as the tracking of electrons to a least \SI{1}{\keV}\cite{agostinelli_geant4simulation_2003}.
-It is proposed to represent the detector geometry as a single layer of neutron absorbing thin polymeric film mounted on top of a non-scintillating material (PMMA).
-For simplicity, the initial events for runs will be chosen by setting up a particle gun for thermal (\SI{0.025}{\eV}) neutrons upon the detector and for both gammas resulting from a \iso[60]{Co} decay.
-\begin{figure}
-  \includegraphics[width=\textwidth]{GEANT4AnnotatedGeo_EnergyDepEvent}
-	\caption[GEANT4 Energy Deposition Geometry]{GEANT4 Geometry for the Simulation of Energy Deposition. What is shown are 10 photons from a \iso[60]{Co} source impingement upon a \SI{2}{\cm} thick detector.  The photon tracks are shown in yellow, while the electron tracks are shown in red.}
-	\label{fig:EDepSimGeo}
-\end{figure}
-It is expected that the the Livermore data-driven parameterized electromagnetic physics will be necessary to calculate the ionizing energy deposition, extending the standard electro-magnetic physics down to \SI{1}{\kilo\eV}.
-The neutron interactions will be simulated with a hadronic modules, using the \verb+HP+ flavored modules to use the ENDF cross sections to calculate the interaction rates.
-
-\subsection{Simulation Validation}
-The validation of this GEANT4 simulation was completed by reproducing the single collision energy loss in water as well as comparing  the spectral shapes and averages of simulated and measured spectra.
-The reproduction of the single collision energy loss will ensure that the electron physics are implemented correctly, while the simulation of the polymeric film energy deposition allows the user to gain confidence that the correct tracking and binning analysis has been implemented.
-
-\subsubsection{Single Collision Energy Loss}
-The simulation was validated by reproducing the single collision energy loss for water as well as comparing spectra shapes and averages of simulated spectra to the measured spectra.
-The single collision energy loss spectra for water that was simulated is shown in \autoref{fig:SingleCollisionELossWater}.
-In general there was excellent agreement between the simulated energy spectra and a previously published spectra\cite{turner_comparative_1982}, with the simulated spectra having much better resolution than the reference did not.
-It is thought that this is due to the water model in GEANT4 having better cross sections than the previously published spectra.
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=\textwidth]{SingleCollisionEnergyLoss_300bins}
-  \caption{Single Collision Energy Loss of Water. The simulated energy spectra matches that of Turner\cite{turner_comparative_1982}.}
-	\label{fig:SingleCollisionELossWater}
-\end{figure}
-
-\subsubsection{Spectra Agreement}
-The validity of the GEANT4 simulation is determined by comparing the spectra shapes of measured spectra to simulated energy deposition.
-Figure \ref{fig:spectraComparisonGamma} shows the comparison between the simulated energy deposition per incident photon from a \iso[60]{Co} source and the measured pulse height spectra from the \iso[60]{Co} irridiator per incident photon.
-The energy calibration on the upper axis of the measured spectra was completed by finding the channel number at a given intrinsic efficiency and the corresponding energy at that intrinsic efficiency.
-The energy of this feature on the measured spectra was then compared to the energy on the simulated spectra, with all of the values being within 10\%.
-\begin{figure*}[ht]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{PS_EDepSim_Co60}
-		\caption{GEANT4 Simulated Energy Deposition}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{PS_GammaCR-Binned-FluxNorm_20LiF_5PPO}
-		\caption{Measured Pulse Height Spectra}
-	\end{subfigure}%
-	\caption{Comparison of the energy deposition and binned pulse height spectra for validation. The spectra have the same shape, indicating agreement. The fabricated films greater than \SI{600}{\um} were of poor optical quality and therefore their results are not shown.}
-	\label{fig:spectraComparisonGamma}
-\end{figure*}
-The average energy deposition and average pulse height are shown in Figure \ref{fig:EDepLightYield}. 
-With the average energy deposition on the left axis and the average light yield (pulse height) on the right axis, it is possible to compare the measurement and the simulation and agreement is observed.
-\begin{figure*}[ht]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{G4EDep_LightYield_Co60}
-		\caption{Gamma (\iso[60]{Co})}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{G4EDep_LightYield_Neutron}
-		\caption{Neutrons}
-	\end{subfigure}%
-	\caption{Average Energy Deposition and Measured Light Yield. The solid lines are calculated values and the red dots are measurements.}
-	\label{fig:EDepLightYield}
-\end{figure*}
 The average energy deposited by a neutron and gamma reaction was investigated for different film thickness to determine if an optimal thickness does exits in a geometry similar to \autoref{fig:EDepSimGeo}.
 \autoref{fig:SimEDep} shows that the energy deposition of the gamma quickly falls off as the films get thinner, while it isn't until the neutron films become on the order of the range of the triton that the energy deposition is impacted.
 \autoref{fig:EDepPosSim} examines the impact of where the interaction took place in the film on the energy deposition.
