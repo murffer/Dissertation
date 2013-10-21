@@ -49,8 +49,8 @@ The concept of alpha to beta ratio is extended for other charged ions as the pul
 The pulse height deficit is defined as a measure the apparent energy loss (as seen from the pulse height) of a heavy charged ion compared to an electron.  
 The apparent loss in energy of the heavy charged charged ions relative to
 This is measured as the difference between the energy of the heavy ion and its apparent energy from the pulse height.  
-Several researchers have investigated the light output of scintillators in response to differnet types of ionizing radiation.
-\autoref{fig:lightYieldVerbinski} summerizes the results of \cite{Verbinski_1968} in which the pulse height deficit is apparent for the as the charged ions become heavier.
+Several researchers have investigated the light output of scintillators in response to different types of ionizing radiation.
+\autoref{fig:lightYieldVerbinski} summarizes the results of \cite{Verbinski_1968} in which the pulse height deficit is apparent for the as the charged ions become heavier.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\textwidth]{Verbinski_LightYield_AlpahCarbonProton}
@@ -60,7 +60,7 @@ Several researchers have investigated the light output of scintillators in respo
 
 An illustration of the energy deposition between the different particles resulting in the pulse height deficit is presented in \autoref{fig:ParticleTracks}.
 The electrons, with their low stopping power and broad track structure deposit their energy over a broader range than do the heavy charged ions (which tend to have rather collimated tracks).
-Thus, the heavy charged ions deposit a large amount of their energy in a small volume, completely ionizing that volume and inhibiting sctintillation.
+Thus, the heavy charged ions deposit a large amount of their energy in a small volume, completely ionizing that volume and inhibiting scintillation.
 \begin{figure}
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=\textwidth]{alphaTrack_0}
@@ -86,9 +86,9 @@ Thus, the heavy charged ions deposit a large amount of their energy in a small v
 \end{figure}
 
 For a portal monitor scintillator the most likely charged particles would be alphas, tritons and electrons.
-GEANT4 has the capability to simulate light quenching by setting an appropriate Birks parameter, and \autoref{fig:SimLightOutputQuench} presents GEANT4 simualated photon distrubtions in polystyrene with a PPO-POPOP fluor and an assumed light yeild of 1,000 photons per MeV.
+GEANT4 has the capability to simulate light quenching by setting an appropriate Birks parameter, and \autoref{fig:SimLightOutputQuench} presents GEANT4 simulated photon distributions in polystyrene with a PPO-POPOP fluor and an assumed light yield of 1,000 photons per MeV.
 For highly energetic particles the electrons are almost an order of magnitude more efficient at creating light than the tritons, and about 90 times more efficient than the alphas.
-However, it is unlikely that many electrons orginating from \iso[60]{Co} interactions in the scintillator will have an energy in the \SI{1}{\MeV} range, more likely that they will be in the \SI{100}{\keV} range.
+However, it is unlikely that many electrons originating from \iso[60]{Co} interactions in the scintillator will have an energy in the \SI{1}{\MeV} range, more likely that they will be in the \SI{100}{\keV} range.
 Thus, as shown in \autoref{fig:SimLightOutputQuench} the triton from the \iso[6]{Li} reaction will produce about an factor of five more photons than an \SI{100}{\keV}, and dominates the number of photons produced the the alpha particle.
 \begin{figure}
   \centering
@@ -107,7 +107,7 @@ Thus, as shown in \autoref{fig:SimLightOutputQuench} the triton from the \iso[6]
 
 The pulse height deficit is computed by simulation of the charged particles and the corresponding electron.
 This analysis yields a  pulse height deficit for the \iso[6]{Li} reaction as 8.5, and 27 for the \iso[10]{B}.
-These results are summerized in \autoref{tab:PulseHeightDeficitSim}.
+These results are summarized in \autoref{tab:PulseHeightDeficitSim}.
 \begin{table}
   \caption[Simulated Number of Optical Photons for Selected Neutron Absorbitions]{GEANT4 simulated number of optical photons produced for the \iso[10]{B} and \iso[6]{Li} neutron absoribitions.  The sctintillator is assumed to have a light yeild of 1,000 photons per MeV}
   \label{tab:PulseHeightDeficitSim}

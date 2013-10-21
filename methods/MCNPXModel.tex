@@ -11,4 +11,22 @@ Note that in this calculation the source strength is set to be \SI{1}{\nano\gram
   I_{\text{sim}} &= S_0 I \\
   &= \SI{2.3E3}{neutron\per\second} I
 \end{align}
-
+ 
+The MCNPX model was benched marked for characterized samples in the in house \iso[252]{Cf} neutron irradiator by simulating the interaction rate and comparing it to the measured count rate.
+These results are summarized in \autoref{tab:MCNPXVal}.
+It should be noted that the interaction rate is not directly the count rate as an interaction needs to have its scintillation photons collected in order to be a count. 
+One would then expect the simulated interaction rate to be a few precent higher than the measured count rate.
+In addition the polymeric sample composition is determined before pressing or casting providing a means for the uncertainty of the composition.
+\begin{table}
+	\caption[MCNPX Validation Results]{Comparison between simulated interaction rate and measured count rate}
+	\label{tab:MCNPXVal}
+	\begin{tabular}{c | c c | c}
+		\toprule
+			Sample & Simulated Interaction Rate & Measured Count Rate & Relative Error \\
+		\midrule
+			GS20 &  & &  \\ 
+			PS & & & \\
+			PEN & & & \\
+		\bottomrule
+	\end{tabular}
+\end{table}
