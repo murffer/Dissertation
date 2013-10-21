@@ -1,0 +1,31 @@
+\chapter{Methods}
+\label{chap:methods}
+In the design of a detector the theory must be supplemented by accurate models of the complex interactions in the radiation portal monitor to determine the performance.
+Once the performance of a design has been determined a method must be chosen for how to optimize the design to  ensure the best use of the materials while meeting the performance criteria.
+Three models of the detector physics are employed; two Monte Carlo based methods and one deterministic method.
+The deterministic model, XSDRN, solves a discretized one dimensional Boltzmann transport equation, and is described in \autoref{sec:XSDRNModel}.
+Probabilistic models follow the path of individual neutrons with interactions based on the probability of a given event occurring.
+Such codes are also known as Monte Carlo models, for which MCNPX (described in \autoref{sec:MCNPXModel}) and GEANT4 (described in \autoref{sec:G4Intro}) are well known examples.
+MCNPX is employed for detailed neutronic modeling, while GEANT4 is employed for optical photon simulations and detailed energy deposition calculations.
+
+The optimization of the detector is completed by a genetic algorithm using the XSDRN model to quickly simulate a large number of geometries.
+Small perturbations on these geometries are then completed with the MCNPX model to ensure that the results are accurate and that true convergence has been reached.
+The genetic algorithm is introduced in \autoref{sec:GAIntro}.
+
+\section{MCNPX Modeling}
+\label{sec:MCNPXModel}
+\input{methods/MCNPXModel}
+
+\section{XSDRN Modeling}
+\label{sec:XSDRNModel}
+\input{methods/XSDRNModel}
+
+\section{GEANT4 Modeling}
+\label{sec:G4Intro}
+\input{methods/G4Intro}
+
+
+
+\section{Genetic Algorithm Introduction}
+\label{sec:GAIntro}
+\input{methods/GAIntro}
