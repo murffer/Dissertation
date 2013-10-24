@@ -70,9 +70,27 @@ With the average energy deposition on the left axis and the average light yield 
 
 \subsection{Optical Photon Simulatioins}
 \label{sec:OpticalPhotonSims}
+Photons are considered to be optical photons in the GEANT4 model when the wavelength of the photon is much greater than atomic spacing to allow for their wave-like nature.
+The processes for optical photons included in GEANT4 are  refraction and reflection at 
+\autoref[tab:G4OpticalParameters} provides a summary of the different optical parameters available in the GEANT4 model.
+\begin{table}
+	\caption[Optical Parameters Available in GEANT4]{Optical Parameters Available in the GEANT4 model}
+	\label{tab:G4OpticalParameters}
+	\begin{tabular}{p{2cm} | m{5cm}
+	\toprule
+	Category & Parameter \\
+	\midrule
+	General & RINDEX, ABSLENGTH \\
+	Scintillation & SCINTILLATION, FASTCOMPONENT, SLOWCOMPONENT, SCINTILLATIONYIELD, RESOLUTIONSCALE, FASTTIMECONSTANT, SLOWTIMECONSTANT, YIELDRATIO \\
+	WLS & WLSABSLENGTH, WLSCOMPONENT, WLSTIME \\
+	Boundary & Finish, Model, Type, RINDEX, SPECULARLOBECONSTANT, BACKSCATTERCONSTANT, REFLECTIVITY, EFFICIENCY, POLISH \\
+	\bottomrule	
+	\end{tabular}
+\end{table}
 Optical photons were simulated in GEANT4 by creating an optical material property for each of the optical materials.
 In general this involves setting the scintillation yield of the material, the resolution of the material, the optical photon absorbance of the film and the decay time.
 It is also possible to set the Birks parameter of the material to simulate the light quenching of the material.
+The Birks parameter for the materials were found by varying the 
 \autoref{tab:G4LightSimParam} enumerates several of the parameters used in the simulations.
 \begin{table}
 	\caption[GEANT4 Material Scintillation Parameters]{Parameters used in the simulation of optical process in GEANT4}
@@ -87,18 +105,3 @@ It is also possible to set the Birks parameter of the material to simulate the l
 \end{table}
  and 
 
-\subsection{Optical Photon Validation}
-\label{sec:OpticalPhotonValidation}
-The GEANT4 optical photon model was verified by measuring a detector and then simulating a similar detector in the GEANT4 toolkit. 
-The comparison of the simulated entire  detection mechanisms (including the energy deposition, scintillation, and optical photon collection) to the a measured value provides confidence in the entire model; however, it should be noted that a validation of this type could allow for individual errors to miraculously cancel each other out.
-Two cases where considered for the validation: 1) a sample mounted onto a PMT and 2) fabricated layered detectors that where  \SI{10}{cm} by \SI{15}{cm} by \SI{6}{cm} .
-The single sample mounted on the PMT was used to establish the Birks constant for the material, and the fabricated layered detectors measurements were used to provide confidence of the ability to simulate a large scale detector system.
-
-A single sample mounted on a PMT provides a simple geometry to validate the parameters used in the light transport simulations. 
-The geometry consist of a sample mounted with a thin layer of optical grease to the PMT, and the entire assembly is wrapped with teflon grease.
-This mimics the measurement of a sample mounted on a PMT, expect for the efficiency of the photocathode is not considered.
-
-It should be noted that the Birks constant greatly impacts the number of optical photons generated and subsequently detected.
-For GS20 a Birks constant of \SI{0.1}{\mm\per\MeV} produced 1,300 photons per neutron, while a Birks constant of \Si{0.01}{\mm\per\MeV} produces 6,900 optical photons per neutron.
-Birks constants greater than \SI{0.01}{\mm\per\MeV} produce marginal increases in the number of optical photons produced; for example 8,600 photons per neutron were produced for a Birks constant of \SI{0.0001}{\mm\per\MeV}.
-If agreement between the simulated and measured c
