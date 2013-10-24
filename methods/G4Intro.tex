@@ -70,9 +70,27 @@ With the average energy deposition on the left axis and the average light yield 
 
 \subsection{Optical Photon Simulatioins}
 \label{sec:OpticalPhotonSims}
+Photons are considered to be optical photons in the GEANT4 model when the wavelength of the photon is much greater than atomic spacing to allow for their wave-like nature.
+The processes for optical photons included in GEANT4 are  refraction and reflection at 
+\autoref[tab:G4OpticalParameters} provides a summary of the different optical parameters available in the GEANT4 model.
+\begin{table}
+	\caption[Optical Parameters Available in GEANT4]{Optical Parameters Available in the GEANT4 model}
+	\label{tab:G4OpticalParameters}
+	\begin{tabular}{p{2cm} | m{5cm}
+	\toprule
+	Category & Parameter \\
+	\midrule
+	General & RINDEX, ABSLENGTH \\
+	Scintillation & SCINTILLATION, FASTCOMPONENT, SLOWCOMPONENT, SCINTILLATIONYIELD, RESOLUTIONSCALE, FASTTIMECONSTANT, SLOWTIMECONSTANT, YIELDRATIO \\
+	WLS & WLSABSLENGTH, WLSCOMPONENT, WLSTIME \\
+	Boundary & Finish, Model, Type, RINDEX, SPECULARLOBECONSTANT, BACKSCATTERCONSTANT, REFLECTIVITY, EFFICIENCY, POLISH \\
+	\bottomrule	
+	\end{tabular}
+\end{table}
 Optical photons were simulated in GEANT4 by creating an optical material property for each of the optical materials.
 In general this involves setting the scintillation yield of the material, the resolution of the material, the optical photon absorbance of the film and the decay time.
 It is also possible to set the Birks parameter of the material to simulate the light quenching of the material.
+The Birks parameter for the materials were found by varying the 
 \autoref{tab:G4LightSimParam} enumerates several of the parameters used in the simulations.
 \begin{table}
 	\caption[GEANT4 Material Scintillation Parameters]{Parameters used in the simulation of optical process in GEANT4}
@@ -86,3 +104,4 @@ It is also possible to set the Birks parameter of the material to simulate the l
 	\end{tabular}
 \end{table}
  and 
+
