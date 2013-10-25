@@ -17,7 +17,6 @@ This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\e
   \label{eqn:FractionOfCountsDefination}
   \eta \equiv \frac{\int_{MLLD}^\infty p(x)dx}{\int_0^\infty p(x)dx}
 \end{align}
-\nomenclature{$p(x)$}{Measured spectra, as a function of channel number}
 \begin{align}
  \label{eqn:RPMCountRate}
  \text{Count Rate} &= I_{\text{sim}} \eta
@@ -28,16 +27,38 @@ These results are summarized in \autoref{tab:MCNPXVal}.
 It should be noted that the interaction rate is not directly the count rate as an interaction needs to have its scintillation photons collected in order to be a count. 
 One would then expect the simulated interaction rate to be a few precent higher than the measured count rate.
 In addition the polymeric sample composition is determined before pressing or casting providing a means for the uncertainty of the composition.
+The relative error is defined as $(sim-obs)/obs)$.
 \begin{table}
-	\caption[MCNPX Validation Results]{Comparison between simulated interaction rate and measured count rate}
+	\centering
+	\caption[MCNPX Neutron Validation Results]{Comparison between simulated interaction rate and measured count rate}
 	\label{tab:MCNPXVal}
-	\begin{tabular}{c | c c | c}
+	\begin{tabular}{m{3cm} | p{4cm} p{4cm} p{2cm}}
 		\toprule
 			Sample & Simulated Interaction Rate & Measured Count Rate & Relative Error \\
 		\midrule
-			GS20 &  & &  \\ 
-			PS & & & \\
-			PEN & & & \\
+			GS20 & 424  & 428 & 0.7\%  \\ 
+			PS 30\% LiF \SI{50}{\um} &  56 & 51 & 9.5\% \\
+			PS 30\% LiF \SI{25}{\um} & 108 & 96 &13\%  \\
+			PEN, 10\% LiF, \SI{110}{\um} & 75.1 & 70 & 7\% \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The gamma irradiator fluence was calibrated by measuring the dose rate are various positions, and then simulating the dose rate in MCNPX.
+The results of this study are shown in \autoref{tab:MCNPXPhotonFluxVal}, and in general good agreement is observed between the simulation and the measurement.
+In some cases where the simulated dose rate is higher may be due to uncertainty in the exact location of the probe in the measurement.
+\begin{table}
+	\centering
+	\caption[MCNPX Photon Dose Rate Validation Results]{Comparison between simulated dose rate and measured dose rate.}
+	\label{tab:MCNPXPhotonFluxVal}
+	\begin{tabular}{c  c |c  c}
+		\toprule
+		\multicolumn{2}{c}{Measured} & \multicolumn{2}{c}{Simulated} \\
+		Distance  & Dose Rate & Distance & Dose Rate \\
+		\midrule
+		\SI{10.2}{\cm} & \SI{10}{mRem \per h} & \SI{10.2}{\cm} & \SI{10.3}{mRem \per h} \\
+		\SI{13}{\cm} & \SI{5.5}{mRem \per h} & \SI{12.8}{\cm} & \SI{5.4}{mRem \per h} \\
+		\SI{28}{\cm} & \SI{2}{mRem \per h} & \SI{28}{\cm} & \SI{1.8}{mRem \per h} \\
 		\bottomrule
 	\end{tabular}
 \end{table}
