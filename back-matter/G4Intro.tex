@@ -7,7 +7,6 @@ While nothing can replace the \href{http://geant4.web.cern.ch/geant4/G4UsersDocu
 A simulation in the GEANT4 toolkit requires a detector geometry (including materials), particles and interactions, and primary events.
 Once the geometry and physics has been described, GEANT4 then tracks the primary particle (and generated secondaries) until the particle leaves the world volume, slows down to zero kinetic energy, or disappears by an interaction or decay. 
 Particles can also be killed by implementing a range a cut, in which the particle is killed once its energy is less than the range.
-
 The GEANT4 toolkit employs the following notation to describe a simulation.
 A \textit{track} contains information about the a particles steps through a material, and acts like a snapshot of the particle.
 \textit{Processes} contain implementations of models of the physics interactions.
@@ -32,10 +31,23 @@ The user classes used in these simulations are described below.
 It should be noted that if a track is killed in the stacking or tracking action that GEANT4 does account for the lost energy in the track, thus the user is responsible for recording it if it is desired.
 
 \section{Phyics List}
+The physics list in GEANT4 describe how the particle interact with matter.
+There are seven major categories of physics that are considered in GEANT4; electromagnetic, hadronic, transportation, decay, optical, photolepton \& hadron, and parameterisation.
+A physics process is applied to particle in GEANT4 after polling all of the processes attached to a particle to find the limiting process.
+Only after the limiting process is found is it applied to the particle, changing the position, energy, time, and other parameters.
+The physics list also serves to apply cuts to the particles based on the range of the particle.
 
 \subsection{Hadronic Physics}
+The hadronic physics list employed in GEANT4 construct hadrons (of which neutrons are a part of) and assign physics processes to those particles.
+The physics list used in this work is \verb+HadronPhysicsQGSP_BERT_HP+ which is a Quark Gluon String model for very high energies that the transported down to \SI{20}{\MeV} with the Bertini cascade model.
+Once the hadrons are in the \SI{20}{\MeV} range data driven cross section models are applied if such a cross section has been measured.
 
 \subsection{Electromagnetic Phyics}
+The electromagnetic physics in GEANT4 is handled in this work by creating a modular physics list which builds the photons and electrons (among other particles) and assigns processes to them.
+In the \verb+G4EmStandardPhysics_option4+ physics list these processes include ionization, delta ray production, multiple scattering, and annihilation for electrons and pair production, photoelectric effect, and Rayleigh scattering for gammas.
+This list also build processes for X-rays, including scintillations. 
+However, the photons produced with scintillations are not tracked unless optical physics are implemented.
+The \verb+G4EmStandardPhysics_option4+ is not the lowest energy model, the GEANT4-DNA extension provides models for energies down to a few eV but only for liquid water.
 
 \subsection{Optical Phyics}
 The light transport in GEANT4 can be thought of in two components; the generation of the optical photon, and the subsequent transport of that photon.
@@ -43,8 +55,22 @@ Scintillating materials have a characteristic light yield defined by \verb+SCINT
 The number of photons generated during a step by an energy deposition is then a distribution characterized by \verb+RESOLUTIONSCALE+.
 A prompt and slow component of the scintillator emission spectra may be simulated as \verb+SLOWCOMPONENT+ for the slow time component and the fast as \verb+FASTCOMPONENT+, and the ratio between the fast and slow components, \verb+YIELDRATIO+.
 In the case of wavelength shifters, it is necessary to specify the absorption length, \verb+WLSABSLENGTH+, the emission spectra, \verb+WLSCOMPONENT+, and the time constant between them, \verb+WLSTIMECONSTANT+.
-
 The tracking of optical photons may be completed in the material by specifying the bulk absorption is defined by the key \verb+ABSLENGTH+, which is set from empirical absorption length.
-Scattering at the boundary between two surfaces can be  handled by the UNIFIED model for Optical Surfaces, or by the use of look up tables based on the measured data values \cite{5485130}
-For this work a look up table model was employed.
+\autoref{tab:G4OpticalParameters} provides a summary of the different optical parameters available in the GEANT4 model.
+\begin{table}
+	\caption[Optical Parameters Available in GEANT4]{Optical Parameters Available in the GEANT4 model}
+	\label{tab:G4OpticalParameters}
+	\begin{tabular}{p{2cm} | p{10cm}}
+	\toprule
+	Category & Parameter \\
+	\midrule
+	General & RINDEX, ABSLENGTH \\
+	Scintillation & SCINTILLATION, FASTCOMPONENT, SLOWCOMPONENT, SCINTILLATIONYIELD, RESOLUTIONSCALE, FASTTIMECONSTANT, SLOWTIMECONSTANT, YIELDRATIO \\
+	WLS & WLSABSLENGTH, WLSCOMPONENT, WLSTIME \\
+	Boundary & Finish, Model, Type, RINDEX, SPECULARLOBECONSTANT, BACKSCATTERCONSTANT, REFLECTIVITY, EFFICIENCY, POLISH \\
+	\bottomrule	
+	\end{tabular}
+\end{table}
+
+
 
