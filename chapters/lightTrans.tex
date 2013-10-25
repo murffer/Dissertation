@@ -1,43 +1,11 @@
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                      									 %
-%                  		  	RPM Light Collection                           %
-% 									                                                     %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \chapter{RPM Light Collection}
 \label{chap:LightTransport}
 \section{RPM Light Collection Performance}
 \label{sec:RPMLCP}
 
-There is no assurance that the detectors designed based on interaction rate would be feasible to construct; due to their low light output and opaqueness collecting the light from scintillation events would be extremely difficult.  
-Additional simulation work then needs to be completed to ensure that a RPM in the layered detector design has a realistic method of collecting the light emitted from the scintillation events.
-Light transport modeling provides a way to calculate the performance of such a design while providing insights for the improvement of a detector design.
 
-Several previous authors have used the GEANT4 toolkit to simulate the light collection efficiency of their detector designs.
-In PNNL 14283 the authors looked at a variety of different PMT placement and detectors designs to increase the light output of a detector in the Advanced Large-Area Plastic Scintillators (ALPS) project \cite{pnnl_14283}.
-The authors found that for a \SI{127}{\cm} by \SI{57}{\cm} by \SI{5}{\cm} slab of BC-408 wrapped in a loose foil of 85\% reflectivity that the light output could be almost doubled by doubling the number of PMT's.
-These results are summarized in \autoref{tab:PNNLLightCollectionEfficiency}.
-\begin{table}
-  \centering
-  \caption[PNNL Light Collection Efficiencies]{Light collection efficiencies of several detector designs simulated by PNNL\cite{pnnl_14283}.}
-  \label{tab:PNNLLightCollectionEfficiency}
-  \begin{tabular}{c|c c}
-  \toprule
-  & \multicolumn{2}{c}{Light Collection Efficiency} \\
-  Number of PMTs  & 2-in PMT & 5-in PMT \\
-  \midrule
-  2 & 7.0\% & 18.8\% \\
-  4 & 13.3\% & 30.7\ \\
-  6 & 18.4\% & 40.2\% \\
-  \bottomrule
-  \end{tabular}
-\end{table}
-In addition, other authors have reported on the simulation performance of a light guides and photon attenuation using the GEANT4 toolkit.
-An overview of the light transport and scintillation processes available in GEANT4 is presented in \cite{riggi_introducing_2011}.
-The authors also simulated a \SI{1}{\m} by \SI{1}{\cm} by \SI{1}{\cm} plastic strip in order to calculate the photon attenuation in the plastic.
-Two orders of magnitude drop in the number of photons was calculated for photons collected \SI{90}{\cm} from the distance of emission, and was highly dependent of the reflectivity of the material encasing the plastic strip\cite{riggi_introducing_2011}.
-Polymeric detectors containing PPO/POPOP as the fluor have also been modeled for the light transport with GEANT4\cite{5485130}.
-This provides a measure of confidence that the films fabricated at the University of Tennessee containing PPO/POPOP can also be simulated without undo burden in finding light transport properties.
 
 \subsection{Proposed Work}
 It is proposed to simulate the neutronics, energy deposition, and light transport and collection of the optical photons with the GEANT4 toolkit to ensure that the proposed detector designs will be feasible. 

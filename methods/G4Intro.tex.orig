@@ -34,7 +34,7 @@ It is thought that this is due to the water model in GEANT4 having better cross 
 \end{figure}
 
 The validity of the GEANT4 simulation is determined by comparing the spectra shapes of measured spectra to simulated energy deposition.
-\autoref{fig:spectraComparisonGamma} shows the comparison between the simulated energy deposition per incident photon from a \iso[60]{Co} source and the measured pulse height spectra from the \iso[60]{Co} irradiator per incident photon.
+Figure \ref{fig:spectraComparisonGamma} shows the comparison between the simulated energy deposition per incident photon from a \iso[60]{Co} source and the measured pulse height spectra from the \iso[60]{Co} irradiator per incident photon.
 The energy calibration on the upper axis of the measured spectra was completed by finding the channel number at a given intrinsic efficiency and the corresponding energy at that intrinsic efficiency.
 The energy of this feature on the measured spectra was then compared to the energy on the simulated spectra, with all of the values being within 10\%.
 \begin{figure*}[ht]
@@ -72,11 +72,11 @@ With the average energy deposition on the left axis and the average light yield 
 \label{sec:OpticalPhotonSims}
 Photons are considered to be optical photons in the GEANT4 model when the wavelength of the photon is much greater than atomic spacing to allow for their wave-like nature.
 The processes for optical photons included in GEANT4 are  refraction and reflection at 
-\autoref{tab:G4OpticalParameters} provides a summary of the different optical parameters available in the GEANT4 model.
+\autoref[tab:G4OpticalParameters} provides a summary of the different optical parameters available in the GEANT4 model.
 \begin{table}
 	\caption[Optical Parameters Available in GEANT4]{Optical Parameters Available in the GEANT4 model}
 	\label{tab:G4OpticalParameters}
-	\begin{tabular}{p{2cm} | p{10cm}}
+	\begin{tabular}{p{2cm} | m{5cm}
 	\toprule
 	Category & Parameter \\
 	\midrule
@@ -94,16 +94,18 @@ The Birks parameter for the materials were found by varying the
 \autoref{tab:G4LightSimParam} enumerates several of the parameters used in the simulations.
 \begin{table}
 	\caption[GEANT4 Material Scintillation Parameters]{Parameters used in the simulation of optical process in GEANT4}
-	\label{tab:G4LightSimParam}
+	\label{tab:G4LightSimParm}
 	\begin{tabular}{c | c}
 	\toprule
 	Parameter & Value \\
 	\midrule
-	Birks Parameter & hi  \\ %\cite{Tretyak_2010} \\
+	Birks Parameter &  \cite{Tretyak_2010} \\
 	\bottomrule
 	\end{tabular}
 \end{table}
+ and 
 
+<<<<<<< HEAD
 \subsection{Optical Photon Validation}
 \label{sec:OpticalPhotonValidation}
 The GEANT4 optical photon model was verified by measuring a detector and then simulating a similar detector in the GEANT4 toolkit. 
@@ -116,6 +118,8 @@ The geometry consist of a sample mounted with a thin layer of optical grease to 
 This mimics the measurement of a sample mounted on a PMT, expect for the efficiency of the photocathode is not considered.
 
 It should be noted that the Birks constant greatly impacts the number of optical photons generated and subsequently detected.
-For GS20 a Birks constant of \SI{0.1}{\mm\per\MeV} produced 1,300 photons per neutron, while a Birks constant of \SI{0.01}{\mm\per\MeV} produces 6,900 optical photons per neutron.
+For GS20 a Birks constant of \SI{0.1}{\mm\per\MeV} produced 1,300 photons per neutron, while a Birks constant of \Si{0.01}{\mm\per\MeV} produces 6,900 optical photons per neutron.
 Birks constants greater than \SI{0.01}{\mm\per\MeV} produce marginal increases in the number of optical photons produced; for example 8,600 photons per neutron were produced for a Birks constant of \SI{0.0001}{\mm\per\MeV}.
 If agreement between the simulated and measured c
+=======
+>>>>>>> c50e2b911582cce7312128dae5f86c2a025a45a7

@@ -6,26 +6,6 @@
 \chapter{Neutronic Optimization}
 \label{chap:GARPMOpt}
 \section{Introduction}
-A single film does not have the necessary interactions to fulfill the neutron count rate criteria multiple films are necessary, and the arrangement of these films provides a design space for a replacement RPM.
-In the case of the RPM, there are several design parameters that can be explored:
-\begin{itemize}
-  \item the neutron absorber loading of the film,
-  \item the thickness of the film,
-  \item the geometry of the film (cylinders or sheets), and
-  \item the placement of the films.
-\end{itemize}
-It is expected that the loading of the film will be limited by the optical clarity, and that the thickness of the film will be determined by the optimization of the energy deposition.
-Thus, of the above design parameters only the geometric placement of the films is an available optimization space.
-
-Preliminary work by this author provided a simple design in which the detector layers are linearly placed throughout the detector volume in an alternating fashion.
-The analysis of the neutron flux throughout this detector lead to a flat flux profile as shown in \autoref{fig:AltLayerThermalNeutronFraction}.
-\begin{figure}
-  \includegraphics[width=\textwidth]{ThermalFluxRatioAltLayers}
-	\caption{Fraction of the neutron flux that is thermalized through a alternating detector and moderator layered RPM.  The low thermal fluxes result in a poor utilization of the high thermal cross section of \iso[6]{Li}.}
-	\label{fig:AltLayerThermalNeutronFraction}
-\end{figure}
-Effective utilization of the neutron flux is necessary for minimizing the amount of neutron absorber (\iso[6]{Li}) that is used in the detector.
-Several different strategies can then be used to optimize the geometry to ensure effective utilization of the thermal cross section of the absorber material.
 
 In this particular problem the placement of a film greatly changes the solution because of the large change in the neutron flux, and traditional gradient based solvers would tend to be trapped in these local minima.
 Genetic algorithms were chosen as the optimization technique because they are less susceptible to local minima than other search techniques and tend to preform very well on combinatorial problems such as this one \cite{Mitchell_1997}.
@@ -35,17 +15,7 @@ Genetic algorithms were chosen as the optimization technique because they are le
 XSDRN will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
 A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
 
-However, not all of these interactions will lead to counts above the pulse height discriminator setting necessary for meeting the gamma intrinsic efficiency.
-This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\eta$, that occur above the gamma LLD \eqref{eqn:FractionOfCountsDefination}, \eqref{eqn:RPMCountRate}.
-\begin{align}
-  \label{eqn:FractionOfCountsDefination}
-  \eta \equiv \frac{\int_{MLLD}^\infty p(x)dx}{\int_0^\infty p(x)dx}
-\end{align}
-\nomenclature{$p(x)$}{Measured spectra, as a function of channel number}
-\begin{align}
- \label{eqn:RPMCountRate}
- \text{Count Rate} &= I_{\text{sim}} \eta
-\end{align}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
@@ -56,11 +26,4 @@ This is corrected for by scaling $I_{\text{sim}}$ by the fraction of counts, $\e
 
 \section{Conclusions}
 
-A physical basis of the optimal solution found by the genetic algorithm can be found by observing the form of the optimal solutions.
-These solutions involve an initial moderator layer in order to ensure that all of the neutrons are thermalized to (increasing the thermal fraction by \textbf{SOME PERCENT}).
-After this moderator layer a film layer is placed to utilize this neutron spectra; however not all of the thermal neutrons are captured (as the mean free path of a neutron in polyethylene is about \SI{0.37}{\cm} and thus some pass through the material) and another absorber layer is needed to capture those neutrons.  
-The neutron flux is then moderated again, and additional layers of detectors are needed to capture this neutron cross section.
-However, it is desirably to have a large neutron reflector in the portal monitor to reflect neutrons back into the detector slices. 
-Theoretically this reflector should be as large as possible, but the limited space of the RPM provides a constraint.
-A parameter study with a single detector slice between a moderator and reflector constrained by the radiation portal monitor design showed that it is desirable to have around \textbf{So much} moderator leaving the majority of the RPM to be left for the reflector.
-Thus it is demonstrated that a large reflector is desired.
+
