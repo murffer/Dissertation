@@ -4,14 +4,8 @@
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-The average energy deposited by a neutron and gamma reaction was investigated for different film thickness to determine if an optimal thickness does exits in a geometry similar to \autoref{fig:EDepSimGeo}.
+The average energy deposited by a neutron and gamma reaction was investigated for different film thickness to determine if an optimal thickness exits in a geometry similar to \autoref{fig:EDepSimGeo}.
 \autoref{fig:SimEDep} shows that the energy deposition of the gamma quickly falls off as the films get thinner, while it isn't until the neutron films become on the order of the range of the triton that the energy deposition is impacted.
-\autoref{fig:EDepPosSim} examines the impact of where the interaction took place in the film on the energy deposition.
-The geometry for this simulation is once again \autoref{fig:EDepSimGeo}, where the beam spot is \SI{3}{\mm} and the area of the detector face is \SI{10}{\cm}. 
-The interaction position is then defined to be distance to the first interaction of the beam in the material along the direction of the beam.
-It is observed that for neutrons events that take place within the center of the films tend to deposit a large majority of their energy in the film, while events that occur on the edge of the film have partial energy depositions in accordance with the ranges of the charged particles.
-A Compton spectra is observed in the photon energy deposition. 
-A secondary effect in having a backing material is also observed for photons in which there is a heightened energy deposition for interactions that occur in the film but near the boundary and electrons are back scattered into the detector material.
 \begin{figure}
   \centering
   \includegraphics[width=0.6\textwidth]{SimulatedEnergyDeposition}
@@ -19,6 +13,14 @@ A secondary effect in having a backing material is also observed for photons in 
   \label{fig:SimEDep}
 \end{figure}
 
+Interactions that occur near the edge of the film may have a large impact in the energy absorbed in the film for very thin films where a large fraction of the volume is within a mean free path of the surface of the detector material.
+For example, for a \SI{25}{\um} film the range of the triton exceeds the thickness of the film.
+The energy loss of interactions occurring near the edge of the film was investigated by simulating the energy loss for a large planar detector where the beam spot is \SI{3}{\mm} and the area of the detector face is \SI{10}{\cm}. 
+The geometry for this simulation shown in \autoref{fig:EDepSimGeo}, with the interaction position defined to be distance to the first interaction of the beam in the material along the direction of the beam.
+\autoref{fig:EDepPosSim} examines the impact of where the interaction took place in the film on the energy deposition.
+It is observed that for neutrons events that take place within the center of the films tend to deposit a large majority of their energy in the film, while events that occur on the edge of the film have partial energy depositions in accordance with the ranges of the charged particles.
+The Compton edge is observed at \SI{1}{\MeV} in the simulated photon energy deposition for the \SI{1}{\cm} film, as expected.
+A secondary effect in having a backing material is also observed for photons in which there is a heightened energy deposition for interactions that occur in the film but near the boundary and electrons are back scattered into the detector material.
 \begin{figure*}[ht]
 	\centering
 	\begin{subfigure}[b]{0.45\textwidth}
