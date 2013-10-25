@@ -34,41 +34,41 @@ It is thought that this is due to the water model in GEANT4 having better cross 
 \end{figure}
 
 The validity of the GEANT4 simulation is determined by comparing the spectra shapes of measured spectra to simulated energy deposition.
-\autoref{fig:spectraComparisonGamma} shows the comparison between the simulated energy deposition per incident photon from a \iso[60]{Co} source and the measured pulse height spectra from the \iso[60]{Co} irradiator per incident photon.
-The energy calibration on the upper axis of the measured spectra was completed by finding the channel number at a given intrinsic efficiency and the corresponding energy at that intrinsic efficiency.
+Example gamma simulated spectra are shown in \autoref{fig:G4SimulatedEDep}, where for thin films there is an almost linear increase in the spectra endpoints with film thickness.
+The simulated energy deposition per incident photon from a \iso[60]{Co} source and the measured pulse height spectra from the \iso[60]{Co} irradiator per incident photon can be compared by finding a calibration between them, in this case the Compton edge of a thick sample.
+The measured Compton edge of a \SI{1}{\mm} film can then be correlated with the simulated energy, as shown in \autoref{fig:spectraComparisonGamma}.
 The energy of this feature on the measured spectra was then compared to the energy on the simulated spectra, with all of the values being within 10\%.
-\begin{figure*}[ht]
+\begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{PS_EDepSim_Co60}
-		\caption{GEANT4 Simulated Energy Deposition}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[b]{0.45\textwidth}
-    \includegraphics[width=\textwidth]{PS_GammaCR-Binned-FluxNorm_20LiF_5PPO}
-		\caption{Measured Pulse Height Spectra}
-	\end{subfigure}%
+    	\includegraphics[width=\textwidth]{PS_EDepSim_Co60}
+	\caption[GEANT4 Simulated Gamma Spectra in PS]{GEANT4 Simulated Energy Deposition}
+	\label{fig:G4SimulatedEDep}
+\end{figure}
+\begin{figure}
+	\centering
+   	\includegraphics[width=\textwidth]{PS_GammaCR-Binned-FluxNorm_20LiF_5PPO}
 	\caption{Comparison of the energy deposition and binned pulse height spectra for validation. The spectra have the same shape, indicating agreement. The fabricated films greater than \SI{600}{\um} were of poor optical quality and therefore their results are not shown.}
 	\label{fig:spectraComparisonGamma}
-\end{figure*}
-The average energy deposition and average pulse height are shown in Figure \ref{fig:EDepLightYield}. 
-With the average energy deposition on the left axis and the average light yield (pulse height) on the right axis, it is possible to compare the measurement and the simulation and agreement is observed.
-\begin{figure*}[ht]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{G4EDep_LightYield_Co60}
-		\caption{Gamma (\iso[60]{Co})}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{G4EDep_LightYield_Neutron}
-		\caption{Neutrons}
-	\end{subfigure}%
-	\caption{Average Energy Deposition and Measured Light Yield. The solid lines are calculated values and the red dots are measurements.}
-	\label{fig:EDepLightYield}
-\end{figure*}
+\end{figure}
 
-\subsection{Optical Photon Simulatioins}
+A direct comparison between the simulated average energy deposition and pulse height are shown in \autoref{fig:EDepLightYieldNeutron} and \autoref{fig:EDepLightYieldGamma}. 
+The average energy deposition is shown on the left axis and the average light yield (pulse height) on the right axis.
+The largest amount of energy that can be deposited in the neutron interaction is \SI{4.78}{\MeV}, which is approached after \SI{200}{\um} in both the measurement and simulations.
+This asymptotic behavior is not observed for the gamma spectra.
+\begin{figure}
+	\centering
+    	\includegraphics[width=\textwidth]{G4EDep_LightYield_Neutron}
+	\caption[Average Light Yield and Energy Deposition for neutron interactions in PS]{Average energy deposition and measured light yield for neutron interactions. The solid lines are calculated values and the red dots are measurements.}
+	\label{fig:EDepLightYieldNeutron}
+\end{figure}
+\begin{figure}
+	\centering
+    	\includegraphics[width=\textwidth]{G4EDep_LightYield_Co60}
+	\caption[Average Light Yield and Energy Deposition for Gamma interactions in PS]{Average energy deposition and measured light yield for \iso[60]{Co} interactions. The solid lines are calculated values and the red dots are measurements}
+	\label{fig:EDepLightYieldGamma}
+\end{figure}
+
+\subsection{Optical Photon Simulations}
 \label{sec:OpticalPhotonSims}
 Photons are considered to be optical photons in the GEANT4 model when the wavelength of the photon is much greater than atomic spacing to allow for their wave-like nature.
 Optical photons were simulated in GEANT4 by creating an optical material property for each of the optical materials.
