@@ -23,19 +23,19 @@ Several different strategies can then be used to optimize the geometry to ensure
 
 \subsection{XSDRN and MCNPX Model Comparison}
 The comparison between the MCNPX simulation and the XSDRN is shown for some of the samples in \autoref{tab:10GenomeXSDRNMCNPXCompare} and \autoref{tab:20GenomeXSDRNMCNPXCompare}, where the change in rank is computed by rank of the MCNPX model versus the rank of the XSDRN model.
-It is observed that the XSDRN model preformed faily closesly to the MCNPX model, but tended to over predict and favor geometries that had repeated layers and clusters.
+It is observed that the XSDRN model preformed fairly closely to the MCNPX model, but tended to over predict and favor geometries that had repeated layers and clusters.
 \begin{table}
   \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
   \label{tab:10GenomeXSDRNMCNPXCompare}
   \begin{tabular}{c c | c c | c}
     \toprule
-    XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
+    Genome & Activity & Interaction Rate & Rank Change \\
     \midrule
-  0111000000 & 10.95 & 0101010000 &  3.08 & $\downarrow$ 10 \\
-  0110100000 & 10.50 & 0101100000 &  2.93 & $\uparrow$ 2 \\
-  0110010000 & 10.21 & 0110010000 &  2.89 & 0 \\
-  0101100000 & 10.12 & 0110100000 &  2.85 & $\downarrow$ 2 \\
-  0111100000 & 13.16 & 0110001000 &  2.84 & $\downarrow$ 4 \\
+  0011010000& 9.30 &  3.82 & $\downarrow$ 13 \\
+  0110100000 & 10.50  &  3.81 & 0 \\
+  0101010000 & 10.12  & 3.79 & $\downarrow$ 7 \\
+ 0101100000 &  & 3.79 & $\downarrow$ 1\\
+  0011100000 & 9.63 &  3.77 & $\downarrow$ 3 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -44,23 +44,64 @@ It is observed that the XSDRN model preformed faily closesly to the MCNPX model,
   \label{tab:20GenomeXSDRNMCNPXCompare}
   \begin{tabular}{c c | c c | c}
     \toprule
-    XSDRN Model & Activity & MCNPX Model & Interaction Rate & Rank Change \\
+    Genome & Activity  & Interaction Rate & Rank Change \\
     \midrule
-  01111000000000000000 & 30.39 & 00110010000000000000 &  3.14 & $\downarrow$ 10 \\
-  01111100000000000000 & 23.93 & 01010010000000000000 &  3.14 & $\downarrow$ 7 \\
-  01011010010000000000 & 23.46 & 01011000000000000000 &  2.65 & $\downarrow$ \\
-  01111010010000000000 & 27.14 & 01101000000000000000 &  2.60 & $\downarrow$ 5\\
-  01111000000000100000 & 20.22 & 01011010010000000000 &  4.29 & $\uparrow$ 2\\
+  00100101000000000000 & 7.77 & 3.79 & $\downarrow$ 19 \\
+  00011000100000000000&  & 3.78 &  \\
+  00011000010000000000& &  3.76 &  \\
+  00110001000000000000 &  3.69 & $\downarrow$ 15\\
+  01011010010000000000 & 23.46 & 3.66 & $\uparrow$ 1\\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \subsection{Pertubations on the MCNPX Model}
 Perturbations on the MCNPX were preformed in order to determine if a minimum in the search function was achieved.
-For the ten length genomes where each slice is \SI{1.27}{\cm} and a perturbation moves a slice \SI{6.35}{\mm} it is observed that perturbations increase the count rate by 15\%.
+A perturbation on a optimal genome is defined as taking each detector slice and translating it a half slice thickness to the left and the right. 
+For example, for a five length genome a perturbation on \verb+010100+ would involve first doubling the genome to  \verb+001000100000+ and then perturbing the slices as  \verb+010000100000+, \verb+000100100000+, \verb+001001000000+, and \verb+001000010000+.
+The perturbations on the length length genome increased the interaction rate from 3.81 interactions per second to 3.85 interactions per second for the optimal ten length genome, and from 3.85 interactions per second to 3.87 interactions per second.
+Thus, it is determined that the genetic algorithm converged to the optimal solution.
+
+\subsection{Optimal Geometries}
+The optimal genomes are listed for 10 15, 20 length, and 30 length genomes for a minimum interaction rate of 2.5 interactions per second in \autoref{tab:GAOptRXNRate_25}, 5.0 interactions per neutron per second in \autoref{tab:GAOptRXnRate_5}, and for 7.5 interactions per second in \autoref{tab:GAOptRXNRate_75}.
+It is observed that higher length genomes tended to shows a slight decrease in the total interaction rate.
 
 
-
+\begin{table}
+	\caption[Optimal geometry for 2.5 interactions per second]{Optimal genome geometries for a total minium interaction rate of 2.5 interactions per second. The detector and simulation is configured per the PNNL critera.}
+	\label{tab:GAOptRXNRate_25}
+	\begin{tabular}{m{5cm} & m{3cm} & m{2cm} 
+	\toprule
+	Genome & Interaction Rate & Mass \iso[6]{Li} \\
+	\midrule
+	0011010000 & 3.82 & 3 \\
+	00100101000000000000 & 3.79 & 3 \\
+	00010100001000000000000000 & 3.75 & 3 \\
+	\bottomrule
+\end{table}
+\begin{table}
+	\caption[Optimal geometry for 5 interactions per second]{Optimal genome geometries for a total minium interaction rate of 5 interactions per second. The detector and simulation is configured per the PNNL critera.}
+	\label{tab:GAOptRXNRate_5}
+	\begin{tabular}{m{5cm} & m{3cm} & m{2cm} 
+	\toprule
+	Genome & Interaction Rate & Mass \iso[6]{Li} \\
+	\midrule
+	011101001000000 & 5.31 & 5 \\
+	01011010010000000000 & 5.21& 5 \\
+	011001001000010000000000000000 & 5.06 & 5 \\
+	\bottomrule
+\end{table}
+\begin{table}
+	\caption[Optimal geometry for 7.5 interactions per second]{Optimal genome geometries for a total minium interaction rate of 7.5 interactions per second. The detector and simulation is configured per the PNNL critera.}
+	\label{tab:GAOptRXNRate_75}
+	\begin{tabular}{m{5cm} & m{3cm} & m{2cm} 
+	\toprule
+	Genome & Interaction Rate & Mass \iso[6]{Li} \\
+	\midrule
+	01111101110100001000 & 7.56 & 10 \\
+	01111101010010101000 & 7.53 & 10 \\
+	\bottomrule
+\end{table}
 
 A physical basis of the optimal solution found by the genetic algorithm can be found by observing the form of the optimal solutions.
 These solutions involve an initial moderator layer in order to ensure that all of the neutrons are thermalized to (increasing the thermal fraction by \textbf{SOME PERCENT}).
