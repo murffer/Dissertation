@@ -19,16 +19,44 @@ These results are summarized in \autoref{tab:PNNLLightCollectionEfficiency}.
 \end{table}
 In addition, other authors have reported on the simulation performance of a light guides and photon attenuation using the GEANT4 toolkit.
 
-Differnet cladding coatings were studied for their effect on the collection efficiency of a scintillator.
-\textbf{LINK TO WLSCINTBAR}
+Different cladding coatings were studied for their effect on the collection efficiency of a scintillator.
 The collection efficiencies are presented in \autoref{tab:CladStudy}.
-%\begin{table}
-%  \caption[Teflon, Mylar, and HDPE Cladding Light Collection Effect]{The effect of Teflon, mylar, and HDPE cladding on the light collection of a scintillating slab}.
-%  \label{tab:CladStudy}
-%  \begin{tabular}
+\begin{table}
+  \caption[Teflon, Mylar, and HDPE Cladding Light Collection Effect]{The effect of Teflon, mylar, and HDPE cladding on the light collection of a scintillating slab}.
+  \label{tab:CladStudy}
+  \begin{tabular}{p{4cm} m{3cm} m{3cm}}
+  \toprule
+  & Coating & Photons Collected \\
+  \midrule 
+  \multirow{3}{*}{EJ-200} & Teflon & 12\% \\
+  				      & Air &  14\% \\
+				      & Mylar & 9.6\% \\
+  \midrule 
+  \multirow{3}{*}{PS LiF} & Teflon & 4.3\% \\
+  				      & Air & 4.5\% \\
+				      & Mylar & 4.0\% \\
+  \midrule 
+  \multirow{3}{*}{EJ-426} & Teflon & \num{4.6E-3}\% \\
+  				      & Air & \num{4.5E-3}\% \\
+				      & Mylar & \num{4.2E-3}\% \\
+ \bottomrule				 	   				  
+  \end{tabular}
+\end{table}
+  \begin{table}
+  \caption[Light Collection Increase with a WLS Bar]{Effect of a WLS on the light collection of a scintillating slab.}
+  \label{tab:WLSStudy}
+  \begin{tabular}{p{4cm} m{3cm} m{3cm}}
+  \toprule
+  & \multicolumn{2}{c}{Precent Photons Detected} \\
+  Detector Material & PMMA &  WLS \\
+  \midrule
+ EJ-200 & 0.68\%  & 12\% \\
+ PS LiF & 0.14\% & 4.3\% \\
+ EJ-426 & \num{1.3E-3}\% & \num{4.5E-3}\% \\
+ \bottomrule
+  \end{tabular}
+\end{table}
 
-%  \end{tabular}
-%\end{table}
 %An overview of the light transport and scintillation processes available in GEANT4 is presented in \cite{riggi_introducing_2011}.
 %The authors also simulated a \SI{1}{\m} by \SI{1}{\cm} by \SI{1}{\cm} plastic strip in order to calculate the photon attenuation in the plastic.
 %Two orders of magnitude drop in the number of photons was calculated for photons collected \SI{90}{\cm} from the distance of emission, and was highly dependent of the reflectivity of the material encasing the plastic strip\cite{riggi_introducing_2011}.
