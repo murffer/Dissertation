@@ -70,7 +70,7 @@ It is observed that higher length genomes tended to shows a slight decrease in t
 \begin{table}
 	\caption[Optimal geometry for 2.5 interactions per second]{Optimal genome geometries for a total minium interaction rate of 2.5 interactions per second. The detector and simulation is configured per the PNNL critera.}
 	\label{tab:GAOptRXNRate_25}
-	\begin{tabular}{m{5cm} & m{3cm} & m{2cm} 
+	\begin{tabular}{m{5cm} m{3cm} m{2cm} }
 	\toprule
 	Genome & Interaction Rate & Mass \iso[6]{Li} \\
 	\midrule
@@ -78,11 +78,12 @@ It is observed that higher length genomes tended to shows a slight decrease in t
 	00100101000000000000 & 3.79 & 3 \\
 	00010100001000000000000000 & 3.75 & 3 \\
 	\bottomrule
+	\end{tabular}
 \end{table}
 \begin{table}
 	\caption[Optimal geometry for 5 interactions per second]{Optimal genome geometries for a total minium interaction rate of 5 interactions per second. The detector and simulation is configured per the PNNL critera.}
 	\label{tab:GAOptRXNRate_5}
-	\begin{tabular}{m{5cm} & m{3cm} & m{2cm} 
+	\begin{tabular}{m{5cm}  m{3cm}  m{2cm} }
 	\toprule
 	Genome & Interaction Rate & Mass \iso[6]{Li} \\
 	\midrule
@@ -90,17 +91,19 @@ It is observed that higher length genomes tended to shows a slight decrease in t
 	01011010010000000000 & 5.21& 5 \\
 	011001001000010000000000000000 & 5.06 & 5 \\
 	\bottomrule
+	\end{tabular}
 \end{table}
 \begin{table}
 	\caption[Optimal geometry for 7.5 interactions per second]{Optimal genome geometries for a total minium interaction rate of 7.5 interactions per second. The detector and simulation is configured per the PNNL critera.}
 	\label{tab:GAOptRXNRate_75}
-	\begin{tabular}{m{5cm} & m{3cm} & m{2cm} 
+	\begin{tabular}{m{5cm}  m{3cm} m{2cm}}
 	\toprule
 	Genome & Interaction Rate & Mass \iso[6]{Li} \\
 	\midrule
 	01111101110100001000 & 7.56 & 10 \\
 	01111101010010101000 & 7.53 & 10 \\
 	\bottomrule
+	\end{tabular}
 \end{table}
 
 The neutron flux as it crosses the detector is of interest to examine the utilization of the neutrons.
@@ -110,7 +113,7 @@ Once the thermal flux has reached about \SI{4E-3}{neutrons \per \cm\squared \per
 A build up of the thermal flux is observed after the last detector layer, and the thermal flux declines as neutrons leave the detector.
 \begin{figure}
 	\centering
-	\includegraphics[widhth=\textwidht]{{20Length2.5cpsMinFluxProfiles}.eps}
+	\includegraphics[width=\textwidth]{20Length25cpsMinFluxProfiles}
 	\caption[Neutron Flux Profile for an Optimal 20 Length Genome, miniumn 2.5 interactions per second]{Neutron flux profile for a 20 length genome with an interaction rate of 3.82 interactions per neutron. The vertical lines represent detector slices.}
 	\label{fig:20Length25MinFluxProfile}
 \end{figure}
@@ -127,5 +130,5 @@ The neutron flux is then moderated again, and additional layers of detectors are
 However, it is desirably to have a large neutron reflector in the portal monitor to reflect neutrons back into the detector slices. 
 Theoretically this reflector should be as large as possible, but the limited space of the RPM provides a constraint.
 A parameter study with a single detector slice between a moderator and reflector constrained by the radiation portal monitor design showed that it is desirable to have around \textbf{So much} moderator leaving the majority of the RPM to be left for the reflector.
-Thus it is demonstrated that a large reflector is desired.10Length2.5cpsMinFluxProfiles.eps
+Thus it is demonstrated that a large reflector is desired.
 
