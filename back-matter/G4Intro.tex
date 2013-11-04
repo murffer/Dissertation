@@ -50,6 +50,7 @@ However, the photons produced with scintillations are not tracked unless optical
 The \verb+G4EmStandardPhysics_option4+ is not the lowest energy model, the GEANT4-DNA extension provides models for energies down to a few eV but only for liquid water.
 
 \subsection{Optical Physics}
+\label{sec:G4OpticalPhysicsAppendix}
 The light transport in GEANT4 can be thought of in two components; the generation of the optical photon, and the subsequent transport of that photon.
 Scintillating materials have a characteristic light yield defined by \verb+SCINTILLATIONYIELD+, and an intrinsic resolution, \verb+RESOLUTIONSCALE+.
 The number of photons generated during a step by an energy deposition is then a distribution characterized by \verb+RESOLUTIONSCALE+.
@@ -80,19 +81,35 @@ As the Birks constant increases the separation between the neutron and gamma pul
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{{GS20SimulatedLightOverlap_2}.eps}
-	\caption{Simulated Gamma and Neutron Optical Photon Spectra for a Birks constant of \SI{0.02}{\mm\per\MeV}. The gamma is shown as red, while neutrons are black.}.
+	\caption{Simulated Gamma and Neutron Optical Photon Spectra for a Birks constant of \SI{0.02}{\mm\per\MeV}. The gamma is shown as red, while neutrons are black.}
 	\label{fig:GS20Birks2Sim}
 \end{figure}
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{{GS20SimulatedLightOverlap_25}.eps}
-	\caption{Simulated Gamma and Neutron Optical Photon Spectra for a Birks constant of \SI{0.025}{\mm\per\MeV}}.
+	\caption{Simulated Gamma and Neutron Optical Photon Spectra for a Birks constant of \SI{0.025}{\mm\per\MeV}.}
 	\label{fig:GS20Birks25Sim}
 \end{figure}
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{{GS20SimulatedLightOverlap_3}.eps}
-	\caption{Simulated Gamma and Neutron Optical Photon Spectra for a Birks constant of \SI{0.03}{\mm\per\MeV}}.
+	\caption{Simulated Gamma and Neutron Optical Photon Spectra for a Birks constant of \SI{0.03}{\mm\per\MeV}.}
 	\label{fig:GS20Birks3Sim}
 \end{figure}
+The Birks constant was then determined semi - empirically for the different material by  simulated the light out of the material with different Birks values and using the value that agreed closest to the measured light yield and separation between the neutron and gamma pulses.
+This is shown in \autoref{fig:GS20_BriksVariation} for GS20 and in \autoref{fig:PS_BirksVariation} for a polystyrene based film.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{GS20_BirksVariation.eps}
+	\caption{Simulated Gamma and Neutron Optical Photon production in GS20 for various Birks Constants.}
+	\label{fig:GS20_BriksVariation}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{PSLiF_BirksVariation.eps}
+	\caption{Simulated Gamma and Neutron Optical Photon production in polystyrene for various Birks Constants.}
+	\label{fig:PS_BirksVariation}
+\end{figure}
+
+
 
