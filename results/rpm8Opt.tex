@@ -132,3 +132,80 @@ Theoretically this reflector should be as large as possible, but the limited spa
 A parameter study with a single detector slice between a moderator and reflector constrained by the radiation portal monitor design showed that it is desirable to have around \textbf{So much} moderator leaving the majority of the RPM to be left for the reflector.
 Thus it is demonstrated that a large reflector is desired.
 
+
+\section{Wrapped Polymer Cylinders}
+\label{sec:WrappedCylinders}
+
+In addition to planar detector sheets a possible replacment geoemtry could be to wrap the detector sheets around a wavelength shifting light core in concentric cylinders and replace the helium tube directly.
+MCNPX simulations were completed of geometries containing two, three, and four cylinders of wrapped detector material.
+The outer diamater of the cylinders were set to be two inches (\SI{2.5}{\cm}) to be a direct replacement of the existing helium three tubes.
+The exact placement of the helium tubes in an RPM is not known, so the tubes were placed one-third of the way back in the detector material, and spaced equidistance apart.
+The spacing of the tubes inside the radiation portal montior is described in \autoref{tab:WrappedCylinderPositions}.
+The thickness of the RPM (\SI{12.7}{\cm}) corresponds to the x dimension, where the front of the detector is at x equals \SI{0.0}{\cm}.
+The width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}, where a y corridante of zero is on the midline of the detector width.
+\begin{table}
+  \caption[Wrappend Cylinder Positions]{Positions of the wrapped cylinders in the RPM. The thickness of the RPM corresponds to the x dimension, and the width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}}
+  \label{tab:WrappedCylinderPositions}
+  \begin{tabular}{m{2cm} | m{3cm} m{4cm} }
+    \toprule
+    Number Cylinders & x corridnate & y corridinate \\
+    \midrule
+    2 & \SI{4.23}{\cm} & $\pm$ \SI{10.16}{\cm} \\
+    3 & \SI{4.23}{\cm} & \SI{0}{\cm}, $\pm$ \SI{7.625}{\cm} \\
+    4 & \SI{4.23}{\cm} & $\pm$ \SI{3.05}{\cm}, $\pm$ \SI{9.15}{\cm} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}
+  \caption[Two Wrapped Cylinders Interaction Rate]{MCNPX simulated interaction rate of two wrapped cylinders of polymer loaded \iso[6]{LiF} in the RPM8 footprint}
+  \label{tab:TwoCylinderResults}
+	\begin{tabular}{m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{4cm} >{\centering\arraybackslash} m{4cm} }
+	\toprule
+    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Count Rate  & count rate per mass \\
+           &                       &  \centering{\si{\gram}} & \si{\cps\per\ng} \iso[255]{Cf}  & \si{\cps\per\ng \iso[252]{Cf}\per\gram} \\
+    \midrule
+    PS     &  0.10  &  2.401 &   1.321 $\pm$   0.03 &   0.550 \\ 
+    PS     &  0.20  &  4.798 &   1.852 $\pm$   0.04 &   0.386 \\
+    PS     &  0.30  &  7.192 &   2.160 $\pm$   0.04 &   0.300 \\
+    PEN    &  0.10  &  2.384 &   1.325 $\pm$   0.03 &   0.556 \\
+    PEN    &  0.20  &  4.769 &   1.841 $\pm$   0.04 &   0.386 \\
+    PEN    &  0.30  &  7.154 &   2.157 $\pm$   0.04 &   0.302 \\ 
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption[Three Wrapped Cylinders Interaction Rate]{MCNPX simulated interaction rate of three wrapped cylinders of polymer loaded \iso[6]{LiF} in the RPM8 footprint}
+  \label{tab:ThreeCylinderResults}
+	\begin{tabular}{m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{4cm} >{\centering\arraybackslash} m{4cm} }
+	\toprule
+    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Count Rate  & count rate per mass \\
+           &                       &  \centering{\si{\gram}} & \si{\cps\per\ng} \iso[255]{Cf}  & \si{\cps\per\ng \iso[252]{Cf}\per\gram} \\
+    \midrule
+    PS     &  0.10  &  2.401 &   1.482 $\pm$  0.02 &   0.617 \\
+    PS     &  0.20  &  4.798 &   2.240 $\pm$  0.03 &   0.467 \\
+    PS     &  0.30  &  7.192 &   2.706 $\pm$  0.04 &   0.376 \\
+    PEN    &  0.10  &  2.384 &   1.368 $\pm$  0.02 &   0.574 \\
+    PEN    &  0.20  &  4.769 &   2.119 $\pm$  0.03 &   0.444 \\
+    PEN    &  0.30  &  7.154 &   2.608 $\pm$  0.04 &   0.365 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption[Four Wrapped Cylinders Interaction Rate]{MCNPX simulated interaction rate of four wrapped cylinders of polymer loaded \iso[6]{LiF} in the RPM8 footprint}
+  \label{tab:FourCylinderResults}
+	\begin{tabular}{m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{4cm} >{\centering\arraybackslash} m{4cm} }
+	\toprule
+    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Count Rate  & count rate per mass \\
+           &                       &  \centering{\si{\gram}} & \si{\cps\per\ng} \iso[255]{Cf}  & \si{\cps\per\ng \iso[252]{Cf}\per\gram} \\
+    \midrule
+    PS     &  0.10  &  2.401 &   1.879 $\pm$   0.03 &   0.783 \\
+    PS     &  0.20  &  4.798 &   2.816 $\pm$   0.04 &   0.587 \\
+    PS     &  0.30  &  7.192 &   3.360 $\pm$   0.05 &   0.467 \\
+    PEN    &  0.10  &  2.384 &   1.726 $\pm$   0.02 &   0.724 \\
+    PEN    &  0.20  &  4.769 &   2.668 $\pm$   0.04 &   0.559 \\
+    PEN    &  0.30  &  7.154 &   3.234 $\pm$   0.04 &   0.452 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
