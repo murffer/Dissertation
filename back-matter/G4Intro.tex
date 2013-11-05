@@ -96,3 +96,11 @@ As the Birks constant increases the separation between the neutron and gamma pul
 	\label{fig:GS20Birks3Sim}
 \end{figure}
 
+The resolution of the a detector can be set with the \verb+RESOLUTION+ parameter in the material property table.
+The relationship between the \verb+RESOLUTION+ parameter and the FWMH can be described as \eqref{eqn:ScintResolution}
+\begin{align}
+	\label{eqn:ScintResolution}
+	\text{RESOLUTION} = \frac{R]{2.35} \sqrt{E\times\text{SCINTILLATIONYIELD}}
+\end{align}
+where \definevar{$R$}{precent resolution (FWHM/Peak)} measured at \definevar{$E$}{peak energy}.
+For GS20, where the precent resolution is around 15\%, this yields a \verb+RESOLUTION+ of eight.
