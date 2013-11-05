@@ -138,13 +138,26 @@ Thus it is demonstrated that a large reflector is desired.
 
 In addition to planar detector sheets a possible replacment geoemtry could be to wrap the detector sheets around a wavelength shifting light core in concentric cylinders and replace the helium tube directly.
 MCNPX simulations were completed of geometries containing two, three, and four cylinders of wrapped detector material.
+It is envisioned that the detector material could be deposited on a flexible sheet and wrapped to create a cylinder, however, for simplicty a cocentric cylinder design is simulated.
 The outer diamater of the cylinders were set to be two inches (\SI{2.5}{\cm}) to be a direct replacement of the existing helium three tubes.
 The exact placement of the helium tubes in an RPM is not known, so the tubes were placed one-third of the way back in the detector material, and spaced equidistance apart.
-The spacing of the tubes inside the radiation portal montior is described in \autoref{tab:WrappedCylinderPositions}.
+The spacing of the tubes inside the radiation portal montior is described in \autoref{tab:WrappedCylinderPositions}, and shown in \autoref{fig:WrappedCylinderGeo} and \autoref{fig:WrappedCylinderPos}.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{WrappedGeoCylinder_WrappedCylinder.eps}
+  \caption[Rendering of Wrapped Cylinder Geometry]{MCNPX Rendering of a wrapped cylinder.  There is a \SI{1}{\cm} diamter inner light guide surrounded by films seperated by \SI{0.4}{\cm} thick light guides.}
+  \label{fig:WrappedCylinderGeo}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{WrappedGeoCylinder_WrappedCylinderPositions.eps}
+  \caption[Positions of Wrapped Cylinders in RPM Cabinet]{MCNPX Rendering of wrapped cylinders placed in an RPM8 Cabinet.}
+  \label{fig:WrappedCylinderPos}
+\end{figure}
 The thickness of the RPM (\SI{12.7}{\cm}) corresponds to the x dimension, where the front of the detector is at x equals \SI{0.0}{\cm}.
 The width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}, where a y corridante of zero is on the midline of the detector width.
 \begin{table}
-  \caption[Wrappend Cylinder Positions]{Positions of the wrapped cylinders in the RPM. The thickness of the RPM corresponds to the x dimension, and the width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}}
+  \caption[Wrapped Cylinder Positions]{Positions of the wrapped cylinders in the RPM. The thickness of the RPM corresponds to the x dimension, and the width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}}
   \label{tab:WrappedCylinderPositions}
   \begin{tabular}{m{2cm} | m{3cm} m{4cm} }
     \toprule
