@@ -97,27 +97,25 @@ As the Birks constant increases the separation between the neutron and gamma pul
 	\label{fig:GS20Birks3Sim}
 \end{figure}
 The Birks constant was then determined semi - empirically for the different material by  simulated the light out of the material with different Birks values and using the value that agreed closest to the measured light yield and separation between the neutron and gamma pulses.
-This is shown in \autoref{fig:GS20_BriksVariation} for GS20 and in \autoref{fig:PS_BirksVariation} for a polystyrene based film.
+This is shown in \autoref{fig:GS20BirksVariation} for GS20 and in \autoref{fig:PSBirksVariation} for a polystyrene based film.
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{GS20_BirksVariation.eps}
 	\caption{Simulated Gamma and Neutron Optical Photon production in GS20 for various Birks Constants.}
-	\label{fig:GS20_BriksVariation}
+	\label{fig:GS20BirksVariation}
 \end{figure}
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{PSLiF_BirksVariation.eps}
 	\caption{Simulated Gamma and Neutron Optical Photon production in polystyrene for various Birks Constants.}
-	\label{fig:PS_BirksVariation}
+	\label{fig:PSBirksVariation}
 \end{figure}
-
-
 
 The resolution of the a detector can be set with the \verb+RESOLUTION+ parameter in the material property table.
 The relationship between the \verb+RESOLUTION+ parameter and the FWMH can be described as \eqref{eqn:ScintResolution}
 \begin{align}
 	\label{eqn:ScintResolution}
-	\text{RESOLUTION} = \frac{R]{2.35} \sqrt{E\times\text{SCINTILLATIONYIELD}}
+	\text{RESOLUTION} = \frac{R}{2.35} \sqrt{E\times\text{SCINTILLATIONYIELD}}
 \end{align}
 where \definevar{$R$}{precent resolution (FWHM/Peak)} measured at \definevar{$E$}{peak energy}.
 For GS20, where the precent resolution is around 15\%, this yields a \verb+RESOLUTION+ of eight.
