@@ -57,18 +57,30 @@ Genetic algorithms were employed to optimize a binary model of the detector for 
 This model consisted of using a binary representation of the layered detector geometry (where each layer is either a \verb+1+ (signifying a detector slice) or \verb+0+ (moderator slice).
 The model was then evaluated using MCNPX and XSDRN to simulate the expected neutron interaction rate performance.
 
+The position of the slices necessary for having the best usage of the absorber material while still maintaining the neutron count rate necessary for the criteria are then determined by the genetic algorithm.
+\autoref{tab:GAOptRXNRate} shows the optimal geometry representation necessary to achieve a minimum of 2.5, 5.0 and 7.5 interactions per second per nanogram \iso[252]{Cf}.
+These geometries are translated into positions of the right hand boundary of the material in \autoref{tab:OptGeoDetailed75},\autoref{tab:OptGeoDetailed5}, and \autoref{tab:OptGeoDetailed25}.
+\begin{table}
+	\caption[Optimal geometry for various interaction rates]{Optimal genome geometries for various minimium interactions rates per nanogram \iso[252]{Cf}. The detector and simulation is configured per the PNNL criteria.}
+	\label{tab:GAOptRXNRate}
+	\begin{tabular}{m{7cm} m{5cm} m{2cm} }
+	\toprule
+	Genome & Interaction Rate & Mass \iso[6]{Li} \\
+	\midrule
+	01111101110100001000 & 7.56 & \SI{41.2}{\gram} \\
+	011101001000000 & 5.31 & \SI{21.0}{\gram} \\
+		0011010000 & 3.82 & \SI{12.6}{\gram} \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+\input{conclusions/optGeoTables}
 
-The geometry surrounding the placement of a film in a radiation portal monitor cabinet greatly impacts the interaction rate of the entire detector assembly.
-A simple repeated layer
 A physical basis of the optimal solution found by the genetic algorithm can be found by observing the form of the optimal solutions.
-These solutions involve an initial moderator layer in order to ensure that all of the neutrons are thermalized to (increasing the thermal fraction by \textbf{SOME PERCENT}).
+These solutions involve an initial moderator layer in order to ensure that all of the neutrons are thermalized.
 After this moderator layer a film layer is placed to utilize this neutron spectra; however not all of the thermal neutrons are captured (as the mean free path of a neutron in polyethylene is about \SI{0.37}{\cm} and thus some pass through the material) and another absorber layer is needed to capture those neutrons.  
 The neutron flux is then moderated again, and additional layers of detectors are needed to capture this neutron cross section.
 However, it is desirably to have a large neutron reflector in the portal monitor to reflect neutrons back into the detector slices. 
 Theoretically this reflector should be as large as possible, but the limited space of the RPM provides a constraint.
-A parameter study with a single detector slice between a moderator and reflector constrained by the radiation portal monitor design showed that it is desirable to have around \textbf{So much} moderator leaving the majority of the RPM to be left for the reflector.
-Thus it is demonstrated that a large reflector is desired.
-
 
 mathematical lower level discriminator 
 This work will be novel in its utilization of high fidelity energy deposition to explain the origins of neutron-gamma discrimination through the range of secondary electrons from the neutron and photons reactions in their subsequent energy deposition.
@@ -84,4 +96,3 @@ A toolkit for the optimization of a radiation portal monitor has been presented 
 Attention needs to be paid to the thickness of a film in order to maximize the neutron / photon discrimination that goes simply beyond the probability of interaction.
 
 The choice of detector thickness must take this into account, and a balance struck.
-
