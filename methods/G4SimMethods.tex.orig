@@ -58,13 +58,13 @@ This asymptotic behavior is not observed for the gamma spectra.
 \begin{figure}
 	\centering
     	\includegraphics[width=\textwidth]{G4EDep_LightYield_Neutron}
-	\caption[Average Light Yield and Energy Deposition for neutron interactions in PS]{Average energy deposition and measured light yield for neutron interactions in 10 \% loaded polystyrene. The solid lines are calculated values and the red dots are measurements. The incident particle for the simulation is a neutron of energy \SI{0.025}{\eV}, while the measured is the response of thermal neutron spectrum measured from the Cf-252 irradiator.}
+	\caption[Average Light Yield and Energy Deposition for neutron interactions in PS]{Average energy deposition and measured light yield for neutron interactions. The solid lines are calculated values and the red dots are measurements.}
 	\label{fig:EDepLightYieldNeutron}
 \end{figure}
 \begin{figure}
 	\centering
     	\includegraphics[width=\textwidth]{G4EDep_LightYield_Co60}
-	\caption[Average Light Yield and Energy Deposition for Gamma interactions in PS]{Average energy deposition and measured light yield for \iso[60]{Co} interactions in 10 \% loaded polystyrene. The solid lines are calculated values and the red dots are measurements}
+	\caption[Average Light Yield and Energy Deposition for Gamma interactions in PS]{Average energy deposition and measured light yield for \iso[60]{Co} interactions. The solid lines are calculated values and the red dots are measurements}
 	\label{fig:EDepLightYieldGamma}
 \end{figure}
 
@@ -77,15 +77,49 @@ Scattering at the boundary between two surfaces can be  handled by the UNIFIED m
 For this work a look up table model was employed.
 
 
-\subsection{Optical Photon Yield}
+\subsection{Optical Photon Validation}
 \label{sec:OpticalPhotonValidation}
 The GEANT4 optical photon model was verified by measuring a detector and then simulating a similar detector in the GEANT4 toolkit. 
 The comparison of the simulated entire  detection mechanisms (including the energy deposition, scintillation, and optical photon collection) to the a measured value provides confidence in the entire model; however, it should be noted that a validation of this type could allow for individual errors to miraculously cancel each other out.
 Two cases where considered for the validation: 1) a sample mounted onto a PMT and 2) fabricated layered detectors that where  \SI{10}{cm} by \SI{15}{cm} by \SI{6}{cm} .
 The single sample mounted on the PMT was used to establish the Birks constant for the material and the light yield (more details can be found in \autoref{sec:G4OpticalPhysicsAppendix}), and the fabricated layered detectors measurements were used to provide confidence of the ability to simulate a large scale detector system.
 
-A single sample mounted on a PMT provides a simple geometry to validate the parameters used in the light transport simulations. 
+A single sample mounted on a PMT provides a simple geometry to calibrate the parameters used in the light transport simulations. 
 The geometry consist of a sample mounted with a thin layer of optical grease to the PMT, and the entire assembly is wrapped with teflon grease.
+<<<<<<< HEAD
+This mimics the measurement of a sample mounted on a PMT, assuming that the pulse height is directly linear with the number of optical photons produced and the efficiency of the photocathode is one.
+The comparison of the simulated and measured spectra are shown in \autoref{fig:LightValSingle_GS20} for GS20 and in \autoref{fig:LightValSingle_PS} for a 10\% polystyrene based film.
+The light output of the Compton edge (corresponding to about \SI{1}{\MeV}) produces 3,800 photons for a light yield of \SI{3,800}{photons \per \MeV}. 
+The neutron peak of the GS20 sample occurs at \SI{6000}{photon\per neutron} in agreement with \cite{carel_w.e_inorganic-scintillator_2001}.
+The light yield of the PS samples is based off of the GS20 samples, and thus published data is not available.
+However, there light yield agrees with the measured values.
+More details on parameters necessary for optical photon simulations in GEANT4 can be found in \label{chap:G4Intro}.
+\begin{figure}
+	\caption[Simulated Photons and Pulse Height for GS20]{GEANT4 simulation of the number of optical photons produced by neutron and gamma events compared  to the measurment for GS20.}
+	\label{fig:LightValSingle_GS20}
+\end{figure}
+\begin{figure}
+	\caption[Simulated Photons and Pulse Height for GS20]{GEANT4 simulation of the number of optical photons produced by neutron and gamma events compared  to the measurment for GS20.}
+	\label{fig:LightValSingle_GS20}
+\end{figure}
+
+The established material properties then allow for the simulation of a layered detector design and subsequent validation.
+This is completed by measuring the fabricated layered sample, and then determining the number of optical photons produced by a simple ratio between a single sample mounted on the PMT and the layered detector.
+The results of these simulations are presented in \autoref{tag:LayeredDetectorVal}.
+\begin{table}
+	\centering
+	\caption[Agreement between Simulated and Measured Photons for Layered Detectors]{Simulated and measured photons detected for layered detector designs. The values reported are the spectral averages.}
+	\label{tab:LayeredDetectorVal}
+	\begin{tabular}{p{3cm} | p{3cm} p{3cm} p{3cm}}
+	\toprule
+	Detector Material & Simulated & Measured & Agreement \\
+	\midrule
+	EJ 426 & & & \\
+	PS LiF & & & \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+=======
 This mimics the measurement of a sample mounted on a PMT, expect for the efficiency of the photocathode is not considered.
 The simulated neutron and gamma optical photon spectra for GS20 and polystyrene based film are shown in \autoref{fig:GS20LightVal} and \autoref{fig:PSLightVal}.
 \begin{figure}
@@ -96,8 +130,9 @@ The simulated neutron and gamma optical photon spectra for GS20 and polystyrene 
 \end{figure}
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{LightValidation_PS.eps}
+	\includegraphics[width=\textwidth]{LightValidation_PS.epss}
 	\caption{Simulated Gamma and Neutron Optical Photon Distribution for a polystyrene film.}
 	\label{fig:PSLightVal}
 \end{figure}
 
+>>>>>>> Birks
