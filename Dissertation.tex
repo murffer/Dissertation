@@ -12,7 +12,7 @@
 % 1. thesis/dissertation
 % 2. monochrome
 % 3. all options provided by the report class
-\documentclass[thesis,letterpaper,12pt]{utthesis} % thesis, one side
+\documentclass[dissertation,letterpaper,12pt]{utthesis} % thesis, one side
 \input{Preamble}
 % some alternatives are:
 %\documentclass[thesis,monochrome,letterpaper,12pt]{utthesis} %thesis, one side, monochrome text
@@ -26,7 +26,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Optimization of the Radiation Portal Monitor}
 \author{Matthew J. Urffer}
-\date{August 9, 2013}
+\date{\today}
 \copyrightYear{2013} 
 \graduationMonth{December}
 \majorProfessor{Liaurence F. Miller}
@@ -95,11 +95,11 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % INCLUDE THE CHAPTERS STARTING WITH THE NOMENCLATURE IF PRESENT
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \include{chapters/intro}  % Problem introduction
-    \include{chapters/secElec}  
-    \include{chapters/gaOpt}
-    \include{chapters/lightTrans}
-    \include{chapters/conclusions}
+    \include{chapters/intro}  		% Problem introduction
+    \include{chapters/theory}  		% Phyics Theory
+    \include{chapters/methods}		% Modeling and GA Intro
+    \include{chapters/results}		% Optimization Results
+    \include{chapters/conclusions}	% Conclusions
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % BIBLIOGRAPHY
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -112,7 +112,7 @@
     \appendix
     \include{back-matter/ComptonScattering}
     \include{back-matter/MCNPXReactionRateCalc}
-    \include{back-matter/IntrinsicEfficiency}
+    \include{back-matter/G4Intro}
     \include{back-matter/DetectorCharacterization}
     \include{back-matter/DetectorComparisons}
 

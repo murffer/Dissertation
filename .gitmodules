@@ -1,0 +1,6 @@
+[submodule "code/GARP8MOpt"]
+	path = code/GARP8MOpt
+	url = git://github.com/murffer/GARPM8Opt.git
+[submodule "code/DetectorSim"]
+	path = code/DetectorSim
+	url = git://github.com/murffer/DetectorSim.git

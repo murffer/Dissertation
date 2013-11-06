@@ -1,0 +1,39 @@
+
+
+\chapter{RPM Light Collection}
+\label{chap:LightTransport}
+\section{RPM Light Collection Performance}
+\label{sec:RPMLCP}
+
+
+
+\subsection{Proposed Work}
+It is proposed to simulate the neutronics, energy deposition, and light transport and collection of the optical photons with the GEANT4 toolkit to ensure that the proposed detector designs will be feasible. 
+This will then have two parts:
+\begin{enumerate}
+  \item the fabrication and simulation of detectors whose performance can be measured in the laboratory, and
+  \item the simulation of a RPM in the geometry specified by the neutronics calculations.
+\end{enumerate}
+It is also proposed to explore the design space of the light collection instrumentation, where such design options include
+\begin{itemize}
+  \item the use of a wavelength shifter (WLS) to increase the detected optical photons by decrease the optical photons absorbed in the light guide,
+  \item the design of a light guide to enhance the photons reflected towards the PMT,
+  \item the application of different light reflection techniques (air gap, Teflon tape, aluminized mylar) to enhance the light collection, and
+  \item the placement of PMT's for their effective utilization.
+\end{itemize}
+The developed GEANT4 application will then have the ability to fully simulate the performance of a replacement RPM.
+
+\subsection{Methodology}
+The full simulation of the light transport of the RPM will be completed in with the GEANT4 toolkit.
+GEANT4 offers three example simulations for generation and tracking of optical photons (\verb+ExampleN06+, \verb+extended/LXe+, and \verb+extended/WLS+).
+These examples will be adapted for the purposes of this simulation.
+However, it should be noted that the \verb+LXe+ and \verb+WLS+ utilize a sensitive detector which kills tracks, and for the purposes of the simulation of the RPM this will not be implemented.
+
+The validation of the GEANT4 simulations will be completed with the fabrication of a 4 inches by 6 inches layered detector to allow the toolset to be benchmarked against measurements.
+Detectors of various materials (boron loaded plastic, lithium loaded polymers, and LiF/ZnS(Ag)) will be tested to avoid a basis in the simulation parameters.
+Where possible, the optical parameters of the materials will be taken from the literature.
+However, it they cannot be found a similar material for which the property is know will be substituted.
+In addition, rather than providing reflectivity parameters for each material, a model of optical surface will be used according to the work of Janecek\cite{5485130}. 
+
+The GEANT4 light transport simulation code base will be written such that bit-string geometries from genetic algorithm optimization can be directly implemented.
+With this formulation it will be possible to reuse the genetic algorithm optimization code base, while additionally providing a validation of the GEANT4 neutronic calculations against the MCNPX.

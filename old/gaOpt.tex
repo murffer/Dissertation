@@ -1,0 +1,29 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                      									 %
+%                  		  	RPM Neutronic Performance   		            	 %
+% 									                                                     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Neutronic Optimization}
+\label{chap:GARPMOpt}
+\section{Introduction}
+
+In this particular problem the placement of a film greatly changes the solution because of the large change in the neutron flux, and traditional gradient based solvers would tend to be trapped in these local minima.
+Genetic algorithms were chosen as the optimization technique because they are less susceptible to local minima than other search techniques and tend to preform very well on combinatorial problems such as this one \cite{Mitchell_1997}.
+
+
+
+XSDRN will be used to preform an initial parameter study and determine a subset of optimal geometries on which to preform more accurate Monte Carlo (MCNPX) modeling. 
+A subset of the highest preforming geometries validated by the detailed model with then be used to test the sensitivity by adjusting the position of the films by fractional amounts.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                         %
+%                             MCNPX Model                                 %
+%                                                                         %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/RPM8OptResults}
+
+\section{Conclusions}
+
+

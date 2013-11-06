@@ -3,57 +3,57 @@
 \label{chap:ComptonScatter}
 
 Compton scattering is the inelastic scattering of a photon off a free charged particle, usually an electron.
-The incident photon undergoes a decrease in energy, transfering the energy to the kinetic energy of the electron while also having a scattered photon.
-Figure \ref{fig:ComptonScattering} is a representation of the phenoma, in which the incidnet photon has a wavelength $\lambda$ which after scattering angle $\theta$ has a final energy of $\lambda'$.
+The incident photon undergoes a decrease in energy, transferring the energy to the kinetic energy of the electron while also having a scattered photon.
+Figure \ref{fig:ComptonScattering} is a representation of the phenomena, in which the incident photon has a wavelength $\lambda$ which after scattering angle $\theta$ has a final energy of $\lambda'$.
 \begin{figure}
   \centering
   \includegraphics[width=0.45\textwidth]{ComptonScattering}
   \caption{Compton Scattering of a Photon off an Electron}
   \label{fig:ComptonScattering}
 \end{figure}
-The change in the energy of a compton scattered photon can be expresesed as \eqref{eqn:PhotonEnergyDiff}, where $E'$ is the final photon energy and $E$ is the initial photon energy, $m_e$ is the mass of the electron and $c$ is the speed of light.
+The change in the energy of a Compton scattered photon can be expressed as \eqref{eqn:APhotonEnergyDiff}, where $E'$ is the final photon energy and $E$ is the initial photon energy, $m_e$ is the mass of the electron and $c$ is the speed of light.
 \begin{align}
-  \label{eqn:FinalPhotonEnergy}
+  \label{eqn:AFinalPhotonEnergy}
   \frac{1}{E'} -\frac{1}{E} = \frac{1}{m_e c^2}\left(1-\cos\theta\right) 
 \end{align}
-Using the conservation of energy, the energy given to the electron, $E_e$ must be equal to the difference in the initial and final photon energies \eqref{eqn:EnergyElectron}
+Using the conservation of energy, the energy given to the electron, $E_e$ must be equal to the difference in the initial and final photon energies \eqref{eqn:AEnergyElectron}
 \begin{align}
-  \label{eqn:EnergyElectron}
+  \label{eqn:AEnergyElectron}
   E_e &= E - E' \\ \notag
    &= E - \frac{E m_e c^2}{m_e c^2 + E (1-\cos\theta)}
 \end{align}
 
 \section{Differential Scattering Cross Section}
-The probability of scattering and imparting energy is provided by the Klein-Nishina formula \eqref{eqn:KleinNishina}.
+The probability of scattering and imparting energy is provided by the Klein-Nishina formula \eqref{eqn:AKleinNishina}.
 \begin{align}
-  \label{eqn:KleinNishina}
+  \label{eqn:AKleinNishina}
   d\sigma = \frac{1}{2} r_0^2 \left(\frac{E'}{E}\right)^2 \left(\frac{E'}{E} + \frac{E}{E'}-\sin^2\theta\right)d\Omega
 \end{align}
-If $f(\theta)$ is defined as $f(\theta) = \frac{1}{2}\left(\frac{E'}{E}\right)^2 \left(\frac{E'}{E} + \frac{E}{E'}-\sin^2\theta\right)$ and assuming the scattering is isotropic leading to $d\Omega = \sin\theta d\theta d\phi$ it is then possible to express \eqref{eqn:KleiNishina} as \eqref{eqn:KleinNishinaShort}.
+If $f(\theta)$ is defined as $f(\theta) = \frac{1}{2}\left(\frac{E'}{E}\right)^2 \left(\frac{E'}{E} + \frac{E}{E'}-\sin^2\theta\right)$ and assuming the scattering is isotropic leading to $d\Omega = \sin\theta d\theta d\phi$ it is then possible to express \eqref{eqn:AKleiNishina} as \eqref{eqn:AKleinNishinaShort}.
 \begin{align}
-  \label{eqn:KleinNishinaShort}
+  \label{eqn:AKleinNishinaShort}
     d\sigma = r_0^2 f(\theta)\sin\theta d\theta d\phi
 \end{align}
-It is then possible to integrate over $\phi$, and then divide by the differential scattering angle to arrive at \eqref{eqn:DiffKleinNishina}.
+It is then possible to integrate over $\phi$, and then divide by the differential scattering angle to arrive at \eqref{eqn:ADiffKleinNishina}.
 \begin{align}
-  \label{eqn:DiffKleinNishina}
+  \label{eqn:ADiffKleinNishina}
   d\sigma &=\int_{\phi=0}^{2\pi} r_0^2 f(\theta)\sin\theta d\theta d\phi\\
   \frac{d\sigma}{d\theta} &=2\pi r_0^2 f(\theta)\sin\theta
 \end{align}
-However the probability of scattering at a given kinetic energy of the electron is desiered, $d\sigma/dE_e$.
-With the chain rule and a few algebraic maniupulations it is possible to arrive at \eqref{eqn:DiffE}, and if the derivative of \eqref{eqn:EnergyElectron} is taken with respect to $\theta$ the differnetial energy scattering can be expressed as \eqref{eqn:dSdEKleinNishina}.
+However the probability of scattering at a given kinetic energy of the electron is desired, $d\sigma/dE_e$.
+With the chain rule and a few algebraic manipulations it is possible to arrive at \eqref{eqn:ADiffE}, and if the derivative of \eqref{eqn:AEnergyElectron} is taken with respect to $\theta$ the differential energy scattering can be expressed as \eqref{eqn:AdSdEKleinNishina}.
 \begin{align}
-  \label{eqn:DiffE}
+  \label{eqn:ADiffE}
   \frac{d\sigma}{dE_e} & = \frac{d\sigma}{d\theta} \frac{d\theta}{dE_e} \\
    & = \frac{d\sigma}{d\theta} \left[\frac{dE_e}{d\theta}\right]^{-1} 
 \end{align}
 \begin{align}
-  \label{eqn:dSdEKleinNishina}
+  \label{eqn:AdSdEKleinNishina}
 \frac{d\sigma}{dE_e} = 2\pi r_e^2 \sin \theta f(\theta)\left [ \frac{1+\frac{E}{m_e c^2}\left(1-\cos\theta \right)^2}{E^2 \sin \theta} \right ]
 \end{align}
 
 \section{Computational Spectra}
-The probability of a Compton scattered electron having an energy $E$ was calculated by sampling (using a rejection method) for the scattering distribution derived in \autoref{eqn:dSdEKleinNishina}.
-This probability was then normalzied into a probability density function and the cumulatitive density function was then calcualted to yield the probability that an electron would be born at an energy.
+The probability of a Compton scattered electron having an energy $E$ was calculated by sampling (using a rejection method) for the scattering distribution derived in \autoref{eqn:AdSdEKleinNishina}.
+This probability was then normalized into a probability density function and the cumulative density function was then calculated to yield the probability that an electron would be born at an energy.
 % Something about the code is avialable . . .
 
