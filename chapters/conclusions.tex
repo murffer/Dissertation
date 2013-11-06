@@ -108,18 +108,18 @@ This is a poor utilization of the absorber mass, but is attractive due to the ea
 The \iso[6]{Li} utilization of the four cylinder design can be improved by adding a fifth cylindrical detector assembly and increasing the spacing between the detector, which is leading to an approximation of planar sheet geometry.
 
 
-mathematical lower level discriminator 
-This work will be novel in its utilization of high fidelity energy deposition to explain the origins of neutron-gamma discrimination through the range of secondary electrons from the neutron and photons reactions in their subsequent energy deposition.
-The neutronic performance of a film will then be assessed by calculating the performance of a full scale replacement RPM in the test environment with MCNPX.
-Non-linear search techniques will then be used to find the optimal geometry of the MCNPX model of the detector that best utilizes the neutron absorber.
-Finally, the scintillation light from the detectors will be simulated with the GEANT4 toolkit, and the performance of the detector based upon the collected light signal reported.
-Different light collection strategies will be employed to maximize the light collection efficiency and minimize the cost of electronics necessary for the detector.
-
-
-A toolkit for the optimization of a radiation portal monitor has been presented in which simulations and measurements are combined to form a design suite.
-
-\section{Neturon - Photon Discrimination}
-Attention needs to be paid to the thickness of a film in order to maximize the neutron / photon discrimination that goes simply beyond the probability of interaction.
-
-The choice of detector thickness must take this into account, and a balance struck.
+\section{Light Collection}
+There is no assurance that the detectors designed based on interaction rate would be feasible to construct; due to their low light output and opaqueness collecting the light from scintillation events would be extremely difficult.  
+Additional simulation work then needs to be completed to ensure that a RPM in the layered detector design has a realistic method of collecting the light emitted from the scintillation events.
+Light transport modeling provides a way to calculate the performance of such a design while providing insights for the improvement of a detector design.
+GEANT4 was used to simulate the neutron interactions, energy deposition, scintillation (with quenching) and the light transport to a PMT for a radiation portal monitor design (shown in \autoref{fig:G4RPM8Geo}).
+This design has the \SI{100}{\um}, 10\% loaded \iso[6]{LiF} films sandwiched between wavelength shifting (each \SI{5}{\mm} thick) with a single PMT at the top and bottom.
+This design collects 8\% of the optical photons emitted; for a polystyrene film with an average light yield of 2,000 photons per neutron 400 would then hit the photocathode.
+It is expected that this is enough photons to create a signal above the noise for a typical PMT.
+\begin{figure}
+  \centering
+	\includegraphics[width=\textwidth]{GEANT4AnnotatedGeo_RPM8SimGeo}
+	  \caption[GEANT4 Simulated RPM8 Detector Design]{Simulated RPM8 with light transport in GEANT4. This design is capable of meeting all of the criteria set forth for radiation portal monitors.}
+  \label{fig:G4RPM8Geo}
+\end{figure}
 
