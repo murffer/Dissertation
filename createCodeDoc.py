@@ -14,8 +14,9 @@ def convertToLatex(markdownFile):
     outFile = os.path.join(outDir+os.path.basename(path)+'.tex')
     cmd = 'pandoc -f markdown -t latex {} > {}'.format(markdownFile,outFile)
     subprocess.call(cmd,shell=True)
-    #with open(outFile,'a') as out:
-    #    out.write(createListingsString(path))
+#    with open(outFile,'a') as out:
+#        out.write('\label{{sec:{}}}'.format(os.path.basename(path)))
+#        out.write(createListingsString(path))
     return os.path.basename(path)
 
 def getAllFiles(directory):
