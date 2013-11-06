@@ -14,7 +14,20 @@ def convertToLatex(markdownFile):
     outFile = os.path.join(outDir+os.path.basename(path)+'.tex')
     cmd = 'pandoc -f markdown -t latex {} > {}'.format(markdownFile,outFile)
     subprocess.call(cmd,shell=True)
-#    with open(outFile,'a') as out:
+    lines = list()
+    with open(outFile,'r') as fin:
+        lines = fin.readlines()
+    firstSection = True
+    with open(outFile,'w') as out:
+        for line in lines:
+            if 'label' in line:
+                if firstSection:
+                    tokens = line.split('\label{')
+                    line = tokens[0]+'\n\\label{sec:'+tokens[1]
+                    firstSection = False
+                else:
+                    line = line.split('\label')[0]
+            out.write(line)
 #        out.write('\label{{sec:{}}}'.format(os.path.basename(path)))
 #        out.write(createListingsString(path))
     return os.path.basename(path)
