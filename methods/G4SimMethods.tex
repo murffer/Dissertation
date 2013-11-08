@@ -107,3 +107,45 @@ The simulated neutron and gamma optical photon spectra for GS20 and polystyrene 
 	\label{fig:PSLightVal}
 \end{figure}
 
+The large scale transport of optical photons with the different boundary processes simulation was validated by measuring four assemblies of \SI{10.16}{\cm} by \SI{15.24}{\cm} scintillators with an attached fishtail light guide.
+Two of the samples where a 10\% loaded \iso[6]{LiF} polystyrene cast to \Si{50}{\um} and \SI{100}{\um}, while the other samples were a \Si{100}{\um} \iso[6]{LiF} loaded ZnS:Ag (purchased from Eljen, EJ-426) and a recast carborane sample from South Carolina State University.
+The PMMA slabs and light guide were also purchased from Eljen Technologies.
+The slabs and scintillators were mounted together with optical grease, as shown in \autoref{fig:4by6LightGuide} and \autoref{fig:4by6OpticalMounting}.
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{MeasLayeredDetector_MountingLayers}
+	\caption[4" by 6" Layered Detector Light Guide and Detector Assembly]{Image of the light guide and the layered PMMA slices between cast \iso[6]{LiF} loaded polystyrene detectors.}
+	\label{fig:4by6LightGuide}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{MeasLayeredDetector_EJ426Mounting}
+	\caption[4" by 6" Layered Detector Optical Mounting]{Image of the optical mounting of the detector slabs to the PMMA. The detector material shown in this sample is EJ-426 (LiF loaded ZnS:Ag) and is opaque.  In the case of the EJ-426 optical grease was only applied to the back face of the detector material per the manufactuers instructrions.}
+	\label{fig:4by6OpticalMounting}
+\end{figure}
+
+The agreement between the simulated number of optical photons and the measured number of optical photons detected is shown in \autoref{tab:4by6SlabOpVal}, with the measured collected spectra shown in \autoref{fig:4by6MeasSpectra}.
+The number of optical photons measured was calibrated by measuring the sample of pure material attached directly to the PMT, and simulating the efficiency of collecting the photons in that geometry.
+There are several factors effecting the agreement between the simulation and measurement.
+The optical coupling of the simulation was assumed to be perfect without air bubbles, which is not consistent with reality.
+The opacity of the films were estimated from their absorbance profiles, which depends on how the sample was mounted in the measurement.
+Finally, and probably contributing the largest to the discrepancies, no attempt was made to fine tune the material parameters for the optical grease and teflon than that which was available as an example in the GEANT4 toolkit.
+\begin{table}
+	\caption[Agreeement between Simulated and Measured Photon Collection in 4" by 6" Slabs]{Agreement between the simulated light collection in the 4" by 6" detector assembiles and the measurements.}
+	\label{tab:4by6SlabOpVal}
+	\begin{tabular}{m{4cm} m{3cm} m{3cm}}
+	\toprule
+	Sample & Measured Photons Collected & Simulated Photons Collected \\
+	\midrule
+	EJ-426 & 1, 500 & 2,100 \\
+	PS LiF, \SI{50}{\um} & 220 & 260 \\
+	PS LiF, \SI{100}{\um} & 100 & 130 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{Meas_LayeredDetectorLightYield}
+	\caption[Measured Light Yield of the 4" by 6" Assembiles]{Measured light yield of the 4" by 6" detector assemblies. The response of the ZnS:Ag doped with \iso[6]{LiF} dominated the response.  The effect of a doubling the thickenss of the polystyrene films is observed in the higher count rate of the \SI{100}{\um} film with a slightly lower light yield than the \SI{50}{\um} film.}
+	\label{fig:4by6MeasSpectra}
+\end{figure}
