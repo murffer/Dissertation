@@ -32,22 +32,24 @@ Thicker films, where more energy is deposited and thus produce more photons, req
   \label{fig:GammaIntEffMLLD}
 \end{figure}
 
-Such a scheme will not be without cost, however, as the simulations and measurements indicate there is an overlap between the neutron 
-The calculated gamma intrinsic efficiency for six polymeric films along with the neutron response of two of the films in \autoref{fig:GammaIntrNeutronCounts}, and the fraction of neutron counts above the MLLD necessary for a given gamma intrinsic efficiency is plotted in \autoref{fig:crVsIntEff}.
+A pulse height discriminator to achieve the necessary gamma discrimination will not be without cost, however, due to an overlap between the neutron and gamma pulse height distributions.
+For example, the calculated gamma intrinsic efficiency for six polymeric films along with the neutron response of two of the films is shown in \autoref{fig:GammaIntrNeutronCounts},
+In order to achieve an intrinsic efficiency of less than \num{1E-6} the MLLD must be set above 2,000 channels, discarding a large majority of the neutron counts.
+The fraction of the neutron counts above a given discriminator setting necessary to achieve a given gamma intrinsic efficiency is plotted in \autoref{fig:crVsIntEff}.
 It is observed that if the films are thin enough (less than \SI{150}{\um}) it is possible to have a significant count rate above the mathematical lower level discriminator necessary for the pulse height discrimination of one in a million.
 This is seen by the \SI{50}{\um} film and the \SI{150}{\um} film having the tail of their neutron spectra above the pulse height discriminator necessary for an intrinsic efficiency of \num{1E-6}.
 Table \ref{tab:FractionCRGamma} shows the fraction of neutron count rate that is above the MLLD necessary for $\epsilon_{int,\gamma n} \le \si{1E-6}$.
-Films less than \SI{50}{\um} have over 2\% of the counts above the necessary discriminator setting, while thicker films have have a factor of 10 less.
+Films less than \SI{50}{\um} have over 16\% of the counts above the necessary discriminator setting, while thicker films have have a factor of 10 less.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{PS_IntEff_LiF20_PPO5}
-    \caption[PS Gamma intrinsic efficiency and neutron count rate]{Gamma intrinsic efficiency (dashed lines) plotted against neutron counts (solid). The gamma spectra has been normalized by the number of incident photons upon the sample, while the neutron spectra has not.}
+    \caption[PS Gamma intrinsic efficiency and neutron count rate]{Gamma intrinsic efficiency (dashed lines) plotted against neutron counts (solid). The gamma spectra has been normalized by the number of incident photons upon the sample, while the neutron spectra has not. The material is polystyrene loaded with 10\% \iso[6]{LiF}.}
     \label{fig:GammaIntrNeutronCounts}
 \end{figure}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{PS_IntFractionNCR_LiF}
-    \caption{Intrinsic efficiency versus neutron count rate. }
+    \caption{Intrinsic efficiency versus neutron count rate for polystyrene loaded with 10\% \iso[6]{LiF}.}
     \label{fig:crVsIntEff}
 \end{figure}
 \begin{table}[]
