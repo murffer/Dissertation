@@ -36,7 +36,7 @@ However, in the interior of the repeated layered detector design did not allow f
 A more efficient use of the neutron detector material would be to space the material out in the detector, separating the layers with moderator, such that the neutron flux could be thermalized before the next detector layer.
 
 Genetic algorithms were employed to optimize a binary model of the detector for the optimal geometry that had the highest count rate while using the least amount of absorber and still meeting the detection efficiency criteria.
-This model consisted of using a binary representation of the layered detector geometry (where each layer is either a \verb+1+ (signifying a detector slice) or \verb+0+ (moderator slice).
+This model consisted of using a binary representation of the layered detector geometry (where each layer is either a detector slice or moderator slice).
 The model was then evaluated using MCNPX and XSDRN to simulate the expected neutron interaction rate performance.
 
 The position of the slices necessary for having the best usage of the absorber material while still maintaining the neutron count rate necessary for the criteria are then determined by the genetic algorithm.
