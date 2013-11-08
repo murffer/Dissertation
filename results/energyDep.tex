@@ -9,7 +9,7 @@ The average energy deposited by a neutron and gamma reaction was investigated fo
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{SimulatedEnergyDeposition}
-  \caption[Simulated Energy Deposition and Film Thickness]{Simulated energy deposition and film thickness in 10 \% loaded polystyrene.  As the films get much thinner it is very unlikely for gamma events (and their secondary electrons) to deposition all of their energy, while above \SI{50}{\um} there is very little impact on the energy deposited by neutrons.}
+  \caption[Simulated Energy Deposition and Film Thickness]{Simulated energy deposition and film thickness. As the films get thinner it is very unlikely for gamma events (and their secondary electrons) to deposition all of their energy, while above \SI{50}{\um} there is very little impact on the energy deposited by neutrons.\EnergyDepSimGeo}
   \label{fig:SimEDep}
 \end{figure}
 
@@ -49,32 +49,31 @@ A secondary effect in having a backing material is also observed for photons in 
 \autoref{fig:simKinE} illustrates the simulated kinetic energy of secondary electrons from Compton scattering and from alpha and triton interactions.
 It is observed that kinetic energy of the secondary electrons from the neutron reaction products have predominately energies in the kilo-volt range, while the Compton scattering electrons have energies in hundreds of kilo-volts range. 
 However, it should be noted that there is only one secondary electron from a Compton scattering and multiple secondary electrons from the reaction products.
-\autoref{fig:ReacProdDist} shows the distribution of the number of secondary electrons from the alpha and triton and their kinetic energy.
+The kinetic energy distribution is broken down by the two reaction products in \autoref{fig:SecElecKinEDist}, while relative number of secondary electrons is shown in \autoref{fig:ReacProdDist}.
+It is apparent that the triton contributes more secondary electrons than heavier alpha, while they have similar energies of the secondary electrons.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{NGSecElecKinEDist}
-    \caption{Simulated Kinetic Energy of Secondary Electrons from Compton Scattering and from \iso[6]{Li} reaction products}
+    \caption[Kinetic Energy of Primary Secondary Electron from Compton Scattering and Neutron Reaction Prodcuts]{The kinetic energy of the first secondary electron from compton scattering with \iso[60]{Co} and from \iso[6]{Li} reaction products. The energy distrubtion of all of the electrons produced in the interactions is shown in \autoref{fig:ERangeAndDist}.\EnergyDepSimGeo}
     \label{fig:simKinE}
 \end{figure}
-\begin{figure*}[ht]
-	\centering
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{AlphaTritonSecElecKinEDist}
-		\caption{Alpha and Triton Secondary Electron Kinetic Energy Distribution}
-	\end{subfigure}%
-	~
-	\begin{subfigure}[b]{0.45\textwidth}
-    		\includegraphics[width=\textwidth]{NeutronNumSecElec}
-		\caption{Number of Secondary Electrons Produced Per Neutron Interaction}
-	\end{subfigure}%
-	\caption{Neutron Reaction Products Secondary Electrons Energies}
-	\label{fig:ReacProdDist}
-\end{figure*}
+\begin{figure}
+ 	\centering
+  	\includegraphics[width=\textwidth]{AlphaTritonSecElecKinEDist}
+	\caption[Kinetic Energy Distribution of Primary Secondary Electrons from the Neutron Reaction Products]{Kinetic energy distribution of the first secondary of the neutron reaction products (alpha and tritron) from a \iso[6]{Li} interaction.  Most of the electrons have kinetic energies in the \SI{1}{\keV} range. \EnergyDepSimGeo}
+	\label{fig:SecElecKinEDist}
+\end{figure}
+\begin{figure}
+ 	\centering
+  	\includegraphics[width=\textwidth]{NeutronNumSecElec}
+	\caption[Distribution of the Number of Secondary Electrons Produced Per Neutron Interaction]{Distribution of the Number of Secondary Electrons Produced Per Neutron Interaction. The alpha particle produces almost a factor of 16 less photons than the triton. \EnergyDepSimGeo}
+	\autoref{fig:ReacProdDist}
+\end{figure}
 
-The average energy deposited was computed for each thickness and normalized by the incident energy for gammas by the Q-value of the reaction for neutrons, and is presented in Table ~\ref{tab:FractionEDep}.
+The average energy deposited was computed for each thickness and normalized by the incident energy for gammas by the Q-value of the reaction for neutrons, and is presented in \autoref{tab:FractionEDep}.
 For thickness greater than \SI{150}{\um} there is little benefit in increasing the thickness of the film in terms of energy deposition by neutrons, since over 90\% of the energy is being deposited in the film.
-\begin{table}[ht]
-    \caption{Fractional Energy Deposition for Various Thickness}
+\begin{table}
+    \caption[Fractional Energy Deposition per Interaction for Various Thickness]{Fraction of total energy deposited per interaction of a neutron and the photons from \iso[60]{Co} in films of various thickness. The total energy deposited in a neutron event is \SI{4.78}{\MeV}, while the maximum energy deposited from a \iso[60]{Co} is \SI{1.33}{\MeV}.\EnergyDepSimGeo}
 	\centering
 	\begin{tabular}{c | c c}
 	Thickness & Gamma Fraction & Neutron Fraction \\
@@ -105,8 +104,7 @@ These simulations (summarized in \autoref{fig:EDepLightYield}) show that as expe
 	\begin{subfigure}[b]{0.45\textwidth}
     		\includegraphics[width=\textwidth]{EDepLightYield_Gamma}
 		\caption{ Gamma (\iso[60]{Co}}
-	\end{subfigure}%
-	~
+
 	\begin{subfigure}[b]{0.45\textwidth}
     		\includegraphics[width=\textwidth]{EDepLightYield_Neutron}
 		  \caption{ Neutron}
