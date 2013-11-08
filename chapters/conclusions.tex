@@ -26,24 +26,6 @@ For example, the range of the alpha created in a \iso[6]{Li} neutron absorption 
 Simulations were completed using the GEANT4 toolkit to simulate the energy deposition of \iso[6]{LiF} loaded polystyrene
 The average energy deposited was computed for each thickness and normalized by the incident energy for gammas by the Q-value of the reaction for neutrons, and is presented in Table ~\ref{tab:ConclusionFractionEDep}.
 For thickness greater than \SI{150}{\um} there is little benefit in increasing the thickness of the film in terms of energy deposition by neutrons, since over 90\% of the energy is being deposited in the film, thus there is little reason to fabricate films thicker than \SI{150}{\um} because it allows for a greater percentage of energy to be deposited from gammas, resulting in a higher MLLD setting.
-\begin{table}[ht]
-    \caption{Fractional Energy Deposition for Various Thickness}
-	\centering
-	\begin{tabular}{c | c c}
-	Thickness & Gamma Fraction & Neutron Fraction \\
-	\hline
-	\hline
-	\SI{15}{\um} & 0.010 & 0.531 \\
-	\SI{25}{\um} & 0.013 & 0.634 \\
-	\SI{50}{\um} & 0.017 & 0.782 \\
-	\SI{150}{\um} & 0.032 & 0.927 \\
-	\SI{300}{\um} & 0.052 & 0.964 \\
-	\SI{600}{\um} & 0.087 & 0.982 \\
-	\SI{1}{\mm} & 0.130 & 0.989 \\
-	\SI{1}{\cm} & 0.425 & 0.998 \\
-	\end{tabular}
-  \label{tab:ConclusionFractionEDep}
-\end{table}
 
 \section{Film Placement}
 A single film does not have an adequate neutron count rate to satisfy the neutron detector requirements of 2.5 cps per nanogram \iso[252]{Cf} in a source that is \SI{2}{\m} from the detector midpoint, shielded by \SI{0.5}{\cm} of lead and moderated by \SI{2.5}{\cm} of high density polyethylene.
@@ -58,23 +40,9 @@ This model consisted of using a binary representation of the layered detector ge
 The model was then evaluated using MCNPX and XSDRN to simulate the expected neutron interaction rate performance.
 
 The position of the slices necessary for having the best usage of the absorber material while still maintaining the neutron count rate necessary for the criteria are then determined by the genetic algorithm.
-\autoref{tab:GAOptRXNRate} shows the optimal geometry representation necessary to achieve a minimum of 2.5, 5.0 and 7.5 interactions per second per nanogram \iso[252]{Cf}.
-These geometries are translated into positions of the right hand boundary of the material in \autoref{tab:OptGeoDetailed75},\autoref{tab:OptGeoDetailed5}, and \autoref{tab:OptGeoDetailed25}; annotated MCNPX renderings are shown in \autoref{fig:RPMLayeredRendering25} and \autoref{fig:RPMLayeredRendering5}, and \autoref{fig:RPMLayeredRendering75}.
-\begin{table}
-	\caption[Optimal geometry for various interaction rates]{Optimal genome geometries for various minimium interactions rates per nanogram \iso[252]{Cf}. The detector and simulation is configured per the PNNL criteria.}
-	\label{tab:GAOptRXNRate}
-	\begin{tabular}{m{7cm} m{5cm} m{2cm} }
-	\toprule
-	Genome & Interaction Rate & Mass \iso[6]{Li} \\
-	\midrule
-	01111101110100001000 & 7.56 & \SI{41.2}{\gram} \\
-	011101001000000 & 5.31 & \SI{21.0}{\gram} \\
-		0011010000 & 3.82 & \SI{12.6}{\gram} \\
-	\bottomrule
-	\end{tabular}
-\end{table}
-
-
+These layered detector designs consist of 100 micron, Li-6 fluoride loaded polymers that are encased in four millimeters of a wavelength shifter.
+Three such layers (30 precent loaded with enriched LiF) can achieve an interaction rate of 3.82 interactions per second per nanogram of Cf-252 (using 12.6 grams of Li-6), while five layer can achieve an interaction rate of 5.31 interactions per second per nanogram of Cf-252 (using 21.0 grams of Li-6)  and ten layers an achieve an interaction rate of 7.56 interactions per second per nanogram of Cf-252 (using 41.2 grams of Li-6).
+Annotated MCNPX renderings of these geometries are shown in \autoref{fig:RPMLayeredRendering25} and \autoref{fig:RPMLayeredRendering5}, and \autoref{fig:RPMLayeredRendering75}.
 
 A physical basis of the optimal solution found by the genetic algorithm can be found by observing the form of the optimal solutions.
 These solutions involve an initial moderator layer in order to ensure that all of the neutrons are thermalized.
