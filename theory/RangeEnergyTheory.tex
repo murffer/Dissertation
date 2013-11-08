@@ -3,9 +3,12 @@
 %                      ENERGY SCALE AND RANGES                            %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Simulation Caption Commands
+
+% Content
 The theoretical basis for the difference in energy deposition lies in the different mechanisms between charged particle interactions and photon interactions in matter.
 For photons with energies between approximately \SI{0.5}{\MeV} and \SI{5}{\MeV} Compton scattering is the predominant interaction mechanism between the material and the photon.
-The probability of an electron having a given kinetic energy after scattering can be expressed as \autoref{eqn:dSdEKleinNishina} (see \autoref{chap:ComptonScatter} for derivation details)
+The probability of an electron having a given kinetic energy after scattering can be expressed as \eqref{eqn:dSdEKleinNishina} (see \autoref{chap:ComptonScatter} for derivation details)
 \begin{align}
   \label{eqn:dSdEKleinNishina}
 \frac{d\sigma}{dE_e} = 2\pi r_e^2 \sin \theta f(\theta)\left [ \frac{1+\frac{E}{m_e c^2}\left(1-\cos\theta \right)^2}{E^2 \sin \theta} \right ]
@@ -13,10 +16,23 @@ The probability of an electron having a given kinetic energy after scattering ca
 provided  $f(\theta)$ is defined as $f(\theta) = \frac{1}{2}\left(\frac{E'}{E}\right)^2 \left(\frac{E'}{E} + \frac{E}{E'}-\sin^2\theta\right)$.
 This distribution is shown for \iso[60]{Co} in \autoref{fig:Co60ComptonScatterSpectra}.
 It is then highly likely that the Compton scattered electron will have an energy close to that of the maximum energy for the Compton scattering, \SI{0.96}{\MeV} for the \SI{1.173}{\MeV} photon and \SI{1.12}{\MeV} for the \SI{1.33}{\MeV} photon.
+\begin{table}
+	\caption[Characterstic Energies of Compton Scattered Electrons from Co-60]{Characteristic kinetic energies of the electrons from a Compton scattering of the two photons from \iso[60]{Co}. It is very likely that an electron will have a kinetic energy greater than \SI{0.8}{\MeV}, which has a range of \SI{0.34}{\gram\per\cm\squared} in polystyrene}.
+	\label{tab:ComptonEnergiesCo60}
+	\begin{tabular}{ m{4cm} m{3cm} m{3cm} m{3cm}}
+	\toprule
+	Gamma Energy & Mean Electron Energy & Median Electron Energy & Maximum Electron Energy \\
+	\midrule
+	\SI{1.17}{\MeV} & \SI{0.68}{\MeV} & \SI{0.82}{\MeV} & \SI{0.96}{\MeV} \\
+	\SI{1.33}{\MeV} & \SI{0.80}{\MeV} & \SI{0.96}{\MeV} & \SI{1.12}{\MeV} \\
+	Average & \SI{0.74}{\MeV} & \SI{0.89}{\MeV} &  \\
+	\bottomrule
+	\end{tabular}
+\end{table}
 \begin{figure}
   \centering
     \includegraphics[width=\textwidth]{Co60ComptonScatteredSpectra}
-    \caption[Analytical Co-60 Compton Electron Differential Microscopic Cross Section]{Co-60 Compton Electron Differential Microscopic Cross Section. The relative probabilities of an Compton Scattered Electron having a given kinetic energy from \iso[60]{Co} can be determined by their relative differential microscopic cross sections. For example, it almost two and a half times more likely that a Compton scattered electron will have a kinetic energy of \SI{0.95}{\MeV} than \SI{0.75}{\MeV}.}
+    \caption[Analytical Co-60 Compton Electron Differential Microscopic Cross Section]{Co-60 Compton Electron Differential Microscopic Cross Section. The relative probabilities of a Compton Scattered Electron having a given kinetic energy from \iso[60]{Co} can be determined by their relative differential microscopic cross sections. For example, it almost two and a half times more likely that a Compton scattered electron will have a kinetic energy of \SI{0.95}{\MeV} than \SI{0.75}{\MeV}.}
     \label{fig:Co60ComptonScatterSpectra}
   \end{figure}
 \begin{figure}
@@ -53,13 +69,13 @@ The electrons  from Compton scattering of \iso[60]{Co} will be on the order of  
 \begin{figure}
   \centering
       \includegraphics[width=\textwidth]{ElectronRangeDistribution}
-      \caption[Simulated Electron Ranges Distrubtions in Polystyrene]{Simulated range of \SI{1}{\MeV}, \SI{100}{\keV}, and \SI{10}{\keV} electrons.}
+      \caption[Simulated Electron Ranges Distrubtions in Polystyrene]{Simulated range of \SI{1}{\MeV}, \SI{100}{\keV}, and \SI{10}{\keV} electrons.\rangeSimGeo}
       \label{fig:ElectronRangesDist}
 \end{figure}
 \begin{figure}
 	\centering
       \includegraphics[width=\textwidth]{ElectronRange}
-  \caption[Simulated Electron Ranges in Polystyrene]{GEANT4 simulated electron ranges.} 
+  \caption[Simulated Electron Ranges in Polystyrene]{Simulated electron ranges for electron kinetic energies ranging from \SI{1}{\keV} to \SI{1}{\MeV}.\rangeSimGeo} 
   \label{fig:ElectronRanges}
 \end{figure}
 
@@ -70,6 +86,6 @@ It is then clear that the electrons from the \iso[60]{Co} will travel much fathe
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{ElectronRangeAndEnergyDist}
-  \caption[Electron Range and Energy Distribution of Selected Reactions]{The electron range (left axis) overlaid with the kinetic energy of electrons from \SI{2.05}{\MeV} alpha, \SI{2.73}{\MeV} triton, and gammas from \iso[60]{Co}. The \iso[60]{Co} electrons have energies much greater than the alpha and triton}
+  \caption[Electron Range and Energy Distribution of Selected Reactions]{The electron range (left axis) corresponding to the square dots overlaid with the kinetic energy of electrons from \SI{2.05}{\MeV} alpha, \SI{2.73}{\MeV} triton, and secondary electrons from \iso[60]{Co}. The \iso[60]{Co} electrons have energies much greater than the alpha and triton, and their corresponding range is orders of magnitude greater than the ranges of the electrons from the alpha and triton. \rangeSimGeo}
   \label{fig:ERangeAndDist}
 \end{figure}
