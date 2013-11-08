@@ -3,11 +3,14 @@
 %                         Introduction to Scintillation                   %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Scintillation detectors (the detectors on which this work is based) utilize a scintillator to convert ionizing radiation into photons, and then transporting and capturing those the emitted photons, commonly with a photomultiplier tube (PMT).
-The electrical signal from the PMT is then an indicator of a radiation event in the detector's scintillator material.
-The current RPMs with \iso[3]{He} are ion chamber detectors, however, the proposed \iso[6]{Li} glass detectors and \iso[6]{LiF} doped ZnS:Ag detectors are scintillation based detectors. 
+
+Scintillation detectors (the detectors on which this work is based) utilize a scintillator to convert ionizing radiation into photons.
+In inorganic scintillators these photons arise from excitations of electrons in the band gap of the material or dopant, while for organic scintillators the photons generally come from relaxations of aromatic rings in the molecule.
+Typically the light emitted from the primary phosphor is of a wavelength that is not suitable for detection with a photomultiplier tube, so a secondary fluor is added to absorb and reemit the light at a more favorable wavelength for detection.
+The process of scintillation in organic scintillators is explained in more detail in \autoref{sec:OrganicScinillators}, while the number of photons emitted for different types of ionizing radiation is discussed in \autoref{sec:PulseHeightDeficit}.
 
 \subsection{Organic Scintillators}
+\label{sec:OrganicScinillators}
 An organic scintillator generally has a $\pi$-electron structure similar to that of \autoref{fig:benzePiStructure} with typical energy levels as shown in \autoref{fig:pielectron}.
 An incoming electron (liberated from the energy deposition of the ionizing radiation) then excites one of the modes of the $\pi$-electron structure.
 Higher singlet states rapidly (on the order of picoseconds) relax to the first singlet state, and excessive vibrational energy (populations of the vibrational sates) is lost.
@@ -51,16 +54,16 @@ This effect is critical in the developed detectors are the reaction products of 
 Thus, while there is \SI{4.78}{\MeV} of reaction product energy released in the neutron absorption, the low alpha to beta ratio of the material limits the actual number of scintillation events.
 
 \subsection{Pulse Height Deficit}
+\label{sec:PulseHeightDeficit}
 The concept of alpha to beta ratio is extended for other charged ions as the pulse height deficit.
-The pulse height deficit is defined as a measure the apparent energy loss (as seen from the pulse height) of a heavy charged ion compared to an electron.  
-The apparent loss in energy of the heavy charged charged ions relative to
+The pulse height deficit is defined as the number of photons produced per energy of the primary particle (usually a heavy charged ion) relative to the number of photons produced per energy by an electron of a similar energy.
 This is measured as the difference between the energy of the heavy ion and its apparent energy from the pulse height.  
 Several researchers have investigated the light output of scintillators in response to different types of ionizing radiation.
 \autoref{fig:lightYieldVerbinski} summarizes the results of \cite{Verbinski_1968} in which the pulse height deficit is apparent for the as the charged ions become heavier.
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{Verbinski_LightYield_AlpahCarbonProton}
-  \caption[Light yield non-proportionality of anthracene]{Light yield non-proportionalityof anthracene. Data from \cite{Verbinski_1968}.}
+  \caption[Light yield non-proportionality of anthracene]{Light yield non-proportionality of anthracene. For the same kinetic energy the protons produce more photons alpha, which in turn produces more photons than the  carbon ions. This is an example of the pulse height deficit. Data from \cite{Verbinski_1968}.}
   \label{fig:lightYieldVerbinski}
 \end{figure}
 
@@ -99,13 +102,13 @@ Thus, as shown in \autoref{fig:SimLightOutputQuench} the triton from the \iso[6]
 \begin{figure}
   \centering
     \includegraphics[width=\textwidth]{SimLightQuench}
-    \caption[Simulated Number of Optical Photons for Various Ions and Energies]{Simulated number of optical photons generated for electrons, alphas, tritons and \iso[7]{Li}.}
+    \caption[Simulated Number of Optical Photons for Various Ions and Energies]{Simulated number of optical photons generated for electrons, alphas, tritons and \iso[7]{Li}.\LightQuenchSimGeo}
 	\label{fig:SimNumOP}
   \end{figure}
   \begin{figure}
 	\centering
     \includegraphics[width=\textwidth]{LightSim_AlphaTritonElectron}
-  \caption[GEANT4 simulated light output of alpha, tritons and electrons in polystyrene]{Simulated optical photons distributions for the particles of interest in a portal monitor. The light yield was assumed to be 1,000 photons per MeV.}
+  \caption[GEANT4 simulated light output of alpha, tritons and electrons in polystyrene]{Simulated optical photons distributions for the particles of interest in a portal monitor. \LightQuenchSimGeo}
   \label{fig:SimLightOutputQuench}
 \end{figure}
 
