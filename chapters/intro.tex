@@ -5,7 +5,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Introduction} 
 \label{chap:Intro}
-Radiation Portal Monitors (RPMs) are passive radiation detection systems implemented at over a thousand of border crossings, designed to determine if cargo contains any special nuclear material in a safe, nondestructive, and effective manner\cite{kouzes_neutron_2010}. 
+Radiation Portal Monitors (RPMs) are passive radiation detection systems implemented at over a thousand of border crossings, and are designed to determine if cargo contains any special nuclear material in a safe, nondestructive, and effective manner\cite{kouzes_neutron_2010}. 
 However, the current technology used in RPMs for detecting neutrons emitted from special nuclear material use a rapidly diminishing resource, \iso[3]{He}, that cannot be economically replaced. 
 The Department of Homeland Security (DHS) continues to fund research (through the Domestic Nuclear Detection Office (DNDO)) for the development of detector systems to detect radioactive material that could potentially be used to cause significant economic loss and loss of life.  
 As a result of this research a number of alternative detection systems continue to be investigated with the most viable including: boron trifluoride filled proportional detectors, boron-lined proportional detectors, \iso[6]{Li} loaded scintillation glass fiber detectors, and \iso[6]{Li} plus scintillator-coated wavelength-shifting fiber detectors\cite{pnnl_18471,kouzes_neutron_2010}.  
@@ -14,7 +14,7 @@ Neutron detectors often utilize a material with a large cross section for absorp
 When these materials absorb a neutron they usually disintegrate to produce ionized reaction products that in turn transfer their kinetic energy to electrons.
 In the case of the $\iso[6]{Li}\left(n,\iso[3]{H}\right)\alpha$ reaction, the fission energy is distributed between a triton of energy \SI{2.73}{\mega\eV} and an alpha of energy \SI{2.05}{\mega\eV}.
 In a proportional counter such as the \iso[3]{He} based detectors,the energy from the charged particles would ionize a gas, creating a voltage signal.
-Scintillator detectors, on which this work is based, utilize the charged particle energy depositions to create electron excitations in the scintillating material which are then transfered by fluors and produce visible light, which is detected with a photomultiplier tube.
+Scintillator detectors, on which this work is based, utilize the charged particle energy depositions to create electron excitations in the scintillating material which are then transferred by fluors and produce visible light, which is detected with a photomultiplier tube.
 
 \section{Replacement Detector Criteria}
 \label{sec:ReplacmentCriteria}
@@ -96,11 +96,11 @@ Current testing indicates that this detector design will meet the DHS criteria\c
 %                       DEVELOPED SCINTILLATORS                           %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Developed Scintillators}
+\section{Thin Film Scintillators}
 \label{sec:DevelopedScintillators}
 In addition to the inorganic scintillator LiF/ZnS(Ag), work is being completed at the University of Tennessee to construct thin film polymeric scintillators to be utilized in a layered detector design for replacement RPMs.
 These films, either based on polystyrene (PS) or polyethylene naphthalate (PEN), are \iso[6]{LiF} containing polymers projected to be low cost, have high mechanical durability, and meet the detector criteria \cite{Sen_Composites,Mabe201329}.
-The developed materials have been characterized for their neutron performance and gamma discrimination abilities, a summary of which (as of May 2013) may be found in \autoref{chap:MeasuredFilmPerfomance}.
+These new materials have been characterized for their neutron performance and gamma discrimination abilities, a summary of which (as of May 2013) may be found in \autoref{chap:MeasuredFilmPerfomance}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                         %
 %                       OPTIMIZATION INTRODUCTION                         %
@@ -127,6 +127,7 @@ This work is unique in that the fundamental physics basis of the neutron-gamma d
 Current modeling work in large area neutron detectors focuses either with monolithic plastic slab geometries or with neutronic calculations that do account for light collection and transport.
 A layered detector design, while not unique, has not been optimized using a genetic algorithm for which the formulation or the problem is quite natural.
 In addition, little modeling work has been completed on the performance of a radiation portal monitor including light transport, which is a large majority of this work.
+This work seeks to develop a strategy for the optimization of thin film layered detector designs utilizing a genetic algorithm and determining the expected number of scintillation photons that can be collected on a PMT through simulation.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
