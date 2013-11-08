@@ -25,23 +25,23 @@ A GEANT4 simulation was then completed of a PVT based scintillator, polystyrene 
 The collection efficiencies are presented in \autoref{tab:CladStudy}.
 It was then determined that Teflon tape would be the best material to ensure that the highest fraction of photons are collected.
 \begin{table}
-  \caption[Teflon, Mylar, and HDPE Cladding Light Collection Effect]{The effect of Teflon, mylar, and air cladding on the light collection of a scintillating slab. The simulation is \SI{100}{\um} thick slice of material \SI{2}{\m} long, \SI{30}{\cm} wide with a rectangular PMT on each end. The photons are born isotropically throughout the material. It should be noted that there is substatinal self-absorbition in ZnS:Ag, which results in a very small fraction of the photons collected. In practice, however, ZnS:Ag is bright enought that it outprefroms the other materials.}
+  \caption[Teflon, Mylar, and HDPE Cladding Light Collection Effect]{The effect of Teflon, mylar, and air cladding on the light collection of a scintillating slab. The simulation is \SI{100}{\um} thick slice of material \SI{2}{\m} long, \SI{30}{\cm} wide with a rectangular PMT on each end. The photons are born isotropically throughout the material. It should be noted that there is substantial self-absorption in ZnS:Ag, which results in a very small fraction of the photons collected. In practice, however, ZnS:Ag is bright enough that it out performs the other materials.}
   \label{tab:CladStudy}
-  \begin{tabular}{p{4cm} m{3cm} m{3cm}}
+  \begin{tabular}{p{3cm} m{3cm} m{3cm} m{3cm}}
   \toprule
-  & Coating & Fraction of Photons Collected \\
+  & Coating & Fraction of Photons Collected & Expected Number of Photons Collected \\
   \midrule 
-  \multirow{3}{*}{EJ-200} & Teflon & 12\% \\
-  				      & Air &  14\% \\
-				      & Mylar & 9.6\% \\
+  \multirow{3}{*}{EJ-200} & Teflon & 12\% & 1,200\\
+  				      & Air &  14\% & 1,400\\
+				      & Mylar & 9.6\% & 960\\
   \midrule 
-  \multirow{3}{*}{PS LiF} & Teflon & 4.3\% \\
-  				      & Air & 4.5\% \\
-				      & Mylar & 4.0\% \\
+  \multirow{3}{*}{PS LiF} & Teflon & 4.3\% & 86\\
+  				      & Air & 4.5\% & 90\\
+				      & Mylar & 4.0\% & 80\\
   \midrule 
-  \multirow{3}{*}{EJ-426} & Teflon & \num{4.6E-3}\% \\
-  				      & Air & \num{4.5E-3}\% \\
-				      & Mylar & \num{4.2E-3}\% \\
+  \multirow{3}{*}{EJ-426} & Teflon & 0.46\% &736\\
+  				      & Air & 0.45\% & 720\\
+				      & Mylar & 0.42\% & 672 \\
  \bottomrule				 	   				  
  \end{tabular}
 \end{table}

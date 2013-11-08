@@ -26,12 +26,6 @@ The thickness of the RPM  (\SI{12.7}{\cm}) was divided into slices, where each s
 These slices of detector material (represented as a \verb+1+) or moderator material (represented as a \verb+0+) were append into a sequence.
 This sequence of one's and zero's (or bit string) then completely represented the geometry of the RPM and formed the basis for all possible solutions to the optimization problem.
 For example the sequence \verb+0001110010+ would represent a detector that had three moderator slices, three detector slices, another two moderator slices, and a final detector slice before a single moderator slice as the reflector.
-Examples of two different genomes are shown in \autoref{fig:ExGeoGenomes}
-\begin{figure}
-
-  \caption[Example Geometries Genomes]{Example of Geometry Genomes}
-  \caption{fig:ExGeoGenomes}
-\end{figure}
 In terms of genetic algorithms the set of all possible solutions is referred to as the \textit{genome}.
 The length of the genome is thus the number of slices in the geometry, where a higher length genome allows for a more complicated geometry.
 The initial population for the genetic algorithm was initialized to be random bit strings with equal probability of a slice being a detector slice or moderator.
