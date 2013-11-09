@@ -54,31 +54,32 @@ It is apparent that the triton contributes more secondary electrons than heavier
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{NGSecElecKinEDist}
-    \caption[Kinetic Energy of Primary Secondary Electron from Compton Scattering and Neutron Reaction Prodcuts]{The kinetic energy of the first secondary electron from compton scattering with \iso[60]{Co} and from \iso[6]{Li} reaction products. The energy distrubtion of all of the electrons produced in the interactions is shown in \autoref{fig:ERangeAndDist}.\EnergyDepSimGeo}
+    \caption[Kinetic Energy of Primary Secondary Electron from Compton Scattering and Neutron Reaction Products]{The kinetic energy of the first secondary electron from Compton scattering with \iso[60]{Co} and from \iso[6]{Li} reaction products. The energy distribution of all of the electrons produced in the interactions is shown in \autoref{fig:ERangeAndDist}.\EnergyDepSimGeo}
     \label{fig:simKinE}
 \end{figure}
 \begin{figure}
  	\centering
   	\includegraphics[width=\textwidth]{AlphaTritonSecElecKinEDist}
-	\caption[Kinetic Energy Distribution of Primary Secondary Electrons from the Neutron Reaction Products]{Kinetic energy distribution of the first secondary of the neutron reaction products (alpha and tritron) from a \iso[6]{Li} interaction.  Most of the electrons have kinetic energies in the \SI{1}{\keV} range. \EnergyDepSimGeo}
+	\caption[Kinetic Energy Distribution of Primary Secondary Electrons from the Neutron Reaction Products]{Kinetic energy distribution of the first secondary of the neutron reaction products (alpha and triton) from a \iso[6]{Li} interaction.  Most of the electrons have kinetic energies in the \SI{1}{\keV} range. \EnergyDepSimGeo}
 	\label{fig:SecElecKinEDist}
 \end{figure}
 \begin{figure}
  	\centering
   	\includegraphics[width=\textwidth]{NeutronNumSecElec}
 	\caption[Distribution of the Number of Secondary Electrons Produced Per Neutron Interaction]{Distribution of the Number of Secondary Electrons Produced Per Neutron Interaction. The alpha particle produces almost a factor of 16 less photons than the triton. \EnergyDepSimGeo}
-	\autoref{fig:ReacProdDist}
+	\label{fig:ReacProdDist}
 \end{figure}
 
 The average energy deposited was computed for each thickness and normalized by the incident energy for gammas by the Q-value of the reaction for neutrons, and is presented in \autoref{tab:FractionEDep}.
 For thickness greater than \SI{150}{\um} there is little benefit in increasing the thickness of the film in terms of energy deposition by neutrons, since over 90\% of the energy is being deposited in the film.
 \begin{table}
     \caption[Fractional Energy Deposition per Interaction for Various Thickness]{Fraction of total energy deposited per interaction of a neutron and the photons from \iso[60]{Co} in films of various thickness. The total energy deposited in a neutron event is \SI{4.78}{\MeV}, while the maximum energy deposited from a \iso[60]{Co} is \SI{1.33}{\MeV}.\EnergyDepSimGeo}
+      \label{tab:FractionEDep}
 	\centering
 	\begin{tabular}{c | c c}
+\toprule
 	Thickness & Gamma Fraction & Neutron Fraction \\
-	\hline
-	\hline
+\midrule
 	\SI{15}{\um} & 0.010 & 0.531 \\
 	\SI{25}{\um} & 0.013 & 0.634 \\
 	\SI{50}{\um} & 0.017 & 0.782 \\
@@ -87,8 +88,9 @@ For thickness greater than \SI{150}{\um} there is little benefit in increasing t
 	\SI{600}{\um} & 0.087 & 0.982 \\
 	\SI{1}{\mm} & 0.130 & 0.989 \\
 	\SI{1}{\cm} & 0.425 & 0.998 \\
+\bottomrule
 	\end{tabular}
-  \label{tab:FractionEDep}
+
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -104,12 +106,12 @@ Thus, while the gammas from \iso[60]{Co} deposit  less energy than neutrons in a
 \begin{figure}
  	\centering
   	\includegraphics[width=\textwidth]{EDepLightYield_Gamma}
-		\caption[Energy Deposition and Light Yield in Polystyene from Co-60 Photons]{Simulated energy deposition from gamma (\iso[60]{Co}) and the corresponding simulated light yield. \SimEDeLYGeo}
+		\caption[Energy Deposition and Light Yield in Polystyrene from Co-60 Photons]{Simulated energy deposition from gamma (\iso[60]{Co}) and the corresponding simulated light yield. \SimEDeLYGeo}
 \end{figure}
 \begin{figure}
  	\centering
   	\includegraphics[width=\textwidth]{EDepLightYield_Neutron}
-  	\caption[Energy Deposition and Light Yield in Polystyene from Neutrons]{Simulated energy deposition and light yield from neutron interactions.  \SimEDeLYGeo}
+  	\caption[Energy Deposition and Light Yield in Polystyrene from Neutrons]{Simulated energy deposition and light yield from neutron interactions.  \SimEDeLYGeo}
   \label{fig:EDepLightYield}
 \end{figure}
 However, it is instructive to look at the distributions of how many photons were created per event.
