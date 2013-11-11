@@ -32,7 +32,7 @@
     \begin{column}{0.49\textwidth}
       \begin{figure}
         \centering
-        \includegraphics[width=2\textwidth]{Spectra_Layered.eps}
+        \includegraphics[width=\textwidth]{Spectra_Layered.eps}
       \end{figure}
     \end{column}
   \end{columns}
@@ -94,6 +94,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Methods}
 \begin{frame}[fragile]
+\label{MCNPXMain}
 \frametitle{Neutron Interaction Rate}
 	\tiny
 	\newtheorem{thm11}{Interaction Rate}
@@ -154,7 +155,7 @@ Genome Bit-String Representation
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                                        %
-%                          PRELIMARY RESULTS                             %
+%                                RESULTS                                 %
 %                                                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Results}
@@ -174,7 +175,46 @@ Genome Bit-String Representation
 \end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
-
+\begin{frame}{Cylinder Designs}
+Is it possible to wrap the detector up and insert as a replacment tube?
+\begin{columns}[onlytextwidth]
+  \begin{column}{0.48\textwidth}
+    \small
+    \begin{itemize}
+      \item Existing tubes are \SI{2.54}{\cm}, positioning in the RPM is unknown
+      \item Simulated two, three, four and five tubes
+      \item Optimization not preformed on tube position
+    \end{itemize}
+    \end{column}
+  \begin{column}{0.5\textwidth}
+    \begin{figure}
+      \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{WrappedGeoCylinder_Cylinder}
+    \end{figure}
+  \end{column}
+\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Cylinder Results}
+  \small
+  \begin{itemize}
+    \item Only four, five tubes will meet the count rate criteria
+    \item Better utilization of the \iso[6]{Li} could be found
+  \end{itemize}
+\begin{table}
+  \tiny
+	\begin{tabular}{m{2cm} | m{1cm} m{1cm} m{1cm} m{1cm} m{1cm}}
+		\toprule
+		Fraction of Assembly & \SI{-10.16}{\cm} & \SI{-5.08}{\cm} & \SI{0}{\cm} & \SI{5.08}{\cm} & \SI{10.16}{\cm}\\
+		\midrule
+		0.13 & 0.072 & 0.074 & 0.069 & 0.070 & 0.062 \\
+		0.33	& 0.180 & 0.201 & 0.186 & 0.189 & 0.172 \\
+		0.54	& 0.318 & 0.351 & 0.330 & 0.338 & 0.310 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\begin{figure}
+  \centering
+  \includegraphics[height=0.4\textheight]{WrappedGeoCylinder_FiveCylinders}
+\end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
