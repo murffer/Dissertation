@@ -1,0 +1,47 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Absolute Neutron Efficiency}
+\newtheorem{pnnlTHM1}{Absolute Neutron Efficiency}
+\begin{pnnlTHM1}<1->
+$$\epsilon_{abs} = \frac{\text{Counts}}{\text{Quanta Radiation Emitted}}\; \; \protect \cite{knoll_radiation_2009} $$
+Constraint:
+$$\epsilon_{abs} \geq 2.5\; \text{cps per ng}\; {}^{252}\text{Cf}$$
+\end{pnnlTHM1}
+Test configuration is defined to be 1 ng ${}^{252}$Cf surrounded by 0.5 cm of lead and 2.5 cm of HDPE, with the detector midpoint 2 m from the source \cite{kouzes_alternative_2010}
+\hyperlink{DHSCriteria}{\beamerbutton{Return to Detector Criteria}}
+\hyperlink{toc}{\beamerbutton{Table of Contents}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Intrinsic Gamma-Neutron Detection Efficiency}
+\newtheorem{pnnlTHM2}{Intrinsic Gamma-Neutron Detection Efficiency}
+\begin{pnnlTHM2}<1->
+$$\epsilon_{int,\gamma n} = \frac{\text{Counts}}{\text{Quanta Radiation Crossing Detector}} \; \protect \cite{kouzes_alternative_2010} $$
+Constraint:
+$$ \epsilon_{int,\gamma n} \leq 10^{-6} $$
+\end{pnnlTHM2}
+\begin{itemize}
+	\item Counts over quanta crossing the detector
+	\item Measured from a source that produces a 10 mR/hr field
+\end{itemize}
+\hyperlink{DHSCriteria}{\beamerbutton{Return to Detector Criteria}}
+\hyperlink{toc}{\beamerbutton{Table of Contents}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Gamma Absolute Rejection Ratio}
+\newtheorem{pnnlTHM3}{GARRn}
+\begin{pnnlTHM3}<1->
+$$ GARRn = \frac{\epsilon_{abs,\gamma n}}{\epsilon_{abs,n}} \; \protect \cite{kouzes_alternative_2010} $$
+Constraint:
+$$ 0.9 \leq GARRn \leq 1.1 $$
+\end{pnnlTHM3}
+The detector's performance should change by no more than 10\% in a strong gamma field
+\begin{itemize}
+	\item GARRn is measured by exposing the detector to a 10 mR/hr gamma field while exposed to neutron source
+	\item Count rate is measured when the gamma source is no longer present
+	\item Difference determines the GARRn
+\end{itemize}
+\hyperlink{DHSCriteria}{\beamerbutton{Return to Detector Criteria}}
+\hyperlink{toc}{\beamerbutton{Table of Contents}}
+\end{frame}
