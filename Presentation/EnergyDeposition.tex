@@ -30,6 +30,7 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[t]{Pulse Height Discrimination}
+\label{PHDMain}
   \begin{itemize}
     \item Use a lower lever discriminator to discard counts
     \item Mathematical Lower Lever Discriminator (MLLD)
@@ -48,66 +49,29 @@
     \end{column}
   \end{columns}
   Pulse height discrimination is equivalent to the energy deposition
+\hyperlink{MeasMethods}{\beamerbutton{Measurment Setups and Methods}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                        %
-%                             PROPOSED WORK                              %
-%                                                                        %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Proposed Work}
-\begin{frame}{Proposed Work}
-  \large
-  \centering{What is the optimal detector thickness?}
-  \vspace{1cm}
-  \normalsize
-  \begin{itemize}
-    \item Use GEANT4 to study the energy deposition in polymeric films
-    \small
-    \begin{itemize}
-      \item How much energy is from the alpha, triton?
-      \item How many and energy distribution of secondary electrons from neutrons, gammas
-    \end{itemize}
-    \item GEANT4 Simulations
-    \begin{itemize}
-      \item Single collision energy loss spectra
-      \item Ranges of alpha, triton in material
-      \item Simulated Spectra
-    \end{itemize}
-    \item Validate simulations with measurements
-  \end{itemize}
+\begin{frame}{Energy Deposition and Simulations with GEANT4}
+GEANT4 is a free toolkit for the simulation of particles as they travel through matter\cite{agostinelli_geant4simulation_2003}
+\label{G4Main}
+  \begin{columns}[onlytextwidth]
+  \begin{column}{0.49\textwidth}
+    \centering
+    \begin{figure}
+    \includegraphics[width=\textwidth]{GEANT4AnnotatedGeo_EnergyDepEvent}
+    \end{figure}
+  \end{column}
+  \begin{column}{0.49\textwidth}
+    \centering
+    \begin{figure}
+	  \includegraphics[width=\textwidth]{GEANT4AnnotatedGeo_GS20SimGeo}
+    \end{figure}
+  \end{column}
+  \end{columns}
+\hyperlink{G4Intro}{\beamerbutton{Energy Deposition with GEANT4}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                        %
-%                               METHODS                                  %
-%                                                                        %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Methods}
-\begin{frame}[fragile]{GEANT4 Introduction}
-What GEANT4 is:
-\begin{itemize}
-  \small
-  \item \href{geant4.cern.ch}{geant4.cern.ch}
-  \item Free software package for the simulation of the passage of particles through matter
-  \item Essentially a collection of tools for geometry, materials, physics models, events and digitization, visualizations $\dots$
-  \item Maintained by the CERN community, widely used in physics
-\end{itemize}
-What GEANT4 is not:
-\begin{itemize}
-  \small
-  \item For the timid
-  \begin{itemize}
-    \item Users are responsible for correctly implementing their own physics
-    \item Users are responsible for correctly implementing their own analysis
-  \end{itemize}
-  \item Stagnant - major release are still occurring
-\end{itemize}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                                        %
-%                          PRELIMARY RESULTS                             %
-%                                                                        %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Preliminary Results}
 \begin{frame}{Single Collision Energy Loss Spectra}
   \begin{figure}
     \includegraphics[width=\textwidth]{SingleCollsionEnergyLoss_Turner}
@@ -117,9 +81,38 @@ What GEANT4 is not:
 Discrepancies are in the resolution of cross section data
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Example Event}
+\begin{frame}{Energy Deposition in Polymers}
+  \begin{columns}[onlytextwidth]
+  \begin{column}{0.5\textwidth}
+    \centering
+    \begin{figure}
+    	\includegraphics[width=\textwidth]{G4EDep_LightYield_Neutron}
+    \end{figure}
+      Neutron
+  \end{column}
+  \begin{column}{0.5\textwidth}
+    \centering
+    \begin{figure}
+    	\includegraphics[width=\textwidth]{G4EDep_LightYield_Co60}
+    \end{figure}
+      \iso[60]{Co} Gamma
+  \end{column}
+  \end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Simulated Optical Photon Yeilds of GS20}
   \begin{figure}
-    \includegraphics[height=0.75\textheight]{GEANT4AnnotatedGeo_EnergyDepEvent}
+    \centering
+    \includegraphics[width=\textwidth]{LightValidation_GS20}
   \end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Simulated Optical Photon Yeild of Polystyrene}
+  \begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{LightValidation_PS}
+  \end{figure}
+  \vspace{2.5cm}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
