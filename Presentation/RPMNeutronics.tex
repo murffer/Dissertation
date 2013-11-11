@@ -21,20 +21,21 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Multi Film Model}
-	\begin{figure}
-    \vspace*{-9cm}
-    \begin{subfigure}[b]{0.47\textwidth}
-      \centering
-      \includegraphics[width=\textwidth]{Multi_120Layers.eps}
-      \caption{Simulated RPM8 Detector (120 layers)}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.47\textwidth}
-      \centering
-      \includegraphics[width=2\textwidth]{Spectra_Layered.eps}
-      \caption{Source and Incident Spectra}
-    \end{subfigure}
-	\end{figure}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.49\textwidth}
+	    \begin{figure}
+        \centering
+        \includegraphics[width=\textwidth]{Multi_120Layers.eps}
+        \caption{Simulated RPM8 Detector (120 layers)}
+      \end{figure}
+    \end{column}
+    \begin{column}{0.49\textwidth}
+      \begin{figure}
+        \centering
+        \includegraphics[width=2\textwidth]{Spectra_Layered.eps}
+      \end{figure}
+    \end{column}
+  \end{columns}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Opportunities for Optimization}
@@ -113,6 +114,7 @@ FC154 (n,t) Reactions in Detector
 F154:n (601<610) (602<610) (603<610) (604<610) T
 FM154 -1 3 105
 \end{lstlisting}
+\hyperlink{MCNPXMethodExtended}{\beamerbutton{Detailed MCNPX Simulation}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Gigantic Genome Geometries}
@@ -144,7 +146,7 @@ Genome Bit-String Representation
     \end{column}
   \begin{column}{0.45\textwidth}
     \begin{figure}
-		\tiny
+      \includegraphics[width=\textwidth]{RPM8OptLayered_5cps}
     \end{figure}
   \end{column}
 \end{columns}
@@ -155,45 +157,24 @@ Genome Bit-String Representation
 %                          PRELIMARY RESULTS                             %
 %                                                                        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Preliminary Results}
+\subsection{Results}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Optimal Geometries Rendered}
+\begin{frame}{Optimal Layered Geometries}
 \begin{figure}
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{RPM8OptLayered_25cps}
+        \caption{2.5 cps per ng \iso[252]{Cf} (Polystyrene)}
     \end{subfigure}%
     ~
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{RPM8OptLayered_5cps}
+        \caption{5 cps per ng \iso[252]{Cf} (Polystyrene)}
     \end{subfigure}
-    \caption{MCNPX rendering of layered geometry}
-    \label{fig:MCNPXRendering}
 \end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Optimal Geometries}
-\begin{table}
-    %\caption[Optimal Bit String Geometries]{Genatic Algothrim Optimal Geometries}
-    \centering
-    \tiny
-    \begin{tabular}{ p{0.75cm} | p{1cm} p{3.25cm} p{0.75cm} p{1cm} p{1cm}}
-      Genome Length&Films Per Assembly&Optimal Geometry&Mass \iso[6]{Li}(g)&CPS per ng \iso[252]{Cf} & Count Rate per Mass \iso[6]{Li} (cps/g) \\
-      \hline
-      \hline
-      3&4&\verb+010+&16.75&2.93&0.175 \\
-      4&4&\verb+0100+& & & \\
-      5&3&\verb+01000+&12.56&2.89&0.230 \\
-      6&3&\verb+010000+&12.56&2.88&0.230 \\
-      7&3&\verb+0100000+&12.56&2.84&0.226 \\ 
-      10&3&\verb+0100000000+&12.56&2.68&0.214 \\
-      10&3&\verb+0010000000+&12.56&2.93&0.233 \\
-      10&3&\verb+0001000000+&12.56&2.95&0.235 \\
-      13&2&\verb+00010010000000+&16.75&3.88&0.232 \\
-      13&2&\verb+00100010000000+&16.75&3.90&0.233 \\
-      13&2&\verb+00100100000000+&16.75&3.87&0.231 \\
-      26&1&\verb+00000110110000000010000000+&20.94&4.33&0.206 \\
-      26&1&\verb+00001010001000100000000000+&16.75&4.20&0.251 \\
-    \end{tabular}
-\end{table}
+\begin{frame}
+
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
