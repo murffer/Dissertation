@@ -1,0 +1,158 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% TO COMPILE: make (animal scrifices may be necessary)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%																							                           %
+%				                         PREAMBLE      							             %
+%                                                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[compress]{beamer}
+%\documentclass[handout,compress]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Frankfurt}
+  \usecolortheme{crane}
+  \setbeamercovered{transparent}
+}
+
+% Package Setup
+\input{Presentation/PresentationPreamable}
+\usepackage{booktabs}
+\usepackage{pgfgantt}
+\usepackage{rotating}
+\usepackage{tikz}
+\graphicspath{{Presentation/tmp/}{Presentation/figures/} {tmp/}{figures/}{figures/eps/}{figures/pdf/} }% specify the path where figures are located
+
+% Preamble / Frst Size
+%\setbeamersize{text margin left=5mm, text margin right 5mm}
+\title[Dissertation]{Optimization of Scintillator Based Radiation Portal Monitor}
+\author[] { Matthew J. Urffer}
+\institute[University of Tennessee] {Department of Nuclear Engineering, University of Tennessee, Knoxville, TN}
+\date{November 15, 2013}
+
+\pgfdeclareimage[height=0.5cm]{university-logo}{./Presentation/figures/utwordmarkhorz.png}
+\logo{\pgfuseimage{university-logo}}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>{}
+    \frametitle{\insertsectionhead}
+    \begin{multicols}{2}
+  % \tableofcontents[currentsubsection,hideothersubsections,sectionstyle=show/hide,subsectionstyle=show/shaded,]
+    \tableofcontents[currentsection] 
+    \end{multicols}
+  \end{frame}
+}
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+  \tiny
+    \begin{center}
+\centering{Financial support from the Domestic Nuclear Detection Office (DNDO) through Award No. 003387891 is gratefully acknowledged. 
+  Any opinions, findings, and conclusions or recommendations expressed in this material are those of the presenter and do not necessarily reflect the views of DNDO.}
+  \end{center}
+\end{frame}
+
+\begin{frame}{Table of Contents}
+  \label{toc}
+  \begin{multicols}{2}
+    %\tableofcontents[currentsection,pausesections]
+    %\tableofcontents[currentsection]
+    \tableofcontents
+  \end{multicols}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                        %
+%                          START OF CONTENT                              %
+%                                                                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\input{Presentation/Introduction}
+\section{Scope of Work}
+\begin{frame}{Scope of Work}
+  \begin{itemize}
+    \item Exists a need to develop techniques and models for the performance of replacement RPMS
+    \item Ability to optimize on those model is necessary
+  \end{itemize}
+  \begin{columns}[onlytextwidth]
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item Maximize neutron gamma discrimination
+        \item Maximize count rate per mass absorber
+        \item Minimize cost of the detector
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.45\textwidth}
+      \begin{itemize}
+        \item Secondary electron energy deposition
+        \item Neutronics simulations
+        \item Light transport 
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+\section{Neutron - Gamma Discrimination}
+\input{Presentation/NeutronGammaDiscrim}
+\section{RPM Neutronics}
+\input{Presentation/RPMNeutronics}
+\section{Energy Deposition}
+\input{Presentation/EnergyDeposition}
+\section{Light Transport}
+\input{Presentation/LightTransport}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%																							                           %
+%												Conclusions						                           %
+%																							                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\subsection*{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Deliverables}
+\centering{Toolkit for detector optimization}
+\begin{columns}[onlytextwidth]
+\begin{column}{0.45\textwidth}
+  \begin{itemize}
+    \item Code base for the simulation of an RPM (available on Github)
+    \item Documentation for these tools
+    \item Tutorial for the optimization of a detector design
+  \end{itemize}
+\end{column}
+\begin{column}{0.45\textwidth}
+\begin{figure}
+		\includegraphics[width=\textwidth]{DoxygenExample.png}
+\end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BILBIOLGRAPHY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[plain,allowframebreaks]
+\frametitle{Works Cited}
+	\tiny
+    \bibliography{Bib} % Bib.bib included in the references directory
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BACKUP 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\section*{Detailed Detector Requirements}
+\label{PNNLCriteria}
+\input{Presentation/PNNLCriteria}
+\section*{Spectra and MLLD Techniques}
+\label{MeasMethods}
+\input{Presentation/MeasurementMethods}
+\section*{GEANT4 Introduction}
+\label{G4Intro}
+\input{Presentation/G4Introduction}
+\section*{Genetic Algorthims}
+\label{GAMethodExtended}
+\input{Presentation/GAIntroduction}
+\end{document}
+
+
