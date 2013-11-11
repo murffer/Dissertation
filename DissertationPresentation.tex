@@ -96,7 +96,11 @@
     \end{column}
   \end{columns}
 \end{frame}
-\section{Neutron - Gamma Discrimination}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%																							                            %
+%																	MAIN BODY						                    %
+%																							                            %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \input{Presentation/NeutronGammaDiscrim}
 \section{RPM Neutronics}
 \input{Presentation/RPMNeutronics}
@@ -112,22 +116,38 @@
 \section{Conclusions}
 \subsection*{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Deliverables}
-\centering{Toolkit for detector optimization}
-\begin{columns}[onlytextwidth]
-\begin{column}{0.45\textwidth}
+\begin{frame}{Neutron - Gamma Discrimination}
   \begin{itemize}
-    \item Code base for the simulation of an RPM (available on Github)
-    \item Documentation for these tools
-    \item Tutorial for the optimization of a detector design
+    \item Devloped a method for pulse height discrimination to achieve a gamma intrsinic efficiency of less than \num{1E-6}
+    \item Completed detailed energy simulations (and preformed validaiton)
+    \item Attributed the pulse height discrimination ability to the ranges of the secondary electrons
+    \item Suggested film thickness is between \SI{50}{\um} and \SI{150}{\um}
   \end{itemize}
-\end{column}
-\begin{column}{0.45\textwidth}
-\begin{figure}
-		\includegraphics[width=\textwidth]{DoxygenExample.png}
-\end{figure}
-\end{column}
-\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Designed Layered RPM Detector}
+  \begin{itemize}
+    \item Simulated layered detector designs with XSDRN, MCNPX, GEANT4
+    \item Optimized a layered detector design capable of meeting the criteria
+    \item Cylindrical designs show promise as well
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Light Collection in an RPM}
+  \begin{itemize}
+    \item Completed light transport simulations of single films, 4" by 6" detector assembly, and a full scale RPM
+    \item Parameter studies indicate that teflon tape is better than mylar
+    \item Wavelength shifters greatly improve the light collection efficiencies
+    \item Typical events in an scintillator RPM will collect between 5\% and 10\% of the emitted light
+  \end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{}
+  \centering
+  \begin{figure}
+    \includegraphics[height=3cm]{PowerTQuestion.png}
+  \end{figure}
+  Thanks to everyone for listening and their contributions
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BILBIOLGRAPHY
