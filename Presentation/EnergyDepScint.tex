@@ -1,18 +1,18 @@
 \begin{frame}{Scintillation and Energy Deposition}
   \begin{itemize}
     \item Scintillation in a film depends on the energy deposition
-    \item Light output generally releated to stopping power
+    \item Light output generally related to stopping power
   \end{itemize}
   \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{Verbinski_LightYield_AlpahCarbonProton}
+    \includegraphics[height=0.6\textheight]{Verbinski_LightYield_AlpahCarbonProton}
   \end{figure}
-  Example of Light yield non-proportionality of anthracene. Data from \cite{Verbinski_1968}.}
+  Example of Light yield non-proportionality of anthracene. Data from \cite{Verbinski_1968}.
 \hyperlink{EDepScint}{\beamerbutton{Return to Scintillation}}
 \hyperlink{toc}{\beamerbutton{Table of Contents}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Example Track Structure (Stopping Power)}
+\begin{frame}{Example Alpha and Triton Tracks}
   \begin{figure}
     \begin{subfigure}[b]{0.45\textwidth}
       \includegraphics[width=\textwidth]{alphaTrack_0}
@@ -20,38 +20,36 @@
     \end{subfigure}% 
     ~
     \begin{subfigure}[b]{0.45\textwidth}
-      \includegraphics[width=\textwidth]{electronTrack_100keV_0}
-      \caption{\SI{100}{\keV} Electron}
-    \end{subfigure}
-    
-    \begin{subfigure}[b]{0.45\textwidth}
-      \includegraphics[width=\textwidth]{electronTrack_50keV_0}
-      \caption{\SI{50}{\keV} Electron}
-    \end{subfigure}%
-    ~
-    \begin{subfigure}[b]{0.45\textwidth}
       \includegraphics[width=\textwidth]{tritonTrack_0}
       \caption{\SI{2.73}{\MeV} Triton}
     \end{subfigure}
-    \caption[Particle Tracks of Alpha, Triton and Electrons]{GEANT4 simulated Particles tracks of a \SI{10}{\keV} electron, \SI{100}{\keV} electron, \SI{2.05}{\MeV} alpha, and \SI{2.73}{\MeV} triton.  The electron tracks are broader than the heavy ion tracks, resulting in a greater spread of the energy deposition and less quenching.}
+    \caption[Particle Tracks of Alpha, Triton]{GEANT4 simulated Particles tracks of a \SI{2.05}{\MeV} alpha, and \SI{2.73}{\MeV} triton}
   \end{figure}
 \hyperlink{EDepScint}{\beamerbutton{Return to Scintillation}}
 \hyperlink{toc}{\beamerbutton{Table of Contents}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}
+\begin{frame}{Example Electron Track Structure (Stopping Power)}
   \begin{figure}
-    \centering
-      \includegraphics[width=\textwidth]{LightSim_AlphaTritonElectron}
-    \caption[GEANT4 simulated light output of alpha, tritons and electrons in polystyrene]{Simulated optical photons distributions for the particles of interest in a portal monitor.  The energy of the electron was chosen to be the average energy deposited by \iso[60]{Co} in \SI{1}{\mm} of polystyrene. \LightQuenchSimGeo}
+    \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{electronTrack_100keV_0}
+      \caption{\SI{100}{\keV} Electron}
+    \end{subfigure}
+   ~ 
+    \begin{subfigure}[b]{0.45\textwidth}
+      \includegraphics[width=\textwidth]{electronTrack_50keV_0}
+      \caption{\SI{50}{\keV} Electron}
+    \end{subfigure}%
+    \caption{GEANT4 simulated Particles tracks of a \SI{10}{\keV} electron, \SI{100}{\keV} electron}
   \end{figure}
 \hyperlink{EDepScint}{\beamerbutton{Return to Scintillation}}
 \hyperlink{toc}{\beamerbutton{Table of Contents}}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Pulse Height Deficits}
-  \begin{table}
+\begin{table}
     \caption[Simulated Number of Optical Photons for Selected Neutron Absorptions]{GEANT4 simulated number of optical photons produced for the \iso[10]{B} and \iso[6]{Li} neutron absorptions.  The scintillator is assumed to have a light yield of 1,000 photons per MeV}
+    \small
     \centering
     \begin{tabular}{c c c | c}
       \toprule
@@ -69,5 +67,5 @@
   \end{table}
 \hyperlink{EDepScint}{\beamerbutton{Return to Scintillation}}
 \hyperlink{toc}{\beamerbutton{Table of Contents}}
-\edn{frame}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
