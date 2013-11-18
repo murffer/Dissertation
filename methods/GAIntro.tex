@@ -26,6 +26,7 @@ The thickness of the RPM  (\SI{12.7}{\cm}) was divided into slices, where each s
 These slices of detector material (represented as a \verb+1+) or moderator material (represented as a \verb+0+) were append into a sequence.
 This sequence of one's and zero's (or bit string) then completely represented the geometry of the RPM and formed the basis for all possible solutions to the optimization problem.
 For example the sequence \verb+0001110010+ would represent a detector that had three moderator slices, three detector slices, another two moderator slices, and a final detector slice before a single moderator slice as the reflector.
+Example geometries are shown in \autoref{sec:OptimalLayeredDetectorGeos}.
 In terms of genetic algorithms the set of all possible solutions is referred to as the \textit{genome}.
 The length of the genome is thus the number of slices in the geometry, where a higher length genome allows for a more complicated geometry.
 The initial population for the genetic algorithm was initialized to be random bit strings with equal probability of a slice being a detector slice or moderator.
@@ -91,8 +92,10 @@ If it failed to meet the count rate criteria a zero fitness was returned \eqref{
 \end{align}
 Films that have excessive detector layers will be penalized by the normalization by the mass of \iso[6]{Li} that they contain, while favoring films that have the minimum number of detector layers that meet the count rate criteria and have a more effective utilization of the neutron flux which increase their count rate.
 
-At this point it is instructive to make a note about the size of the solution space.
-\autoref{tab:BitStringGeo} some of the these geometries are simple enough that the search space can be computed exhaustively.
+At this point it is instructive to make a note about the size of the solution space, highlighted in  \autoref{tab:BitStringGeo}.
+For small genome lengths (less than 10) it is possible to exhaustively search the hypothesis space of possible solutions, which is not feasible for the larger genome lengths, as the search space increases as $2^n$, while the refinement of the geometry increases linearly.
+Therefore, efficient evaluation of the fitness function is necessary in order to evolve a reasonable number of solutions, suggesting a deterministic code such as XSDRN.
+In addition, a hybrid method of finding a basic geometry in a low search space and then preforming perturbations on that geometry will have a better performance than attempting to search the higher geometry solution space.
 \begin{table}
     \caption[Genome Bit String Geometries]{Bit String Simplified Geometry Descriptions}
     \label{tab:BitStringGeo}
@@ -112,9 +115,3 @@ At this point it is instructive to make a note about the size of the solution sp
     \bottomrule
     \end{tabular}
 \end{table}
-There are several salient features highlighted in \autoref{tab:BitStringGeo}.
-For small genome lengths (less than 10) it is possible to exhaustively search the hypothesis space of possible solutions.
-This is not possible for the larger genome lengths.
-Therefore, efficient evaluation of the fitness function is necessary in order to evolve a reasonable number of solutions.
-In addition the refinement in the details of the geometries increases linearly with the genome length while the size of the search space increases as $2^n$.
-This suggest that a hybrid method of finding a basic geometry in a low search space and then preforming perturbations on that geometry will have a better performance than attempting to search the higher geometry solution space.

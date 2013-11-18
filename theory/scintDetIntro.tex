@@ -14,7 +14,7 @@ The process of scintillation in organic scintillators is explained in more detai
 An organic scintillator generally has a $\pi$-electron structure similar to that of \autoref{fig:benzePiStructure} with typical energy levels as shown in \autoref{fig:pielectron}.
 An incoming electron (liberated from the energy deposition of the ionizing radiation) then excites one of the modes of the $\pi$-electron structure.
 Higher singlet states rapidly (on the order of picoseconds) relax to the first singlet state, and excessive vibrational energy (populations of the vibrational sates) is lost.
-Thus, after a short period of time the entire excitation population is in the $S_10$ state, and the decay of this state creates the prompt fluorescence.
+Thus, after a short period of time the entire excitation population is in the $S_{10}$ state, and the decay of this state creates the prompt fluorescence.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.5\textwidth]{benzeneStructure}
@@ -24,7 +24,7 @@ Thus, after a short period of time the entire excitation population is in the $S
 \begin{figure}
   \centering
   \includegraphics[width=0.6\textwidth]{PiElectronSates}
-  \caption[$\pi$ Electron Structure]{Typical $\pi$-electron structure of an organic molecule. The ground state of the molecule is shown as $S_0$, and excited single states are $S_1$, $S_2$ etc The triplet states are $T_1$, $T_2$, with the vibrational states as $S_OO$, $S_01$, $S_02$ and so forth. Figure from Wikipedia.}
+  \caption[$\pi$ Electron Structure]{Typical $\pi$-electron structure of an organic molecule. The ground state of the molecule is shown as $S_0$, and excited single states are $S_1$, $S_2$ etc The triplet states are $T_1$, $T_2$, with the vibrational states as $S_{OO}$, $S_{01}$, $S_{02}$ and so forth. Figure from Wikipedia.}
   \label{fig:pielectron}
 \end{figure}
 The excitations of triplet states typically yield delayed scintillation events or phosphorescence.
@@ -33,7 +33,7 @@ The $T_0$ state typically decays by interacting with another $T_0$ state in a $T
 The excited singlet state $S^*$ then also decays to the $S_0$ state.
 The $T_0 + T_0$ transitions is slower than direct singlet state de-excitations, and results in a slow component of the pulse, which can be used for pulse shape discrimination.
 
-The light output of an organic scintillator can be empirically related to the energy deposition in the scintillator through the Birks equation.
+The light output of an organic scintillator can be empirically related to the energy deposition in the scintillator through the Birks equation \cite{birks_scintillations_1951}.
 In the absence of any quenching it is assumed that the light output per unit length is directly proportional to the energy deposition per unit length \eqref{eqn:LONoQuench}
 \begin{align}
   \label{eqn:LONoQuench}
@@ -51,15 +51,15 @@ However, for particles with a large stopping power the light output along the tr
 This difference in the pulse height accounts for that difference in light output from a \SI{1}{\MeV} electron compared to a \SI{1}{\MeV} alpha.
 The \textit{alpha to beta} ratio provides a measure of this effect, and for the GS20 glass is it typically around 0.23.
 This effect is critical in the developed detectors are the reaction products of of the \iso[6]{Li} neutron absorption are both heavily charged particles subject to this effect.
-Thus, while there is \SI{4.78}{\MeV} of reaction product energy released in the neutron absorption, the low alpha to beta ratio of the material limits the actual number of scintillation events.
+Thus, while there is \SI{4.78}{\MeV} of reaction product energy released in the neutron absorption, the low alpha to beta ratio of the material limits the actual number of scintillation events compared to those produced by a \SI{4.78}{\MeV} beta (electron).
 
 \subsection{Pulse Height Deficit}
 \label{sec:PulseHeightDeficit}
 The concept of alpha to beta ratio is extended for other charged ions as the pulse height deficit.
 The pulse height deficit is defined as the number of photons produced per energy of the primary particle (usually a heavy charged ion) relative to the number of photons produced per energy by an electron of a similar energy.
 This is measured as the difference between the energy of the heavy ion and its apparent energy from the pulse height.  
-Several researchers have investigated the light output of scintillators in response to different types of ionizing radiation.
-\autoref{fig:lightYieldVerbinski} summarizes the results of \cite{Verbinski_1968} in which the pulse height deficit is apparent for the as the charged ions become heavier.
+Several researchers have investigated the light output of scintillators in response to different types of ionizing radiation\cite{Verbinski_1968}.
+\autoref{fig:lightYieldVerbinski} summarizes example results in which the pulse height deficit is apparent for the as the charged ions become heavier.
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{Verbinski_LightYield_AlpahCarbonProton}
