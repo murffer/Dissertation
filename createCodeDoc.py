@@ -107,7 +107,7 @@ def sanitize(path):
                     line,graphics = line.split('\includegraphics')
                     fout.write(line)
                     fout.write('\n\\begin{figure}\n')
-                    fout.write('\\includegraphics[width=\\textwidth]'+graphics+'\n')
+                    fout.write('\\includegraphics[width=\\textwidth]'+graphics)
                     fout.write('\\end{figure}\n')
                 # Business as normal
                 else:
