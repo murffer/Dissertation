@@ -92,7 +92,6 @@ def sanitize(path):
     for fname in files:
         # Cleaning up
         with open(fname,'r') as fin, open('temp','w') as fout:
-            print fname
             for line in fin:
                 # Verbatim enviorments
                 if line.startswith('\\begin{verbatim}'):
@@ -103,7 +102,6 @@ def sanitize(path):
                     fout.write('}')
                 # Figures
                 elif 'includegraphics' in line:
-                    print 'Graphics line'
                     line,graphics = line.split('\includegraphics')
                     fout.write(line)
                     fout.write('\n\\begin{figure}\n')
