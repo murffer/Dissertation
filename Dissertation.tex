@@ -70,25 +70,24 @@
     %
     \addToPDFBookmarks{1}{Acknowledgements}{c} % add a pdf bookmark to the acknowledgements page
     \include{front-matter/acknowledgements} % include the acknowledgements
+    %
     \addToPDFBookmarks{1}{Abstract}{d} % add a pdf bookmark to the title page
-    \begin{abstract}
     \input{front-matter/abstract}
-    \end{abstract}
     %
-    \pagenumbering{roman}
-    \setcounter{page}{2}
+    \addToPDFBookmarks{1}{Executive Summary}{e} % add a pdf bookmark to the title page
+    \input{front-matter/ExecutiveSummary}
     %
-    \addToPDFBookmarks{1}{Table of Contents}{e}
+    \addToPDFBookmarks{1}{Table of Contents}{f}
     \tableofcontents % generate a table of contents
     %
-    \addToPDFBookmarks{1}{List of Tables}{f}
+    \addToPDFBookmarks{1}{List of Tables}{g}
     \listoftables % generate a list of tables
     %
-    \addToPDFBookmarks{1}{List of Figures}{g}
+    \addToPDFBookmarks{1}{List of Figures}{h}
     \listoffigures % generate a list of figures
     %
     \makenomenclature % OPTIONAL
-    \addToPDFBookmarks{1}{Nomenclature}{h} % OPTIONAL
+    \addToPDFBookmarks{1}{Nomenclature}{i} % OPTIONAL
     \printnomenclature[1.25in] % OPTIONAL
     %
     \newpage
