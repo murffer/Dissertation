@@ -8,6 +8,39 @@ A MCNPX calculation was used to determine the neutron flux incident upon the lef
 The number of neutron absorptions was calculated using an activity flag in the XSDRN model.
 The fitness function for this model was implemented as the activity normalized the number of detector layers.
 The number of layers was chosen as the normalization factor instead of the actual mass of absorber to allow for different film compositions to be simulated more readily.
-%The XSDRN model was validated by comparing to the MCNPX simulations of a similar geometry.
-%It was observed that geometries that started with a neutron absorber layer did not have good agreement with the MCNPX model; this is attributed to the breakdown of the diffusion equation in a strongly absorbing medium near a source.
-%Some strification of the results were also observed, leading to the conclusion that the XSDRN calculations should only be used as a general guide.
+
+The comparison between the MCNPX simulation and the XSDRN is shown for some of the samples in \autoref{tab:10GenomeXSDRNMCNPXCompare} and \autoref{tab:20GenomeXSDRNMCNPXCompare}, where the change in rank is computed by rank of the MCNPX model versus the rank of the XSDRN model.
+It is observed that the XSDRN model preformed fairly closely to the MCNPX model, but tended to over predict and favor geometries that had repeated layers and clusters.
+This was very noticeable when the geometries started with a neutron absorber layer this is attributed to the breakdown of the diffusion equation in a strongly absorbing medium near a source.
+Some stratification of the results were also observed, leading to the conclusion that the XSDRN calculations should only be used as a general guide.
+More details are available in the simulation code base, summarized in \autoref{sec:garpm8opt}.
+\begin{table}
+  \caption[10 Genome Length RPM Model]{10 Genome Length RPM Model Interactions rates}
+  \label{tab:10GenomeXSDRNMCNPXCompare}
+  \begin{tabular}{c c | c c | c}
+    \toprule
+    Genome & Activity & Interaction Rate & Rank Change \\
+    \midrule
+  0011010000& 9.30 &  3.82 & $\downarrow$ 13 \\
+  0110100000 & 10.50  &  3.81 & 0 \\
+  0101010000 & 10.12  & 3.79 & $\downarrow$ 7 \\
+ 0101100000 &  & 3.79 & $\downarrow$ 1\\
+  0011100000 & 9.63 &  3.77 & $\downarrow$ 3 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\begin{table}
+  \caption[20 Genome Length RPM Model]{20 Genome Length RPM Model Interactions rates}
+  \label{tab:20GenomeXSDRNMCNPXCompare}
+  \begin{tabular}{c c | c c | c}
+    \toprule
+    Genome & Activity  & Interaction Rate & Rank Change \\
+    \midrule
+  00100101000000000000 & 7.77 & 3.79 & $\downarrow$ 19 \\
+  00011000100000000000 &  & 3.78 &  \\
+  00011000010000000000 &  &  3.76 &  \\
+  00110001000000000000 &  &  3.69 & $\downarrow$ 15\\
+  01011010010000000000 & 23.46 & 3.66 & $\uparrow$ 1\\
+    \bottomrule
+  \end{tabular}
+\end{table}
