@@ -2,6 +2,7 @@
 
 import os
 import subprocess
+import glob
 
 def convertToLatex(markdownFile):
     """
@@ -80,7 +81,38 @@ def getListOfFiles(directory):
         if f.endswith('.md'):
             matches.append(f)
     return matches
-        
+
+def sanitize(path):
+    """
+    Cleans up all of the latex documents in path
+
+    Currently just cleans up the figures and makes the verbatim tiny
+    """
+    files = glob.glob(path+'/*.tex')
+    for fname in files:
+        # Cleaning up
+        with open(fname,'r') as fin, open('temp','w') as fout:
+            for line in fin:
+                # Verbatim enviorments
+                if line.startswith('\\begin{verbatim}'):
+                    fout.write('{\\small')
+                    fout.write(line)
+                elif line.startswith('\\end{verbatim}'):
+                    fout.write(line)
+                    fout.write('}')
+                # Figures
+                elif 'includegraphics' in line:
+                    line,graphics = line.split('\includegraphics')
+                    fout.write(line)
+                    fout.write('\n\\begin{figure}\n')
+                    fout.write('\\includegraphics[width=\\textwidth]'+graphics)
+                    fout.write('\\end{figure}\n')
+                # Business as normal
+                else:
+                    fout.write(line)
+        # Renaming
+        os.rename('temp',fname)
+
 if __name__ == '__main__':
     files = getListOfFiles('code')
     toWrite = set()
@@ -90,3 +122,4 @@ if __name__ == '__main__':
     with open('doc/CodeDoc.tex','w') as out:
         for f in toWrite:
             out.write('\input{doc/'+f+'}\n')
+    sanitize('doc')

@@ -26,7 +26,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \title{Optimization of Scintillator based Radiation Portal Monitors}
 \author{Matthew J. Urffer}
-\date{December, 2013}
+\date{December 2013}
 \copyrightYear{2013} 
 \graduationMonth{December}
 \majorProfessor{Laurence F. Miller}
@@ -60,7 +60,7 @@
     %
     \addToPDFBookmarks{0}{Front Matter}{rootNode} % create a root node named "Front Matter" in the pdf bookmarks
     \addToPDFBookmarks{1}{Title}{a} % add a pdf bookmark to the title page
-    \maketitle
+    \makeTitlePage
     %
     \pagenumbering{roman}
     \setcounter{page}{2}
@@ -80,14 +80,14 @@
     \addToPDFBookmarks{1}{Table of Contents}{f}
     \tableofcontents % generate a table of contents
     %
-    \addToPDFBookmarks{1}{List of Tables}{g}
+    \addToPDFBookmarks{1}{List of Tables}{f}
     \listoftables % generate a list of tables
     %
-    \addToPDFBookmarks{1}{List of Figures}{h}
+    \addToPDFBookmarks{1}{List of Figures}{g}
     \listoffigures % generate a list of figures
     %
     \makenomenclature % OPTIONAL
-    \addToPDFBookmarks{1}{Nomenclature}{i} % OPTIONAL
+    \addToPDFBookmarks{1}{Nomenclature}{h} % OPTIONAL
     \printnomenclature[1.25in] % OPTIONAL
     %
     \newpage
@@ -104,6 +104,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % BIBLIOGRAPHY
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \makeBibliographyPage
     \bibliographystyle{apalike} % bibliography style - recommend using apalike-doi as it hyperlinks DOIs
     \bibliography{Bib} % Bib.bib included in the references directory
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

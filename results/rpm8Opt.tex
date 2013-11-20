@@ -47,15 +47,15 @@ It is observed that the XSDRN model preformed fairly closely to the MCNPX model,
     Genome & Activity  & Interaction Rate & Rank Change \\
     \midrule
   00100101000000000000 & 7.77 & 3.79 & $\downarrow$ 19 \\
-  00011000100000000000&  & 3.78 &  \\
-  00011000010000000000& &  3.76 &  \\
-  00110001000000000000 &  3.69 & $\downarrow$ 15\\
+  00011000100000000000 &  & 3.78 &  \\
+  00011000010000000000 &  &  3.76 &  \\
+  00110001000000000000 &  &  3.69 & $\downarrow$ 15\\
   01011010010000000000 & 23.46 & 3.66 & $\uparrow$ 1\\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\subsection{Pertubations on the MCNPX Model}
+\subsection{Perturbations on the MCNPX Model}
 Perturbations on the MCNPX were preformed in order to determine if a minimum in the search function was achieved.
 A perturbation on a optimal genome is defined as taking each detector slice and translating it a half slice thickness to the left and the right. 
 For example, for a five length genome a perturbation on \verb+010100+ would involve first doubling the genome to  \verb+001000100000+ and then perturbing the slices as  \verb+010000100000+, \verb+000100100000+, \verb+001001000000+, and \verb+001000010000+.
@@ -63,9 +63,9 @@ The perturbations on the length length genome increased the interaction rate fro
 Thus, it is determined that the genetic algorithm converged to the optimal solution.
 
 \subsection{Optimal Layered Detector Geometries}
-The optimal genomes are listed for 10 15, 20 length, and 30 length genomes for a minimum interaction rate of 2.5 interactions per second in \autoref{tab:GAOptRXNRate_25}, 5.0 interactions per neutron per second in \autoref{tab:GAOptRXnRate_5}, and for 7.5 interactions per second in \autoref{tab:GAOptRXNRate_75}.
+\label{sec:OptimalLayeredDetectorGeos}
+The optimal genomes are listed for 10 15, 20 length, and 30 length genomes for a minimum interaction rate of 2.5 interactions per second in \autoref{tab:GAOptRXNRate_25}, 5.0 interactions per neutron per second in \autoref{tab:GAOptRXNRate_5}, and for 7.5 interactions per second in \autoref{tab:GAOptRXNRate_75}.
 It is observed that higher length genomes tended to shows a slight decrease in the total interaction rate.
-
 
 \begin{table}
 	\caption[Optimal geometry for 2.5 interactions per second]{Optimal genome geometries for a total minimium interaction rate of 2.5 interactions per second. The detector and simulation is configured per the PNNL criteria.}
@@ -144,11 +144,11 @@ A build up of the thermal flux is observed after the last detector layer, and th
 \end{figure}
 
 \begin{table}
-	\caption[Optimal Layered Film Geometry for 7.5 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 7.5 interactions per second per nano-gram \iso[252]{Cf} in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geoemtry is \texttt{01111101110100001000}.}
+	\caption[Optimal Layered Film Geometry for 7.5 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 7.5 interactions per second per nano-gram \iso[252]{Cf} in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geometry is \texttt{01111101110100001000}.}
 	\label{tab:OptGeoDetailed75}
 	\begin{tabular}{m{3cm} m{4cm}}
 	\toprule
-	Edge Position (\si{\cm}) & Material \\
+	Position (\si{\cm}) & Material \\
 	\midrule
 0.635&Moderator\\
 0.645&Detector\\
@@ -179,11 +179,11 @@ A build up of the thermal flux is observed after the last detector layer, and th
 	\end{tabular}
 \end{table}
 \begin{table}
-	\caption[Optimal Layered Film Geometry for 5.0 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 5.0 interactions per second per nano-gram \iso[252]{Cf}  in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geoemtry is \texttt{011101001000000}.}
+	\caption[Optimal Layered Film Geometry for 5.0 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 5.0 interactions per second per nano-gram \iso[252]{Cf}  in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geometry is \texttt{011101001000000}.}
 	\label{tab:OptGeoDetailed5}
 	\begin{tabular}{m{3cm} m{4cm}}
 	\toprule
-	Edge Position (\si{\cm}) & Material \\
+	Position (\si{\cm}) & Material \\
 	\midrule
 0.847&Moderator\\
 0.857&Detector\\
@@ -203,11 +203,11 @@ A build up of the thermal flux is observed after the last detector layer, and th
 	\end{tabular}
 \end{table}
 \begin{table}
-	\caption[Optimal Layered Film Geometry for 2.5 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 2.5 interactions per second per nano-gram \iso[252]{Cf} in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geoemtry is \texttt{0011010000}.}
+	\caption[Optimal Layered Film Geometry for 2.5 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 2.5 interactions per second per nano-gram \iso[252]{Cf} in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geometry is \texttt{0011010000}.}
 	\label{tab:OptGeoDetailed25}
 	\begin{tabular}{m{3cm} m{4cm}}
 	\toprule
-	Edge Position (\si{\cm}) & Material \\
+	Position (\si{\cm}) & Material \\
 	\midrule
 1.270&Moderator\\
 2.550&Detector\\
@@ -263,7 +263,7 @@ The width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}, w
   \label{tab:TwoCylinderResults}
 	\begin{tabular}{m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{4cm} >{\centering\arraybackslash} m{4cm} }
 	\toprule
-    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Interaction Rate  & count rate per mass \\
+    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Interaction Rate  & Count Rate per Mass \\
            &                       &  \centering{\si{\gram}} & \si{\cps\per\ng} \iso[255]{Cf}  & \si{\cps\per\ng \iso[252]{Cf}\per\gram} \\
     \midrule
     PS     &  0.10  & 4.80 &    1.321  $\pm$   0.03 &   0.28\\ 
@@ -281,7 +281,7 @@ The width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}, w
   \label{tab:ThreeCylinderResults}
 	\begin{tabular}{m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{4cm} >{\centering\arraybackslash} m{4cm} }
 	\toprule
-    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Interaction Rate  & count rate per mass \\
+    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Interaction Rate  & Count Rate per Mass \\
            &                       &  \centering{\si{\gram}} & \si{\cps\per\ng} \iso[255]{Cf}  & \si{\cps\per\ng \iso[252]{Cf}\per\gram} \\
     \midrule
     PS     &  0.10  & 7.20&   1.482   $\pm$  0.02 &   0.21\\
@@ -299,7 +299,7 @@ The width of the RPM cabinet extends from \SI{-15.25}{\cm} to \SI{15.25}{\cm}, w
   \label{tab:FourCylinderResults}
 	\begin{tabular}{m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{2cm} >{\centering\arraybackslash} m{4cm} >{\centering\arraybackslash} m{4cm} }
 	\toprule
-    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Interaction Rate  & count rate per mass \\
+    Polymer& Fraction \iso[6]{LiF} & Mass \iso[6]{Li}& Interaction Rate  & Count Rate per Mass \\
            &                       &  \centering{\si{\gram}} & \si{\cps\per\ng} \iso[255]{Cf}  & \si{\cps\per\ng \iso[252]{Cf}\per\gram} \\
     \midrule
     PS     &  0.10  &  9.60 &   1.879  $\pm$   0.03 &   0.20\\

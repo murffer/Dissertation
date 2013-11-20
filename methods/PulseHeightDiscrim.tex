@@ -17,7 +17,7 @@ A formulation of the MLLD is presented in \eqref{eqn:MLLDFormulation},
 \begin{align}
 	\epsilon_{\gamma,int}\left(MLLD\right) &= \frac{\int_{MLLD}^{\infty}p(x)dx}{\Phi}
   \label{eqn:MLLDFormulation}
-\end{align},
+\end{align}
 where \definevar{$p(x)$}{spectra as a function of channel number} and \definevar{$\Phi$} is the incident gamma flux.
 By computing the gamma intrinsic efficiency as a function of the MLLD, one only needs to find what MLLD corresponds to having a intrinsic efficiency of less than one in a million.
 
@@ -49,15 +49,16 @@ Films less than \SI{50}{\um} have over 16\% of the counts above the necessary di
     \caption{Fraction of Neutron Count Rate Above Discriminator Setting in 10\% loaded polystyrene}
 	\centering
 	\begin{tabular}{c | c}
+  \toprule
 	Thickness & Neutron Fraction \\
-	\hline
-	\hline
-	\SI{15}{\um} & 0.21 \\
+	\midrule
+  \SI{15}{\um} & 0.21 \\
 	\SI{25}{\um} & 0.30 \\
 	\SI{50}{\um}  & 0.16 \\
 	\SI{150}{\um}  & 0.009 \\
 	\SI{300}{\um}  & 0.002 \\
 	\SI{600}{\um}  & 0.002 \\
+  \bottomrule
 	\end{tabular}
   \label{tab:FractionCRGamma}
 \end{table}

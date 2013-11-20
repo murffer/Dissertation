@@ -134,7 +134,7 @@
 	pdfsubject={\@dept},
 	pdfkeywords={\@keywords},
 	pdfpagelayout=SinglePage,
-    bookmarksopen=False,
+    bookmarksopen=True,
 	%pdfview=FitV,
 	pdfborder=0 0 0, 		% make all links invisible, so the pdf looks good when printed	
     pdffitwindow=true,      % window fit to page when opened
@@ -185,9 +185,7 @@
 
             The \@degree
         } \else {
-            A Dissertation
-
-            Presented for the
+            A Dissertation Presented for the
 
             \@degree
         } \fi

@@ -1,4 +1,4 @@
-o\chapter{Conclusions}
+\chapter{Conclusions}
 \label{chap:Conclusions}
 Defense against nuclear terrorism relies upon the ability to accurately detect and identify Special Nuclear Material (SNM).
 The current standard for neutron detection in portal monitors is \iso[3]{He}, which is a diminishing resource. 
@@ -15,16 +15,14 @@ MCNPX simulations where used to establish the photon fluence over samples mounte
 The MLLD is then determined as the discriminator setting in which for every million photons that cross the detector only one is counted.
 
 The origination of the neutron - gamma discrimination in primary in film thickness as the scintillators tested for replacement detector criteria are low - z materials.
-The thickness of the film impacts the discrimination firstly through the interaction rate (the interaction rate for photons in a given thickness of material can be expressed as $1-\exp\left(-(\mu/\rho)x \right )$), but for a \SI{1}{\MeV} photon in polystyrene to have an interaction rate of less than one in a million would require that the film be less than \SI{0.15}{\um}.
-A far greater impact on the neutron - gamma discrimination comes from the range of the secondary electrons produced by Compton scattering in gamma-photon events and their energy deposition.
+The thickness of the film impacts the discrimination firstly through the interaction rate, but a far greater impact on the neutron - gamma discrimination comes from the range of the secondary electrons produced by Compton scattering in gamma-photon events and their energy deposition.
 The electrons from the gamma interactions generally have energies on the order of 100 keV, while energies from the charged particle reactions of the neutrons have energies or the order to 10 keV.
 Thus, the neutron reaction product energies tend to deposit more energy in the film than their gamma produced counterparts.
-It is the the poor energy deposition by the electrons generated from photon events that allow for films to be much thicker than the thickness predicted based on the interaction rate.
+It is the poor energy deposition by electrons generated from photon events that allow for films to be much thicker than the thickness predicted based on the interaction rate.
 
 Effective design must account for the energy deposition in the material, including the pulse height deficit of the impingement particle.
 For example, the range of the alpha created in a \iso[6]{Li} neutron absorption is six times less than that of the triton, but the triton creates almost six times more photons than the alpha.
 Simulations were completed using the GEANT4 toolkit to simulate the energy deposition of \iso[6]{LiF} loaded polystyrene
-The average energy deposited was computed for each thickness and normalized by the incident energy for gammas by the Q-value of the reaction for neutrons, and is presented in Table ~\ref{tab:ConclusionFractionEDep}.
 For thickness greater than \SI{150}{\um} there is little benefit in increasing the thickness of the film in terms of energy deposition by neutrons, since over 90\% of the energy is being deposited in the film, thus there is little reason to fabricate films thicker than \SI{150}{\um} because it allows for a greater percentage of energy to be deposited from gammas, resulting in a higher MLLD setting.
 
 \section{Film Placement}
@@ -33,15 +31,15 @@ Layering the detectors, however, has been shown to improve the neutron count rat
 A simple repeated layer design was first proposed as a solution to this problem, but due to the changing neutron flux through the detector is was quickly discarded as non-ideal.
 The repeated layered detector design caused the neutron flux to never thermalize appreciably after being depleted by the first few detector slices; as neutrons became thermalized they would be captured by \iso[6]{Li}.
 However, in the interior of the repeated layered detector design did not allow for any buildup, leading to waste of the absorber.
-A more efficient use of the neutron detector material would be to space the material out in the detector, separating the layers with moderator, such that the neutron flux could be thermalized before the next detector layer.
+A more efficient use of the neutron detector material would be to separate the detector layers with moderator such that the neutron flux could be thermalized before the next detector layer.
 
 Genetic algorithms were employed to optimize a binary model of the detector for the optimal geometry that had the highest count rate while using the least amount of absorber and still meeting the detection efficiency criteria.
 This model consisted of using a binary representation of the layered detector geometry (where each layer is either a detector slice or moderator slice).
 The model was then evaluated using MCNPX and XSDRN to simulate the expected neutron interaction rate performance.
 
 The position of the slices necessary for having the best usage of the absorber material while still maintaining the neutron count rate necessary for the criteria are then determined by the genetic algorithm.
-These layered detector designs consist of 100 micron, Li-6 fluoride loaded polymers that are encased in four millimeters of a wavelength shifter.
-Three such layers (30 precent loaded with enriched LiF) can achieve an interaction rate of 3.82 interactions per second per nanogram of Cf-252 (using 12.6 grams of Li-6), while five layer can achieve an interaction rate of 5.31 interactions per second per nanogram of Cf-252 (using 21.0 grams of Li-6)  and ten layers an achieve an interaction rate of 7.56 interactions per second per nanogram of Cf-252 (using 41.2 grams of Li-6).
+These layered detector designs consist of 100 micron, \iso[6]{Li} fluoride loaded polymers that are encased in four millimeters of a wavelength shifter.
+Three such layers (30 precent loaded with enriched LiF) can achieve an interaction rate of 3.82 interactions per second per nanogram of Cf-252 (using 12.6 grams of \iso[6]{Li}), while five layer can achieve an interaction rate of 5.31 interactions per second per nanogram of Cf-252 (using 21.0 grams of \iso[6]{Li})  and ten layers an achieve an interaction rate of 7.56 interactions per second per nanogram of Cf-252 (using 41.2 grams of \iso[6]{Li}).
 Annotated MCNPX renderings of these geometries are shown in \autoref{fig:RPMLayeredRendering25} and \autoref{fig:RPMLayeredRendering5}, and \autoref{fig:RPMLayeredRendering75}.
 
 A physical basis of the optimal solution found by the genetic algorithm can be found by observing the form of the optimal solutions.
