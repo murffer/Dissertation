@@ -1,6 +1,6 @@
 % MCNPX Model of the interaction rate
 \chapter{MCNPX Tally Interactions}
-The performance of films is simulated in MCNPX, a Monte Carlo transport code\cite{pelowitz_mcnpx_????}.
+The performance of films is simulated in MCNPX, a Monte Carlo transport code\cite{pelowitz_mcnpx_2006}.
 
 The interaction rate is calculated using the a cell flux tally in MCNPX and a tally multiplier card.
 The tally multiplier card (FMn) is used to calculated any quantity of the form \eqref{eqn:FMCardForm} \cite{pelowitz_mcnpx_2006}
@@ -9,7 +9,7 @@ The tally multiplier card (FMn) is used to calculated any quantity of the form \
   I &= C\int\phi(E)\Re_m(E)dE
 \end{align}
 where \definevar{$I$}{Interaction rate}, \definevar{$\phi(E)$}{Energy dependent fluence} , \definevar{$\Re_m(E)$}{Response function operator} and $C$ is an arbitrary scalar for normalization.
-An general example of the use of the FM card is shown in Listing \ref{lst:GeneralFMExample}, which is taken from the MCNPX manual \cite{pelowitz_mcnpx_????}.
+An general example of the use of the FM card is shown in Listing \ref{lst:GeneralFMExample}, which is taken from the MCNPX manual \cite{pelowitz_mcnpx_2006}.
 % See pg. 4-41 of the MCNP manual
 \begin{lstlisting}[caption={[Example usage of the FM card]Example usage of the FM card to calculate the number of reactions per \si{\cm\cubed} of type R in cell 8 of material M. The normalization is by atomic density, signified by the -1},label={lst:GeneralFMExample}]
 F104: N 8
