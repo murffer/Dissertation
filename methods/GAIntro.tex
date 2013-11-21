@@ -115,3 +115,12 @@ In addition, a hybrid method of finding a basic geometry in a low search space a
     \bottomrule
     \end{tabular}
 \end{table}
+
+\subsection{Convergence}
+Convergence to an optimal solution of the problem by the genetic algorithm was determined by an exhaustive search of the genome space for lengths less than eight (255 combinations) and using perturbations of the optimal solutions for higher search spaces.
+For the small search spaces it was observed that the genetic algorithm would converge to an optimal solution almost all of the time; and in the cases when it did not the solution it did converge to was a top candidate.
+The convergence to the top candidates can then be corrected by preforming perturbations on the top candidates.
+A perturbation on a optimal genome is defined as taking each detector slice and translating it a half slice thickness to the left and the right. 
+For example, for a five length genome a perturbation on \verb+010100+ would involve first doubling the genome to  \verb+001000100000+ and then perturbing the slices as  \verb+010000100000+, \verb+000100100000+, \verb+001001000000+, and \verb+001000010000+.
+The perturbations on the length length genome increased the interaction rate from 3.81 interactions per second to 3.85 interactions per second for the optimal ten length genome, and from 3.85 interactions per second to 3.87 interactions per second.
+Thus, it is determined that the genetic algorithm converged to the optimal solution.
