@@ -113,7 +113,29 @@ MCNPX simulations were completed of geometries containing two, three, and four c
 It is envisioned that the detector material could be deposited on a flexible sheet and wrapped to create a cylinder, however, for simplicity a concentric cylinder design is simulated.
 The outer diameter of the cylinders were set to be two inches (\SI{2.5}{\cm}) to be a direct replacement of the existing helium three tubes.
 The exact placement of the helium tubes in an RPM is not known, so the tubes were placed one-third of the way back in the detector material, and spaced equidistance apart.
-The spacing of the tubes inside the radiation portal monitor is described in \autoref{tab:WrappedCylinderPositions}, and shown in \autoref{fig:WrappedCylinderGeo} and \autoref{fig:WrappedCylinderPos}.
+Calculations have shown that when a matrix of tube positions are considered (i.e. varying the x coordinate for all y coordinates, for all possible combinations) that there is little difference when the cylinders are offset.
+In particular, it is shown in \autoref{tab:EffectsOfCylinderPos} that the variation of the x coordinate has a negligible effect on the count rate, as long as most of the cylinders are about a third of the way towards the front of the detector.
+The final spacing of the tubes inside the radiation portal monitor is described in \autoref{tab:WrappedCylinderPositions}, and shown in \autoref{fig:WrappedCylinderGeo} and \autoref{fig:WrappedCylinderPos}.
+\begin{table}
+  \caption[Cylinder Position Effects on Interaction Rate]{Effect of the cylinder position on the total neutron interaction rate.  The precent changes in the total reactivity are less than the errors of the Monte Carlo uncertainty. The position of the x coordinates are shown, while the y positions are given in \autoref{tab:WrappedCylinderPositions}.}
+  \label{tab:EffectsOfCylinderPos}
+  \begin{tabular}{p{3.5cm} m{3cm} | p{3.5cm} m{3cm}}
+  \toprule
+  Cylinder Coordinates & Interaction Rate Change & Cylinder Coordinates & Interaction Rate Change \\
+  \multicolumn{2}{c|}{Three Cylinders} & \multicolumn{2}{|c}{Five Cylinders} \\
+  \midrule
+   4.0,4.0,4.0 & 0\%   & 4.0,4.0,4.0,4.0,4.0 & 0\%   \\
+   4.0,4.0,5.5 & 1.5\% & 4.0,4.0,2.5,4.0,4.0 & 0\%   \\
+   4.0,4.0,2.5 & 1.5\% & 4.0,4.0,2.5,5.5,4.0 & 0.3\% \\
+   4.0,5.5,4.0 & 1.5\% & 4.0,4.0,4.0,5.5,4.0 & 0.3\% \\
+   4.4,4.4,4.4 & 2.0\% & 4.0,4.0,5.5,4.0,4.0 & 0.7\% \\
+   4.4,4.4,2.5 & 2.5\% & 4.0,4.0,4.0,2.5,4.0 & 1.0\% \\
+   4.0,2.5,4.0 & 3.4\% & 4.0,4.0,4.0,5.5,2.5 & 1.0\% \\
+   5.5,4.0,4.0 & 3.4\% & 4.0,4.0,2.5,4.0,5.5 & 1.7\% \\
+   4.0,5.5,2.5 & 3.9\% & 4.0,4.0,2.5,5.5,2.5 & 1.7\% \\
+  \bottomrule
+  \end{tabular}
+\end{table}
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{WrappedGeoCylinder_Cylinder}
@@ -232,3 +254,4 @@ In this design the outer cylinders had over 56\% of the total interaction rate, 
 		\bottomrule
 	\end{tabular}
 \end{table}
+
