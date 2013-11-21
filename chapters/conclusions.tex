@@ -49,7 +49,7 @@ The neutron flux is then moderated again, and additional layers of detectors are
 However, it is desirably to have a large neutron reflector in the portal monitor to reflect neutrons back into the detector slices. 
 Theoretically this reflector should be as large as possible, but the limited space of the RPM provides a constraint.
 
-A wrapped detector design in which the detector layers are wrapped around a cylinder in concentric circles was also simulated for a variety of absorber loadings in polystyrene and polyethylene naphthalate.
+A wrapped detector design in which the detector layers are wrapped around a cylinder in concentric circles was also simulated for a variety of absorber loadings in polystyrene and polyethylene naphthalene.
 It is observed that the neuronic performance does not depend greatly on the polymer in which the absorber in placed, although the PEN films contain a slightly lower mass fraction of \iso[6]{Li} for the same mass fraction of \iso[6]{LiF} as polystyrene due to PEN having a higher atomic weight than polystyrene.
 Four cylinders (each \SI{2}{\cm} in outer diameter) placed equidistant in the RPM8 loaded with 30\% \iso[6]{LiF} would have an interaction rate above 3.2 interactions per second per nanogram \iso[252]{Cf}, thus meeting the neutron count rate criteria. These assemblies use \SI{28}{\gram} of \iso[6]{Li}, compared to the \SI{12.6}{\gram} of \iso[6]{Li} used in a layered design of a similar count rate.
 This is a poor utilization of the absorber mass, but is attractive due to the ease of collecting the photons with a single PMT on the top and bottom of each cylinder.
@@ -62,5 +62,15 @@ Additional simulation work then needs to be completed to ensure that a RPM in th
 Light transport modeling provides a way to calculate the performance of such a design while providing insights for the improvement of a detector design.
 GEANT4 was used to simulate the neutron interactions, energy deposition, scintillation (with quenching) and the light transport to a PMT for a radiation portal monitor design (shown in \autoref{fig:G4RPM8Geo}).
 This design has the \SI{100}{\um}, 10\% loaded \iso[6]{LiF} films sandwiched between wavelength shifting (each \SI{5}{\mm} thick) with a single PMT at the top and bottom.
-This design collects 8\% of the optical photons emitted; for a polystyrene film with an average light yield of 2,000 photons per neutron 400 would then hit the photocathode.
-It is expected that this is enough photons to create a signal above the noise for a typical PMT.
+This design collects 8\% of the optical photons emitted; for a polystyrene film with an average light yield of 2,000 photons per neutron 160 would then hit the photocathode.
+It is expected that this is enough photons to create a signal above the noise for a good PMT.
+
+\section{Design Improvements}
+It is known that the scintillation events that occur near the center of the detector have a low probability of their photons reaching the PMT.
+Thus, the light collection efficiency could be improved by eliminating that material or by dedicating another PMT to cover the detector mid region.
+Different light collection strategies could also be employed in which more PMT's are added at different locations to improve the light collection, or using different wavelength shifters, coupling materials, and light guides.
+Another improvement in the light collection could be to fabricate films that have less internal optical photon absorption.
+In addition, the large mass of \iso[6]{Li} required could be reduced by examining methods in which an alternative to pulse height discrimination is employed, thus allowing for more of the neutron spectra to be utilized.
+There still exists the need to couple the optimization of the light transport with the material usage.
+For instance, it might be beneficial to have smaller subunits of (each optically independent) detector materials rather than monolithic slabs.
+Another design might exploit the trade-off in the neutron fraction above the discrimination criteria by employing different film thickness in different locations within the radiation portal monitor.
