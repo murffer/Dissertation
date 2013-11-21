@@ -78,7 +78,9 @@
     \input{front-matter/ExecutiveSummary}
     %
     \addToPDFBookmarks{1}{Table of Contents}{f}
-    \tableofcontents % generate a table of contents
+    %\tableofcontents % generate a table of contents
+    \startcontents[chapters]
+    \printcontents[chapters]{p}{0}{}
     %
     \addToPDFBookmarks{1}{List of Tables}{f}
     \listoftables % generate a list of tables
@@ -111,7 +113,10 @@
     % APPENDIX - OPTIONAL - COMMENT IF NOT NEEDED
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \makeAppendixPage   % make the appendix title page - can be edited in ut-thesis-template.tex
+    \addappheadtotoc
     \appendix
+    \startcontents[chapters]
+    \printcontents[chapters]{}{0}{\setcounter{tocdepth}{2}}
     \include{back-matter/ComptonScattering}
     \include{back-matter/MCNPXReactionRateCalc}
     \include{back-matter/G4Intro}

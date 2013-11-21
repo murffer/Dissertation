@@ -109,6 +109,7 @@
 \RequirePackage{amsmath,amsthm,amssymb}     % AMS math, AMS theorem, AMS fonts
 \RequirePackage{setspace}                   % line spacing
 \RequirePackage[vcentering,dvips]{geometry}	% help with margins
+\RequirePackage{titletoc}
 \RequirePackage[pdftex,plainpages=false,pdfpagelabels=true,breaklinks=true,pagebackref]{hyperref} % for pdf bookmarks
 \RequirePackage{color}
 %----------------------------------------------------------------------------------------------------%
@@ -134,7 +135,7 @@
 	pdfsubject={\@dept},
 	pdfkeywords={\@keywords},
 	pdfpagelayout=SinglePage,
-    bookmarksopen=True,
+    bookmarksopen=false,
 	%pdfview=FitV,
 	pdfborder=0 0 0, 		% make all links invisible, so the pdf looks good when printed	
     pdffitwindow=true,      % window fit to page when opened
