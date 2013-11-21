@@ -18,12 +18,16 @@ The analysis of the neutron flux throughout this detector lead to a flat flux pr
 \end{figure}
 Effective utilization of the neutron flux is necessary for minimizing the amount of neutron absorber (\iso[6]{Li}) that is used in the detector.
 
-
 \subsection{Optimal Layered Detector Geometries}
 \label{sec:OptimalLayeredDetectorGeos}
 The optimal genomes are listed for 10 15, 20 length, and 30 length genomes for a minimum interaction rate of 2.5 interactions per second in \autoref{tab:GAOptRXNRate_25}, 5.0 interactions per neutron per second in \autoref{tab:GAOptRXNRate_5}, and for 7.5 interactions per second in \autoref{tab:GAOptRXNRate_75}.
-It is observed that higher length genomes tended to shows a slight decrease in the total interaction rate.
-
+It is observed that higher length genomes tended to shows a slight decrease in the total interaction rate while containing the same amount of \iso[6]{Li}.
+This effect is attributed to the accuracy of the MCNPX calcuations.
+It is also observed (most prominately in \autoref{tab:GAOptRXNRate_75}) that some geometries have very similar interaction rates.
+For large interaction rates more \iso[6]{Li} is required, increasing the number detector layers needed.
+This causes a lower thermal to fast neutron flux ratio, espeically towards the middle of the detector. 
+A flat flux profile implies that that positioning of the film layers does not matter as no region has a higher thermal flux than another.
+In the cases where a lower interaction rate is desired the changes to the film positions can be attributed to the difference that pertubations make on the geometry, and are mostly within the Monte Carlo error.
 \begin{table}
 	\caption[Optimal geometry for 2.5 interactions per second]{Optimal genome geometries for a total minimium interaction rate of 2.5 interactions per second. The detector and simulation is configured per the PNNL criteria.}
 	\label{tab:GAOptRXNRate_25}
@@ -63,6 +67,7 @@ It is observed that higher length genomes tended to shows a slight decrease in t
 	\end{tabular}
 \end{table}
 
+The rendering of several of these goemetires are shown in \autoref{fig:RPMLayeredRendering25}, \autoref{fig:RPMLayeredRendering5}, and \autoref{fig:RPMLayeredRendering75} with the genomes written out in \autoref{tab:OptGeoDetailed25}, \autoref{tab:OptGeoDetailed5}, and \autoref{tab:OptGeoDetailed75}.
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{RPM8OptLayered_25cps}
@@ -99,85 +104,6 @@ A build up of the thermal flux is observed after the last detector layer, and th
 	\caption[Neutron Flux Profile for an Optimal 20 Length Genome, minimum 5 interactions per second]{Neutron flux profile for a 20 length genome with an interaction rate of 5.31 interactions per neutron. The vertical lines represent detector film layers.}
 	\label{fig:20Length5MinFluxProfile}
 \end{figure}
-
-\begin{table}
-	\caption[Optimal Layered Film Geometry for 7.5 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 7.5 interactions per second per nano-gram \iso[252]{Cf} in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geometry is \texttt{01111101110100001000}.}
-	\label{tab:OptGeoDetailed75}
-	\begin{tabular}{m{3cm} m{4cm}}
-	\toprule
-	Position (\si{\cm}) & Material \\
-	\midrule
-0.635&Moderator\\
-0.645&Detector\\
-1.270&LightGuide\\
-1.280&Detector\\
-1.905&LightGuide\\
-1.915&Detector\\
-2.540&LightGuide\\
-2.550&Detector\\
-3.175&LightGuide\\
-3.185&Detector\\
-3.810&LightGuide\\
-4.445&Moderator\\
-4.455&Detector\\
-5.080&LightGuide\\
-5.090&Detector\\
-5.715&LightGuide\\
-5.725&Detector\\
-6.350&LightGuide\\
-6.985&Moderator\\
-6.995&Detector\\
-7.620&LightGuide\\
-8.255&Moderator\\
-10.170&Detector\\
-10.795&LightGuide\\
-11.430&Moderator\\
-	\bottomrule
-	\end{tabular}
-\end{table}
-\begin{table}
-	\caption[Optimal Layered Film Geometry for 5.0 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 5.0 interactions per second per nano-gram \iso[252]{Cf}  in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geometry is \texttt{011101001000000}.}
-	\label{tab:OptGeoDetailed5}
-	\begin{tabular}{m{3cm} m{4cm}}
-	\toprule
-	Position (\si{\cm}) & Material \\
-	\midrule
-0.847&Moderator\\
-0.857&Detector\\
-1.693&LightGuide\\
-1.703&Detector\\
-2.540&LightGuide\\
-2.550&Detector\\
-3.387&LightGuide\\
-4.233&Moderator\\
-4.243&Detector\\
-5.080&LightGuide\\
-5.927&Moderator\\
-6.783&Detector\\
-7.620&LightGuide\\
-8.467&Moderator\\
-	\bottomrule
-	\end{tabular}
-\end{table}
-\begin{table}
-	\caption[Optimal Layered Film Geometry for 2.5 interaction per second per nanogram Cf-252]{Optimal layered film geometry for an interaction rate of 2.5 interactions per second per nano-gram \iso[252]{Cf} in a 10\% \iso[6]{Li} loaded PS film. The positions shown in the table are the right boundary, where the detector starts at \SI{0.0}{\cm}. The genome representing this geometry is \texttt{0011010000}.}
-	\label{tab:OptGeoDetailed25}
-	\begin{tabular}{m{3cm} m{4cm}}
-	\toprule
-	Position (\si{\cm}) & Material \\
-	\midrule
-1.270&Moderator\\
-2.550&Detector\\
-3.810&LightGuide\\
-3.820&Detector\\
-5.080&LightGuide\\
-6.350&Moderator\\
-6.360&Detector\\
-7.620&LightGuide\\
-8.890&Moderator\\
-	\bottomrule
-	\end{tabular}
-\end{table}
 
 \subsection{Wrapped Polymer Cylinders}
 \label{sec:WrappedCylinders}
