@@ -124,7 +124,7 @@ In \eqref{eqn:F1Def} the position $\vec{r}$\nom{$\vec{r}$}{position}, direction 
 As macro-bodies are used for the surfaces of the detector, $-1<\cos\theta<0$ represents the particles that cross into the surface and $0<\cos\theta<1$ the particles that leave the surface.
 In the case where macrobodies are not used to create the cell, the reader is referred to the MCNPX manual for more details.
 
-The count rate of a detector is found by integrating the measured spectra, $p(x)$, \nom{$p(x)$}{measured spectra as a function of channel number $x$} over some bounds of integration.
+The count rate of a detector is found by integrating the measured spectra, $p(x)$, over some bounds of integration.
 It is then possible to express the intrinsic efficiency as a function of a mathematical lower level discriminator (MLLD) of the measured spectra \footnote{The MLLD behaves essentially as a physical lower level discriminator in that all counts below this value are discarded.} in order to determine at what MLLD the intrinsic efficiency is less then a value.
 Equation \eqref{eqn:MLLDDef} shows such a formulation of the intrinsic efficiency as a function of a MLLD, where the upper bond is assumed to be the end of the spectra or highest recorded channel of the analog to digital converter.
 \begin{align}
