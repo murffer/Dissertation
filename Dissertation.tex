@@ -80,8 +80,8 @@
     \addToPDFBookmarks{1}{Table of Contents}{f}
     %\tableofcontents % generate a table of contents
     \chapter*{Table of Contents}
-    \startcontents[chapters]
-    \printcontents[chapters]{p}{0}{}
+    \startcontents[main]
+    \printcontents[main]{p}{0}{}
     %
     \addToPDFBookmarks{1}{List of Tables}{f}
     \listoftables % generate a list of tables
@@ -116,8 +116,9 @@
     \makeAppendixPage   % make the appendix title page - can be edited in ut-thesis-template.tex
     \addappheadtotoc
     \appendix
-    \startcontents[chapters]
-    \printcontents[chapters]{}{0}{\setcounter{tocdepth}{2}}
+    \stopcontents[main]
+    \startcontents[appendix]
+    \printcontents[appendix]{}{0}{\setcounter{tocdepth}{2}}
     \include{back-matter/ComptonScattering}
     \include{back-matter/MCNPXReactionRateCalc}
     \include{back-matter/G4Intro}
@@ -127,6 +128,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % A VITA IS REQUIRED
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \resumecontents[main]
     \addToTOC{Vita}
     \include{back-matter/vita}
 \end{document}
