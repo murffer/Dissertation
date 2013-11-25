@@ -86,8 +86,8 @@ If it failed to meet the count rate criteria a zero fitness was returned \eqref{
     \label{eqn:FitnessFun}
     f(\vec{x})
     = \begin{cases}
-    0 & \text{if} \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
-    \text{countRatePerMass}(\vec{x})
+    0,                               & \text{if } \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
+    \text{countRatePerMass}(\vec{x}),& \text{otherwise}
     \end{cases}
 \end{align}
 Films that have excessive detector layers will be penalized by the normalization by the mass of \iso[6]{Li} that they contain, while favoring films that have the minimum number of detector layers that meet the count rate criteria and have a more effective utilization of the neutron flux which increase their count rate.
