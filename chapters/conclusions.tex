@@ -1,38 +1,23 @@
 \chapter{Conclusions}
 \label{chap:Conclusions}
-Defense against nuclear terrorism relies upon the ability to accurately detect and identify Special Nuclear Material (SNM).
-The current standard for neutron detection in portal monitors is \iso[3]{He}, which is a diminishing resource. 
-A significant amount of research is then focused on developing new (or optimizing an existing) neutron detection system to serve as a replacement RPMs.
-
-Thin (less than approximately \SI{150}{\um}) polymeric films loaded with \iso[6]{Li} films or \iso[6]{Li} loaded ZnS:Ag scintillators show promise in meeting the criteria for replacement detectors; namely a 1) neutron interaction rate greater than 2.5 per nanogram \iso[252]{Cf} (in a specified test configuration) 2) an intrinsic gamma ray detection efficiency of less than one in a million in a 10 mR/hr field, and 3) the neutron and gamma efficiencies should not change by more than 10\% in a 10 mR/hr gamma field.
+Thin polymeric films loaded with \iso[6]{Li} films or \iso[6]{Li} loaded ZnS:Ag scintillators show promise in meeting the criteria for replacement detectors set forth by DHS/DNDO.
 Design of a replacement detector technology capable of meeting these criteria needs to account for neutron interaction used for detection, the subsequent energy deposition  of the reaction products into the material, the scintillation that results from the energy deposition, and the transport of photons from the interaction site to the photomultiplier tube.
 Understanding these complex reactions involve understanding the mechanisms of scintillation, light transport, and energy deposition while developing techniques to confirm simulations and confirm the light yield,intrinsic efficiency and count rate for the different detector materials.
 
 \section{Neutron - Gamma Discrimination}
-This work presented in this thesis outlines an approach in which a detector material is first characterized for it's ability to meet a gamma ray detection efficiency of less than one in a million. 
-A pulse height discriminator is implemented as a mathematical lower level discriminator (MLLD) in which counts that are above a given channel number are counted as neutron counts, and counts below are discarded.
-MCNPX simulations where used to establish the photon fluence over samples mounted on a PMT exposed to a 10 mR/hr field, allowing for the count rate per particle crossing to be established.
-The MLLD is then determined as the discriminator setting in which for every million photons that cross the detector only one is counted.
-
+A pulse height discriminator is implemented as a mathematical lower level discriminator (MLLD) in which counts above a given channel number are counted as neutron counts, and counts below are discarded.
+The MLLD is established for a given film by intregrating the measured photon spectra and then normalizing by the photon fluence (determined by MCNPX simulations) and looking for this intrisinic efficiency is less than \num{1E-6}.
 The origination of the neutron - gamma discrimination in primary in film thickness as the scintillators tested for replacement detector criteria are low - z materials.
 The thickness of the film impacts the discrimination firstly through the interaction rate, but a far greater impact on the neutron - gamma discrimination comes from the range of the secondary electrons produced by Compton scattering in gamma-photon events and their energy deposition.
 The electrons from the gamma interactions generally have energies on the order of 100 keV, while energies from the charged particle reactions of the neutrons have energies or the order to 10 keV.
 Thus, the neutron reaction product energies tend to deposit more energy in the film than their gamma produced counterparts.
 It is the poor energy deposition by electrons generated from photon events that allow for films to be much thicker than the thickness predicted based on the interaction rate.
-
-Effective design must account for the energy deposition in the material, including the pulse height deficit of the impingement particle.
-For example, the range of the alpha created in a \iso[6]{Li} neutron absorption is six times less than that of the triton, but the triton creates almost six times more photons than the alpha.
-Simulations were completed using the GEANT4 toolkit to simulate the energy deposition of \iso[6]{LiF} loaded polystyrene
 For thickness greater than \SI{150}{\um} there is little benefit in increasing the thickness of the film in terms of energy deposition by neutrons, since over 90\% of the energy is being deposited in the film, thus there is little reason to fabricate films thicker than \SI{150}{\um} because it allows for a greater percentage of energy to be deposited from gammas, resulting in a higher MLLD setting.
 
 \section{Film Placement}
 A single film does not have an adequate neutron count rate to satisfy the neutron detector requirements of 2.5 cps per nanogram \iso[252]{Cf} in a source that is \SI{2}{\m} from the detector midpoint, shielded by \SI{0.5}{\cm} of lead and moderated by \SI{2.5}{\cm} of high density polyethylene.
 Layering the detectors, however, has been shown to improve the neutron count rate while maintaing the necessary gamma intrinsic detection efficiency.
 A simple repeated layer design was first proposed as a solution to this problem, but due to the changing neutron flux through the detector is was quickly discarded as non-ideal.
-The repeated layered detector design caused the neutron flux to never thermalize appreciably after being depleted by the first few detector slices; as neutrons became thermalized they would be captured by \iso[6]{Li}.
-However, in the interior of the repeated layered detector design did not allow for any buildup, leading to waste of the absorber.
-A more efficient use of the neutron detector material would be to separate the detector layers with moderator such that the neutron flux could be thermalized before the next detector layer.
-
 Genetic algorithms were employed to optimize a binary model of the detector for the optimal geometry that had the highest count rate while using the least amount of absorber and still meeting the detection efficiency criteria.
 This model consisted of using a binary representation of the layered detector geometry (where each layer is either a detector slice or moderator slice).
 The model was then evaluated using MCNPX and XSDRN to simulate the expected neutron interaction rate performance.
@@ -57,18 +42,16 @@ The \iso[6]{Li} utilization of the four cylinder design can be improved by addin
 
 
 \section{Light Collection}
-There is no assurance that the detectors designed based on interaction rate would be feasible to construct; due to their low light output and opaqueness collecting the light from scintillation events would be extremely difficult.  
-Additional simulation work then needs to be completed to ensure that a RPM in the layered detector design has a realistic method of collecting the light emitted from the scintillation events.
-Light transport modeling provides a way to calculate the performance of such a design while providing insights for the improvement of a detector design.
+Light transport modeling provides a method to calculate the performance of a detector design while providing improvement insights.
 GEANT4 was used to simulate the neutron interactions, energy deposition, scintillation (with quenching) and the light transport to a PMT for a radiation portal monitor design (shown in \autoref{fig:G4RPM8Geo}).
 This design has the \SI{100}{\um}, 10\% loaded \iso[6]{LiF} films sandwiched between wavelength shifting (each \SI{5}{\mm} thick) with a single PMT at the top and bottom.
 This design collects 8\% of the optical photons emitted; for a polystyrene film with an average light yield of 2,000 photons per neutron 160 would then hit the photocathode.
-It is expected that this is enough photons to create a signal above the noise for a good PMT.
+If a \SI{5}{\in} PMT is used instead of a\SI{2}{\in} PMT it is esimated that the light ouput increases by a factor of \num{2.7} \cite{pnnl_14283}.
 
 \section{Design Improvements}
 It is known that the scintillation events that occur near the center of the detector have a low probability of their photons reaching the PMT.
 Thus, the light collection efficiency could be improved by eliminating that material or by dedicating another PMT to cover the detector mid region.
-Different light collection strategies could also be employed in which more PMT's are added at different locations to improve the light collection, or using different wavelength shifters, coupling materials, and light guides.
+Different light collection strategies could also be employed in which more PMT's (or larger PMTs) are added at different locations to improve the light collection, or using different wavelength shifters, coupling materials, and light guides.
 Another improvement in the light collection could be to fabricate films that have less internal optical photon absorption.
 In addition, the large mass of \iso[6]{Li} required could be reduced by examining methods in which an alternative to pulse height discrimination is employed, thus allowing for more of the neutron spectra to be utilized.
 There still exists the need to couple the optimization of the light transport with the material usage.
