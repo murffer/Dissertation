@@ -5,16 +5,16 @@ Replacement technologies must fulfill three basic criteria: 1) a neutron detecti
 Polymeric films containing \iso[6]{Li} ranging from 15 to 300 microns have the ability to fulfill these criteria if suitably utilized.
 For a typical detector this involves maximizing the neutron-gamma discrimination, maximizing the physical detector configuration in order to ensure optimal use of the incident neutron spectra, and ensuring that the scintillation light generated can be collected.
 
-A pulse height discriminator for rejecting gamma interactions has been determined for polymeric films ranging from 15 microns to 300 microns in thickness. 
-The ability for this pulse height discriminator has been investigated and attributed to the energy deposition in the material by the reaction products of the gammas and neutrons, where the Compton scattered electrons from a photon interaction generally have energies in the hundreds of keV while the \iso[6]{Li} reaction products have energies in the 10 keV range. 
-Detailed GEANT4 simulations indicate that a desired film thickness is around 100 microns. 
+A pulse height discriminator technique for rejecting gamma interactions has been developed for polymeric films ranging from 15 microns to 300 microns thick.
+The feasibility of using a pulse height discriminator has been investigated and attributed to the energy deposition in the material by the reaction products of the gammas and neutrons, where the Compton scattered electrons from a photon interaction generally have energies in the hundreds of keV while the \iso[6]{Li} reaction products have energies in the \SI{10}{\keV} range. 
+Detailed GEANT4 simulations indicate that films from \SI{50}{\um} to \SI{150}{\um} would be a practical.
 
 A replacement portal monitor has then been designed for layered polymeric films that effectively utilize the \iso[6]{Li} in the detector material. 
-These layered detector designs consist of thin film layers sandwiched between a light guide, in this case a wavelength shifter.
+These layered detector designs consist of thin film layers sandwiched between wavelength shifting light guides.
 A genetic algorithm was employed to optimize the interaction rate above the necessary discriminator level for three different types of detector materials.
 Two of these materials were composite polymers developed at the University of Tennessee, consisting of a polystyrene based film and a polyethylene naphthalene film.
 The third material was a commercial scintillator, \iso[6]{LiF} loaded ZnS:Ag (EJ-426HD).
-An example of the an optimized geometry is shown in \autoref{fig:EXSumDemoLiFZnS} in which the films are \SI{100}{\um} placed in a wavelength shifter.
+An example of the an optimized geometry is shown in \autoref{fig:EXSumDemoLiFZnS} in which the films are \SI{100}{\um} thick placed in a wavelength shifter.
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{RPM8OptLayered_LiFZnSBW}
@@ -25,23 +25,28 @@ An example of the an optimized geometry is shown in \autoref{fig:EXSumDemoLiFZnS
 The positions of the films necessary to meet the detector criteria are shown in \autoref{tab:EXSumPerf}.
 These layered detector designs consist of \SI{100}{\um}, \iso[6]{Li} fluoride loaded polymers that are encased in \SI{5}{\mm} of a wavelength shifting plastic in addition to a \SI{100}{\um} \iso[6]{LiF} loaded ZnS:Ag commercial scintillator also encased in a wavelength shifter.
 The wavelength shifter was assumed to have a material composition similar to that of high density polyethylene, which also served as the moderator.
-In the case of the polyethylene naphthalene film an alternative method of neutron - gamma discrimination shows promise in which the entire neutron spectra can be utilized. 
-In this case only two detector films are necessary, spaced at \SI{2.54}{\cm} and \SI{5.08}{\cm}.
+In the case of the polyethylene naphthalene film pulse shape discrimination shows promise as an alternative method of neutron - gamma discrimination in which the entire neutron spectra can be utilized. 
+In this case only two \SI{100}{\um}, 10\% \iso[6]{LiF} loaded detector films spaced at \SI{2.54}{\cm} and \SI{5.08}{\cm} would be sufficient.
 In addition to layered designs a design in which the \iso[6]{Li} detector layers are wrapped around into concentric cylinders was also explored. 
-A design using four cylinders (each 2 cm in outer diameter) placed equidistant in the RPM8 loaded with 30\% \iso[6]{Li} fluoride (using \SI{28}{\g} of \iso[6]{Li}) would have an interaction rate above 3.2 interactions per second per nanogram \iso[252]{Cf}.
-If two photomultiplier tubes are placed at the top and bottom of a fishtail light guide mounted on the top and bottom of the detector cabinet, eight percent of the optical photons generated in a 10 percent loaded polystyrene film can be collected, leaving 160 photons to produce a signal on the photomultiplier tubes.
+A design using four cylinders (each \SI{2}{\cm} in outer diameter) placed equidistant in the RPM8 loaded with 30\% \iso[6]{Li} fluoride (using \SI{28}{\g} of \iso[6]{Li}) would have an interaction rate above 3.2 interactions per second per nanogram \iso[252]{Cf}.
+If two \SI{2}{\in} photomultiplier tubes are placed at the top and bottom of a fishtail light guide mounted on the top and bottom of the detector cabinet, 8\% of the optical photons generated in a 10\% loaded polystyrene film can be collected.
+It is assumed for the estimated \SI{5}{\in} PMT photons collected that the light collection efficiency of \SI{5}{\in} PMT can be estimated from the ratio of the \SI{2}{\in} to \SI{5}{\in} light collection efficiency as reported in \cite{pnnl_14283}.
+% \autoref{tab:EXSumPerf} is based on a \SI{100}{\um}, 10\% \iso[6]{LiF} loaded film while the \SI{50}{\um}, 10\% \iso[6]{LiF} loaded polystyrene film has a higher light output.
+% The polystyrene light output could then be improved by using two \SI{50}{\um} films sandwhiched together.
 \begin{table}
   \caption[]{Simulated detector performance in a design capable of meeting the DHS / DNDO criteria.}
   \label{tab:EXSumPerf}
-  \begin{tabular}{m{5cm} m{5cm} m{3cm}}
+  \begin{tabular}{m{4.5cm} m{4cm} m{2cm} m{2cm} }
     \toprule
-    Detector Composition & Film Positions & Expected Photons Collected \\
+    Detector Composition & Film Positions & \multicolumn{2}{c}{Estimated Photons Collected} \\
+                         &                & \SI{2}{\in} PMT & \SI{5}{\in} PMT \\
     \midrule
-    10\% \iso[6]{LiF} polystyrene & \SI{2.54}{\cm}, \SI{3.82}{\cm}, \SI{6.36}{\cm} & 160 \\
-    10\% \iso[6]{LiF} polyethylene naphthalene & \SI{1.90}{\cm}, \SI{3.82}{\cm}, \SI{5.08}{\cm} & 240 \\
-    \iso[6]{LiF} loaded ZnS:Ag &\SI{3.17}{\cm}, \SI{6.35}{\cm} & 1,900\\
+    10\% \iso[6]{LiF} polystyrene & \SI{2.54}{\cm}, \SI{3.82}{\cm}, \SI{6.36}{\cm} & 160 & 432 \\
+    10\% \iso[6]{LiF} polyethylene naphthalene & \SI{1.90}{\cm}, \SI{3.82}{\cm}, \SI{5.08}{\cm} & 240& 410 \\
+    \iso[6]{LiF} loaded ZnS:Ag &\SI{3.17}{\cm}, \SI{6.35}{\cm} & 1,900 & 5,130 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
- 
+Improvements to this design may be found by exploiting the larger fraction of the neutron count rate above the pulse height discriminator for thinner films (at the cost of reduced light output).
+Future work should be directed into exploring the light collection efficiency for different film thickness and the dependance on the number of films necessary to meet the DHS criteria in planar and cylindrical arrangements.
