@@ -29,6 +29,9 @@
 \usepackage{graphicx}
 \usepackage[outdir=./tmp/]{epstopdf}
 \DeclareGraphicsExtensions{.eps, .pdf, .jpeg, .png}
+\usepackage{pdfcomment}
+\LetLtxMacro\latexincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][]{\pdftooltip{\latexincludegraphics[#1]{#2}}{#2}}
 
 %% ALGORTHIM
 \usepackage[chapter]{algorithm}
