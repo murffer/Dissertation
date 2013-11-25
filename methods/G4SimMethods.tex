@@ -12,7 +12,7 @@ It is proposed to represent the detector geometry as a single layer of neutron a
 For simplicity, the initial events for runs will be chosen by setting up a particle gun for thermal (\SI{0.025}{\eV}) neutrons upon the detector and for both gammas resulting from a \iso[60]{Co} decay.
 \begin{figure}
   \includegraphics[width=\textwidth]{GEANT4AnnotatedGeo_EnergyDepEvent}
-	\caption[GEANT4 Energy Deposition Geometry]{GEANT4 Geometry for the Simulation of Energy Deposition. What is shown are 10 photons from a \iso[60]{Co} source impingement upon a \SI{2}{\cm} thick detector.  The photon tracks are shown in yellow, while the electron tracks are shown in red.}
+	\caption[GEANT4 Energy Deposition Geometry]{GEANT4 Geometry for the Simulation of Energy Deposition. What is shown are ten photons from a \iso[60]{Co} source impingement upon a \SI{2}{\cm} thick detector.  The photon tracks are shown in yellow, while the electron tracks are shown in red.}
 	\label{fig:EDepSimGeo}
 \end{figure}
 It is expected that the Livermore data-driven parameterized electromagnetic physics will be necessary to calculate the ionizing energy deposition, extending the standard electro-magnetic physics down to \SI{1}{\kilo\eV}.
@@ -133,7 +133,7 @@ Finally, and probably contributing the largest to the discrepancies, no attempt 
 \begin{table}
 	\caption[Agreement between Simulated and Measured Photon Collection in 4" by 6" Slabs]{Agreement between the simulated light collection in the 4" by 6" detector assemblies and the measurements.}
 	\label{tab:4by6SlabOpVal}
-	\begin{tabular}{m{4cm} m{3cm} m{3cm}}
+	\begin{tabular}{m{3.5cm} m{4cm} m{4cm}}
 	\toprule
 	Sample & Measured Photons Collected & Simulated Photons Collected \\
 	\midrule
@@ -146,6 +146,6 @@ Finally, and probably contributing the largest to the discrepancies, no attempt 
 \begin{figure}
 	\centering
 	\includegraphics[width=\textwidth]{Meas_LayeredDetectorLightYield}
-	\caption[Measured Light Yield of the 4" by 6" Assemblies]{Measured light yield of the 4" by 6" detector assemblies. The response of the ZnS:Ag doped with \iso[6]{LiF} dominated the response.  The effect of a doubling the thickness of the polystyrene films is observed in the higher count rate of the \SI{100}{\um} film with a slightly lower light yield than the \SI{50}{\um} film.}
+	\caption[Measured Light Yield of the 4" by 6" Assemblies]{Measured light yield of the 4" by 6" detector assemblies. The response of the ZnS:Ag doped with \iso[6]{LiF} (EJ-426 HD2) dominates the response.  The effect of a doubling the thickness of the polystyrene films is observed in the higher count rate of the \SI{100}{\um} film with a slightly lower light yield than the \SI{50}{\um} film.}
 	\label{fig:4by6MeasSpectra}
 \end{figure}
