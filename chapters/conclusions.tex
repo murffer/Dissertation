@@ -18,27 +18,28 @@ A \SI{150}{\um} thick film absorbs over 90\% of the energy deposition of the neu
 \section{Film Placement}
 A single film does not have an adequate neutron count rate to satisfy the neutron detector requirements of 2.5 cps per nanogram \iso[252]{Cf} in a source that is \SI{2}{\m} from the detector midpoint, shielded by \SI{0.5}{\cm} of lead and moderated by \SI{2.5}{\cm} of high density polyethylene.
 Layering the detectors, however, has been shown to improve the neutron count rate while maintaing the necessary gamma intrinsic detection efficiency.
-A simple repeated layer design was first proposed, but due to the changing neutron flux through the detector is was quickly discarded as a poor utilization of the \iso[6]{Li}.
+A simple repeated layer design was first proposed, but due to the changing neutron flux through the detector, it was quickly discarded as a poor utilization of the \iso[6]{Li}.
 Genetic algorithms were employed to optimize a binary model of the detector for the optimal geometry that had the highest count rate while using the least amount of absorber and still meeting the detection efficiency criteria.
 This model consisted of using a binary representation of the layered detector geometry (where each layer is either a detector slice or moderator slice).
 The model was then evaluated using MCNPX and XSDRN to simulate the expected neutron interaction rate performance.
 
 The position of the slices necessary for having the best usage of the absorber material while still maintaining the neutron count rate necessary for the criteria are then determined by the genetic algorithm.
 These layered detector designs consist of \SI{100}{\um}, \iso[6]{Li} fluoride loaded polymers that are encased in four millimeters of a wavelength shifter.
-Three such layers (30 percent loaded with enriched LiF) can achieve an interaction rate of 3.82 interactions per second per nanogram of Cf-252 (using 12.6 grams of \iso[6]{Li}), while five layer can achieve an interaction rate of 5.31 interactions per second per nanogram of Cf-252 (using 21.0 grams of \iso[6]{Li})  and ten layers an achieve an interaction rate of 7.56 interactions per second per nanogram of Cf-252 (using 41.2 grams of \iso[6]{Li}).
-Annotated MCNPX renderings of these geometries are shown in \autoref{fig:RPMLayeredRendering25} and \autoref{fig:RPMLayeredRendering5}, and \autoref{fig:RPMLayeredRendering75}.
+Three such layers (30 percent loaded with enriched LiF) can achieve an interaction rate of 3.82 interactions per second per nanogram of Cf-252 (using 12.6 grams of \iso[6]{Li}), while five layers can achieve an interaction rate of 5.31 interactions per second per nanogram of Cf-252 (using 21.0 grams of \iso[6]{Li})  and ten layers can achieve an interaction rate of 7.56 interactions per second per nanogram of Cf-252 (using 41.2 grams of \iso[6]{Li}).
+Annotated MCNPX renderings of these geometries are shown in \autoref{fig:RPMLayeredRendering25}, \autoref{fig:RPMLayeredRendering5}, and \autoref{fig:RPMLayeredRendering75}.
 
 A physical basis of the optimal solution found by the genetic algorithm can be found by observing the form of the optimal solutions.
 These solutions involve an initial moderator layer in order to ensure neutron thermalization.
-After this moderator layer a film layer is placed to utilize this neutron spectra; however not all of the thermal neutrons are captured (as the mean free path of a neutron in polyethylene is about \SI{0.37}{\cm} and thus some pass through the material) and another absorber layer is needed to capture those neutrons.  
+After this moderator layer a film layer is placed to capture the thermal neutron spectra; however, not all of the thermal neutrons are captured (as the mean free path of a neutron in polyethylene is about \SI{0.37}{\cm} and thus some pass through the material).
+A second absorber layer is needed to capture those neutrons.  
 The neutron flux is then moderated again, and additional layers of detectors are needed to capture this neutron cross section.
-However, it is desirably to have a large neutron reflector in the portal monitor to reflect neutrons back into the detector slices. 
-Theoretically this reflector should be as thick as possible, but the limited space of the RPM provides a constraint.
+However, it is desirable to have a large neutron reflector in the portal monitor to reflect neutrons back into the detector slices. 
+Theoretically, this reflector should be as thick as possible, but the limited space of the RPM provides a constraint.
 
 A wrapped detector design in which the detector layers are wrapped around a cylinder in concentric circles was also simulated for a variety of absorber loadings in polystyrene and polyethylene naphthalene.
 It is observed that the neuronic performance does not depend greatly on the polymer in which the absorber in placed, although the PEN films contain a slightly lower mass fraction of \iso[6]{Li} for the same mass fraction of \iso[6]{LiF} as polystyrene due to PEN having a higher atomic weight than polystyrene.
 Four cylinders (each \SI{2}{\cm} in outer diameter) placed equidistant in the RPM8 loaded with 30\% \iso[6]{LiF} would have an interaction rate above 3.2 interactions per second per nanogram \iso[252]{Cf}, thus meeting the neutron count rate criteria. These assemblies use \SI{28}{\gram} of \iso[6]{Li}, compared to the \SI{12.6}{\gram} of \iso[6]{Li} used in a layered design of a similar count rate.
-This is a poor utilization of the absorber mass, but is attractive due to the ease of collecting the photons with a single PMT on the top and bottom of each cylinder.
+This is a poor utilization of the absorber mass, but, it is attractive due to the ease of collecting the photons with a single PMT on the top and bottom of each cylinder.
 The \iso[6]{Li} utilization of the four cylinder design can be improved by adding a fifth cylindrical detector assembly and increasing the spacing between the detector, which is leading to an approximation of planar sheet geometry.
 
 
