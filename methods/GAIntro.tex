@@ -86,8 +86,8 @@ If it failed to meet the count rate criteria a zero fitness was returned \eqref{
     \label{eqn:FitnessFun}
     f(\vec{x})
     = \begin{cases}
-    0 & \text{if} \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
-    \text{countRatePerMass}(\vec{x})
+    0,                               & \text{if } \text{countRate}(\vec{x}) \leq \SI{2.5}{cps\per\nano\gram\iso[252]{Cf}} \\
+    \text{countRatePerMass}(\vec{x}),& \text{otherwise}
     \end{cases}
 \end{align}
 Films that have excessive detector layers will be penalized by the normalization by the mass of \iso[6]{Li} that they contain, while favoring films that have the minimum number of detector layers that meet the count rate criteria and have a more effective utilization of the neutron flux which increase their count rate.
@@ -123,4 +123,4 @@ The convergence to the top candidates can then be corrected by preforming pertur
 A perturbation on a optimal genome is defined as taking each detector slice and translating it a half slice thickness to the left and the right. 
 For example, for a five length genome a perturbation on \verb+010100+ would involve first doubling the genome to  \verb+001000100000+ and then perturbing the slices as  \verb+010000100000+, \verb+000100100000+, \verb+001001000000+, and \verb+001000010000+.
 The perturbations on the length length genome increased the interaction rate from 3.81 interactions per second to 3.85 interactions per second for the optimal ten length genome, and from 3.85 interactions per second to 3.87 interactions per second.
-Thus, it is determined that the genetic algorithm converged to the optimal solution.
+Thus, it is determined that the genetic algorithm converged to a very close to optimal solution.

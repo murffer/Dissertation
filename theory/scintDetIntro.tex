@@ -56,14 +56,14 @@ Thus, while there is \SI{4.78}{\MeV} of reaction product energy released in the 
 \subsection{Pulse Height Deficit}
 \label{sec:PulseHeightDeficit}
 The concept of alpha to beta ratio is extended for other charged ions as the pulse height deficit.
-The pulse height deficit is defined as the number of photons produced per energy of the primary particle (usually a heavy charged ion) relative to the number of photons produced per energy by an electron of a similar energy.
-This is measured as the difference between the energy of the heavy ion and its apparent energy from the pulse height.  
+The pulse height deficit is defined as the number of photons produced per energy of the primary particle (usually a heavy charged ion) relative to the number of photons produced per energy by an electron of the same energy.
+This is measured as the difference between the energy of the heavy ion and its apparent energy from the pulse height (that produces the same number of photons).  
 Several researchers have investigated the light output of scintillators in response to different types of ionizing radiation\cite{Verbinski_1968}.
 \autoref{fig:lightYieldVerbinski} summarizes example results in which the pulse height deficit is apparent for the as the charged ions become heavier.
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{Verbinski_LightYield_AlpahCarbonProton}
-  \caption[Light yield non-proportionality of anthracene]{Light yield non-proportionality of anthracene. For the same kinetic energy the protons produce more photons alpha, which in turn produces more photons than the  carbon ions. This is an example of the pulse height deficit. Data from \cite{Verbinski_1968}.}
+  \caption[Light yield non-proportionality of anthracene]{Light yield non-proportionality of anthracene. For the same kinetic energy the protons produce more photons alpha, which in turn produces more photons than the  carbon ions. This is an example of the pulse height deficit. The alpha to beta ratio of anthracene is \num{0.29} \cite{5075983}. The figure data is from \cite{Verbinski_1968}.}
   \label{fig:lightYieldVerbinski}
 \end{figure}
 
@@ -102,7 +102,7 @@ Thus, as shown in \autoref{fig:SimLightOutputQuench} the triton from the \iso[6]
 \begin{figure}
   \centering
     \includegraphics[width=\textwidth]{SimLightQuench}
-    \caption[Simulated Number of Optical Photons for Various Ions and Energies]{Simulated number of optical photons generated for electrons, alphas, tritons and \iso[7]{Li}.\LightQuenchSimGeo}
+    \caption[Simulated Number of Optical Photons for Various Ions and Energies]{Simulated number of optical photons generated from electrons, alphas, tritons and \iso[7]{Li}.\LightQuenchSimGeo}
 	\label{fig:SimNumOP}
   \end{figure}
   \begin{figure}
@@ -116,7 +116,7 @@ The pulse height deficit is computed by simulation of the charged particles and 
 This analysis yields a  pulse height deficit for the \iso[6]{Li} reaction as 8.5, and 27 for the \iso[10]{B}.
 These results are summarized in \autoref{tab:PulseHeightDeficitSim}.
 \begin{table}
-  \caption[Simulated Number of Optical Photons for Selected Neutron Absorptions]{GEANT4 simulated number of optical photons produced for the \iso[10]{B} and \iso[6]{Li} neutron absorptions.  The scintillator is assumed to have a light yield of 1,000 photons per MeV}
+  \caption[Simulated Number of Optical Photons for Selected Neutron Absorptions]{GEANT4 simulated number of optical photons produced for the \iso[10]{B} and \iso[6]{Li} neutron absorptions.  The scintillator is assumed to have a light yield of 1,000 photons per MeV of electron energy.}
   \label{tab:PulseHeightDeficitSim}
   \centering
   \begin{tabular}{c c c | c}
